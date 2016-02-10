@@ -5,28 +5,31 @@
 
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" href="css/linea-icon.css" />
-	<link rel="stylesheet" href="css/fancy-buttons.css" />
+	<link rel="stylesheet" href="resources/css/bootstrap.css" />
+	<link rel="stylesheet" href="resources/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="resources/css/linea-icon.css" />
+	<link rel="stylesheet" href="resources/css/fancy-buttons.css" />
 
 	<!--=== Google Fonts ===-->
 	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<!-- User Font-Sign in-->
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<!--=== Other CSS files ===-->
-	<link rel="stylesheet" href="css/animate.css" />
-	<link rel="stylesheet" href="css/jquery.vegas.css" />
-	<link rel="stylesheet" href="css/baraja.css" />
-	<link rel="stylesheet" href="css/jquery.bxslider.css" />
-
+	<link rel="stylesheet" href="resources/css/animate.css" />
+	<link rel="stylesheet" href="resources/css/jquery.vegas.css" />
+	<link rel="stylesheet" href="resources/css/baraja.css" />
+	<link rel="stylesheet" href="resources/css/jquery.bxslider.css" />
 	<!--=== Main Stylesheets ===-->
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/responsive.css" />
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!--=== Main Stylesheets ===-->
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<link rel="stylesheet" href="resources/css/responsive.css" />
 
 	<!--=== Color Scheme, three colors are available red.css, orange.css and gray.css ===-->
-	<link rel="stylesheet" id="scheme-source" href="css/schemes/gray.css" />
+	<link rel="stylesheet" id="scheme-source" href="resources/css/schemes/orange.css" />
 
 	<!--=== Internet explorer fix ===-->
 	<!-- [if lt IE 9]>
@@ -113,175 +116,29 @@
 	</div>
 
 
-	<!--=== Features section Starts ===-->
-	<section id="section-feature" class="feature-wrap">
-		<div class="container features center">
-			<div class="row">
-				<div class="col-lg-12">
-						<!--Features container Starts -->
-						<ul id="card-ul" class="features-hold baraja-container">
+	<!-- Users Starts -->
+		<section id="section-feature" class="feature-wrap">
+			<div class="container step animated" data-animation="bounceInLeft" data-animation-delay="700">
+				<div class="row">
+				<img src="resources/images/p5.jpg" alt="banner" class="img-responsive">
+				<img src="resources/images/profile.jpg" class="img-circle profile">
+					<ul class="sub-steps"> <!-- Sub steps here -->
+						<li>
+							<span class="icon fa fa-comments color-scheme"></span>
+							<span class="sub-text">Comentarios</span>
+						</li>
+						<li>
+							<span class="icon fa fa-pencil-square-o color-scheme"></span>
+							<span class="sub-text">Editar</span>
+						</li>
 
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="Card style">
-								<img src="images/5.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Paris</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
-								</p>
-
-									<a href="#" class="fancy-button button-line btn-col small vertical">
-										Detalles
-										<span class="icon">
-											<i class="fa fa-leaf"></i>
-										</span>
-									</a>
-
-							</li>
-							<!-- Single Feature Ends -->
-
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="50+ SVG Icon included">
-								<img src="images/22.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">New York</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
-								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
-									Detalles
-									<span class="icon">
-										<i class="fa fa-leaf"></i>
-									</span>
-								</a>
-							</li>
-							<!-- Single Feature Ends -->
-
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="MailChimp Ready">
-								<img src="images/33.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Hawai</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
-								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
-                                                                            Detalles
-									<span class="icon">
-										<i class="fa fa-leaf"></i>
-									</span>
-								</a>
-							</li>
-							<!-- Single Feature Ends -->
-
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="4 home style">
-								<img src="images/44.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Moscu</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
-								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
-									Detalles
-									<span class="icon">
-										<i class="fa fa-leaf"></i>
-									</span>
-								</a>
-							</li>
-							<!-- Single Feature Ends -->
-
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="Parallax Backgrounds">
-								<img src="images/55.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Cancun</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
-								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
-									Detalles
-									<span class="icon">
-										<i class="fa fa-leaf"></i>
-									</span>
-								</a>
-							</li>
-							<!-- Single Feature Ends -->
-
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="Ajax contact form">
-								<img src="images/66.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Sidney</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
-								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
-									Detalles
-									<span class="icon">
-										<i class="fa fa-leaf"></i>
-									</span>
-								</a>
-							</li>
-							<!-- Single Feature Ends -->
-
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="unlimited Google fonts">
-								<img src="images/77.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Berlin</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
-								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
-									Detalles
-									<span class="icon">
-										<i class="fa fa-leaf"></i>
-									</span>
-								</a>
-							</li>
-							<!-- Single Feature Ends -->
-
-							<!-- Single Feature Starts -->
-							<li class="single-feature" title="Feature heading">
-								<img src="images/88.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Dubai</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
-								</p>
-								<a href="#" class="fancy-button button-line btn-col small zoom">
-									Detalles
-									<span class="icon">
-										<i class="fa fa-leaf"></i>
-									</span>
-								</a>
-							</li>
-							<!-- Single Feature Ends -->
-						</ul>
-						<!--Features container Ends -->
-
-						<!-- Features Controls Starts -->
-						<div class="features-control relative">
-							<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-prev" title="Previous" >
-								<span class="icon">
-									<i class="fa fa-arrow-left"></i>
-								</span>
-							</button>
-							<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-expand" title="Expand" >
-								<span class="icon">
-									<i class="fa fa-expand"></i>
-								</span>
-							</button>
-							<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-close" title="Collapse" >
-								<span class="icon">
-									<i class="fa fa-compress"></i>
-								</span>
-							</button>
-							<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-next" title="Next" >
-								<span class="icon">
-									<i class="fa fa-arrow-right"></i>
-								</span>
-							</button>
-						</div>
-						<!-- Features Controls Ends -->
+					</ul>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!--=== Features section Ends ===-->
+
+		</section>
+		<!--=== Step-1 section Ends ===-->
+	<!-- #Slider Ends -->
 
 	<!--=== Services section Starts ===-->
 	<section id="section-services" class="services-wrap">
@@ -376,14 +233,14 @@
 							<h5 class="pricing-heading color-scheme">Itinerario 1</h5>
 							<div class="price">
 
-								<img src="images/Intinerario1.jpg" alt="Intinerario 1" width="100" height="100"/>
+								<img src="resources/images/Intinerario1.jpg" alt="Intinerario 1" width="100" height="100"/>
 							</div>
 						</div>
 
 
 						<div class="sign-up">
-							<a href="itinerario1.html" target="iframe1" class="fancy-button button-line btn-col zoom">
-								<p title="Ver" style="font-size:12px">Ver &#9992</p>
+							<a href="#" class="fancy-button button-line btn-col zoom">
+								<p title="Ver" style="font-size:12px">Ver &#10084</p>
 								<!--&#10084 corazon-->
 								<!--&#9992 avion -->
 							</a>
@@ -399,13 +256,13 @@
 							<h5 class="pricing-heading color-scheme">Itinerario 2</h5>
 							<div class="price">
 
-								<img src="images/Intinerario2.jpg" alt="Intinerario 2" width="100" height="100"/>
+								<img src="resources/images/Intinerario2.jpg" alt="Intinerario 2" width="100" height="100"/>
 							</div>
 						</div>
 
 
 						<div class="sign-up">
-							<a href="itinerario2.html" target="iframe1" class="fancy-button button-line btn-col zoom">
+							<a href="#" class="fancy-button button-line btn-col zoom">
 								<p title="Ver" style="font-size:12px">Ver &#9992</p>
 								<!--&#10084 corazon-->
 							</a>
@@ -421,7 +278,7 @@
 							<h5 class="pricing-heading color-scheme">Itinerario 3</h5>
 							<div class="price">
 
-								<img src="images/Intinerario3.jpg" alt="Intinerario 3" width="100" height="100"/>
+								<img src="resources/images/Intinerario3.jpg" alt="Intinerario 3" width="100" height="100"/>
 							</div>
 						</div>
 
@@ -443,7 +300,7 @@
 							<h5 class="pricing-heading color-scheme">Itinerario 4</h5>
 							<div class="price">
 
-								<img src="images/Intinerario4.jpg" alt="Intinerario 4" width="100" height="100"/>
+								<img src="resources/images/Intinerario4.jpg" alt="Intinerario 4" width="100" height="100"/>
 							</div>
 						</div>
 
@@ -467,17 +324,33 @@
 				<!-- Step Description Ends -->
 				<div class="col-md-4 step-img">
 
-					
-					<!--corte1-->
-					<iframe src="itinerario1.html" name="iframe1"width="350" height="400" style="border:none" data-animation="bounceInRight"></iframe>
-					<a  href="#step-2"><p class="step-description"><strong>Ver mapa y linea de tiempo</strong></p></a>
+					<p> Itinerario Actual</p>
+					<img title="Agregar Itinerario" src="resources/images/IntinerarioAgregar.jpg" alt="Crea tu itinerario" /> <!-- Step Photo Here -->
+					<img src="resources/images/Agregar.png" alt="Agregar" width="30" height="30" >
+
+					<p> Agregar Intinerario</p>
+
+					<div class="col-md-10 step-details">
+							<h5 class="step-title color-scheme">Detalles</h5>
+
+							<ul class="sub-steps"> <!-- Sub steps here -->
+								<li>
+									<span class="icon fa fa-comments color-scheme"></span>
+									<span class="sub-text">Comentarios</span>
+								</li>
+								<li>
+									<span class="icon fa fa-pencil-square-o color-scheme"></span>
+									<span class="sub-text">Integrantes</span>
+								</li>
+
+							</ul>
+					</div>
 
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--=== Step-1 section Ends ===-->
-	<!-- LuisMesa Fin -->
 
 
 
@@ -494,7 +367,7 @@
 					</div>
 
 					<div class="col-md-10 step-details">
-							<h3 class="step-title color-scheme">Acá puede ir el mapa y la linea de tiempo del itinerario seleccionado arriba</h3>
+							<h3 class="step-title color-scheme">Work flow title here</h3>
 							<p class="step-description">Cillum laboris <strong>consequat</strong>, qui elit retro next level
 							skateboard freegan hella. Cillum laboris consequat qui elit retro next level
 							skateboard freegan hella. Cillum laboris consequat skateboard freegan hella</p>
@@ -514,7 +387,7 @@
 				</div>
 				<!-- Step Description Ends -->
 				<div class="col-md-4 step-img">
-					<img src="images/desk.png" alt="" /> <!-- Step Photo Here -->
+					<img src="resources/images/desk.png" alt="" /> <!-- Step Photo Here -->
 				</div>
 			</div>
 		</div>
@@ -548,12 +421,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/7.jpg" alt="" />
+							<img src="resources/images/7.jpg" alt="" />
 							<div class="photo-overlay">
 								<h4>Wordpress theme</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 					</div>
@@ -564,12 +437,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/2.jpg" alt="" />
+							<img src="resources/images/2.jpg" alt="" />
 							<div class="photo-overlay">
 								<h4>User Interface design</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="modules/single/single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 
@@ -581,12 +454,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/33.jpg" alt="" />
+							<img src="resources/images/3.jpg" alt="" />
 							<div class="photo-overlay">
 								<h4>PSD template design</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="timeline.tpl.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 
@@ -598,12 +471,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/4.jpg" alt="" />
+							<img src="resources/images/4.jpg" alt="" />
 							<div class="photo-overlay">
 								<h4>User Experience design</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="modules/single/single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 
@@ -615,12 +488,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/5.jpg" alt="" />
+							<img src="resources/images/5.jpg" alt="" />
 							<div class="photo-overlay">
 								<h4>Page builder plugin</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 
@@ -632,12 +505,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="images/6.jpg" alt="" />
+							<img src="resources/images/6.jpg" alt="" />
 							<div class="photo-overlay">
 								<h4>Corporate website</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="modules/single/single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 
@@ -714,17 +587,17 @@
 					<div id="bx-pager" class="client-photos">
 						<a data-slide-index="0" href="" class="photo-hold">
 							<span class="photo-bg">
-								<img src="images/client_1.jpg" alt="" /> <!-- Client photo 1 -->
+								<img src="resources/images/client_1.jpg" alt="" /> <!-- Client photo 1 -->
 							</span>
 						</a>
 						<a data-slide-index="1" href="" class="photo-hold">
 							<span class="photo-bg">
-								<img src="images/client_2.jpg" alt="" /> <!-- Client photo 2 -->
+								<img src="resources/images/client_2.jpg" alt="" /> <!-- Client photo 2 -->
 							</span>
 						</a>
 						<a data-slide-index="2" href="" class="photo-hold">
 							<span class="photo-bg">
-								<img src="images/client_3.jpg" alt="" /> <!-- Client photo 3 -->
+								<img src="resources/images/client_3.jpg" alt="" /> <!-- Client photo 3 -->
 							</span>
 						</a>
 					</div>
@@ -920,182 +793,34 @@
 
 
 	<!--=== Download section Starts ===-->
-        <!--Fabio Lopez -->
-        <section id="section-download" class="screenshots-wrap-wrap">
-		<div class="container screenshots animated" data-animation="fadeInUp" data-animation-delay="1000">
-			<div class="row porfolio-container">
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Multimedia</h3>
-                                        <h5 style="color:whitesmoke">¡Accede, agrega y edita a los recuerdos vividos en tu viaje a través de tus fotos, música y videos!</h5>
-				</div>
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-						<div class="photo-box">
-							<img src="images/multimedia1.jpg" alt="multimedia 1"  />
-							<div class="photo-overlay">
-								<h4>Londres</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+	<section id="section-download" class="download-wrap">
+		<div class="container download center">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="col-md-10 col-md-offset-1 center section-title">
+						<h3>Download app</h3>
+					</div>
+					<div class="download-buttons clearfix"> <!-- Download Buttons -->
+						<a class="fancy-button button-line no-text btn-col large zoom" href="#" title="Download from App store">
+							<span class="icon">
+							<i class="fa fa-apple"></i>
 							</span>
-						</div>
+						</a>
+						<a class="fancy-button button-line btn-col no-text large zoom" href="#" title="Download from App store">
+							<span class="icon">
+							<i class="fa fa-android"></i>
+							</span>
+						</a>
+						<a class="fancy-button button-line btn-col no-text large zoom" href="#" title="Download from App store">
+							<span class="icon">
+							<i class="fa fa-windows"></i>
+							</span>
+						</a>
 					</div>
 				</div>
-				<!-- Single screenshot ends -->
-
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-						<div class="photo-box">
-							<img src="images/multimedia2.png" alt="" />
-							<div class="photo-overlay">
-								<h4>Rio de Janeiro</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-						<div class="photo-box">
-							<img src="images/33.jpg" alt="" />
-							<div class="photo-overlay">
-								<h4>Playa</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="timeline.tpl.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-                                <!--boton agregar-->
-                        <div class="sign-up" style="float:right;widht:225px;">
-                                <a href="#" class="view-project">
-                                        <p title="Agregar" style="font-size:25px"><b>Agregar media &#43</b></p>
-                                        <!--&#10084 corazon-->
-                                        <!--&#9992 avion -->
-                                </a>
-                        </div>
-                    <!--fin boton agregar-->
-                    <!--boton visualizar-->
-                        <div class="sign-up" style="float:left;widht:225px">
-                                <a href="#" class="view-project">
-                                        <p title="Visualizar" style="font-size:25px"><b>Visualizar media </b></p>
-
-                                </a>
-                        </div>
-                    <!--fin boton visualizar-->
-
 			</div>
-
-
-
-			<div id="portfolio-loader" class="center">
-				<div class="loading-circle fa-spin"></div>
-			</div> <!--=== Portfolio loader ===-->
-
-			<div id="portfolio-load"></div><!--=== ajax content will be loaded here ===-->
-                            <div class="col-md-12 center back-button"><!--Lo que salga dentro de este div solo aparece despues del clik en un boton-->
-                                <!-- <div class="container pricing"> -->
-                                <div class="row">
-                                        <!-- Intinerario1 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="500">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 1</h4>
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                        <!--&#9992 avion -->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <!-- Intinerario2 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="700">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 2</h4>
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <!-- Intinerario3 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="900">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 3</h4>
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <!-- Intinerario4 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="1100">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 4</h4>
-
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                </div>
-                        <!-- </div> -->
-
-
-                                    <a class="backToProject fancy-button button-line bell btn-col" href="#">
-                                            Back
-                                            <span class="icon">
-                                                    <i class="fa fa-arrow-left"></i>
-                                            </span>
-                                    </a>
-                            </div><!--=== Single portfolio back button ===-->
 		</div>
 	</section>
-
 	<!--=== Download section Ends ===-->
 
 
@@ -1106,7 +831,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<div class="col-md-10 col-md-offset-1 center section-title">
-						<h3>Dejanos un mensaje</h3>
+						<h3>Leave a message</h3>
 					</div>
 
 					<div class="confirmation">
@@ -1124,7 +849,7 @@
 							<textarea id="message" class="textarea-field form-item field-message" rows="10" name="contact-message" placeholder="Message"></textarea>
 						</div>
 						<button type="submit" class="fancy-button button-line button-white large zoom subform">
-							Enviar mensaje
+							Send message
 							<span class="icon">
 								<i class="fa fa-paper-plane-o"></i>
 							</span>
@@ -1142,7 +867,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h4 class="footer-title"><!-- Footer Title -->
-						<a class="site-name" href="#"><span>P</span>RIMID</a>
+						<a class="site-name" href="#"><span>E</span>gret</a>
 					</h4>
 
 					<!-- Social Links -->
@@ -1166,28 +891,29 @@
 
 <!--==== Js files ====-->
 <!--==== Essential files ====-->
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-<script type="text/javascript" src="js/modernizr.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="resources/js/modernizr.js"></script>
+<script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>
 
 <!--==== Slider and Card style plugin ====-->
-<script type="text/javascript" src="js/jquery.baraja.js"></script>
-<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
-<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.baraja.js"></script>
+<script type="text/javascript" src="resources/js/jquery.vegas.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
 
 <!--==== MailChimp Widget plugin ====-->
-<script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.ajaxchimp.min.js"></script>
 
 <!--==== Scroll and navigation plugins ====-->
-<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-<script type="text/javascript" src="js/jquery.nav.js"></script>
-<script type="text/javascript" src="js/jquery.appear.js"></script>
-<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="resources/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.nav.js"></script>
+<script type="text/javascript" src="resources/js/jquery.appear.js"></script>
+<script type="text/javascript" src="resources/js/jquery.fitvids.js"></script>
 
 <!--==== Custom Script files ====-->
-<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="resources/js/custom.js"></script>
 
 </body>
 </html>
+

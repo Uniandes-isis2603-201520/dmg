@@ -9,13 +9,14 @@
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise("/evento");
             $stateProvider
-                    .state('evento', {
-                        url: '/evento',
-                        templateUrl: "src/modules/evento/evento.tpl.html"
+
+                    .state('Viajero', {
+                        url: '/User',
+                        templateUrl: "resources/src/modules/User/Viajero.tpl.html"
                     })
                     .state('evento', {
                         url: '/evento',
-                        templateUrl: "src/modules/evento/evento.tpl.html"
+                        templateUrl: "resources/src/modules/evento/evento.tpl.html"
                     });
         }]);
 })(window.angular);
