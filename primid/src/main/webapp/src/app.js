@@ -11,12 +11,24 @@
             $stateProvider
 
                     .state('Viajero', {
-                        url: '/User',
+                        url: '/Viajero',
                         templateUrl: "resources/src/modules/User/Viajero.tpl.html"
                     })
                     .state('evento', {
                         url: '/evento',
                         templateUrl: "resources/src/modules/evento/evento.tpl.html"
+                    })
+                    .state('Itinerario1', {
+                        url: '/Itinerario1',
+                        templateUrl: "resources/src/modules/Itinerario/itinerario1.tpl.html"
+                    })
+                    .state('Itinerario2', {
+                        url: '/Itinerario2',
+                        templateUrl: "resources/src/modules/Itinerario/itinerario2.tpl.html"
+                    })
+                    .state('Timeline', {
+                        url: '/Timeline',
+                        templateUrl: "resources/src/modules/Timeline/timeline.tpl.html"
                     });
         }]);
 })(window.angular);
