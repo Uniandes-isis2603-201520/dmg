@@ -26,6 +26,10 @@
                         url: '/Itinerario2',
                         templateUrl: "resources/src/modules/Itinerario/itinerario2.tpl.html"
                     })
+                    .state('Multimedia', {
+                        url: '/Multimedia',
+                        templateUrl: "resources/src/modules/Multimedia/multimedia.tpl.html"
+                    })
                     .state('Timeline', {
                         url: '/Timeline',
                         templateUrl: "resources/src/modules/Timeline/timeline.tpl.html"
