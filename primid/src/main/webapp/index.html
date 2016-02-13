@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="resources/css/bootstrap.css" />
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="resources/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="resources/css/linea-icon.css" />
 	<link rel="stylesheet" href="resources/css/fancy-buttons.css" />
@@ -68,12 +69,12 @@
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li class="current"><a href="#header">Inicio</a></li>
-								<li><a href="#section-feature">Usuario</a></li>
-								<li><a href="#section-services">Servicios</a></li>
-								<li><a href="#step-1">Itinerarios</a></li>
-								<li><a href="#section-screenshots">Eventos</a></li>
-								<li><a href="#section-pricing">Sitios</a></li>
-								<li><a href="#section-download">Media</a></li>
+								<li><a href="#section-feature">Eventos</a></li>
+								<li><a href="#itinerarios">Itinerarios</a></li>
+								<li><a href="#timeline">Timeline</a></li>
+								<li><a href="#mapas">Mapa</a></li>
+								<li><a href="#multimedia">Multimedia</a></li>
+								<li><a href="#viajero">Viajero</a></li>
 							</ul>
 						</div>
 						<!-- Main Navigation menu ends-->
@@ -114,100 +115,179 @@
 		</div>
 		<!--=== Home Section Ends ===-->
 	</div>
-
-
-	<!-- Users Starts -->
-		<section id="section-feature" class="feature-wrap">
-			<div class="container step animated" data-animation="bounceInLeft" data-animation-delay="700">
-				<div class="row">
-				<img src="resources/images/p5.jpg" alt="banner" class="img-responsive">
-				<img src="resources/images/profile.jpg" class="img-circle profile">
-					<ul class="sub-steps"> <!-- Sub steps here -->
-						<li>
-							<span class="icon fa fa-comments color-scheme"></span>
-							<span class="sub-text">Comentarios</span>
-						</li>
-						<li>
-							<span class="icon fa fa-pencil-square-o color-scheme"></span>
-							<span class="sub-text">Editar</span>
-						</li>
-
-					</ul>
-				</div>
-			</div>
-
-		</section>
-		<!--=== Step-1 section Ends ===-->
-	<!-- #Slider Ends -->
-
-	<!--=== Services section Starts ===-->
-	<section id="section-services" class="services-wrap">
-		<div class="container services">
+        <!--=== Seccion de las cartas de los eventos ===-->
+	<section id="section-feature" class="feature-wrap">
+		<div class="container features center">
 			<div class="row">
+				<div class="col-lg-12">
+						<!--Features container Starts -->
+						<ul id="card-ul" class="features-hold baraja-container">
 
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>What we do best</h3>
-				</div>
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Card style">
+								<img src="resources/images/5.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Paris</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
+								</p>
 
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInLeft" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-book-pencil fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Clean Design</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
+									<a href="#" class="fancy-button button-line btn-col small vertical">
+										Detalles
+										<span class="icon">
+											<i class="fa fa-leaf"></i>
+										</span>
+									</a>
 
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-paperplane fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Full responsive</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service ends -->
+							</li>
+							<!-- Single Feature Ends -->
 
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInRight" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-accelerator fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Ajax contact form</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="50+ SVG Icon included">
+								<img src="resources/images/22.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">New York</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
 
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-lightbulb fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Mailchimp ready</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
-					</div>
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="MailChimp Ready">
+								<img src="resources/images/33.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Hawai</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+                                                                            Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="4 home style">
+								<img src="resources/images/44.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Moscu</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Parallax Backgrounds">
+								<img src="resources/images/55.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Cancun</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Ajax contact form">
+								<img src="resources/images/66.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Sidney</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="unlimited Google fonts">
+								<img src="resources/images/77.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Berlin</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Feature heading">
+								<img src="resources/images/88.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Dubai</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+						</ul>
+						<!--Features container Ends -->
+
+						<!-- Features Controls Starts -->
+						<div class="features-control relative">
+							<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-prev" title="Previous" >
+								<span class="icon">
+									<i class="fa fa-arrow-left"></i>
+								</span>
+							</button>
+							<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-expand" title="Expand" >
+								<span class="icon">
+									<i class="fa fa-expand"></i>
+								</span>
+							</button>
+							<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-close" title="Collapse" >
+								<span class="icon">
+									<i class="fa fa-compress"></i>
+								</span>
+							</button>
+							<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-next" title="Next" >
+								<span class="icon">
+									<i class="fa fa-arrow-right"></i>
+								</span>
+							</button>
+						</div>
+						<!-- Features Controls Ends -->
 				</div>
-				<!-- Single Service Ends -->
 			</div>
 		</div>
 	</section>
-	<!--=== Services section Ends ===-->
+	<!--=== Seccion de las cartas de eventos termina ===-->
 
-	<!--=== Step-1 section Starts ===-->
+	<!--=== Empieza itinerarios ===   -->
 	<!--Luis Mesa -->
-	<section id="step-1" class="section-step step-wrap">
+	<section id="itinerarios" class="section-step step-wrap">
 		<div class="container step animated" data-animation="bounceInLeft" data-animation-delay="700">
 			<div class="row">
 				<!-- Step Description Starts -->
@@ -239,8 +319,8 @@
 
 
 						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col zoom">
-								<p title="Ver" style="font-size:12px">Ver &#10084</p>
+							<a href="src/modules/Itinerario/itinerario1.tpl.html" target="iframe1" class="fancy-button button-line btn-col zoom">
+								<p title="Ver" style="font-size:12px">Ver &#9992</p>
 								<!--&#10084 corazon-->
 								<!--&#9992 avion -->
 							</a>
@@ -262,7 +342,7 @@
 
 
 						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col zoom">
+							<a href="src/modules/Itinerario/itinerario2.tpl.html" target="iframe1" class="fancy-button button-line btn-col zoom">
 								<p title="Ver" style="font-size:12px">Ver &#9992</p>
 								<!--&#10084 corazon-->
 							</a>
@@ -318,44 +398,27 @@
 			</div>
 		<!-- </div> -->					<!--<ul class="sub-steps"><--> <!-- Sub steps here --><!-->
 
-							</ul>
+
 					</div> <!-- End step-details -->
 				</div>
 				<!-- Step Description Ends -->
 				<div class="col-md-4 step-img">
 
-					<p> Itinerario Actual</p>
-					<img title="Agregar Itinerario" src="resources/images/IntinerarioAgregar.jpg" alt="Crea tu itinerario" /> <!-- Step Photo Here -->
-					<img src="resources/images/Agregar.png" alt="Agregar" width="30" height="30" >
 
-					<p> Agregar Intinerario</p>
-
-					<div class="col-md-10 step-details">
-							<h5 class="step-title color-scheme">Detalles</h5>
-
-							<ul class="sub-steps"> <!-- Sub steps here -->
-								<li>
-									<span class="icon fa fa-comments color-scheme"></span>
-									<span class="sub-text">Comentarios</span>
-								</li>
-								<li>
-									<span class="icon fa fa-pencil-square-o color-scheme"></span>
-									<span class="sub-text">Integrantes</span>
-								</li>
-
-							</ul>
-					</div>
+					<!--corte1-->
+					<iframe src="itinerario1.html" name="iframe1" width="350" height="400" style="border:none" data-animation="bounceInRight"></iframe>
+					<a  href="#step-2"><p class="step-description"><strong>Ver mapa y linea de tiempo</strong></p></a>
 
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--=== Step-1 section Ends ===-->
+	<!--=== Finaliza Itinerarios ===-->
 
 
 
-	<!--=== Step-2 section Starts ===-->
-	<section id="step-2" class="section-step step-even step-wrap">
+	<!--=== aca va el timeline ===-->
+	<section id="timeline" class="section-step step-even step-wrap">
 		<div class="container step animated" data-animation="bounceInRight" data-animation-delay="700">
 			<div class="row">
 				<!-- Step Description Starts -->
@@ -367,7 +430,7 @@
 					</div>
 
 					<div class="col-md-10 step-details">
-							<h3 class="step-title color-scheme">Work flow title here</h3>
+							<h3 class="step-title color-scheme">Aca va la linea del tiempo</h3>
 							<p class="step-description">Cillum laboris <strong>consequat</strong>, qui elit retro next level
 							skateboard freegan hella. Cillum laboris consequat qui elit retro next level
 							skateboard freegan hella. Cillum laboris consequat skateboard freegan hella</p>
@@ -387,46 +450,74 @@
 				</div>
 				<!-- Step Description Ends -->
 				<div class="col-md-4 step-img">
-					<img src="resources/images/desk.png" alt="" /> <!-- Step Photo Here -->
+					<img src="resources/images/timeline.jpg" alt="" /> <!-- Step Photo Here -->
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--=== Step-2 section Ends ===-->
+	<!--=== HAsta aca va el timeline===-->
 
-	<!--=== Video section Starts ===-->
-	<section id="section-video" class="section-video-wrap">
-		<div class="section-overlay"></div>
-		<div class="container big-video center animated" data-animation="fadeInLeft" data-animation-delay="700">
+
+	<!--=== Parte del mapa ===-->
+	<section id="mapas" class="section-step step-even step-wrap">
+		<div class="container step animated" data-animation="bounceInRight" data-animation-delay="700">
 			<div class="row">
-				<div class="col-md-12 section-title">
-					<h3>Describe with a video</h3>
+				<!-- Step Description Starts -->
+				<div class="col-md-8 step-desc">
+					<div class="col-md-2 center">
+						<div class="step-no">
+							<span class="no-inner">2</span>
+						</div>
+					</div>
+
+					<div class="col-md-10 step-details">
+							<h3 class="step-title color-scheme">Aca va el mapa</h3>
+							<p class="step-description">Cillum laboris <strong>consequat</strong>, qui elit retro next level
+							skateboard freegan hella. Cillum laboris consequat qui elit retro next level
+							skateboard freegan hella. Cillum laboris consequat skateboard freegan hella</p>
+
+							<ul class="sub-steps"> <!-- Sub steps here -->
+								<li>
+									<span class="icon fa fa-comments color-scheme"></span>
+									<span class="sub-text">skateboard freegan hella. Cillum laboris consequat qui elit</span>
+								</li>
+								<li>
+									<span class="icon fa fa-pencil-square-o color-scheme"></span>
+									<span class="sub-text">Documenting collected data</span>
+								</li>
+
+							</ul>
+					</div><!-- End step-details -->
 				</div>
-				<div class="col-md-10 col-md-offset-1 video-content">
-					<iframe src="http://player.vimeo.com/video/75317749?title=0&amp;byline=0&amp;portrait=0" width="400" height="240"></iframe>
+				<!-- Step Description Ends -->
+				<div class="col-md-4 step-img">
+					<img src="resources/images/mapa.png" alt="" /> <!-- Step Photo Here -->
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--=== Video section Ends ===-->
+	<!--=== Hasta aca va la parte del mapa===-->
 
-	<!--=== ScreenShots section Starts ===-->
-	<section id="section-screenshots" class="screenshots-wrap">
+
+	<!--=== Media empieza ===-->
+	<!--Fabio Lopez -->
+        <section id="multimedia" class="screenshots-wrap-wrap">
 		<div class="container screenshots animated" data-animation="fadeInUp" data-animation-delay="1000">
 			<div class="row porfolio-container">
 				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Our Latest Projects</h3>
+					<h3>Multimedia</h3>
+                                        <h5 style="color:whitesmoke">¡Accede, agrega y edita a los recuerdos vividos en tu viaje a través de tus fotos, música y videos!</h5>
 				</div>
 				<!-- Single screenshot starts -->
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="resources/images/7.jpg" alt="" />
+							<img src="resources/images/multimedia1.jpg" alt="multimedia 1"  />
 							<div class="photo-overlay">
-								<h4>Wordpress theme</h4>
+								<h4>Londres</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 					</div>
@@ -437,29 +528,12 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="resources/images/2.jpg" alt="" />
+							<img src="resources/images/multimedia2.png" alt="" />
 							<div class="photo-overlay">
-								<h4>User Interface design</h4>
+								<h4>Rio de Janeiro</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="modules/single/single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-						<div class="photo-box">
-							<img src="resources/images/3.jpg" alt="" />
-							<div class="photo-overlay">
-								<h4>PSD template design</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 
@@ -471,357 +545,162 @@
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
 						<div class="photo-box">
-							<img src="resources/images/4.jpg" alt="" />
+							<img src="resources/images/33.jpg" alt="" />
 							<div class="photo-overlay">
-								<h4>User Experience design</h4>
+								<h4>Playa</h4>
 							</div>
 							<span class="photo-zoom">
-								<a href="modules/single/single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+								<a href="src/modules/Timeline/timeline.tpl.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
 							</span>
 						</div>
 
 					</div>
 				</div>
 				<!-- Single screenshot ends -->
+                                <!--boton agregar-->
+                        <div class="sign-up" style="float:right;widht:225px;">
+                                <a href="#" class="view-project">
+                                        <p title="Agregar" style="font-size:25px"><b>Agregar media &#43</b></p>
+                                        <!--&#10084 corazon-->
+                                        <!--&#9992 avion -->
+                                </a>
+                        </div>
+                    <!--fin boton agregar-->
+                    <!--boton visualizar-->
+                        <div class="sign-up" style="float:left;widht:225px">
+                                <a href="#" class="view-project">
+                                        <p title="Visualizar" style="font-size:25px"><b>Visualizar media </b></p>
 
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-						<div class="photo-box">
-							<img src="resources/images/5.jpg" alt="" />
-							<div class="photo-overlay">
-								<h4>Page builder plugin</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-						<div class="photo-box">
-							<img src="resources/images/6.jpg" alt="" />
-							<div class="photo-overlay">
-								<h4>Corporate website</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="modules/single/single-project-2.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
+                                </a>
+                        </div>
+                    <!--fin boton visualizar-->
 
 			</div>
+
+
 
 			<div id="portfolio-loader" class="center">
 				<div class="loading-circle fa-spin"></div>
 			</div> <!--=== Portfolio loader ===-->
 
 			<div id="portfolio-load"></div><!--=== ajax content will be loaded here ===-->
+                            <div class="col-md-12 center back-button"><!--Lo que salga dentro de este div solo aparece despues del clik en un boton-->
+                                <!-- <div class="container pricing"> -->
+                                <div class="row">
+                                        <!-- Intinerario1 -->
+                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="500">
+                                                <div class="single-pricing">
 
-			<div class="col-md-12 center back-button">
-				<a class="backToProject fancy-button button-line bell btn-col" href="#">
-					Back
-					<span class="icon">
-						<i class="fa fa-arrow-left"></i>
-					</span>
-				</a>
-			</div><!--=== Single portfolio back button ===-->
+                                                        <div class="pricing-head">
+                                                                <h4 class="pricing-heading color-scheme">Itinerario 1</h4>
+                                                        </div>
+
+
+                                                        <div class="sign-up">
+                                                                <a href="#" class="fancy-button button-line btn-col zoom">
+                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
+                                                                        <!--&#10084 corazon-->
+                                                                        <!--&#9992 avion -->
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- Intinerario2 -->
+                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="700">
+                                                <div class="single-pricing">
+
+                                                        <div class="pricing-head">
+                                                                <h4 class="pricing-heading color-scheme">Itinerario 2</h4>
+                                                        </div>
+
+
+                                                        <div class="sign-up">
+                                                                <a href="#" class="fancy-button button-line btn-col zoom">
+                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
+                                                                        <!--&#10084 corazon-->
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- Intinerario3 -->
+                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="900">
+                                                <div class="single-pricing">
+
+                                                        <div class="pricing-head">
+                                                                <h4 class="pricing-heading color-scheme">Itinerario 3</h4>
+                                                        </div>
+
+
+                                                        <div class="sign-up">
+                                                                <a href="#" class="fancy-button button-line btn-col zoom">
+                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
+                                                                        <!--&#10084 corazon-->
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- Intinerario4 -->
+                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="1100">
+                                                <div class="single-pricing">
+
+                                                        <div class="pricing-head">
+                                                                <h4 class="pricing-heading color-scheme">Itinerario 4</h4>
+
+                                                        </div>
+
+
+                                                        <div class="sign-up">
+                                                                <a href="#" class="fancy-button button-line btn-col zoom">
+                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
+                                                                        <!--&#10084 corazon-->
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+                                </div>
+                        <!-- </div> -->
+
+
+                                    <a class="backToProject fancy-button button-line bell btn-col" href="#">
+                                            Atras
+                                            <span class="icon">
+                                                    <i class="fa fa-arrow-left"></i>
+                                            </span>
+                                    </a>
+                            </div><!--=== Single portfolio back button ===-->
 		</div>
 	</section>
-	<!--=== ScreenShots section Ends ===-->
+	<!--=== Termina media ===-->
 
-	<!--=== Testimonials section Starts ===-->
-	<section id="section-testimonials" class="testimonials-wrap">
-		<div class="section-overlay"></div>
-		<div class="container testimonials center animated" data-animation="rollIn" data-animation-delay="500">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="testimonial-slider">
-						<!-- Single Testimonial Starts -->
-						<div class="testimonial">
-							<p class="comment">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu sem ante. Nullam quis risus eu
-								purus commodo dignissim. Donec iaculis ac ex vel posuere. Sed posuere, elit vitae mattis condimentum,
-								quam urna fringilla magna
-							</p>
+	<!-- Empieza Viajero Starts -->
+		<section id="viajero" class="feature-wrap">
+			<div class="container step animated" data-animation="bounceInLeft" data-animation-delay="700">
+				<div class="row">
+				<img src="resources/images/p5.jpg" alt="banner" class="img-responsive">
+				<img src="resources/images/profile.jpg" class="img-circle profile">
+					<ul class="sub-steps"> <!-- Sub steps here -->
+						<li>
+							<span class="icon fa fa-comments color-scheme"></span>
+							<span class="sub-text">Comentarios</span>
+						</li>
+						<li>
+							<span class="icon fa fa-pencil-square-o color-scheme"></span>
+							<span class="sub-text">Editar</span>
+						</li>
 
-							<h5 class="happy-client">Jhon Doe</h5>
-							<span class="client-info">Executive at CDF Corp.</span>
-						</div>
-						<!-- Single Testimonial Ends -->
-
-						<!-- Single Testimonial Starts -->
-						<div class="testimonial">
-							<p class="comment">
-								Dolor sit amet, consectetur adipiscing elit. Nullam eu sem ante. Nullam quis risus eu
-								purus commodo dignissim. Donec iaculis ac ex vel posuere. Sed posuere, elit vitae mattis condimentum,
-								quam urna fringilla magna
-							</p>
-
-							<h5 class="happy-client">JB Jeniffer</h5>
-							<span class="client-info">Developer at TTF Corp.</span>
-						</div>
-						<!-- Single Testimonial Ends -->
-
-						<!-- Single Testimonial Starts -->
-						<div class="testimonial">
-							<p class="comment">
-								Consectetur adipiscing elit. Nullam eu sem ante. Nullam quis risus eu
-								purus commodo dignissim. Donec iaculis ac ex vel posuere. Sed posuere, elit vitae mattis condimentum,
-								quam urna fringilla magna
-							</p>
-
-							<h5 class="happy-client">Chan Jhin</h5>
-							<span class="client-info">CEO of MutiNaTakio.</span>
-						</div>
-						<!-- Single Testimonial Ends -->
-					</div>
-					<div id="bx-pager" class="client-photos">
-						<a data-slide-index="0" href="" class="photo-hold">
-							<span class="photo-bg">
-								<img src="resources/images/client_1.jpg" alt="" /> <!-- Client photo 1 -->
-							</span>
-						</a>
-						<a data-slide-index="1" href="" class="photo-hold">
-							<span class="photo-bg">
-								<img src="resources/images/client_2.jpg" alt="" /> <!-- Client photo 2 -->
-							</span>
-						</a>
-						<a data-slide-index="2" href="" class="photo-hold">
-							<span class="photo-bg">
-								<img src="resources/images/client_3.jpg" alt="" /> <!-- Client photo 3 -->
-							</span>
-						</a>
-					</div>
+					</ul>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!--=== Testimonials section Ends ===-->
 
+		</section>
+		<!--=== Termina viajero ===-->
+	
 
-	<!--=== Pricing section Starts ===-->
-	<section id="section-pricing" class="pricing-wrap">
-		<div class="container pricing">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Plans & pricing</h3>
-				</div>
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="500">
-					<div class="single-pricing">
-
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Basic</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									40
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-close"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-close"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-close"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col zoom">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-thumbs-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-
-
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="700">
-					<div class="single-pricing best-pricing"> <!-- this is best-pricing -->
-
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Advance</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									60
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-check"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-close"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-close"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col vertical">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-hand-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="900">
-					<div class="single-pricing">
-
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Premium</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									80
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-check"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-check"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-close"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col rotate">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-thumbs-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-
-				<!-- Single Price Starts -->
-				<div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="1100">
-					<div class="single-pricing">
-
-						<div class="pricing-head">
-							<h4 class="pricing-heading color-scheme">Ultra</h4>
-							<div class="price">
-								<h3>
-									<span class="dollar">$</span>
-									100
-									<span class="month">/month</span>
-								</h3>
-							</div>
-						</div>
-
-						<ul class="package-features">
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Downloads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Uploads</li>
-							<li><span class="color-scheme fa fa-check"></span>Unlimited Email Accounts</li>
-							<li><span class="color-scheme fa fa-check"></span>Email Forwards</li>
-							<li><span class="color-scheme fa fa-check"></span>Cloud Storage</li>
-							<li><span class="color-scheme fa fa-check"></span>Voice call</li>
-							<li><span class="color-scheme fa fa-check"></span>Screen Share</li>
-						</ul>
-						<div class="sign-up">
-							<a href="#" class="fancy-button button-line btn-col zoom">
-								Sign up
-								<span class="icon">
-									<i class="fa fa-thumbs-o-up"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- Single Price Ends -->
-
-			</div>
-		</div>
-	</section>
-	<!--=== Pricing section Ends ===-->
-
-	<!--=== Subscribe section Starts ===-->
-	<section id="section-subscribe" class="subscribe-wrap">
-		<div class="section-overlay"></div>
-		<div class="container subscribe center">
-			<div class="row">
-				<div class="col-lg-12">
-					<p class="subscription-success"></p>
-					<p class="subscription-failed"></p>
-					<div class="col-md-10 col-md-offset-1 center section-title">
-						<h3>Newsletter</h3>
-					</div>
-					<form id="subscription-form">
-						<input type="email" name="EMAIL" required="required" placeholder="Your Email" class="input-email" />
-						<button type="submit" id="subscription-btn" class="fancy-button button-line button-white large zoom">
-							Subscribe
-							<span class="icon">
-								<i class="fa fa-sign-in"></i>
-							</span>
-						</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Subscribe section Ends ===-->
-
-
-	<!--=== Download section Starts ===-->
-	<section id="section-download" class="download-wrap">
-		<div class="container download center">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="col-md-10 col-md-offset-1 center section-title">
-						<h3>Download app</h3>
-					</div>
-					<div class="download-buttons clearfix"> <!-- Download Buttons -->
-						<a class="fancy-button button-line no-text btn-col large zoom" href="#" title="Download from App store">
-							<span class="icon">
-							<i class="fa fa-apple"></i>
-							</span>
-						</a>
-						<a class="fancy-button button-line btn-col no-text large zoom" href="#" title="Download from App store">
-							<span class="icon">
-							<i class="fa fa-android"></i>
-							</span>
-						</a>
-						<a class="fancy-button button-line btn-col no-text large zoom" href="#" title="Download from App store">
-							<span class="icon">
-							<i class="fa fa-windows"></i>
-							</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Download section Ends ===-->
 
 
 	<!--=== Contact section Starts ===-->
@@ -831,7 +710,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<div class="col-md-10 col-md-offset-1 center section-title">
-						<h3>Leave a message</h3>
+						<h3>Dejanos un mensaje</h3>
 					</div>
 
 					<div class="confirmation">
@@ -849,7 +728,7 @@
 							<textarea id="message" class="textarea-field form-item field-message" rows="10" name="contact-message" placeholder="Message"></textarea>
 						</div>
 						<button type="submit" class="fancy-button button-line button-white large zoom subform">
-							Send message
+							Enviar mensaje
 							<span class="icon">
 								<i class="fa fa-paper-plane-o"></i>
 							</span>
@@ -867,7 +746,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h4 class="footer-title"><!-- Footer Title -->
-						<a class="site-name" href="#"><span>E</span>gret</a>
+						<a class="site-name" href="#"><span>P</span>rimid</a>
 					</h4>
 
 					<!-- Social Links -->
@@ -882,7 +761,7 @@
 						</ul>
 					</div>
 
-					<p class="copyright">All rights reserved &copy; 2015</p>
+					<p class="copyright">All rights reserved, team DMG &copy; 2016</p>
 				</div>
 			</div>
 		</div>

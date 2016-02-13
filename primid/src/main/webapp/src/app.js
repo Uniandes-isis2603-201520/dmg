@@ -7,7 +7,7 @@
         }]);
 
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise("/evento");
+            $urlRouterProvider.otherwise("/Viajero");
             $stateProvider
 
                     .state('Viajero', {
