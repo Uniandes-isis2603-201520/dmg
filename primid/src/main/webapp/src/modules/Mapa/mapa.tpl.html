@@ -1,40 +1,6 @@
-<div class="container step animated" data-animation="bounceInRight" data-animation-delay="700">
-            <div class="row">
-                <!-- Step Description Starts -->
-                <div class="col-md-8 step-desc">
-                    <div class="col-md-2 center">
-                        <div class="step-no">
-                            <span class="no-inner">2</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-10 step-details">
-                            <h3 class="step-title color-scheme">Aca va el mapa</h3>
-                            <p class="step-description">Cillum laboris <strong>consequat</strong>, qui elit retro next level
-                            skateboard freegan hella. Cillum laboris consequat qui elit retro next level
-                            skateboard freegan hella. Cillum laboris consequat skateboard freegan hella</p>
-
-                            <ul class="sub-steps"> <!-- Sub steps here -->
-                                <li>
-                                    <span class="icon fa fa-comments color-scheme"></span>
-                                    <span class="sub-text">skateboard freegan hella. Cillum laboris consequat qui elit</span>
-                                </li>
-                                <li>
-                                    <span class="icon fa fa-pencil-square-o color-scheme"></span>
-                                    <span class="sub-text">Documenting collected data</span>
-                                </li>
-
-                            </ul>
-                    </div><!-- End step-details -->
-                </div>
-                <!-- Step Description Ends -->
-                <div class="col-md-4 step-img">
-                    <img src="resources/images/mapa.png" alt="" /> <!-- Step Photo Here -->
-                </div>
-            </div>
-</div>
-
-		<!--==== MailChimp Widget plugin ====-->
+<html>
+    <head>
+        		<!--==== MailChimp Widget plugin ====-->
 <script type="text/javascript" src="resources/js/jquery.ajaxchimp.min.js"></script>
 
 <!--==== Scroll and navigation plugins ====-->
@@ -45,3 +11,70 @@
 
 <!--==== Custom Script files ====-->
 <script type="text/javascript" src="resources/js/custom.js"></script>
+
+<!-- Js para MAPA -->
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+        <script>
+            var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+function initialize()
+{
+var mapProp = {
+  center: myCenter,
+  zoom:5,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position: myCenter,
+  title:'Click to zoom'
+  });
+
+marker.setMap(map);
+
+// Zoom to 9 when clicking on marker
+google.maps.event.addListener(marker,'click',function() {
+  map.setZoom(9);
+  map.setCenter(marker.getPosition());
+  });
+
+google.maps.event.addListener(map,'center_changed',function() {
+// 3 seconds after the center of the map has changed, pan back to the marker
+  window.setTimeout(function() {
+    map.panTo(marker.getPosition());
+  },3000);
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+    </head>
+    <body>
+
+
+<section id="section-pricing" class="pricing-wrap">
+		<div class="container pricing">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 center section-title">
+					<h3>Mapa</h3>
+				</div>
+				<!-- Single Price Starts -->
+				<div class="col-md-20 col-sm-12 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="1000">
+					<div class="single-pricing">
+
+                                            <div id="googleMap" style="width:1180px;height:600px;"></div>
+
+					</div>
+				</div>
+				<!-- Single Price Ends -->
+			</div>
+		</div>
+	</section>
+
+    </body>
+
+        </html>

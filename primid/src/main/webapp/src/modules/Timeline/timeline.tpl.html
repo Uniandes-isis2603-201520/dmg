@@ -9,22 +9,42 @@
 					</div>
 
 					<div class="col-md-10 step-details">
-							<h3 class="step-title color-scheme">Aca va la linea del tiempo</h3>
-							<p class="step-description">Cillum laboris <strong>consequat</strong>, qui elit retro next level
-							skateboard freegan hella. Cillum laboris consequat qui elit retro next level
-							skateboard freegan hella. Cillum laboris consequat skateboard freegan hella</p>
+							<h3 class="step-title color-scheme">TIMELINE</h3>
 
-							<ul class="sub-steps"> <!-- Sub steps here -->
-								<li>
-									<span class="icon fa fa-comments color-scheme"></span>
-									<span class="sub-text">skateboard freegan hella. Cillum laboris consequat qui elit</span>
-								</li>
-								<li>
-									<span class="icon fa fa-pencil-square-o color-scheme"></span>
-									<span class="sub-text">Documenting collected data</span>
-								</li>
+                                        <ul class="details-list">
+					<form action="script.php" method="post">
+                                            Seleccione Itinerario:<br />
+                                            <select name="programa">
+                                                <option value="it1" selected="selected">Itinerario 1</option>
+                                                <option value="it2">Itinerario 2</option>
+                                                <option value="it3">Itinerario 3</option>
+                                            </select>
 
-							</ul>
+                                         </form>
+                                            <a href="src/modules/Timeline/timeline2.tpl.html" class="view-project">Agregar Evento al Timeline<i class="fa fa-search-plus fa-2x"></i></a>
+                                        </ul>
+
+                                                        <a href="src/modules/Timeline/timeline2.tpl.html" class="view-project">Ver Timeline del Itinerario<i class="fa fa-search-plus fa-2x"></i></a>
+                                                        <br>
+                                                        <br>
+
+                                                        <ul class="details-list">
+					<form action="script.php" method="post">
+                                            Seleccione Ciudad:<br />
+                                            <select name="programa">
+                                                <option value="it1" selected="selected">Bogota</option>
+                                                <option value="it2">Medellin</option>
+                                                <option value="it3">Cartagena 3</option>
+                                            </select>
+
+                                         </form>
+                                        </ul>
+                                                        <br>
+                                                        <a href="src/modules/Timeline/timeline2.tpl.html" class="view-project">Ver Timeline de la ciudad<i class="fa fa-search-plus fa-2x"></i></a>
+
+
+
+
 					</div><!-- End step-details -->
 				</div>
 				<!-- Step Description Ends -->

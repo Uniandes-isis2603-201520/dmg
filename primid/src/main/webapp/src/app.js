@@ -36,7 +36,7 @@
                     })
                     .state('Timeline', {
                         url: '/Timeline',
-                        templateUrl: "src/modules/Timeline/timeline.tpl.html"
+                        templateUrl: "src/modules/Timeline/timeline2.tpl.html"
                     });
         }]);
 })(window.angular);
