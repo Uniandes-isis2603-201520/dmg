@@ -1,56 +1,117 @@
 <div class="container step animated" data-animation="bounceInRight" data-animation-delay="700">
 			<div class="row">
-				<!-- Step Description Starts -->
-				<div class="col-md-8 step-desc">
-					<div class="col-md-2 center">
-						<div class="step-no">
-							<span class="no-inner">2</span>
-						</div>
-					</div>
-
-					<div class="col-md-10 step-details">
-							<h3 class="step-title color-scheme">TIMELINE</h3>
-
-                                        <ul class="details-list">
-					<form action="script.php" method="post">
-                                            Seleccione Itinerario:<br />
-                                            <select name="programa">
-                                                <option value="it1" selected="selected">Itinerario 1</option>
-                                                <option value="it2">Itinerario 2</option>
-                                                <option value="it3">Itinerario 3</option>
-                                            </select>
-
-                                         </form>
-                                            <a href="src/modules/Timeline/timeline2.tpl.html" class="view-project">Agregar Evento al Timeline<i class="fa fa-search-plus fa-2x"></i></a>
-                                        </ul>
-
-                                                        <a href="src/modules/Timeline/timeline2.tpl.html" class="view-project">Ver Timeline del Itinerario<i class="fa fa-search-plus fa-2x"></i></a>
-                                                        <br>
-                                                        <br>
-
-                                                        <ul class="details-list">
-					<form action="script.php" method="post">
-                                            Seleccione Ciudad:<br />
-                                            <select name="programa">
-                                                <option value="it1" selected="selected">Bogota</option>
-                                                <option value="it2">Medellin</option>
-                                                <option value="it3">Cartagena 3</option>
-                                            </select>
-
-                                         </form>
-                                        </ul>
-                                                        <br>
-                                                        <a href="src/modules/Timeline/timeline2.tpl.html" class="view-project">Ver Timeline de la ciudad<i class="fa fa-search-plus fa-2x"></i></a>
 
 
+                            <!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+	<title>Timeline</title>
+</head>
+<body>
+	<header>
+		<h1>Timeline</h1>
+	</header>
+
+	<section id="cd-timeline" class="cd-container">
+	<a href="agregar.tpl.html" class="view-project">Agregar Evento al Timeline<i class="fa fa-search-plus fa-2x"></i></a>
+            <div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="img/cd-icon-picture.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Evento 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+				<a href="#0" class="cd-read-more">Eliminar Evento</a>
+				<span class="cd-date">Jan 14</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-movie">
+				<img src="img/cd-icon-movie.svg" alt="Movie">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Evento 2</h2>
+				<p>Descripcion:</p>
+                                <p>Horario:</p>
+                                <a href="#0" class="cd-read-more">Eliminar Evento</a>
+				<span class="cd-date">Jan 18</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="img/cd-icon-picture.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Evento 3</h2>
+				<p>Descripcion:</p>
+                                <p>Horario:</p>
+                                <a href="#0" class="cd-read-more">Eliminar Evento</a>
+				<span class="cd-date">Jan 24</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-location">
+				<img src="img/cd-icon-location.svg" alt="Location">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Evento 4</h2>
+				<p>Descripcion:</p>
+                                <p>Horario:</p>
+				<a href="#0" class="cd-read-more">Eliminar Evento</a>
+				<span class="cd-date">Feb 14</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-location">
+				<img src="img/cd-icon-location.svg" alt="Location">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Evento 5</h2>
+				<p>Descripcion:</p>
+                                <p>Horario:</p>
+				<a href="#0" class="cd-read-more">Eliminar Evento</a>
+				<span class="cd-date">Feb 18</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-movie">
+				<img src="img/cd-icon-movie.svg" alt="Movie">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Evento 6</h2>
+				<p>Descripcion:</p>
+                                <p>Horario:</p>
+                                <a href="#0" class="cd-read-more">Eliminar Evento</a>
+				<span class="cd-date">Feb 26</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+	</section> <!-- cd-timeline -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
 
 
-					</div><!-- End step-details -->
-				</div>
-				<!-- Step Description Ends -->
-				<div class="col-md-4 step-img">
-					<img src="resources/images/timeline.jpg" alt="" /> <!-- Step Photo Here -->
-				</div>
 			</div>
 </div>
 
