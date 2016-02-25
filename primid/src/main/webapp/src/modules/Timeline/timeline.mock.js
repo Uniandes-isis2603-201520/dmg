@@ -1,41 +1,42 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 (function (ng) {
 
-    var mod = ng.module('bookMock', ['ngMockE2E']);
+    var mod = ng.module('timelineMock', ['ngMockE2E']);
 
 
     mod.run(['$httpBackend', function ($httpBackend) {
             var ignore_regexp = new RegExp('^((?!api).)*$');
             /*
              * @type RegExp
-             * recordUrl acepta cualquier url con el formato 
+             * recordUrl acepta cualquier url con el formato
              * api/(cualquierpalabra)/(numero)
-             * ej: api/books/1
+             * ej: api/reviews/1
              */
-            var recordUrl = new RegExp('api/books/([0-9]+)');
+            var recordUrl = new RegExp('api/timelines/([0-9]+)');
 
             /*
              * @type Array
              * records: Array con un libro por defecto
              */
-            var records = [
-                {id: 1,
-                    name: 'La nieve del Almirante',
-                    description: 'Libro Mock',
-                    isbn: '12345-1',
-                    image: 'http://unlibrocadadia.es/wp-content/uploads/2013/05/La_nieve_del_almirante_alvaro_mutis.jpg',
-                    publishDate: '2016-01-22'},
-                {id: 2,
-                    name: 'Java 8',
-                    description: 'Libro Mock 2',
-                    isbn: '12345-2',
-                    image: 'http://image.casadellibro.com/a/l/t0/55/9788441536555.jpg',
-                    publishDate: '2015-01-22'}
-            ];
+            var records = [{
+                    id: 1,
+                    name: 'Concierto',
+                    description: 'Concierto en Bogota....precio....lugar, eventDate:2016-01-22 '
+                    
+
+                },
+                {
+                    id: 2,
+                    name: 'Visita Museo',
+                    description: 'Museo del Oro....precio....lugar,  eventDate: 2016-01-23'
+                    
+
+                    
+                }];
 
             function getQueryParams(url) {
                 var vars = {}, hash;
@@ -53,13 +54,13 @@
             $httpBackend.whenGET(ignore_regexp).passThrough();
 
             /*
-             * Esta funcion se ejecuta al invocar una solicitud GET a la url "api/books"
-             * Obtiene los parámetros de consulta "queryParams" para establecer 
-             * la pagina y la maxima cantida de records. Con los anteriores parametros 
+             * Esta funcion se ejecuta al invocar una solicitud GET a la url "api/reviews"
+             * Obtiene los parámetros de consulta "queryParams" para establecer
+             * la pagina y la maxima cantida de records. Con los anteriores parametros
              * se realiza la simulacion de la paginacion.
              * Response: 200 -> Status ok, array de libros y los headers.
              */
-            $httpBackend.whenGET('api/books').respond(function (method, url) {
+            $httpBackend.whenGET('api/timelines').respond(function (method, url) {
                 var queryParams = getQueryParams(url);
                 var responseObj = [];
                 var page = queryParams.page;
@@ -76,7 +77,7 @@
                 return [200, responseObj, headers];
             });
             /*
-             * Esta funcion se ejecuta al invocar una solicitud GET a la url "api/books/[numero]"
+             * Esta funcion se ejecuta al invocar una solicitud GET a la url "api/reviews/[numero]"
              * Obtiene el id de la url y el registro asociado dentro del array records.
              * Response: 200 -> Status ok, record -> libro y ningún header.
              */
@@ -91,13 +92,13 @@
                 return [200, record, {}];
             });
             /*
-             * Esta funcion se ejecuta al invocar una solicitud POST a la url "api/books"
+             * Esta funcion se ejecuta al invocar una solicitud POST a la url "api/reviews"
              * Obtiene el record de libro desde el cuerpo de la peticion
-             * Genera un id aleatorio y lo asocia al record de libro y lo guarda en el 
+             * Genera un id aleatorio y lo asocia al record de libro y lo guarda en el
              * array de records.
              * Response: 201 -> Status created, record -> libro y ningún header.
              */
-            $httpBackend.whenPOST('api/books').respond(function (method, url, data) {
+            $httpBackend.whenPOST('api/timelines').respond(function (method, url, data) {
                 var record = ng.fromJson(data);
                 record.id = Math.floor(Math.random() * 10000);
                 records.push(record);
@@ -105,7 +106,7 @@
             });
 
             /*
-             * Esta funcion se ejecuta al invocar una solicitud DELETE a la url "api/books/[numero]"
+             * Esta funcion se ejecuta al invocar una solicitud DELETE a la url "api/reviews/[numero]"
              * Obtiene el id del la url y el registro asociado dentro del array records.
              * Luego realiza un splice "eliminar registro del array".
              * Response: 204, no retorna ningun dato ni headers.
@@ -122,11 +123,11 @@
             });
 
             /*
-             * Esta funcion se ejecuta al invocar una solicitud PUT a la url "api/books/[numero]"
+             * Esta funcion se ejecuta al invocar una solicitud PUT a la url "api/reviews/[numero]"
              * Obtiene el id del la url y el record de libro desde el cuerpo de la peticion
              * Busca y reemplaza el anterior registro por el enviado en el cuerpo de la solicitud
-             * Response: 204, no retorna ningun dato ni headers. 
-             * 
+             * Response: 204, no retorna ningun dato ni headers.
+             *
              */
             $httpBackend.whenPUT(recordUrl).respond(function (method, url, data) {
                 var id = parseInt(url.split('/').pop());
