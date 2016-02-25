@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 
-
 (function (ng) {
 
-    var mod = ng.module("timelineModule");
+    var mod = ng.module("bookModule");
 
-    mod.controller("timelineCtrl", ["$scope", "timelineService", function ($scope, svc) {
-
+    mod.controller("bookCtrl", ["$scope", "bookService", function ($scope, svc) {
+           //Se almacenan todas las alertas 
             $scope.alerts = [];
             $scope.currentRecord = {};
             $scope.records = [];
@@ -35,6 +34,7 @@
                 $scope.alerts.splice(index, 1);
             };
 
+            // Función showMessage: Recibe el mensaje en String y su tipo con el fin de almacenarlo en el array $scope.alerts.
             function showMessage(msg, type) {
                 var types = ["info", "danger", "warning", "success"];
                 if (types.some(function (rc) {
@@ -56,18 +56,18 @@
             function responseError(response) {
                 self.showError(response.data);
             }
+            
             //Variables para el controlador
             this.readOnly = false;
             this.editMode = false;
-            
 
             this.changeTab = function (tab) {
                 $scope.tab = tab;
             };
-
+            
             //Ejemplo alerta
-            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje exitoso", "success");
-
+            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje de información","info");
+            
 
             /*
              * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la 
@@ -104,7 +104,7 @@
 
             /*
              * Funcion fetchRecords consulta el servicio svc.fetchRecords con el fin de consultar 
-             * todos los registros del modulo review.
+             * todos los registros del modulo book.
              * Guarda los registros en la variable $scope.records
              * Muestra el template de la lista de records.
              */
@@ -124,10 +124,9 @@
              * Muestra el template de la lista de records al finalizar la operación saveRecord
              */
             this.saveRecord = function () {
-                return svc.saveRecord($scope.currentRecord).then(function () {
-                    self.fetchRecords();
-                  
-                }, responseError);
+                    return svc.saveRecord($scope.currentRecord).then(function () {
+                        self.fetchRecords();
+                    }, responseError);                
             };
 
             /*
@@ -142,7 +141,7 @@
             };
 
             /*
-             * Funcion fetchRecords consulta todos los registros del módulo editorial en base de datos
+             * Funcion fetchRecords consulta todos los registros del módulo book en base de datos
              * para desplegarlo en el template de la lista.
              */
             this.fetchRecords();
