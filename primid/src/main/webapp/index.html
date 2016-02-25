@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html ng-app="mainApp">
 <html lang="en-US" >
-    
+
 <head>
 
 <meta charset="utf-8">
@@ -45,6 +45,14 @@
 		<script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif] -->
+
+        <!-- script para mapa -->
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <!-- archivos para el tmp de mapa -->
+        <script src="src/modules/mapa/mapa.mod.js" type="text/javascript"></script>
+        <script src="src/modules/mapa/mapa.ctrl.js" type="text/javascript"></script>
+        <script src="src/modules/mapa/mapa.svc.js" type="text/javascript"></script>
+        <script src="src/modules/mapa/mapa.mock.js" type="text/javascript"></script>
 
 
 </head>
@@ -125,7 +133,7 @@
 	</div>
         <!--=== Seccion de las cartas de los eventos ===-->
 	<section id="section-feature" class="feature-wrap">
-		<div ui-view="idEvento"></div>
+	        <div ui-view="idEvento"></div>
 	</section>
 	<!--=== Seccion de las cartas de eventos termina ===-->
 
