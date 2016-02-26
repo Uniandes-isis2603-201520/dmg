@@ -124,7 +124,7 @@
 		<!--=== Home Section Ends ===-->
 	</div>
         <!--=== Seccion de las cartas de los eventos ===-->
-	<section id="section-feature" class="feature-wrap">
+	<section id="section-feature" class="section-step step-even step-wrap">
 		<div ui-view="idEvento"></div>
 	</section>
 	<!--=== Seccion de las cartas de eventos termina ===-->
@@ -242,7 +242,11 @@
 <script src="resources/js/angular-ui-router.min.js" type="text/javascript"></script>
 <script src="src/app.js" type="text/javascript"></script>
 
-
+<!-- se gregan todas los archivos JavaScript de cada modulo que necesita el index.-->
+<script src="src/modules/book/book.mod.js" type="text/javascript"></script>
+<script src="src/modules/book/book.ctrl.js" type="text/javascript"></script>
+<script src="src/modules/book/book.svc.js" type="text/javascript"></script>
+<script src="src/modules/book/book.mock.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
