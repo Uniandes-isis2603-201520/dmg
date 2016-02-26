@@ -1,132 +1,79 @@
-<div class="container step animated" data-animation="bounceInRight" data-animation-delay="700">
-			<div class="row">
+<div id="timeline-header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#timeline-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">timelines</a>
+            </div>
 
-
-                            <!doctype html>
-<html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-
-	<title>Timeline</title>
-</head>
-<body>
-	<header>
-		<h1>Timeline</h1>
-	</header>
-
-	<section id="cd-timeline" class="cd-container">
-	<a href="agregar.tpl.html" class="view-project">Agregar Evento al Timeline<i class="fa fa-search-plus fa-2x"></i></a>
-            <div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="img/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Evento 1</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-				<a href="#0" class="cd-read-more">Eliminar Evento</a>
-				<span class="cd-date">Jan 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-				<img src="img/cd-icon-movie.svg" alt="Movie">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Evento 2</h2>
-				<p>Descripcion:</p>
-                                <p>Horario:</p>
-                                <a href="#0" class="cd-read-more">Eliminar Evento</a>
-				<span class="cd-date">Jan 18</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="img/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Evento 3</h2>
-				<p>Descripcion:</p>
-                                <p>Horario:</p>
-                                <a href="#0" class="cd-read-more">Eliminar Evento</a>
-				<span class="cd-date">Jan 24</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-location.svg" alt="Location">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Evento 4</h2>
-				<p>Descripcion:</p>
-                                <p>Horario:</p>
-				<a href="#0" class="cd-read-more">Eliminar Evento</a>
-				<span class="cd-date">Feb 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-location.svg" alt="Location">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Evento 5</h2>
-				<p>Descripcion:</p>
-                                <p>Horario:</p>
-				<a href="#0" class="cd-read-more">Eliminar Evento</a>
-				<span class="cd-date">Feb 18</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-				<img src="img/cd-icon-movie.svg" alt="Movie">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Evento 6</h2>
-				<p>Descripcion:</p>
-                                <p>Horario:</p>
-                                <a href="#0" class="cd-read-more">Eliminar Evento</a>
-				<span class="cd-date">Feb 26</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-	</section> <!-- cd-timeline -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-</body>
-</html>
-
-
-			</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="timeline-navbar">
+                <button id="create-timeline" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Create</button>
+                <button id="refresh-timeline" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                <button id="save-timeline" type="submit" form=timeline-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-save"></span> Save</button>
+                <button id="cancel-timeline" type="button" form="timeline-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+            </div>
+        </div>
+    </nav>
 </div>
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="5000">{{alert.msg}} </alert>
+<div ng-hide="ctrl.editMode">
+    <div class="col-sm-12">
+        <div ng-repeat="record in records">
+            <div class="col-md-4 col-sm-6 col-lg-3 well">
 
+                <div class="caption" >
+                    <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
+                    <p><strong>Description:</strong> <span id="{{$index}}-description">{{record.description}}</span></p>
+                    <p><strong>Event Date:</strong> <span id="{{$index}}-publishDate">{{record.eventDate| date}}</span></p>
+                </div>
+                <p class="text-center">
+                    <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-show="ctrl.editMode" class="col-md-6 well">
+    <form novalidate name="form" id="timeline-form" role="form" ng-submit="ctrl.saveRecord()">
+        <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
+            <div ng-message="required">
+                Please, Fill the required fields!
+            </div>
+        </alert>
+        <fieldset>
+            <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.name.$valid && form.name.$dirty, 'has-error': form.name.$invalid && (form.name.$dirty || form.$submitted)}" >
+                <label for="name" class="col-md-2 control-label">Name</label>
+                <div class="col-md-10">
+                    <input id="name" name="name" class="form-control" type="text" ng-model="currentRecord.name" required />
+                </div>
+            </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.description.$valid && form.description.$dirty, 'has-error': form.description.$invalid && (form.description.$dirty || form.$submitted)}" >
+                <label for="description" class="col-md-2 control-label">Description</label>
+                <div class="col-md-10">
+                    <input id="description" name="description" class="form-control" type="text" ng-model="currentRecord.description" required />
+                </div>
+            </div>
 
-<!--==== MailChimp Widget plugin ====-->
-<script type="text/javascript" src="resources/js/jquery.ajaxchimp.min.js"></script>
-
-<!--==== Scroll and navigation plugins ====-->
-<script type="text/javascript" src="resources/js/jquery.nicescroll.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery.nav.js"></script>
-<script type="text/javascript" src="resources/js/jquery.appear.js"></script>
-<script type="text/javascript" src="resources/js/jquery.fitvids.js"></script>
-
-<!--==== Custom Script files ====-->
-<script type="text/javascript" src="resources/js/custom.js"></script>
-
-
-
+            <div class="form-group col-md-12" ng-class="{'has-success': !form.eventDate.$error.required && form.eventDate.$dirty, 'has-error': form.eventDate.$error.required && (form.eventDate.$dirty || form.$submitted)}" >
+                <label for="eventDate" class="col-md-2 control-label">Event Date</label>
+                <div class="col-md-10">
+                    <p class="input-group">
+                        <input type="text" id="eventDate" name="eventDate" class="form-control" ng-model="currentRecord.eventDate" ng-required="model.required" datepicker-popup is-open="opened" />
+                        <span class="input-group-btn">
+                            <button type="button" id="eventDate-datepicker" class="btn btn-default" ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
