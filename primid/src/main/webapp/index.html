@@ -1,223 +1,96 @@
 <!DOCTYPE HTML>
 <html ng-app="mainApp">
-<html lang="en-US" >
-    
-<head>
 
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-	<title>Primid</title>
+<title>Primid</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="resources/css/bootstrap.css" />
+<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="resources/css/font-awesome.min.css" />
+<link rel="stylesheet" href="resources/css/linea-icon.css" />
+<link rel="stylesheet" href="resources/css/fancy-buttons.css" />
 
-	<link rel="stylesheet" href="resources/css/bootstrap.css" />
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="resources/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="resources/css/linea-icon.css" />
-	<link rel="stylesheet" href="resources/css/fancy-buttons.css" />
+<!--=== Google Fonts ===-->
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-	<!--=== Google Fonts ===-->
-	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-	<!-- User Font-Sign in-->
-	<link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-	<!--=== Other CSS files ===-->
-	<link rel="stylesheet" href="resources/css/animate.css" />
-	<link rel="stylesheet" href="resources/css/jquery.vegas.css" />
-	<link rel="stylesheet" href="resources/css/baraja.css" />
-	<link rel="stylesheet" href="resources/css/jquery.bxslider.css" />
-	<!--=== Main Stylesheets ===-->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<!--=== Main Stylesheets ===-->
-	<link rel="stylesheet" href="resources/css/style.css" />
-	<link rel="stylesheet" href="resources/css/responsive.css" />
+<!-- User Font-Sign in-->
+<link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 
-	<!--=== Color Scheme, three colors are available red.css, orange.css and gray.css ===-->
-	<link rel="stylesheet" id="scheme-source" href="resources/css/schemes/orange.css" />
+<!--=== Other CSS files ===-->
+<link rel="stylesheet" href="resources/css/animate.css" />
+<link rel="stylesheet" href="resources/css/jquery.vegas.css" />
+<link rel="stylesheet" href="resources/css/baraja.css" />
+<link rel="stylesheet" href="resources/css/jquery.bxslider.css" />
 
-	<!--=== Internet explorer fix ===-->
-	<!-- [if lt IE 9]>
-		<script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif] -->
+<!--=== Main Stylesheets ===-->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!--=== Main Stylesheets ===-->
+<link rel="stylesheet" href="resources/css/style.css" />
+<link rel="stylesheet" href="resources/css/responsive.css" />
 
+<!--=== Color Scheme, three colors are available red.css, orange.css and gray.css ===-->
+<link rel="stylesheet" id="scheme-source" href="resources/css/schemes/orange.css" />
+
+<!--=== Internet explorer fix ===-->
+<!-- [if lt IE 9]>
+        <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif] -->
 
 </head>
 <body>
-	<!--=== Preloader section starts ===-->
-	<section id="preloader">
-		<div class="loading-circle fa-spin"></div>
-	</section>
-	<!--=== Preloader section Ends ===-->
+    <!--=== Preloader section starts ===-->
+    <section id="preloader">
+            <div class="loading-circle fa-spin"></div>
+    </section>
+    <!--=== Preloader section Ends ===-->
 
-	<!--=== Header section Starts ===-->
-	<div id="header" class="header-section">
-		<!-- sticky-bar Starts-->
-		<div class="sticky-bar-wrap">
-			<div class="sticky-section">
-				<div id="topbar-hold" class="nav-hold container">
-					<nav class="navbar" role="navigation">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-							</button>
-							<!--=== Site Name ===-->
-							<a class="site-name navbar-brand" href="#"><span>P</span>rimid</a>
-						</div>
+    <!--=== Header section Starts ===-->
+    <div id="header" class="header-section">
+            <!-- sticky-bar Starts-->
+            <div class="sticky-bar-wrap">
+                    <div class="sticky-section">
+                            <div id="topbar-hold" class="nav-hold container">
+                                    <nav class="navbar" role="navigation">
+                                            <div class="navbar-header">
+                                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                                                    <span class="sr-only">Toggle navigation</span>
+                                                                    <span class="icon-bar"></span>
+                                                                    <span class="icon-bar"></span>
+                                                                    <span class="icon-bar"></span>
+                                                    </button>
+                                                    <!--=== Site Name ===-->
+                                                    <a class="site-name navbar-brand" href="#"><span>P</span>rimid</a>
+                                            </div>
 
-						<!-- Main Navigation menu Starts -->
-						<div class="collapse navbar-collapse navbar-responsive-collapse">
-							<ul class="nav navbar-nav navbar-right">
-								<li class="current"><a href="#header">Inicio</a></li>
-								<li><a href="#section-feature">Eventos</a></li>
-								<li><a href="#itinerarios">Itinerarios</a></li>
-								<li><a href="#timeline">Timeline</a></li>
-								<li><a href="#mapas">Mapa</a></li>
-								<li><a href="#multimedia">Multimedia</a></li>
-								<li><a href="#viajero">Viajero</a></li>
-							</ul>
-						</div>
-						<!-- Main Navigation menu ends-->
-					</nav>
-				</div>
-			</div>
-		</div>
-		<!-- sticky-bar Ends-->
-		<!--=== Header section Ends ===-->
+                                            <!-- Main Navigation menu Starts -->
+                                            <div class="collapse navbar-collapse navbar-responsive-collapse" id="main-bar">
+                                                    <ul class="nav navbar-nav navbar-right">
+                                                            <li class="current"><a ui-sref="section-home">Inicio</a></li>
+                                                            <li><a ui-sref="evento">Eventos</a></li>
+                                                            <li><a ui-sref="itinerario">Itinerarios</a></li>
+                                                            <li><a ui-sref="timeline">Timeline</a></li>
+                                                            <li><a ui-sref="mapa">Mapa</a></li>
+                                                            <li><a ui-sref="multimedia">Multimedia</a></li>
+                                                            <li><a ui-sref="viajero">Viajero</a></li>
 
-		<!--=== Home Section Starts ===-->
-		<div id="section-home" class="home-section-wrap center">
-			<div class="section-overlay">
-			</div>
-			<div class="container home">
-				<div class="row">
-					<h1 class="well-come">Conoce, disfruta y opina.</h1>
-
-					<div class="col-md-8 col-md-offset-2">
-						<p class="intro-message">Conoce lugares increibles en todo el planeta que esperan por ti.</p>
-
-						<div class="home-buttons" >
-
-							<a href="#" class="fancy-button button-line button-white vertical" data-toggle="modal"  >
-								Sign in
-								<span class="icon">
-									<i class="fa fa-leaf"></i>
-								</span>
-							</a>
-							<a href="#" class="fancy-button button-line button-white zoom" data-toggle="modal" data-target="#myModal1">
-								Registrate
-								<span class="icon">
-									<i class="fa fa-leaf"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Modal sign in -->
-
-            <!-- Modal sign in -->
-		<div id="myModal1" class="modal fade" role="dialog">
-					  <div class="modal-dialog">
-
-                <!-- Modal content-->
-                    <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                             <h4 class="modal-title">Registro</h4>
-                                                      <form role="form" novalidate name="form" id="review-form" ng-submit="ctrl.saveRecord()">
-                                                        <div class="form-group">
-                                                        <label for="name">Nombre completo:</label>
-                                                        <input type="name"  id="name" name="name" class="form-control" ng-model="currentRecord.name">
-                                                                </div>
-                                                                <div class="form-group">
-                                                            <label for="email">Correo:</label>
-                                                            <input type="email" name="email" class="form-control" id="email" ng-model="currentRecord.email">
-                                                                </div>
-                                                                <div class="form-group">
-                                                            <label for="user">Usuario:</label>
-                                                            <input type="name" class="form-control" id="user" name="user" ng-model="currentRecord.user">
-                                                                </div>
-                                                                <div class="form-group">
-                                                            <label for="pass">Clave:</label>
-                                                            <input type="password" class="form-control" id="pass" name="pass" ng-model="currentRecord.pass">
-                                                                <div class="form-group">
-                                                            <label for="pwd">Confirmar Clave:</label>
-                                                            <input type="password" class="form-control" id="pwd">
-                                                                </div>
-                                                                <div class="checkbox">
-                                                            <label><input type="checkbox"> Recordar sesion</label>
-                                                                </div>
-                                                                 <button type="submit" class="btn btn-default" ng-click="ctrl.createRecord()">Registrarme</button>
-                                                          </form>
-                                                      <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" ng-click="ctrl.fetchRecords()" data-dismiss="modal">cerrar</button>
-                                                      </div>
-                                 </div>
-
-                  </div>
-                 </div>
-                </div>
-
-
-		<!--=== Home Section ends ===-->
-        <!--=== Seccion de las cartas de los eventos ===-->
-	<section id="section-feature" class="section-step step-even step-wrap">
-		<div ui-view="idEvento"></div>
-	</section>
-	<!--=== Seccion de las cartas de eventos termina ===-->
-
-	<!--=== Empieza itinerarios ===   -->
-	<!--Luis Mesa -->
-	<section id="itinerarios" class="section-step step-wrap">
-		<div ui-view="idItinerario"></div>
-	</section>
-	<!--=== Finaliza Itinerarios ===-->
-
-
-
-	<!--=== aca va el timeline ===-->
-	<section id="timeline" class="section-step step-even step-wrap">
-		<div ui-view="idTimeLine"></div>
-	</section>
-	<!--=== HAsta aca va el timeline===-->
-
-
-	<!--=== Parte del mapa ===-->
-	<section id="mapas" class="section-step step-even step-wrap">
-		<div ui-view="idMapa"></div>
-	</section>
-	<!--=== Hasta aca va la parte del mapa===-->
-
-
-	<!--=== Media empieza ===-->
-	<!--Fabio Lopez -->
-    <section id="multimedia" class="screenshots-wrap-wrap">
-		<div ui-view="idMultimedia"></div>
-	</section>
-	<!--=== Termina media ===-->
-
-	<!-- Empieza Viajero Starts -->
-		<section id="viajero" class="feature-wrap">
-			<div ui-view="idViajero"></div>
-
-		</section>
-		<!--=== Termina viajero ===-->
-
-
-
-
-
+                                                    </ul>
+                                            </div>
+                                            <!-- Main Navigation menu ends-->
+                                    </nav>
+                            </div>
+                    </div>
+            </div>
+            <!-- sticky-bar Ends-->
+           <div ui-view></div>
 
 	<!--=== Contact section Starts ===-->
 	<section id="section-contact" class="contact-wrap">
@@ -283,7 +156,7 @@
 		</div>
 	</div>
 	<!--=== Footer section Ends ===-->
-
+    </div>
 <!--==== Js files ====-->
 <!--==== Essential files ====-->
 
