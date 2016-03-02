@@ -49,8 +49,8 @@
                     })
                     .state('evento', {
                         url: '/evento',
-                        controller: "eventoCtrl",
-                        controllerAs: "ctrl",
+                        //controller: "eventoCtrl",
+                        //controllerAs: "ctrl",
                         templateUrl: "src/modules/evento/evento.tpl.html"
                     });
         }]);
