@@ -5,15 +5,24 @@
  */
 package edu.uniandes.dmg.rest.resources;
 
+import edu.uniandes.dmg.rest.dtos.CityDTO;
+import java.util.List;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 /**
  *
  * @author jd.torres11
  */
 @Path ("viajero")
+@Produces("application/json")
 public class ViajeroResource {
 //incluir dependencia desde el pomp
 
+     @GET
+    public List<CityDTO> getCities()  {
+        return null;
+    }
 
 }
