@@ -9,6 +9,6 @@ package edu.uniandes.dmg.rest.resources;
  *
  * @author jd.torres11
  */
-public class Viajero {
+public class ViajeroResource {
 
 }
