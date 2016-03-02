@@ -5,10 +5,15 @@
  */
 package edu.uniandes.dmg.rest.resources;
 
+import javax.ws.rs.Path;
+
 /**
  *
  * @author jd.torres11
  */
+@Path ("viajero")
 public class ViajeroResource {
+//incluir dependencia desde el pomp
+
 
 }
