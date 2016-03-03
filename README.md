@@ -25,21 +25,21 @@ Servidor-JAXRS
     │   │   TimelineResource.java
     │   │   ViajeroResource.java
     │   |   EventoResource.java
-    │
+    │   |   MultimediaResource.java
+    |
     ├───co.edu.uniandes.rest.dtos
     │   │   ViajeroDTO.java
     │   |   EventDTO.java
-    │   |   TimelineDTO.java
-    │
+    │   |   MultimediaDTO.java
+    |
     ├───co.edu.uniandes.rest.mocks
     │   │   ViajeroLogicMock.java 
     |   │   EventoLogicMock.java 
-    │   |   TimelineLogicMock.java
+    |   |   MultimediaLogicMock.java
     │
     ├───co.edu.uniandes.rest.exceptions
     │   │   PrimidLogicException.java
     │   │   EventoLogicException.java
-    │   |   TimelineLogicExceptioni.java
     │
     └───co.edu.uniandes.converters
         │   PrimidLogicExceptionMapper.java        
