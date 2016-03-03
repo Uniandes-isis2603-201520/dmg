@@ -29,14 +29,17 @@ Servidor-JAXRS
     ├───co.edu.uniandes.rest.dtos
     │   │   ViajeroDTO.java
     │   |   EventDTO.java
+    │   |   TimelineDTO.java
     │
     ├───co.edu.uniandes.rest.mocks
     │   │   ViajeroLogicMock.java 
     |   │   EventoLogicMock.java 
+    │   |   TimelineLogicMock.java
     │
     ├───co.edu.uniandes.rest.exceptions
     │   │   PrimidLogicException.java
     │   │   EventoLogicException.java
+    │   |   TimelineLogicExceptioni.java
     │
     └───co.edu.uniandes.converters
         │   PrimidLogicExceptionMapper.java        
