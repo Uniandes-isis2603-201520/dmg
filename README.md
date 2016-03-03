@@ -1,10 +1,10 @@
 # DMG (Primid webPage)
 
 
-## Ejemplo Servicio REST
+## Descripción del proyecto
 
 Proyecto Primid, modela una herramienta para la planeacion de viajes.
-Itegra servicios REST implementando JAX-RS.
+Integra servicios REST implementando JAX-RS.
 
 
 ## Estructura del proyecto
