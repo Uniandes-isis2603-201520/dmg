@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.rest.resources;
+package edu.uniandes.dmg.rest.dtos;
 
 /**
  *
  * @author karenlorenaosoriohenao
  */
-public class Evento {
+public class EventoDTO {
     
 }
