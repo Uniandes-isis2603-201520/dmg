@@ -5,9 +5,12 @@
  */
 package edu.uniandes.dmg.rest.resources;
 
-import edu.uniandes.dmg.rest.dtos.CityDTO;
+import edu.uniandes.dmg.rest.dtos.EventoDTO;
 import java.util.List;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
@@ -22,7 +25,29 @@ public class EventoResource {
     //incluir dependencia desde el pomp
 
      @GET
-    public List<CityDTO> getCities()  {
+    public List<EventoDTO> getEventos()  {
+        return null;
+    }
+    
+         @GET
+    public List<EventoDTO> getEvento(int id)  {
+        return null;
+    }
+    
+         @POST
+    public List<EventoDTO> postEvento()  {
+        return null;
+    }
+    
+    
+         @PUT
+    public List<EventoDTO> putEvento(int id)  {
+        return null;
+    }
+    
+    
+         @DELETE
+    public List<EventoDTO> deleteEvento(int id)  {
         return null;
     }
     
