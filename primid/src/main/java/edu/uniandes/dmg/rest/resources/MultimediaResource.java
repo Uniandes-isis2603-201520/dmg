@@ -5,6 +5,7 @@
  */
 package edu.uniandes.dmg.rest.resources;
 
+import edu.uniandes.dmg.rest.dtos.MultimediaDTO;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -19,9 +20,11 @@ import javax.ws.rs.Produces;
 public class MultimediaResource {
 
     @GET
-    public List<MultimediasDTO> get()
+    public List<MultimediaDTO> get()
     {
-        return multimediaLogic.getMultimedia();
+        return null;
     }
+
+
 
 }
