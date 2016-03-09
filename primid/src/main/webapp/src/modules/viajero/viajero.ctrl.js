@@ -17,8 +17,7 @@
                 name: '' /*Tipo String*/,
                 email: '' /*Tipo String*/,
                 image: '' /*Tipo String*/,
-                activo:true,
-                editorial: {} /*Objeto que representa instancia de Editorial*/,
+                activo:true /*Tipo Boolean*/,
                 reviews: [] /*Colección de registros de Review*/
             };
             $scope.records = [];
