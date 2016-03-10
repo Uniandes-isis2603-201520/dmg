@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.rest.exceptions;
+package edu.uniandes.dmg.rest.mocks;
 
 /**
  *
  * @author jd.torres11
  */
-public class CityLogicException {
+public class CiudadLogicMock {
 
 }

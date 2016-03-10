@@ -5,7 +5,7 @@
  */
 package edu.uniandes.dmg.rest.resources;
 
-import edu.uniandes.dmg.rest.dtos.CityDTO;
+import edu.uniandes.dmg.rest.dtos.CiudadDTO;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -21,7 +21,7 @@ public class ViajeroResource {
 //incluir dependencia desde el pomp
 
      @GET
-    public List<CityDTO> getCities()  {
+    public List<CiudadDTO> getCities()  {
         return null;
     }
 
