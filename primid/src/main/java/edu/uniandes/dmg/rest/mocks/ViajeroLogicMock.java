@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
-// probando sonar
+// probando sonar2
 /*
  * ViajeroLogicMock
  * Mock del recurso viajero (Mock del servicio REST)
