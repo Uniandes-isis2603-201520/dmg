@@ -12,7 +12,14 @@
 
     mod.controller("reviewCtrl", ["$scope", "reviewService", function ($scope, svc) {
 
-            $scope.currentRecord = {};
+            $scope.currentRecord = {
+                id: 0 /*Tipo Long*/,
+                name: '' /*Tipo String*/,
+                email: '' /*Tipo String*/,
+                image: '' /*Tipo String*/,
+                activo:true /*Tipo Boolean*/,
+                reviews: [] /*Colección de registros de Review*/
+            };
             $scope.records = [];
 
             $scope.today = function () {
