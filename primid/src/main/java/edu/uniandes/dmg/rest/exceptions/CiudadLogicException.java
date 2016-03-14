@@ -9,7 +9,7 @@ package edu.uniandes.dmg.rest.exceptions;
  *
  * @author jd.torres11
  */
-public class CiudadLogicException {
+public class CiudadLogicException extends Exception{
 
     /**
 	 * versión usada en la serialización de la clase
