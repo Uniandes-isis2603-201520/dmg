@@ -227,11 +227,12 @@ La descripción del API REST se presenta a continuación:
 
 Método|URI|Acción|Parámetros|Cuerpo|Retorno
 :--:|:--:|:--:|:--:|:--:|:--:
-**GET**|/multimedia|Lista los registros de City (READ)|||Colección de registros de City 
-**GET**|/multimedia/*:id*|Obtener los atributos de una instancia de City (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de City
-**POST**|/multimedia|Crear una nueva instancia de la entidad City (CREATE)||Atributos de la instancia de City a crear|Instancia de City creada, incluyendo su nuevo ID
-**PUT**|/multimedia/*:id*|Actualiza una instancia de la entidad City (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de City|Instancia de City actualizada
-**DELETE**|/multimedia/*:id*|Borra instancia de City en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
+**GET**|/multimedia|Lista los registros de Multimedia (READ)|||Colección de registros de archivos multimedia
+**GET**|/multimedia/*:id*|Obtener los atributos de una instancia de archivo multimedia (READ)|**@PathParam id**: Identificador del registro ||Atributos de la instancia del archivo  Multimedia 
+**POST**|/multimedia|Crear una nueva instancia de la entidad Multimedia (CREATE)||Atributos de la instancia de Multimedia a crear|Instancia de Multimedia creada, incluyendo su nueva ruta
+**PUT**|/multimedia/*:id*|Actualiza una instancia de la entidad Multimedia (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Multimedia|Instancia de Multimedia actualizada
+**DELETE**|/multimedia/*:id*|Borra instancia de Multimedia en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
+
 
 
 
