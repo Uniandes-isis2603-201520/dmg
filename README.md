@@ -205,31 +205,33 @@ Si se solicta la servidor una lista de ciudades, el servidor retorna un arreglo 
   {
     "id" : 1,     /* Tipo Long */
     "name" : '',    /* Tipo String */
-    "email" : '',    /* Tipo String */
+    "tipo" : '',    /* Tipo String */
+    "visible" : '',    /* Tipo boolean */
     "ruta" : ''    /* Tipo String */
   }, {
     "id" : 2,     /* Tipo Long */
-    "name" : ''    /* Tipo String */
-    "email" : '',    /* Tipo String */
+    "name" : '',    /* Tipo String */
+    "tipo" : '',    /* Tipo String */
+    "visible" : '',    /* Tipo boolean */
     "ruta" : ''    /* Tipo String */
-  } /* ... otras ciudades */   
+  } /* ... otros archivos multimedia */   
 ]
 ```
 
 ### Servicios REST
 
 Al ejecutarlo en su propia máquina, el recurso REST estará disponible en:
-*  `http://localhost:8080/Servidor-JAXRS/api/viajero` 
+*  `http://localhost:8080/Servidor-JAXRS/api/multimedia` 
 
 La descripción del API REST se presenta a continuación:
 
 Método|URI|Acción|Parámetros|Cuerpo|Retorno
 :--:|:--:|:--:|:--:|:--:|:--:
-**GET**|/cities|Lista los registros de City (READ)|||Colección de registros de City 
-**GET**|/cities/*:id*|Obtener los atributos de una instancia de City (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de City
-**POST**|/cities|Crear una nueva instancia de la entidad City (CREATE)||Atributos de la instancia de City a crear|Instancia de City creada, incluyendo su nuevo ID
-**PUT**|/cities/*:id*|Actualiza una instancia de la entidad City (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de City|Instancia de City actualizada
-**DELETE**|/cities/*:id*|Borra instancia de City en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
+**GET**|/multimedia|Lista los registros de City (READ)|||Colección de registros de City 
+**GET**|/multimedia/*:id*|Obtener los atributos de una instancia de City (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de City
+**POST**|/multimedia|Crear una nueva instancia de la entidad City (CREATE)||Atributos de la instancia de City a crear|Instancia de City creada, incluyendo su nuevo ID
+**PUT**|/multimedia/*:id*|Actualiza una instancia de la entidad City (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de City|Instancia de City actualizada
+**DELETE**|/multimedia/*:id*|Borra instancia de City en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
 
 
 
