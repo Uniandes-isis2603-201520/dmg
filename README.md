@@ -261,3 +261,70 @@ Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio RE
 | Agregar un archivo multimedia   | POST http://localhost:8080/Servidor-JAXRS/api/multimedia  incluyendo en la petición un archivo. Por ejemplo, es posible usar `{ "id": 4, "name": "torre eiffel", "tipo": "imagen", "visible": true, "ruta":"https://github.com/Uniandes-isis2603-201520/dmg/edit/master/imagenes/torre-eiffel.jpg" }` |
 | Modificar un archivo multimedia | PUT http://localhost:8080/Servidor-JAXRS/api/multimedia/{id} donde id es el `id` del archivo a modificar. Por ejemplo, para modificar el archivo con el id=1 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/multimedia/1 y enviar como parámetro los datos del nuevo archivo, por ejemplo, `{ "id": 1, "name": "nube" }` |  
 | Borrar un archivo multimedia    | DELETE http://localhost:8080/Servidor-JAXRS/api/multimedia/{id} donde id es el `id` del archivo a eliminar. Por ejemplo, para eliminar el archivo con el id=2 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/multimedia/2 | 
+
+### Entidad Itinerario
+
+La comunicación entre el cliente y el servidor se realiza intercambiando objetos JSON que siguen el siguiente formato:
+
+```javascript
+{
+    "idUsuario" : 1,     /* Tipo Long */
+    "name" : '',    /* Tipo String */
+    "resumen" : '',    /* Tipo String */
+    "fechaInicio" : '',    /* Tipo Date */
+    "fechaFin" : ''    /* Tipo Date */
+}
+```
+
+Si se solicta la servidor una lista con los itinerarios del usuario, el servidor retorna un arreglo de esos objetos siguiendo el siguiente formato: 
+
+ ```javascript
+[ 
+  {
+    "id" : 1,     /* Tipo Long */
+    "name" : '',    /* Tipo String */
+    "resumen" : '',    /* Tipo String */
+    "fechaInicio" : '',    /* Tipo Date */
+    "fechaFin" : ''    /* Tipo Date */
+  }, {
+    "id" : 1,     /* Tipo Long */
+    "name" : '',    /* Tipo String */
+    "resumen" : '',    /* Tipo String */
+    "fechaInicio" : '',    /* Tipo Date */
+    "fechaFin" : ''    /* Tipo Date */
+  } /* ... otros itinerarios */   
+]
+```
+
+### Servicios REST
+
+Al ejecutarlo en su propia máquina, el recurso REST estará disponible en:
+*  `http://localhost:8080/Servidor-JAXRS/api/itinerarios` 
+
+La descripción del API REST se presenta a continuación:
+
+Método|URI|Acción|Parámetros|Cuerpo|Retorno
+:--:|:--:|:--:|:--:|:--:|:--:
+**GET**|/itinerarios|Lista los registros de Itinerario (READ)|||Colección de registros de Itinerario
+**GET**|/itinerarios/*:id*|Obtener los atributos de una instancia de Itinerario (READ)|**@PathParam id**: Identificador del itinerario||Atributos del Itinerario
+**PUT**|/itinerarios|Crear una nueva instancia de Itinerario (CREATE)||Atributos de la instancia de Itinerario a crear|Instancia de Itinerario creada
+**POST**|/itinerarios/*:id*|Actualiza una instancia de la entidad Itinerario (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Evento|Instancia del Itinerario actualizada
+**DELETE**|/itinerarios/*:id*|Borra instancia de Itinerario en el servidor (DELETE)|**@PathParam id**: Identificador del Itinerario||
+
+
+
+## Ejecutando y probando el proyecto
+
+El proyecto se ejecuta como un proyecto web tradicional. 
+En Netbeans basta con ejecutar "Clean and Build" en el proyecto y luego usar la opción de "Run".
+
+Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio REST.
+
+| Ejemplo | Comando |
+| ------- | ------- |
+| Obtener los itinerarios | GET http://localhost:8080/Servidor-JAXRS/api/itinerarios |
+| Obtener un itinerario   | GET http://localhost:8080/Servidor-JAXRS/api/itinerarios/{id} donde id es el `id` del itinerario buscado.| 
+| Agregar un itinerario   | PUT http://localhost:8080/Servidor-JAXRS/api/itinerarios  incluyendo en la petición un itinerario. Por ejemplo, es posible usar `{ "id": 4, "name": "MiViaje", "resumen":"viaje familiar", "fechaInicio":"2016/03/14","fechaFin":"2016/03/19" }` |
+| Modificar un evento | POST http://localhost:8080/Servidor-JAXRS/api/itinerarios/{id} donde id es el `id` del itinerario a modificar. Por ejemplo, para modificar el itinerario con el id=1 es necesario usar el URL http://localhost:8080/Primid/api/itinerarios/1 y enviar como parámetro los datos del nuevo itinerario, por ejemplo, `{ "id": 1, "name": "MiViajeEnFamilia", "resumen":"otro viaje", "fechaInicio":"2016/03/14","fechaFin":"2016/03/19" }` |  
+| Borrar un itinerario    | DELETE http://localhost:8080/Primid/api/itinerarios/{id} donde id es el `id` del itinerario a eliminar. Por ejemplo, para eliminar el itinerario con el id=2 es necesario usar el URL http://localhost:8080/Primid/api/itinerarios/2 | 
+
