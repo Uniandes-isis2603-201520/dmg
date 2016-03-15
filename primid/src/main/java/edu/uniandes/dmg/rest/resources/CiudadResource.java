@@ -6,7 +6,10 @@
 package edu.uniandes.dmg.rest.resources;
 
 import edu.uniandes.dmg.rest.dtos.CiudadDTO;
+import edu.uniandes.dmg.rest.exceptions.PrimidLogicException;
+import edu.uniandes.dmg.rest.mocks.CiudadLogicMock;
 import java.util.List;
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -19,9 +22,12 @@ import javax.ws.rs.Produces;
 @Produces("application/json")
 public class CiudadResource {
 
+    @Inject
+    CiudadLogicMock ciudadLogic;
+
     @GET
-    public List<CiudadDTO> getCiudades(){
-        return null;
+    public List<CiudadDTO> getCiudades() throws PrimidLogicException{
+        return ciudadLogic.getCities();
     }
 
     /**
@@ -32,8 +38,8 @@ public class CiudadResource {
      */
     @GET
     @Path("{id: \\d+}")
-    public CiudadDTO getCiudad(@PathParam("id") Long id) {
-        return null;
+    public CiudadDTO getCity(@PathParam("id") Long id) throws PrimidLogicException {
+        return ciudadLogic.getCity(id);
     }
 
     /**
@@ -43,8 +49,8 @@ public class CiudadResource {
      * @throws CityLogicException cuando ya existe una ciudad con el id suministrado
      */
     @POST
-    public CiudadDTO createCity(CiudadDTO city){
-        return null;
+    public CiudadDTO createCity(CiudadDTO city) throws PrimidLogicException {
+        return ciudadLogic.createCity(city);
     }
 
     /**
@@ -56,8 +62,8 @@ public class CiudadResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public CiudadDTO updateCiudad(@PathParam("id") Long id, CiudadDTO city) {
-        return null;
+    public CiudadDTO updateCity(@PathParam("id") Long id, CiudadDTO city) throws PrimidLogicException {
+        return ciudadLogic.updateCity(id, city);
     }
 
     /**
@@ -67,8 +73,8 @@ public class CiudadResource {
      */
     @DELETE
     @Path("{id: \\d+}")
-    public void deleteCiudad(@PathParam("id") Long id) {
-
+    public void deleteCity(@PathParam("id") Long id) throws PrimidLogicException {
+    	ciudadLogic.deleteCity(id);
     }
 
 }

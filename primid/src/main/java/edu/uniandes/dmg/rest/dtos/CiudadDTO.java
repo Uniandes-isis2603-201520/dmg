@@ -5,43 +5,28 @@
  */
 package edu.uniandes.dmg.rest.dtos;
 
-/** 
+/**
  *
  * @author jd.torres11
  */
 public class CiudadDTO {
 
-    private Long id;
+    private long id;
     private String name;
-    private Double coordenadas;
-    private Boolean visible;
-    private String ruta;
+    private double coordenadas;
 
     /**
      * Constructor por defecto
      */
-    public CiudadDTO(long id, String name, Double coordenadas, String ruta) {
+    public CiudadDTO(long id, String name, double coordenadas) {
 
         super();
         this.id = id;
         this.name = name;
         this.coordenadas = coordenadas;
-        this.visible = true;
-        this.ruta = ruta;
+
 
 	}
-
-    /**
-     * Constructor con parámetros.
-     * @param id identificador de la ciudad
-     * @param name nombre de la ciudad
-     */
-    public CiudadDTO(Long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-
 	/**
      * @return the id
      */
@@ -70,12 +55,23 @@ public class CiudadDTO {
         this.name = name;
     }
 
+    public double getCoordenadas() {
+        return coordenadas;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setCoordenadas(double coordenadas) {
+        this.coordenadas = coordenadas;
+    }
+
     /**
      * Convierte el objeto a una cadena
      */
     @Override
     public String toString() {
-    	return "{ id : " + getId() + ", name : \"" + getName() + "\" }" ;
+    	return "{ id : " + getId() + ", name : \"" + getName() + "\"" + getCoordenadas() + ",coordenadas: \" }" ;
     }
 
 }

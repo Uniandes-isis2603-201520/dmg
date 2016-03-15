@@ -16,8 +16,7 @@
             $scope.currentRecord = {
                 id: 0 /*Tipo Long*/,
                 name: '' /*Tipo String*/,
-                tipo: '' /*Tipo String*/,
-                visible: '' /*Tipo String*/,
+                coordenadas: '' /*Tipo String*/,
                 ruta: '' /*Tipo String*/,
                 itinerario: {} /*Objeto que representa instancia de Itinerario*/,
                 reviews: [] /*Colección de registros de Review*/

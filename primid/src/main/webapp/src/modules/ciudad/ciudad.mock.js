@@ -8,19 +8,11 @@
     var mod = ng.module('ciudadMock', ['ngMockE2E']);
 
     mod.run(['$httpBackend', function ($httpBackend) {
+
             var ignore_regexp = new RegExp('^((?!api).)*$');
-            /*
-             * @type RegExp
-             * recordUrl acepta cualquier url con el formato
-             * api/(cualquierpalabra)/(numero)
-             * ej: api/persons/1
-             */
+
             var recordUrl = new RegExp('api/ciudades/([0-9]+)');
 
-            /*
-             * @type Array
-             * records: Array con un libro por defecto
-             */
             var records = [{
                     name: 'Bogota',
                     latitud: 73984,
@@ -54,7 +46,7 @@
              * se realiza la simulacion de la paginacion.
              * Response: 200 -> Status ok, array de libros y los headers.
              */
-            $httpBackend.whenGET('api/mapas').respond(function (method, url) {
+            $httpBackend.whenGET('api/ciudades').respond(function (method, url) {
                 var queryParams = getQueryParams(url);
                 var responseObj = [];
                 var page = queryParams.page;
@@ -92,7 +84,7 @@
              * array de records.
              * Response: 201 -> Status created, record -> libro y ningún header.
              */
-            $httpBackend.whenPOST('api/mapas').respond(function (method, url, data) {
+            $httpBackend.whenPOST('api/ciudades').respond(function (method, url, data) {
                 var record = ng.fromJson(data);
                 record.id = Math.floor(Math.random() * 10000);
                 records.push(record);
