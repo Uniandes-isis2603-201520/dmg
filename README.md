@@ -32,18 +32,21 @@ Servidor-JAXRS
     │   │   ViajeroDTO.java
     │   |   EventDTO.java
     │   |   MultimediaDTO.java
+    |   |   TimelindeDTO.java
     |   |   ItinerarioDTO.jjave
     │
     ├───co.edu.uniandes.rest.mocks
     │   │   ViajeroLogicMock.java 
     |   │   EventoLogicMock.java
     |   │   MultimediaLogicMock.java 
+    |   |   TimelineLogicMock.java
     |   |   ItinerarioLogicMock.java
     │
     ├───co.edu.uniandes.rest.exceptions
     │   │   PrimidLogicException.java
     │   │   EventoLogicException.java
     │   │   MultimediaLogicException.java
+    |   |   TimelineLogicException.java
     |   |   ItinerarioLogicException.java
     │
     └───co.edu.uniandes.converters
