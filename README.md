@@ -26,21 +26,25 @@ Servidor-JAXRS
     │   │   ViajeroResource.java
     │   |   EventoResource.java
     │   |   MultimediaResource.java
+    |   |   ItinerarioResource.java
     │
     ├───co.edu.uniandes.rest.dtos
     │   │   ViajeroDTO.java
     │   |   EventDTO.java
     │   |   MultimediaDTO.java
+    |   |   ItinerarioDTO.jjave
     │
     ├───co.edu.uniandes.rest.mocks
     │   │   ViajeroLogicMock.java 
     |   │   EventoLogicMock.java
     |   │   MultimediaLogicMock.java 
+    |   |   ItinerarioLogicMock.java
     │
     ├───co.edu.uniandes.rest.exceptions
     │   │   PrimidLogicException.java
     │   │   EventoLogicException.java
     │   │   MultimediaLogicException.java
+    |   |   ItinerarioLogicException.java
     │
     └───co.edu.uniandes.converters
         │   PrimidLogicExceptionMapper.java        
