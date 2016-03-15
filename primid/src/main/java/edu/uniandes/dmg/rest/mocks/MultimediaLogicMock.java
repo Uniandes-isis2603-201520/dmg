@@ -7,6 +7,7 @@
 package edu.uniandes.dmg.rest.mocks;
 
 import edu.uniandes.dmg.rest.dtos.MultimediaDTO;
+import edu.uniandes.dmg.rest.exceptions.MultimediaLogicException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -22,158 +23,161 @@ import javax.inject.Named;
 public class MultimediaLogicMock {
     //Copiado igual al ejemplo
     // objeto para presentar logs de las operaciones
-	private final static Logger logger = Logger.getLogger(CityLogicMock.class.getName());
+	private final static Logger logger = Logger.getLogger(MultimediaLogicMock.class.getName());
 
-	// listado de ciudades
-    private static ArrayList<MultimediaDTO> cities;
+	// listado de archivos multimedia
+    private static ArrayList<MultimediaDTO> multimedia;
 
     /**
      * Constructor. Crea los datos de ejemplo.
      */
-    public CityLogicMock() {
+    public MultimediaLogicMock() {
 
-    	if (cities == null) {
-            cities = new ArrayList<>();
-            cities.add(new MultimediaDTO(1L, "Bogota"));    //Arreglar
-            cities.add(new MultimediaDTO(2L, "Cali"));      //Arreglar
-            cities.add(new MultimediaDTO(3L, "Medellin"));  //Arreglar
+    	if (multimedia == null) {
+            multimedia = new ArrayList<>();
+            multimedia.add(new MultimediaDTO(1L, "Foto1","imagen","ruta1"));
+            multimedia.add(new MultimediaDTO(2L, "Musica1","audio","ruta2"));
+            multimedia.add(new MultimediaDTO(3L, "Grabacion1","video","ruta3"));
         }
 
     	// indica que se muestren todos los mensajes
     	logger.setLevel(Level.INFO);
 
     	// muestra información
-    	logger.info("Inicializa la lista de ciudades");
-    	logger.info("ciudades" + cities );
+    	logger.info("Inicializa la lista de archivos multimedia");
+    	logger.info("archivos multimedia" + multimedia );
     }
 
 	/**
-	 * Obtiene el listado de personas.
-	 * @return lista de ciudades
-	 * @throws CityLogicException cuando no existe la lista en memoria
+	 * Obtiene el listado de archivos multimedia.
+	 * @return lista de archivos multimedia
+         * @throws edu.uniandes.dmg.rest.exceptions.MultimediaLogicException
 	 */
-    public List<CityDTO> getCities() throws CityLogicException {
-    	if (cities == null) {
-    		logger.severe("Error interno: lista de ciudades no existe.");
-    		throw new CityLogicException("Error interno: lista de ciudades no existe.");
+    public List<MultimediaDTO> getMultimedia() throws MultimediaLogicException {
+    	if (multimedia == null) {
+    		logger.severe("Error interno: lista de archivos multimedia no existe.");
+    		throw new MultimediaLogicException("Error interno: lista de archivos multimedia no existe.");
     	}
 
     	logger.info("retornando todas las ciudades");
-    	return cities;
+    	return multimedia;
     }
 
     /**
-     * Obtiene una ciudad
+     * Obtiene un archivo multimedia
      * @param id identificador de la ciudad
      * @return ciudad encontrada
-     * @throws CityLogicException cuando la ciudad no existe
+     * @throws edu.uniandes.dmg.rest.exceptions.MultimediaLogicException cuando el archivo no existe
      */
-    public CityDTO getCity(Long id) throws CityLogicException {
+    public MultimediaDTO getMultimedia(Long id) throws MultimediaLogicException {
     	logger.info("recibiendo solicitud de ciudad con id " + id);
 
     	// busca la ciudad con el id suministrado
-        for (CityDTO city : cities) {
-            if (Objects.equals(city.getId(), id)){
-            	logger.info("retornando ciudad " + city);
-                return city;
+        for (MultimediaDTO mult : multimedia) {
+            if (Objects.equals(mult.getId(), id)){
+            	logger.info("retornando archivo multimedia " + mult);
+                return mult;
             }
         }
 
-        // si no encuentra la ciudad
-        logger.severe("No existe ciudad con ese id");
-        throw new CityLogicException("No existe ciudad con ese id");
+        // si no encuentra el archivo multimedia
+        logger.severe("No existe archivo multimedia con ese id");
+        throw new MultimediaLogicException("No existe archivo multimedia con ese id");
     }
 
     /**
-     * Agrega una ciudad a la lista.
-     * @param newCity ciudad a adicionar
-     * @throws CityLogicException cuando ya existe una ciudad con el id suministrado
-     * @return ciudad agregada
+     * Agrega un archivo multimedia a la lista.
+     * @param newMult archivo multimedia a adicionar
+     * @throws MultimediaLogicException cuando ya existe un archivo multimedia con el id suministrado
+     * @return archivo multimedia agregado
      */
-    public CityDTO createCity(CityDTO newCity) throws CityLogicException {
-    	logger.info("recibiendo solicitud de agregar ciudad " + newCity);
+    public MultimediaDTO createArchivoMultimedia(MultimediaDTO newMult) throws MultimediaLogicException {
+    	logger.info("recibiendo solicitud de agregar archivo multimedia " + newMult);
 
-    	// la nueva ciudad tiene id ?
-    	if ( newCity.getId() != null ) {
+    	// el nuevo archivo tiene id ?
+    	if ( newMult.getId() != null ) {
 	    	// busca la ciudad con el id suministrado
-	        for (CityDTO city : cities) {
+	        for (MultimediaDTO mult : multimedia) {
 	        	// si existe una ciudad con ese id
-	            if (Objects.equals(city.getId(), newCity.getId())){
-	            	logger.severe("Ya existe una ciudad con ese id");
-	                throw new CityLogicException("Ya existe una ciudad con ese id");
+	            if (Objects.equals(mult.getId(), newMult.getId())){
+	            	logger.severe("Ya existe un archivo multimedia con ese id");
+	                throw new MultimediaLogicException("Ya existe un archivo multimedia con ese id");
 	            }
 	        }
 
-	    // la nueva ciudad no tiene id ?
+	    // el nuevo archivo no tiene id ?
     	} else {
 
-    		// genera un id para la ciudad
-    		logger.info("Generando id paa la nueva ciudad");
+    		// genera un id para el archivo
+    		logger.info("Generando id para el nuevo archivo");
     		long newId = 1;
-	        for (CityDTO city : cities) {
-	            if (newId <= city.getId()){
-	                newId =  city.getId() + 1;
+	        for (MultimediaDTO mult : multimedia) {
+	            if (newId <= mult.getId()){
+	                newId =  mult.getId() + 1;
 	            }
 	        }
-	        newCity.setId(newId);
+	        newMult.setId(newId);
     	}
 
-        // agrega la ciudad
-    	logger.info("agregando ciudad " + newCity);
-        cities.add(newCity);
-        return newCity;
+        // agrega el archivo
+    	logger.info("agregando archivo multimedia " + newMult);
+        multimedia.add(newMult);
+        return newMult;
     }
 
     /**
-     * Actualiza los datos de una ciudad
-     * @param id identificador de la ciudad a modificar
-     * @param city ciudad a modificar
-     * @return datos de la ciudad modificada
-     * @throws CityLogicException cuando no existe una ciudad con el id suministrado
+     * Actualiza los datos de un archivo multimedia
+     * @param id identificador del archivo a modificar
+     * @param updatedMult
+     * @return datos del archivo modificado
+     * @throws edu.uniandes.dmg.rest.exceptions.MultimediaLogicException cuando no existe un archivo con el id suministrado
      */
-    public CityDTO updateCity(Long id, CityDTO updatedCity) throws CityLogicException {
-    	logger.info("recibiendo solictud de modificar ciudad " + updatedCity);
+    public MultimediaDTO updateArchivoMultimedia(Long id, MultimediaDTO updatedMult) throws MultimediaLogicException {
+    	logger.info("recibiendo solictud de modificar archivo multimedia " + updatedMult);
 
     	// busca la ciudad con el id suministrado
-        for (CityDTO city : cities) {
-            if (Objects.equals(city.getId(), id)) {
+        for (MultimediaDTO mult : multimedia) {
+            if (Objects.equals(mult.getId(), id)) {
 
-            	// modifica la ciudad
-            	city.setId(updatedCity.getId());
-                city.setName(updatedCity.getName());
+            	// modifica el archivo multimedia
+            	mult.setId(updatedMult.getId());
+                mult.setName(updatedMult.getName());
+                mult.setRuta(updatedMult.getRuta());
+                mult.setTipo(updatedMult.getTipo());
+                mult.setVisible(updatedMult.getVisible());
 
                 // retorna la ciudad modificada
-            	logger.info("Modificando ciudad " + city);
-                return city;
+            	logger.info("Modificando archivo " + mult);
+                return mult;
             }
         }
 
-        // no encontró la ciudad con ese id ?
-        logger.severe("No existe una ciudad con ese id");
-        throw new CityLogicException("No existe una ciudad con ese id");
+        // no encontró el archivo multimedia con ese id ?
+        logger.severe("No existe una archivo multimedia con ese id");
+        throw new MultimediaLogicException("No existe una archivo multimedia con ese id");
     }
 
     /**
-     * Elimina los datos de una ciudad
-     * @param id identificador de la ciudad a eliminar
-     * @throws CityLogicException cuando no existe una ciudad con el id suministrado
+     * Elimina los datos de un archivo multimedia
+     * @param id identificador del archivo multimedia a eliminar
+     * @throws CityLogicException cuando no existe un archivo multimedia con el id suministrado
      */
-    public void deleteCity(Long id) throws CityLogicException {
-    	logger.info("recibiendo solictud de eliminar ciudad con id " + id);
+    public void deleteArchivoMultimedia(Long id) throws MultimediaLogicException {
+    	logger.info("recibiendo solictud de eliminar archivo multimedia con id " + id);
 
-    	// busca la ciudad con el id suministrado
-        for (CityDTO city : cities) {
-            if (Objects.equals(city.getId(), id)) {
+    	// busca el archivo multimedia con el id suministrado
+        for (MultimediaDTO mult : multimedia) {
+            if (Objects.equals(mult.getId(), id)) {
 
             	// elimina la ciudad
-            	logger.info("eliminando ciudad " + city);
-                cities.remove(city);
+            	logger.info("eliminando archivo multimedia " + mult);
+                multimedia.remove(mult);
                 return;
             }
         }
 
         // no encontró la ciudad con ese id ?
         logger.severe("No existe una ciudad con ese id");
-        throw new CityLogicException("No existe una ciudad con ese id");
+        throw new MultimediaLogicException("No existe un archivo multimedia con ese id");
     }
 }
