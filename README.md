@@ -268,7 +268,7 @@ La comunicación entre el cliente y el servidor se realiza intercambiando objeto
 
 ```javascript
 {
-    "idUsuario" : 1,     /* Tipo Long */
+    "idItinerario" : 1,     /* Tipo Long */
     "name" : '',    /* Tipo String */
     "resumen" : '',    /* Tipo String */
     "fechaInicio" : '',    /* Tipo Date */
@@ -281,13 +281,13 @@ Si se solicta la servidor una lista con los itinerarios del usuario, el servidor
  ```javascript
 [ 
   {
-    "id" : 1,     /* Tipo Long */
+    "idItinerario" : 1,     /* Tipo Long */
     "name" : '',    /* Tipo String */
     "resumen" : '',    /* Tipo String */
     "fechaInicio" : '',    /* Tipo Date */
     "fechaFin" : ''    /* Tipo Date */
   }, {
-    "id" : 1,     /* Tipo Long */
+    "idItinerario" : 1,     /* Tipo Long */
     "name" : '',    /* Tipo String */
     "resumen" : '',    /* Tipo String */
     "fechaInicio" : '',    /* Tipo Date */
