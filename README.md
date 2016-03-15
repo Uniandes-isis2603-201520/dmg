@@ -153,12 +153,12 @@ Si se solicta la servidor una lista de ciudades, el servidor retorna un arreglo 
  ```javascript
 [ 
   {
-    "id" : 1,     /* Tipo Long */
-    "name" : '',    /* Tipo String */
-    "email" : '',    /* Tipo String */
-    "ruta" : ''    /* Tipo String */
+    "id" : 1,     /* Tipo Long */ //modela el id del viajerp
+    "name" : '',    /* Tipo String */ //representa el nombre del viajero
+    "email" : '',    /* Tipo String */ //representa el correo del viajero
+    "ruta" : ''    /* Tipo String */ //representa la ruta de la imagen del perfil del viajero
   }, {
-    "id" : 2,     /* Tipo Long */
+    "id" : 2,     /* Tipo Long */  
     "name" : ''    /* Tipo String */
     "email" : '',    /* Tipo String */
     "ruta" : ''    /* Tipo String */
