@@ -25,18 +25,22 @@ Servidor-JAXRS
     │   │   TimelineResource.java
     │   │   ViajeroResource.java
     │   |   EventoResource.java
+    │   |   MultimediaResource.java
     │
     ├───co.edu.uniandes.rest.dtos
     │   │   ViajeroDTO.java
     │   |   EventDTO.java
+    │   |   MultimediaDTO.java
     │
     ├───co.edu.uniandes.rest.mocks
     │   │   ViajeroLogicMock.java 
-    |   │   EventoLogicMock.java 
+    |   │   EventoLogicMock.java
+    |   │   MultimediaLogicMock.java 
     │
     ├───co.edu.uniandes.rest.exceptions
     │   │   PrimidLogicException.java
     │   │   EventoLogicException.java
+    │   │   MultimediaLogicException.java
     │
     └───co.edu.uniandes.converters
         │   PrimidLogicExceptionMapper.java        
@@ -47,12 +51,15 @@ Servidor-JAXRS
 | `RestConfig.java` | Indica que la aplicación expone recursos REST. Solo se re	quiere uno en la aplicación. Especifica la ruta `/api` como prefijo para los recursos REST |
 | `ViajeroResource.java` | Define el recurso con la ruta `/api/viajero`. Contiene métodos para procesar las peticiones GET, POST, PUT y DELETE de acuerdo al API definido |
 | `EventoResource.java` | Define el recurso con la ruta `/api/eventos`. Contiene métodos para procesar las peticiones GET, POST, PUT y DELETE de acuerdo al API definido |
+| `MultimediaResource.java` | Define el recurso con la ruta `/api/multimedia`. Contiene métodos para procesar las peticiones GET, POST, PUT y DELETE de acuerdo al API definido |
 | `ViajeroDTO.java` | Define los datos que se transfiere entre el cliente y el servidor. Como se usa como tipo de retorno en los métodos de `ViajeroResource`, JAX-RS convierte automáticamente de JSON a esta clase y de esta clase a JSON.  |
 | `EventoDTO.java` | Define los datos que se transfiere entre el cliente y el servidor. Como se usa como tipo de retorno en los métodos de `EventoResource`, JAX-RS convierte automáticamente de JSON a esta clase y de esta clase a JSON.  |
+| `MultimediaDTO.java` | Define los datos que se transfiere entre el cliente y el servidor. Como se usa como tipo de retorno en los métodos de `MultimediaResource`, JAX-RS convierte automáticamente de JSON a esta clase y de esta clase a JSON.  |
 | `ViajeroLogicMock.java` | Simula un servicio de lógica de negocios. En este ejemplo, el Mock manipula los elementos en una lista de viajeros (Un lista de `ViajeroDTO`). |
 | `EventoLogicMock.java` | Simula un servicio de lógica de negocios. En este ejemplo, el Mock manipula los elementos en una lista de eventos (Un lista de `EventoDTO`). |
 | `PrimidLogicException.java` | Excepción lanzada por PriimidLogicMock cuando se genera un error. |
 | `EventoLogicException.java` | Excepción lanzada por EventodLogicMock cuando se genera un error del recurso Evento. |
+| `MultimediaLogicException.java` | Excepción lanzada por MultimediaLogicMock cuando se genera un error del recurso Multimedia. |
 | `PrimidLogicExceptionMapper.java` | Convertidor de la excepción `PrimidLogicException` a mensajes REST. |
 
 
