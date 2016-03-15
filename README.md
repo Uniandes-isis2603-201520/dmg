@@ -328,3 +328,69 @@ Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio RE
 | Modificar un evento | POST http://localhost:8080/Servidor-JAXRS/api/itinerarios/{id} donde id es el `id` del itinerario a modificar. Por ejemplo, para modificar el itinerario con el id=1 es necesario usar el URL http://localhost:8080/Primid/api/itinerarios/1 y enviar como parámetro los datos del nuevo itinerario, por ejemplo, `{ "id": 1, "name": "MiViajeEnFamilia", "resumen":"otro viaje", "fechaInicio":"2016/03/14","fechaFin":"2016/03/19" }` |  
 | Borrar un itinerario    | DELETE http://localhost:8080/Primid/api/itinerarios/{id} donde id es el `id` del itinerario a eliminar. Por ejemplo, para eliminar el itinerario con el id=2 es necesario usar el URL http://localhost:8080/Primid/api/itinerarios/2 | 
 
+### Entidad Timeline
+
+La comunicación entre el cliente y el servidor se realiza intercambiando objetos JSON que siguen el siguiente formato:
+
+```javascript
+{
+    "id" : 1,     /* Tipo Long */
+    "name" : '',    /* Tipo String */
+    "descripcion" : '',    /* Tipo String */
+    "eventos" : ''    /* Tipo array */
+}
+```
+
+Si se solicta la servidor una lista de timelines, el servidor retorna un arreglo de esos objetos siguiendo el siguiente formato: 
+
+ ```javascript
+[ 
+  {
+    "id" : 1,     /* Tipo Long */
+    "name" : '',    /* Tipo String */
+    "descripcion" : '',    /* Tipo String */
+    "eventos" : ''    /* array */
+  }, {
+    "id" : 2,     /* Tipo Long */
+    "name" : ''    /* Tipo String */
+    "descripcion" : '',    /* Tipo String */
+    "eventos" : ''    /* Tipo String */
+  } /* ... otros timelines*/   
+]
+```
+
+### Servicios REST
+
+Al ejecutarlo en su propia máquina, el recurso REST estará disponible en:
+*  `http://localhost:8080/Servidor-JAXRS/api/timeline` 
+
+La descripción del API REST se presenta a continuación:
+
+Método|URI|Acción|Parámetros|Cuerpo|Retorno
+:--:|:--:|:--:|:--:|:--:|:--:
+**GET**|/timelines|Lista los registros de timeline (READ)|||Colección de registros de timeline
+**GET**|/timelines/*:id*|Obtener los atributos de una instancia de Timeline (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de Timelina
+**POST**|/timelines|Crear una nueva instancia de la entidad Timeline (CREATE)||Atributos de la instancia de Timeline a crear|Instancia de Timeline creada, incluyendo su nuevo ID
+**PUT**|/timelines/*:id*|Actualiza una instancia de la entidad Timeline (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Timeline|Instancia de Timeline actualizada
+**DELETE**|/timelines/*:id*|Borra instancia de timeline en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
+
+
+
+## Ejecutando y probando el proyecto
+
+El proyecto se ejecuta como un proyecto web tradicional. 
+En Netbeans basta con ejecutar "Clean and Build" en el proyecto y luego usar la opción de "Run".
+
+Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio REST.
+
+| Ejemplo | Comando |
+| ------- | ------- |
+| Obtener los timelines | GET http://localhost:8080/Servidor-JAXRS/api/timelines |
+| Obtener un timeline  | GET http://localhost:8080/Servidor-JAXRS/api/timelines/{id} donde id es el `id` del timeline a obtener. Por ejemplo, para traer el timeline con el id=1 es posible usar el URL http://localhost:8080/Servidor-JAXRS/api/timelines/1 | 
+| Agregar un timeline  | POST http://localhost:8080/Servidor-JAXRS/api/timelines  incluyendo en la petición un timeline. Por ejemplo, es posible usar `{ "id": 4, "name": "itinerario1" }` |
+| Modificar un timeline | PUT http://localhost:8080/Servidor-JAXRS/api/timelines/{id} donde id es el `id` del timeline a modificar. Por ejemplo, para modificar el timeline con el id=1 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/timelines/1 y enviar como parámetro los datos del nuevo timeline, por ejemplo, `{ "id": 1, "name": "itinerario2" }` |  
+| Borrar un timeline    | DELETE http://localhost:8080/Servidor-JAXRS/api/timelines/{id} donde id es el `id` del timeline a eliminar. Por ejemplo, para eliminar el timeline con el id=2 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/timelines/2 | 
+
+
+
+
