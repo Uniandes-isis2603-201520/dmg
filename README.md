@@ -172,11 +172,11 @@ La descripción del API REST se presenta a continuación:
 
 Método|URI|Acción|Parámetros|Cuerpo|Retorno
 :--:|:--:|:--:|:--:|:--:|:--:
-**GET**|/cities|Lista los registros de City (READ)|||Colección de registros de City 
-**GET**|/cities/*:id*|Obtener los atributos de una instancia de City (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de City
-**POST**|/cities|Crear una nueva instancia de la entidad City (CREATE)||Atributos de la instancia de City a crear|Instancia de City creada, incluyendo su nuevo ID
-**PUT**|/cities/*:id*|Actualiza una instancia de la entidad City (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de City|Instancia de City actualizada
-**DELETE**|/cities/*:id*|Borra instancia de City en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
+**GET**|/viajeros|Lista los registros de viajero (READ)|||Colección de registros de Viajero
+**GET**|/viajero/*:id*|Obtener los atributos de una instancia de Viajero (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de Viajero
+**POST**|/viajeros|Crear una nueva instancia de la entidad Viajero (CREATE)||Atributos de la instancia de Viajero a crear|Instancia de Viajero creada, incluyendo su nuevo ID
+**PUT**|/viajero/*:id*|Actualiza una instancia de la entidad Viajero (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Viajero|Instancia de Viajero actualizada
+**DELETE**|/viajero/*:id*|Borra instancia de Viajero en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
 
 
 
@@ -189,11 +189,11 @@ Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio RE
 
 | Ejemplo | Comando |
 | ------- | ------- |
-| Obtener las ciudades | GET http://localhost:8080/Servidor-JAXRS/api/cities |
-| Obtener una ciudad   | GET http://localhost:8080/Servidor-JAXRS/api/cities/{id} donde id es el `id` de la ciudad a obtener. Por ejemplo, para traer la ciudad con el id=1 es posible usar el URL http://localhost:8080/Servidor-JAXRS/api/cities/1 | 
-| Agregar una ciudad   | POST http://localhost:8080/Servidor-JAXRS/api/cities  incluyendo en la petición una ciudad. Por ejemplo, es posible usar `{ "id": 4, "name": "barranquilla" }` |
-| Modificar una ciudad | PUT http://localhost:8080/Servidor-JAXRS/api/cities/{id} donde id es el `id` de la ciudad a modificar. Por ejemplo, para modificar la ciudad con el id=1 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/cities/1 y enviar como parámetro los datos de la nueva cuidad, por ejemplo, `{ "id": 1, "name": "Santa Fe de Bogota" }` |  
-| Borrar una ciudad    | DELETE http://localhost:8080/Servidor-JAXRS/api/cities/{id} donde id es el `id` de la ciudad a eliminar. Por ejemplo, para eliminar la ciudad con el id=2 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/cities/2 | 
+| Obtener las ciudades | GET http://localhost:8080/Servidor-JAXRS/api/viajeros |
+| Obtener una ciudad   | GET http://localhost:8080/Servidor-JAXRS/api/viajero/{id} donde id es el `id` del Viajero a obtener. Por ejemplo, para traer la el viajero con el id=1 es posible usar el URL http://localhost:8080/Servidor-JAXRS/api/viajero/1 | 
+| Agregar un Viajero  | POST http://localhost:8080/Servidor-JAXRS/api/viajero  incluyendo en la petición un Viajero. Por ejemplo, es posible usar `{ "id": 1, "name": "Juan", "mail":"juan@uniandes.edu.co", "ruta":"/data/profile.png" }` |
+| Modificar una Viajero | PUT http://localhost:8080/Servidor-JAXRS/api/viajero/{id} donde id es el `id` del viajero a modificar. Por ejemplo, para modificar la ciudad con el id=1 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/viajero/1 y enviar como parámetro los datos del nuevo viajero, por ejemplo, `{ "id": 1, "name": "JuanC", "mail":"juanC@uniandes.edu.co", "ruta":"/data/profileC.png" }` |  
+| Borrar un Viajero    | DELETE http://localhost:8080/Servidor-JAXRS/api/viajero/{id} donde id es el `id` del viajero a eliminar. Por ejemplo, para eliminar el viajero con el id=2 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/viajero/2 | 
 
 ### Entidad Multimedia
 
