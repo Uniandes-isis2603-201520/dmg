@@ -141,10 +141,10 @@ La comunicación entre el cliente y el servidor se realiza intercambiando objeto
 
 ```javascript
 {
-    "id" : 1,     /* Tipo Long */
-    "name" : '',    /* Tipo String */
-    "email" : '',    /* Tipo String */
-    "rutaImagen" : ''    /* Tipo String */
+    "id" : 1,     /* Tipo Long */  //modela el id del viajero
+    "name" : '',    /* Tipo String */  //representa el nombre del viajero
+    "email" : '',    /* Tipo String */    //representa el correo del viajero
+    "rutaImagen" : ''    /* Tipo String */  //representa la ruta de la imagen del perfil del viajero
 }
 ```
 
@@ -153,15 +153,15 @@ Si se solicta la servidor una lista de ciudades, el servidor retorna un arreglo 
  ```javascript
 [ 
   {
-    "id" : 1,     /* Tipo Long */ //modela el id del viajerp
-    "name" : '',    /* Tipo String */ //representa el nombre del viajero
-    "email" : '',    /* Tipo String */ //representa el correo del viajero
-    "ruta" : ''    /* Tipo String */ //representa la ruta de la imagen del perfil del viajero
+    "id" : 1,     /* Tipo Long */ 
+    "name" : '',    /* Tipo String */ 
+    "email" : '',    /* Tipo String */
+    "rutaImagen" : ''    /* Tipo String */ 
   }, {
     "id" : 2,     /* Tipo Long */  
     "name" : ''    /* Tipo String */
     "email" : '',    /* Tipo String */
-    "ruta" : ''    /* Tipo String */
+    "rutaImagen" : ''    /* Tipo String */
   } /* ... otras ciudades */   
 ]
 ```
