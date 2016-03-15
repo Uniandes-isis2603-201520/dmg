@@ -192,8 +192,8 @@ Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio RE
 
 | Ejemplo | Comando |
 | ------- | ------- |
-| Obtener las ciudades | GET http://localhost:8080/Servidor-JAXRS/api/viajeros |
-| Obtener una ciudad   | GET http://localhost:8080/Servidor-JAXRS/api/viajero/{id} donde id es el `id` del Viajero a obtener. Por ejemplo, para traer la el viajero con el id=1 es posible usar el URL http://localhost:8080/Servidor-JAXRS/api/viajero/1 | 
+| Obtener los Viajeros | GET http://localhost:8080/Servidor-JAXRS/api/viajeros |
+| Obtener un Viajero  | GET http://localhost:8080/Servidor-JAXRS/api/viajero/{id} donde id es el `id` del Viajero a obtener. Por ejemplo, para traer la el viajero con el id=1 es posible usar el URL http://localhost:8080/Servidor-JAXRS/api/viajero/1 | 
 | Agregar un Viajero  | POST http://localhost:8080/Servidor-JAXRS/api/viajero  incluyendo en la petición un Viajero. Por ejemplo, es posible usar `{ "id": 1, "name": "Juan", "mail":"juan@uniandes.edu.co", "ruta":"/data/profile.png" }` |
 | Modificar una Viajero | PUT http://localhost:8080/Servidor-JAXRS/api/viajero/{id} donde id es el `id` del viajero a modificar. Por ejemplo, para modificar la ciudad con el id=1 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/viajero/1 y enviar como parámetro los datos del nuevo viajero, por ejemplo, `{ "id": 1, "name": "JuanC", "mail":"juanC@uniandes.edu.co", "ruta":"/data/profileC.png" }` |  
 | Borrar un Viajero    | DELETE http://localhost:8080/Servidor-JAXRS/api/viajero/{id} donde id es el `id` del viajero a eliminar. Por ejemplo, para eliminar el viajero con el id=2 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/viajero/2 | 
