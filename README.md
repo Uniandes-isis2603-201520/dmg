@@ -245,8 +245,8 @@ Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio RE
 
 | Ejemplo | Comando |
 | ------- | ------- |
-| Obtener las ciudades | GET http://localhost:8080/Servidor-JAXRS/api/cities |
-| Obtener una ciudad   | GET http://localhost:8080/Servidor-JAXRS/api/cities/{id} donde id es el `id` de la ciudad a obtener. Por ejemplo, para traer la ciudad con el id=1 es posible usar el URL http://localhost:8080/Servidor-JAXRS/api/cities/1 | 
-| Agregar una ciudad   | POST http://localhost:8080/Servidor-JAXRS/api/cities  incluyendo en la petición una ciudad. Por ejemplo, es posible usar `{ "id": 4, "name": "barranquilla" }` |
-| Modificar una ciudad | PUT http://localhost:8080/Servidor-JAXRS/api/cities/{id} donde id es el `id` de la ciudad a modificar. Por ejemplo, para modificar la ciudad con el id=1 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/cities/1 y enviar como parámetro los datos de la nueva cuidad, por ejemplo, `{ "id": 1, "name": "Santa Fe de Bogota" }` |  
-| Borrar una ciudad    | DELETE http://localhost:8080/Servidor-JAXRS/api/cities/{id} donde id es el `id` de la ciudad a eliminar. Por ejemplo, para eliminar la ciudad con el id=2 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/cities/2 | 
+| Obtener los archivos multimedia | GET http://localhost:8080/Servidor-JAXRS/api/multimedia |
+| Obtener un archivo multimedia   | GET http://localhost:8080/Servidor-JAXRS/api/multimedia/{id} donde id es el `id` del archivo multimedia a obtener. Por ejemplo, para traer el archivo con el id=1 es posible usar el URL http://localhost:8080/Servidor-JAXRS/api/multimedia/1 | 
+| Agregar una ciudad   | POST http://localhost:8080/Servidor-JAXRS/api/multimedia  incluyendo en la petición una ciudad. Por ejemplo, es posible usar `{ "id": 4, "name": "torre eiffel", "tipo": "imagen", "visible": true, "ruta":"https://github.com/Uniandes-isis2603-201520/dmg/edit/master/imagenes/torre-eiffel.jpg" }` |
+| Modificar un archivo multimedia | PUT http://localhost:8080/Servidor-JAXRS/api/multimedia/{id} donde id es el `id` del archivo a modificar. Por ejemplo, para modificar el archivo con el id=1 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/multimedia/1 y enviar como parámetro los datos del nuevo archivo, por ejemplo, `{ "id": 1, "name": "nube" }` |  
+| Borrar un archivo multimedia    | DELETE http://localhost:8080/Servidor-JAXRS/api/multimedia/{id} donde id es el `id` del archivo a eliminar. Por ejemplo, para eliminar el archivo con el id=2 es necesario usar el URL http://localhost:8080/Servidor-JAXRS/api/multimedia/2 | 
