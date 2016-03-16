@@ -78,10 +78,10 @@ La comunicación entre el cliente y el servidor se realiza intercambiando objeto
 
 ```javascript
 {
-    "id" : 1,     /* Tipo Long */
-    "name" : '',    /* Tipo String */
-    "description" : '',    /* Tipo String */
-    "pathImage" : ''    /* Tipo String */
+    "id" : 1,     /* Tipo Long */ // el identificador del evento
+    "name" : '',    /* Tipo String */ // El nombre del evento
+    "description" : '',    /* Tipo String */ // la descripción en lo que consiste el evento 
+    "pathImage" : ''    /* Tipo String */ // La imagen del evento
 }
 ```
 
@@ -115,7 +115,7 @@ Método|URI|Acción|Parámetros|Cuerpo|Retorno
 **GET**|/eventos|Lista los registros de Evento (READ)|||Colección de registros de Evento
 **GET**|/eventos/*:id*|Obtener los atributos de una instancia de Evento (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de Evento
 **POST**|/eventos|Crear una nueva instancia de la entidad Evento (CREATE)||Atributos de la instancia de Evento a crear|Instancia de Evento creada, incluyendo su nuevo ID
-**PUT**|/itinerarios/*:id*/planCiudades/*:id*/planEventos/*:id*|Actualiza una instancia de la entidad Itinerario (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Evento|Instancia del Itinerario actualizada
+**PUT**|/*:id*/viajero/*:id*/itinerarios/*:id*/planCiudades/*:id*/planEventos/*:id*|Actualiza una instancia de la entidad Itinerario (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Evento|Instancia del Itinerario actualizada
 **DELETE**|/eventos/*:id*|Borra instancia de Evento en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
 
 
