@@ -16,8 +16,7 @@
             $scope.currentRecord = {
                 id: 0 /*Tipo Long*/,
                 name: '' /*Tipo String*/,
-                coordenadas: '' /*Tipo String*/,
-                ruta: '' /*Tipo String*/,
+                coordenadas: 0/*Tipo Long*/,
                 itinerario: {} /*Objeto que representa instancia de Itinerario*/,
                 reviews: [] /*Colección de registros de Review*/
 
@@ -115,8 +114,13 @@
 
             this.fetchRecords();
 
-            var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+            svc.get('http://localhost:8080/primid/src/modules/ciudad/ciudad.mock.js')
+            .success(function(response){
+                $scope.records = response.records;
 
+        });
+
+    var myCenter=new google.maps.LatLng(51.508742,-0.120850);
     function initialize()
     {
     var mapProp = {

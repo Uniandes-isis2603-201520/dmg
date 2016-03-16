@@ -17,6 +17,12 @@
                         //controllerAs: "ctrl",
                         templateUrl: "src/modules/section-H/section-home.tpl.html"
                     })
+                    .state('ciudad', {
+                        url: '/ciudad',
+                        //controller: "section-homeCtrl",
+                        //controllerAs: "ctrl",
+                        templateUrl: "src/modules/ciudad/ciudad.tpl.html"
+                    })
                      .state('multimedia', {
                         url: '/multimedia',
                         //controller: "section-homeCtrl",
@@ -28,12 +34,6 @@
                         //controller: "section-homeCtrl",
                         //controllerAs: "ctrl",
                         templateUrl: "src/modules/Itinerario/itinerario1.tpl.html"
-                    })
-                    .state('mapa', {
-                        url: '/mapa',
-                        //controller: "section-homeCtrl",
-                        //controllerAs: "ctrl",
-                        templateUrl: "src/modules/mapa/mapa.tpl.html"
                     })
                     .state('viajero', {
                         url: '/viajero',

@@ -14,14 +14,14 @@
             var recordUrl = new RegExp('api/ciudades/([0-9]+)');
 
             var records = [{
+                    id: 1,
                     name: 'Bogota',
-                    latitud: 73984,
-                    longitud: 02738
+                    coordenadas: 73984
                 },
                 {
+                    id: 2,
                     name: 'Los Angeles',
-                    latitud: 64812,
-                    longitud: 63187
+                    coordenadas: 64812
                 }];
 
             function getQueryParams(url) {
