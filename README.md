@@ -44,10 +44,6 @@ Servidor-JAXRS
     │
     ├───co.edu.uniandes.rest.exceptions
     │   │   PrimidLogicException.java
-    │   │   EventoLogicException.java
-    │   │   MultimediaLogicException.java
-    |   |   TimelineLogicException.java
-    |   |   ItinerarioLogicException.java
     │
     └───co.edu.uniandes.converters
         │   PrimidLogicExceptionMapper.java        
