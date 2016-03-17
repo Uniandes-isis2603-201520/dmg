@@ -26,7 +26,7 @@
                                             <i class="fa fa-file-o"></i>
                                     </span>
                             </button>
-                            <button id="save-Cuenta" type="submit" form="cuenta-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-save"></span> Save</button>
+                            <button id="save-Cuenta" type="submit" form="cuenta-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-save"></span> Save</button>
                             <button type="submit" class="fancy-button button-line button-orange subform center" ng-hide="ctrl.editMode">
                                 Editar Foto
                                     <span class="icon">
@@ -46,7 +46,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="record in records">
-                                    <td id="{{$index}}-name">{{record.name}}</td>
+                                    <td>{{record.name}}</td>
                                     <td>
                                         <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
                                         <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
@@ -101,3 +101,31 @@
                  </div>
                 </div>
                      </div>
+<div id="myModal2" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+
+                <!-- Modal content-->
+                    <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                             <h4 class="modal-title">Editar Foto</h4>
+                                                      <form role="form" novalidate name="form" id="review-form" ng-submit="ctrl.saveRecord()">
+                                                            <label for="pass">Clave:</label>
+                                                            <input type="password" class="form-control" id="pass" name="pass" ng-model="currentRecord.pass">
+                                                                <div class="form-group">
+                                                            <label for="pwd">Confirmar Clave:</label>
+                                                            <input type="password" class="form-control" id="pwd">
+                                                                </div>
+                                                                <div class="checkbox">
+                                                            <label><input type="checkbox"> Guardar CAmbios</label>
+                                                                </div>
+                                                                 <button type="submit" class="btn btn-default" ng-click="ctrl.createRecord()">Guardar</button>
+                                                          </form>
+                                                      <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" ng-click="ctrl.fetchRecords()" data-dismiss="modal">Cerrar</button>
+                                                      </div>
+                                 </div>
+                  </div>
+                 </div>
+                </div>
+             </div>
