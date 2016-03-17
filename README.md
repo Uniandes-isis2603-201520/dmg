@@ -82,6 +82,8 @@ La comunicación entre el cliente y el servidor se realiza intercambiando objeto
     "name" : '',    /* Tipo String */ // El nombre del evento
     "description" : '',    /* Tipo String */ // la descripción en lo que consiste el evento 
     "pathImage" : ''    /* Tipo String */ // La imagen del evento
+    "dateStarts" : ''    /* Tipo String */ // La fecha con la que inicia
+    "dateEnds" : ''    /* Tipo String */ // La fecha en la que termina
 }
 ```
 
@@ -94,11 +96,15 @@ Si se solicta la servidor una lista de ciudades, el servidor retorna un arreglo 
     "name" : '',    /* Tipo String */
     "description" : '',    /* Tipo String */
     "pathImage" : ''    /* Tipo String */
+    "dateStarts" : '05/10/2016 00:00:00'    /* Tipo String */ 
+    "dateEnds" : '05/17/2016 00:00:00'    /* Tipo String */ 
   }, {
     "id" : 1,     /* Tipo Long */
     "name" : '',    /* Tipo String */
     "description" : '',    /* Tipo String */
     "pathImage" : ''    /* Tipo String */
+    "dateStarts" : '03/16/2016 00:00:00'    /* Tipo String */ 
+    "dateEnds" : '03/17/2016 00:00:00'    /* Tipo String */ 
   } /* ... otras eventos */   
 ]
 ```
