@@ -6,7 +6,7 @@
                 <div class="row">
 
                     <h1 class="well-come">Bienvenido, Juan</h1>
-                    <div class="col-md-10 col-md-offset-1 center section-title">
+                    <div class="col-md-2 col-md-offset-2 center section-title">
                     <div class="col-md-0 step-img">
                             <img src="resources/images/profile.jpg" class="img-circle profile">
                             </div>
@@ -20,19 +20,41 @@
                                     <label><input id="email" class="input-field form-item field-email" type="email" required="required" name="contact-email" placeholder="TuCorreo@uniandes.edu.co" /> </label>
 
                             </div>
-                            <button type="submit" class="fancy-button button-line button-orange subform center">
+                            <button type="submit" class="fancy-button button-line button-orange subform center" ng-hide="ctrl.editMode">
                                     Editar cuenta
                                     <span class="icon">
                                             <i class="fa fa-file-o"></i>
                                     </span>
                             </button>
-                            <button type="submit" class="fancy-button button-line button-orange subform center">
-                                    Editar Foto
+                            <button id="save-Cuenta" type="submit" form="cuenta-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-save"></span> Save</button>
+                            <button type="submit" class="fancy-button button-line button-orange subform center" ng-hide="ctrl.editMode">
+                                Editar Foto
                                     <span class="icon">
                                             <i class="fa fa-file-o"	></i>
                                     </span>
                             </button>
+                          <button id="cancel-editorial" type="button" form="editorial-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
                     </form>
+                    <div ng-hide="ctrl.editMode" class="col-md-6">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="record in records">
+                                    <td id="{{$index}}-name">{{record.name}}</td>
+                                    <td>
+                                        <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                        <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
             </div>
 	</div>
     </div>
