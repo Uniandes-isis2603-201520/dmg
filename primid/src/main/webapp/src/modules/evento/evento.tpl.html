@@ -1,149 +1,142 @@
-
-
 <!--==== Slider and Card style plugin ====-->
 <script type="text/javascript" src="resources/js/jquery.baraja.js"></script>
-<script type="text/javascript" src="resources/js/jquery.vegas.min.js"></script>
 <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
 
+
 <!--=== Features section Starts ===-->
-	<section id="section-feature" class="feature-wrap">
+	<section>
 		<div class="container features center">
-                            <ul>
-                                <li class="left">
-                                    <ul class="list-inline">
-                                        <li><div id="bx-pager" class="left client-photos">
-
-						<a data-slide-index="0" href="#viajero" class="photo-hold">
-							<span class="photo-bg">
-								<img src="resources/images/profile.jpg" alt="" /> <!-- Client photo 1 -->
-							</span>
-						</a>  
-                                        </div>
-                                        </li>
-                                        <li><h3 class="step-title color-scheme">El nombre del viajero</h3></li>
-                                    </ul>
-                                </li>
-                                <li><br></li>
-                                <li>
-                                    <ul class="list-inline">
-                                        <li><input id="name" class="input-field form-item field-name" type="text" required="required" name="ciudad-evento" placeholder="Ciudad" />
-                                        </li>
-                                        <li>
-                                            <!-- Collect the nav links, forms, and other content for toggling -->
-                                             <div class="collapse navbar-collapse" id="editorial-navbar">
-                                             <button id="refresh-evento" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-                                             <button class="fancy-button button-line btn-col small horizontal">
-                                                Buscar	
-                                                    <span class="icon">
-                                                        <i class="fa fa-search"></i>
-                                                    </span>
-                                            </button>
-                                             </div>
-                                        </li>
-                                    </ul>
-
-                                </li>
-                            </ul>
-
-                    <br>
-
-                    <div ng-hide="ctrl.editMode">
-                    		<ul>
-                    			<label class="feature-title color-scheme"> Información ng </label>
-                    			<li ng-repeat="record in records">
-                    				{{record.name}}
-                    			</li>
-                    		</ul>
-                    </div>
-                    <div  class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-12">
 						<!--Features container Starts -->
 						<ul id="card-ul" class="features-hold baraja-container">
 
-							<!-- Single Feature Starts ng-repeat -->
-							<li ng-repeat="record in records"  class="single-feature" title="Card style1" id="{{$index}}-card">
-								<img src="resources/images/monserrate-church.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">{{record.name}}</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
-								</p>
-                                                                
-                                                                        <a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
-										Información
-										<span class="icon">
-											<i class="fa fa-leaf"></i>
-										</span>
-									</a>
-
-							</li>
-							<!-- Single Feature Ends -->
-
-						
 
 							<!-- Single Feature Starts -->
-							<li class="single-feature" title="Card style2" >
-								<img src="resources/images/Universal-studios.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Universal</h4>
+							<li class="single-feature" title="Card style">
+								<img src="resources/images/5.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Paris</h4>
 								<p class="feature-text">
 									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
 								</p>
 
-                                                                        <a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
-										Información
+									<a href="#" class="fancy-button button-line btn-col small vertical">
+										Detalles
 										<span class="icon">
 											<i class="fa fa-leaf"></i>
 										</span>
 									</a>
-							</li>
-							<!-- Single Feature Ends -->
-                                                        
-                                                        <!-- Single Feature Starts -->
-							<li class="single-feature" title="Card style3" >
-								<img src="resources/images/33.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Foto 33</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
-								</p>
 
-                                                                        <a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
-										Información
-										<span class="icon">
-											<i class="fa fa-leaf"></i>
-										</span>
-									</a>
 							</li>
 							<!-- Single Feature Ends -->
-                                                        
-                                                        <!-- Single Feature Starts -->
-							<li class="single-feature" title="Card style4" >
-								<img src="resources/images/1.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Foto 1</h4>
-								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
-								</p>
 
-                                                                        <a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
-										Información
-										<span class="icon">
-											<i class="fa fa-leaf"></i>
-										</span>
-									</a>
-							</li>
-							<!-- Single Feature Ends -->
-                                                        
-                                                        <!-- Single Feature Starts -->
-							<li class="single-feature" title="Card style5" >
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="50+ SVG Icon included">
 								<img src="resources/images/22.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
-								<h4 class="feature-title color-scheme">Foto 22</h4>
+								<h4 class="feature-title color-scheme">New York</h4>
 								<p class="feature-text">
-									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut.
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
 								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="MailChimp Ready">
+								<img src="resources/images/33.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Hawai</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+                                                                            Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="4 home style">
+								<img src="resources/images/44.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Moscu</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
 
-                                                                        <a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
-										Información
-										<span class="icon">
-											<i class="fa fa-leaf"></i>
-										</span>
-									</a>
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Parallax Backgrounds">
+								<img src="resources/images/55.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Cancun</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Ajax contact form">
+								<img src="resources/images/66.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Sidney</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="unlimited Google fonts">
+								<img src="resources/images/77.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Berlin</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
+							</li>
+							<!-- Single Feature Ends -->
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Feature heading" style="">
+								<img src="resources/images/88.jpg" alt="" class="feature-image" /><!-- Feature Icon -->
+								<h4 class="feature-title color-scheme">Dubai7</h4>
+								<p class="feature-text">
+									Curabitur posuere feugiat ipsum, sed elementum tortor maximus ut
+								</p>
+								<a href="#" class="fancy-button button-line btn-col small zoom">
+									Detalles
+									<span class="icon">
+										<i class="fa fa-leaf"></i>
+									</span>
+								</a>
 							</li>
 							<!-- Single Feature Ends -->
 						</ul>
@@ -174,11 +167,7 @@
 						</div>
 						<!-- Features Controls Ends -->
 				</div>
-			</div>  
+                            </div>
+                    </div>
 	</section>
 	<!--=== Features section Ends ===-->
-
-
-
-
-
