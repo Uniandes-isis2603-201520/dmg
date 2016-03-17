@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.cities.resources;
+package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.resources;
 
-import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.CiudadDTO;
-import co.edu.uniandes.rest.cities.exceptions.PrimidLogicException;
-import edu.uniandes.dmg.co.edu.uniandes.rest.cities.mocks.CiudadLogicMock;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.CiudadDTO;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.CiudadLogicMock;
 
 import java.util.List;
 import javax.inject.Inject;

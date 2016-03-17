@@ -4,7 +4,7 @@
  * Los DTO especifican los mensajes que se envían entre el cliente y el servidor.
  * @author la.mesa10
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos;
+package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos;
 
 /*
  * Objeto de transferencia de datos de Viajeros.

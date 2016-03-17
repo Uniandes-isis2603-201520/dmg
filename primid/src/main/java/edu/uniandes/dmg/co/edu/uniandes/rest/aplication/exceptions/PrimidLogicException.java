@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.rest.cities.exceptions;
+package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions;
 
 /*
  *  Representa las excepciones de la lógica de Primid

@@ -1,10 +1,10 @@
 
-package edu.uniandes.dmg.co.edu.uniandes.rest.cities.mocks;
+package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks;
 
 
 //import co.edu.uniandes.rest.cities.dtos.ItinerarioDTO;
-import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.ItinerarioDTO;
-import co.edu.uniandes.rest.cities.exceptions.PrimidLogicException;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.ItinerarioDTO;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

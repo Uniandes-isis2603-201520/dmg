@@ -1,14 +1,15 @@
 /*
  *ViajeroResource.java
- * Clase que representa el viajero "/viajero"
+ * Clase que representa el viajero "/timeline"
  * Implementa varios métodos para manipular los viajeros
  */
-package co.edu.uniandes.rest.cities.resources;
+package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.resources;
 
 
-import co.edu.uniandes.rest.cities.dtos.ViajeroDTO;
-import co.edu.uniandes.rest.cities.exceptions.PrimidLogicException;
-import co.edu.uniandes.rest.cities.mocks.ViajeroLogicMock;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.TimelineDTO;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.TimelineLogicMock;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
@@ -28,13 +29,13 @@ import javax.ws.rs.Produces;
  * ruta "/api/viajero"
  * @author jd.torres11
  */
-@Path ("viajeros")
+@Path ("timelines")
 @Produces("application/json")
-public class ViajeroResource {
+public class TimelineResource {
 
  //incluir dependencia desde el pomp
     @Inject
-    ViajeroLogicMock viajeroLogic;
+    TimelineLogicMock timelineLogic;
 
     	/**
 	 * Obtiene el listado de viajeros.
@@ -42,8 +43,8 @@ public class ViajeroResource {
 	 * @throws PrimidLogicException excepción retornada por la lógica
 	 */
      @GET
-    public List<ViajeroDTO> getViajeros() throws PrimidLogicException {
-        return viajeroLogic.getViajeros();
+    public List<TimelineDTO> getTimelines() throws PrimidLogicException {
+        return timelineLogic.getTimelines();
     }
 
     /**
@@ -54,8 +55,8 @@ public class ViajeroResource {
      */
          @GET
          @Path("{id: \\d+}")
-    public ViajeroDTO getViajero(@PathParam("id") Long id) throws PrimidLogicException   {
-        return viajeroLogic.getViajeroPorId(id);
+    public TimelineDTO getTimeline(@PathParam("id") Long id) throws PrimidLogicException   {
+        return timelineLogic.getTimelinePorId(id);
     }
 
      /**
@@ -65,8 +66,8 @@ public class ViajeroResource {
      * @throws PrimidLogicException cuando ya existe un viajero con el id suministrado
      */
          @POST
-    public ViajeroDTO createViajeros(ViajeroDTO viajero) throws PrimidLogicException  {
-        return viajeroLogic.createViajero(viajero);
+    public TimelineDTO createTimelines(TimelineDTO timeline) throws PrimidLogicException  {
+        return timelineLogic.createTimeline(timeline);
     }
 
 
@@ -79,8 +80,8 @@ public class ViajeroResource {
      */
          @PUT
          @Path("{id: \\d+}")
-    public ViajeroDTO updateViajero(@PathParam("id") Long id, ViajeroDTO viajero) throws PrimidLogicException {
-        return viajeroLogic.updateViajero(id, viajero);
+    public TimelineDTO updateTimeline(@PathParam("id") Long id, TimelineDTO timeline) throws PrimidLogicException {
+        return timelineLogic.updateTimeline(id, timeline);
     }
 
     /**
@@ -91,8 +92,9 @@ public class ViajeroResource {
 
          @DELETE
          @Path("{id: \\d+}")
-    public void deleteViajero(@PathParam("id") Long id) throws PrimidLogicException  {
-        viajeroLogic.deleteViajero(id);
+    public void deleteTimeline(@PathParam("id") Long id) throws PrimidLogicException  {
+        timelineLogic.deleteTimeline(id);
     }
 
 }
+

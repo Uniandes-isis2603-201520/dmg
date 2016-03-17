@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.cities.mocks;
+package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks;
 
-import co.edu.uniandes.rest.cities.exceptions.PrimidLogicException;
-import edu.uniandes.dmg.rest.dtos.EventoDTO;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.EventoDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
