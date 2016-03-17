@@ -52,6 +52,12 @@
                         //controller: "eventoCtrl",
                         //controllerAs: "ctrl",
                         templateUrl: "src/modules/evento/evento.tpl.html"
+                    })
+                    .state('eventoInfo', {
+                        url: '/eventoInfo',
+                        //controller: "eventoCtrl",
+                        //controllerAs: "ctrl",
+                        templateUrl: "src/modules/evento/evento1.tpl.html"
                     });
         }]);
 })(window.angular);
