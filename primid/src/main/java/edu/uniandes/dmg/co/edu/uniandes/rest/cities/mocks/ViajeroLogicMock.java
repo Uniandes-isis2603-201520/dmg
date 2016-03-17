@@ -1,8 +1,9 @@
 
-package edu.uniandes.dmg.rest.mocks;
+package co.edu.uniandes.rest.cities.mocks;
 
-import edu.uniandes.dmg.rest.dtos.ViajeroDTO;
-import edu.uniandes.dmg.rest.exceptions.PrimidLogicException;
+
+import co.edu.uniandes.rest.cities.dtos.ViajeroDTO;
+import co.edu.uniandes.rest.cities.exceptions.PrimidLogicException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -42,8 +43,8 @@ public class ViajeroLogicMock {
     	logger.setLevel(Level.INFO);
 
     	// muestra información
-    	logger.info("Inicializa la lista de ciudades");
-    	logger.info("ciudades" + viajeros );
+    	logger.info("Inicializa la lista de viajeros");
+    	logger.info("viajeros" + viajeros );
 }
 
     /**

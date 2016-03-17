@@ -3,12 +3,12 @@
  * Clase que representa el viajero "/viajero"
  * Implementa varios métodos para manipular los viajeros
  */
-package edu.uniandes.dmg.rest.resources;
+package co.edu.uniandes.rest.cities.resources;
 
-import edu.uniandes.dmg.rest.dtos.CiudadDTO;
-import edu.uniandes.dmg.rest.dtos.ViajeroDTO;
-import edu.uniandes.dmg.rest.exceptions.PrimidLogicException;
-import edu.uniandes.dmg.rest.mocks.ViajeroLogicMock;
+
+import co.edu.uniandes.rest.cities.dtos.ViajeroDTO;
+import co.edu.uniandes.rest.cities.exceptions.PrimidLogicException;
+import co.edu.uniandes.rest.cities.mocks.ViajeroLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
