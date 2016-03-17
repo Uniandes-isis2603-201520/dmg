@@ -33,7 +33,7 @@
                         url: '/itinerario',
                         //controller: "section-homeCtrl",
                         //controllerAs: "ctrl",
-                        templateUrl: "src/modules/Itinerario/itinerario1.tpl.html"
+                        templateUrl: "src/modules/Itinerario/itinerario.tpl.html"
                     })
                     .state('viajero', {
                         url: '/viajero',

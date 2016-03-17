@@ -33,7 +33,7 @@ import javax.ws.rs.Produces;
 public class MultimediaResource {
 
 
-    @Inject
+    //@Inject
     MultimediaLogicMock multimediaLogic;
 
     /**
