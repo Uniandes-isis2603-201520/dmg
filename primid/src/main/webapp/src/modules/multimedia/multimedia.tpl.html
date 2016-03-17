@@ -2,21 +2,24 @@
 <div class="container features center">
 <div class="row porfolio-container">
 				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>Multimedia</h3>
-                                        <h5 style="color:whitesmoke">¡Accede, agrega y edita a los recuerdos vividos en tu viaje a través de tus fotos, música y videos!</h5>
+					<h3 style="color:grey">Multimedia</h3>
+                                        <h5 style="color:grey"><b>¡Accede, agrega y edita a los recuerdos vividos en tu viaje a través de tus fotos, música y videos!</b></h5>
 				</div>
 				<!-- Single screenshot starts -->
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
-						<div class="photo-box">
-							<img src="resources/images/multimedia1.jpg" alt="multimedia 1"  />
-							<div class="photo-overlay">
-								<h4>Londres</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
+
+                                            <div class="photo-box">
+                                                    <img src="resources/images/multimedia1.jpg" alt="multimedia 1"  />
+                                                    <div class="photo-overlay">
+                                                            <h4>Londres</h4>
+                                                    </div>
+                                                    <span class="photo-zoom">
+                                                            <a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+                                                    </span>
+                                            </div>
+                                            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
 					</div>
 				</div>
 				<!-- Single screenshot ends -->
@@ -24,16 +27,17 @@
 				<!-- Single screenshot starts -->
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
-						<div class="photo-box">
-							<img src="resources/images/multimedia2.png" alt="" />
-							<div class="photo-overlay">
-								<h4>Rio de Janeiro</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-
+                                            <div class="photo-box">
+                                                    <img src="resources/images/multimedia2.png" alt="" />
+                                                    <div class="photo-overlay">
+                                                            <h4>Rio de Janeiro</h4>
+                                                    </div>
+                                                    <span class="photo-zoom">
+                                                            <a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+                                                    </span>
+                                            </div>
+                                            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
 					</div>
 				</div>
 				<!-- Single screenshot ends -->
@@ -41,36 +45,26 @@
 				<!-- Single screenshot starts -->
 				<div class="col-md-4 col-sm-4 col-xs-6">
 					<div class="screenshot">
-						<div class="photo-box">
-							<img src="resources/images/33.jpg" alt="" />
-							<div class="photo-overlay">
-								<h4>Playa</h4>
-							</div>
-							<span class="photo-zoom">
-								<a href="src/modules/Timeline/timeline.tpl.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-							</span>
-						</div>
-
+                                            <div class="photo-box">
+                                                    <img src="resources/images/33.jpg" alt="" />
+                                                    <div class="photo-overlay">
+                                                            <h4>Playa</h4>
+                                                    </div>
+                                                    <span class="photo-zoom">
+                                                            <a href="src/modules/Timeline/timeline.tpl.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
+                                                    </span>
+                                            </div>
+                                            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                                            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
 					</div>
 				</div>
 				<!-- Single screenshot ends -->
-                                <!--boton agregar-->
-                        <div class="sign-up" style="float:right;widht:225px;">
-                                <a href="#" class="view-project">
-                                        <p title="Agregar" style="font-size:25px"><b>Agregar media &#43</b></p>
-                                        <!--&#10084 corazon-->
-                                        <!--&#9992 avion -->
-                                </a>
-                        </div>
-                    <!--fin boton agregar-->
-                    <!--boton visualizar-->
+                    <!--botones crear y refrescar-->
                         <div class="sign-up" style="float:left;widht:225px">
-                                <a href="#" class="view-project">
-                                        <p title="Visualizar" style="font-size:25px"><b>Visualizar media </b></p>
-
-                                </a>
+                            <button id="create-multimedia" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Create</button>
+                            <button id="refresh-multimedia" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
                         </div>
-                    <!--fin boton visualizar-->
+                    <!--fin botones crear y refrescar-->
 
 			</div>
 
