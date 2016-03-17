@@ -117,7 +117,7 @@ Método|URI|Acción|Parámetros|Cuerpo|Retorno
 **GET**|/eventos|Lista los registros de Evento (READ)|||Colección de registros de Evento
 **GET**|/eventos/*:id*|Obtener los atributos de una instancia de Evento (READ)|**@PathParam id**: Identificador del registro||Atributos de la instancia de Evento
 **POST**|/eventos|Crear una nueva instancia de la entidad Evento (CREATE)||Atributos de la instancia de Evento a crear|Instancia de Evento creada, incluyendo su nuevo ID
-**PUT**|api/viajeros//*id*/itinerarios//*id*/planCiudades//*id*/planEventos//*id*|Actualiza una instancia de la entidad Itinerario (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Evento|Instancia del Itinerario actualizada
+**PUT**|api/viajeros\\*id*/itinerarios\\*id*/planCiudades\\*id*/planEventos\\*id*|Actualiza una instancia de la entidad Itinerario (UPDATE)|**@PathParam id**: Identificador del registro|Objeto JSON de Evento|Instancia del Itinerario actualizada
 **DELETE**|/eventos/*:id*|Borra instancia de Evento en el servidor (DELETE)|**@PathParam id**: Identificador del registro||
 
 
