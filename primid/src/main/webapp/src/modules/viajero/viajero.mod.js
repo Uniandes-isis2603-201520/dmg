@@ -6,10 +6,10 @@
 
 (function(ng){
 
-    
+
     var mod = ng.module("reviewModule", ["ui.bootstrap"]);
 
-    mod.constant("reviewContext", "api/reviews");
+    mod.constant("reviewContext", "api/viajeros");
 
 })(window.angular);
 

@@ -38,6 +38,9 @@ public class ViajeroLogicMock {
             viajeros.add(new ViajeroDTO(1L, "Juan Perez","juan@perez.com","src/images/u1"));
             viajeros.add(new ViajeroDTO(2L, "Manuel","manuel@perez.com","src/images/u2"));
             viajeros.add(new ViajeroDTO(3L, "Pepita Perez","pepita@perez.com","src/images/u3"));
+             viajeros.add(new ViajeroDTO(4L, "Armando esteban Quito","armando@banquitos.com","src/images/u4"));
+              viajeros.add(new ViajeroDTO(5L, "Elsa Pato","Elsapayo@perez.com","src/images/u5"));
+               viajeros.add(new ViajeroDTO(6L, "Elsa Pito","Elsapatero@perez.com","src/images/u6"));
         }
         // indica que se muestren todos los mensajes
     	logger.setLevel(Level.INFO);

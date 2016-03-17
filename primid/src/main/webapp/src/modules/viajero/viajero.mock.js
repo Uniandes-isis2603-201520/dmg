@@ -23,14 +23,30 @@
              */
             var records = [{
                     id: 1,
-                    name: 'Para los amantes de la lectura',
+                    name: 'armando esteban quito',
                     source: 'El Tiempo',
                     description: 'El periódico El Tiempo recomienda a sus lectores más seleccionados este ejemplar. '
 
                 },
                 {
                     id: 2,
-                    name: 'Solo para programadores',
+                    name: 'juanito perez',
+                    source: 'Universidad de Los Andes',
+                    description: 'Se recomienda el libro únicamente para programadores.'
+
+                },
+            ,
+                {
+                    id: 3,
+                    name: 'rosa perez',
+                    source: 'Universidad de Los Andes',
+                    description: 'Se recomienda el libro únicamente para programadores.'
+
+                },
+            ,
+                {
+                    id: 4,
+                    name: 'JUan perez',
                     source: 'Universidad de Los Andes',
                     description: 'Se recomienda el libro únicamente para programadores.'
 
