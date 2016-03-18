@@ -28,7 +28,7 @@ import javax.ws.rs.Produces;
  * ruta "/api/multimedia"
  * @author fa.lopez10
  */
-@Path ("multimedia")
+@Path ("viajeros/{id}/itinerario/{id}/ciudades/{id}/eventos/{id}/multimedia")
 @Produces("application/json")
 public class MultimediaResource {
 
