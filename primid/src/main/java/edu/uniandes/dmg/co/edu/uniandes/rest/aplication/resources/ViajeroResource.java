@@ -28,7 +28,7 @@ import javax.ws.rs.Produces;
  * ruta "/api/viajero"
  * @author jd.torres11
  */
-@Path ("viajeros")
+
 @Produces("application/json")
 public class ViajeroResource {
 
@@ -53,7 +53,7 @@ public class ViajeroResource {
      * @throws PrimidLogicException cuando el viajero no existe
      */
          @GET
-         @Path("{id: \\d+}")
+         @Path("viajeros/{id: \\d+}")
     public ViajeroDTO getViajero(@PathParam("id") Long id) throws PrimidLogicException   {
         return viajeroLogic.getViajeroPorId(id);
     }

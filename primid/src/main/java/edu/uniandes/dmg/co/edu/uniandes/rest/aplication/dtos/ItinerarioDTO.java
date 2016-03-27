@@ -13,6 +13,7 @@ package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos;
 public class ItinerarioDTO {
 
     private Long id;
+    private Long idViajero;
     private String resumen;
     private String fechaInicio;
     private String fechaFin;
@@ -31,19 +32,26 @@ public class ItinerarioDTO {
      * @param fechaInicio fechaInicio del viajero
      * @param rutaImg imagen del viajero
      */
-    public ItinerarioDTO(Long id, String resumen, String fechaInicio,String fechaFin,String rutaImg) {
+    public ItinerarioDTO(Long id, String resumen, String fechaInicio,String fechaFin,String rutaImg,Long idViajero) {
 		super();
 		this.id = id;
 		this.resumen = resumen;
                 this.fechaInicio = fechaInicio;
                 this.fechaFin=fechaFin;
                 this.rutaImg = rutaImg;
+                this.idViajero=idViajero;
 	}
     /*
      * @return el id
      */
     public Long getId() {
         return id;
+    }
+    /*
+     * @return el id
+     */
+    public Long getIdViajero() {
+        return idViajero;
     }
     /**
      * @param id el id del viajero

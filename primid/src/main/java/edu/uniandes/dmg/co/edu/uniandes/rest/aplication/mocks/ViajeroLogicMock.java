@@ -28,6 +28,8 @@ public class ViajeroLogicMock {
 	// listado de ciudades
             private static ArrayList<ViajeroDTO> viajeros;
 
+          
+
     /**
      * Constructor. Crea los datos de ejemplo.
      */

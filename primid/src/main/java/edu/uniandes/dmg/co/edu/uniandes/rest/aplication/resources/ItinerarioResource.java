@@ -30,13 +30,14 @@ import javax.ws.rs.Produces;
  * ruta "/api/itinerario"
  * @author la.mesa10
  */
-@Path ("itinerarios")
+@Path ("viajeross")
 @Produces("application/json")
 public class ItinerarioResource {
 
  //incluir dependencia desde el pomp
     @Inject
     ItinerarioLogicMock itinerarioLogic;
+    ViajeroResource viajeroResource;
 
     	/**
 	 * Obtiene el listado de itinerarios.
@@ -44,8 +45,10 @@ public class ItinerarioResource {
 	 * @throws PrimidLogicException excepción retornada por la lógica
 	 */
      @GET
-    public List<ItinerarioDTO> getItinerarios() throws PrimidLogicException {
-        return itinerarioLogic.getItinerarios();
+     @Path("{id_Viajero:\\d+}/itinerarios")
+    public List<ItinerarioDTO> getItinerarios(@PathParam("id_Viajero") Long idViajero) throws PrimidLogicException {
+
+        return itinerarioLogic.getItinerarios(idViajero);
     }
 
     /**
@@ -57,6 +60,7 @@ public class ItinerarioResource {
          @GET
          @Path("id: \\d")
     public ItinerarioDTO getItinerario(@PathParam("id") Long id) throws PrimidLogicException   {
+
         return itinerarioLogic.getItinerarioPorId(id);
     }
 
