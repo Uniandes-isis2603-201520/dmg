@@ -30,7 +30,7 @@ import javax.ws.rs.Produces;
  * ruta "/api/itinerario"
  * @author la.mesa10
  */
-@Path ("viajeross")
+@Path ("viajeros/{id_Viajero:\\d+}")
 @Produces("application/json")
 public class ItinerarioResource {
 
@@ -45,7 +45,7 @@ public class ItinerarioResource {
 	 * @throws PrimidLogicException excepción retornada por la lógica
 	 */
      @GET
-     @Path("{id_Viajero:\\d+}/itinerarios")
+     @Path("/itinerarios")
     public List<ItinerarioDTO> getItinerarios(@PathParam("id_Viajero") Long idViajero) throws PrimidLogicException {
 
         return itinerarioLogic.getItinerarios(idViajero);
