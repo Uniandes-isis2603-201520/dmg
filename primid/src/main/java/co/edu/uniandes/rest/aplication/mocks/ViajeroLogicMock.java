@@ -1,5 +1,5 @@
 
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks;
+package co.edu.uniandes.rest.aplication.mocks;
 
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.ViajeroDTO;
@@ -28,7 +28,7 @@ public class ViajeroLogicMock {
 	// listado de ciudades
             private static ArrayList<ViajeroDTO> viajeros;
 
-          
+
 
     /**
      * Constructor. Crea los datos de ejemplo.
@@ -36,7 +36,7 @@ public class ViajeroLogicMock {
     public ViajeroLogicMock() {
 
     	if (viajeros == null) {
-            viajeros = new ArrayList<>();
+            viajeros = new ArrayList();
             viajeros.add(new ViajeroDTO(1L, "Juan Perez","juan@perez.com","src/images/u1"));
             viajeros.add(new ViajeroDTO(2L, "Manuel","manuel@perez.com","src/images/u2"));
             viajeros.add(new ViajeroDTO(3L, "Pepita Perez","pepita@perez.com","src/images/u3"));

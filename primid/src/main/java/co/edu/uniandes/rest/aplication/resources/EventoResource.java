@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.resources;
+package co.edu.uniandes.rest.aplication.resources;
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.EventoDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.EventoLogicMock;
+import co.edu.uniandes.rest.aplication.mocks.EventoLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;

@@ -3,13 +3,13 @@
  * Clase que representa el viajero "/timeline"
  * Implementa varios métodos para manipular los viajeros
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.resources;
+package co.edu.uniandes.rest.aplication.resources;
 
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.TimelineDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.TimelineLogicMock;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
+import co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;

@@ -1,5 +1,5 @@
 
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks;
+package co.edu.uniandes.rest.aplication.mocks;
 
 
 //import co.edu.uniandes.rest.cities.dtos.ItinerarioDTO;
@@ -36,7 +36,7 @@ public class ItinerarioLogicMock {
     public ItinerarioLogicMock() {
 
     	if (itinerarios == null) {
-            itinerarios = new ArrayList<>();
+            itinerarios = new ArrayList();
             itinerarios.add(new ItinerarioDTO(1L, "Vacaciones en familia","2016/03/17","2016/03/19","resources/images/Intinerario1.jpg",1L));
             itinerarios.add(new ItinerarioDTO(2L, "Vacaciones en Estambul","2016/03/18","2016/03/20","resources/images/Intinerario2.jpg",1L));
             itinerarios.add(new ItinerarioDTO(3L, "Visita a la familia","2016/03/19","2016/03/21","resources/images/Intinerario3.jpg",1L));
@@ -64,7 +64,7 @@ public class ItinerarioLogicMock {
     	}
 
     	logger.info("retornando todos los itinerarios del viajero");
-        List<ItinerarioDTO> itinerariosViajero = new ArrayList<>();
+        List<ItinerarioDTO> itinerariosViajero = new ArrayList ();
         for (int i = 0 ; i< itinerarios.size();i++) {
            ItinerarioDTO itinerario = itinerarios.get(i);
            if(Objects.equals(idViajero, itinerario.getIdViajero()))

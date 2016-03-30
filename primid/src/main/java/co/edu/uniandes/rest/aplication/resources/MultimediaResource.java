@@ -3,12 +3,12 @@
  * Clase que representa el archivo multimedia "/multimedia"
  * Implementa varios métodos para manipular los viajeros
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.resources;
+package co.edu.uniandes.rest.aplication.resources;
 
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.MultimediaDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.MultimediaLogicMock;
+import co.edu.uniandes.rest.aplication.mocks.MultimediaLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;

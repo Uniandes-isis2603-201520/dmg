@@ -34,7 +34,7 @@ public class TimelineLogicMock {
     public TimelineLogicMock() {
 
     	if (timelines == null) {
-            timelines = new ArrayList<>();
+            timelines = new ArrayList();
 
             ArrayList a= new ArrayList();
             a.add("descripcion:Concierto...lugar..precio..,fecha:01/02/2016");

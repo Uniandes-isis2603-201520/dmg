@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks;
+package co.edu.uniandes.rest.aplication.mocks;
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.EventoDTO;
@@ -32,7 +32,7 @@ public class EventoLogicMock {
     public EventoLogicMock() {
 
     	if (eventos == null) {
-            eventos = new ArrayList<>();
+            eventos = new ArrayList();
             eventos.add(new EventoDTO(1L, "Tomorrowland","http://www.tomorrowland.com/sites/default/files/media/tl16-033_fb_date_announce_horiz.jpg","Concierto de electronica","10/04/2016","15/06/2016"));
             eventos.add(new EventoDTO(2L, "Concierto Calor Vives","http://www.aaarena.com/assets/img/Concert_CarlosVivies2014.jpg", "Concierto de un artista colombiano","19/07/2016","15/08/2016"));
             eventos.add(new EventoDTO(3L, "Estereo Picnic","https://www.rockombia.com/images/upload/rockombia-201411161416166396.jpg","Concierto de electronica y más","10/10/2016","01/11/2016"));

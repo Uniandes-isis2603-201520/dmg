@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.cities.mocks;
+package co.edu.uniandes.rest.aplication.mocks;
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.CiudadDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
@@ -34,7 +34,7 @@ public class CiudadLogicMock {
     public CiudadLogicMock() {
 
     	if (ciudades == null) {
-            ciudades = new ArrayList<>();
+            ciudades = new ArrayList();
             ciudades.add(new CiudadDTO(1L, "Bogota", 233321));
             ciudades.add(new CiudadDTO(2L, "Cali", 2334243));
             ciudades.add(new CiudadDTO(3L, "Medellin", 234542));

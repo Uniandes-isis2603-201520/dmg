@@ -1,5 +1,5 @@
 
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks;
+package co.edu.uniandes.rest.aplication.mocks;
 
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.MultimediaDTO;
@@ -35,7 +35,7 @@ public class MultimediaLogicMock {
     public MultimediaLogicMock() {
 
     	if (multimedia == null) {
-            multimedia = new ArrayList<>();
+            multimedia = new ArrayList();
             multimedia.add(new MultimediaDTO(1L, "fotico","imagen","src/images/u1"));
             multimedia.add(new MultimediaDTO(2L, "videito","video","src/images/u2"));
             multimedia.add(new MultimediaDTO(3L, "musiquita","audio","src/images/u3"));

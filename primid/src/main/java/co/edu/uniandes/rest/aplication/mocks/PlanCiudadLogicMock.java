@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks;
+package co.edu.uniandes.rest.aplication.mocks;
 import java.util.Date;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.PlanCiudadDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
@@ -37,7 +37,7 @@ public class PlanCiudadLogicMock {
         Date fecha1=null;
 
     	if (planCiudades == null) {
-            planCiudades = new ArrayList<>();
+            planCiudades = new ArrayList();
             planCiudades.add(new PlanCiudadDTO(1L, "Bogota", fecha1, fecha1));
             planCiudades.add(new PlanCiudadDTO(2L, "Cali", fecha1, fecha1));
             planCiudades.add(new PlanCiudadDTO(3L, "Medellin", fecha1, fecha1));
