@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
+import co.edu.uniandes.csw.primid.logic.persistence.ItinerarioPersistence;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.inject.Inject;
@@ -23,8 +24,8 @@ public class ItinerarioLogic
 
     public List<ItinerarioEntity> getItinerarios() {
         logger.info("Inicia proceso de consultar todos los ");
-        List<ItinerarioEntity> books = persistence.findAll();
+
         logger.info("Termina proceso de consultar todos los libros");
-        return books;
+        return null;
     }
 }

@@ -1,4 +1,4 @@
-package co.edu.uniandes.csw.bookstore.ejbs;
+package co.edu.uniandes.csw.primid.logic.ejbs;
 
 import co.edu.uniandes.csw.bookstore.api.IBookLogic;
 import co.edu.uniandes.csw.bookstore.entities.AuthorEntity;
@@ -127,7 +127,7 @@ public class BookLogic implements IBookLogic {
         }
         return true;
     }
-    
+
     private boolean bornBeforePublishDate(Date birthDate, Date publishDate){
         if (publishDate != null && birthDate != null) {
             if (birthDate.before(publishDate)) {

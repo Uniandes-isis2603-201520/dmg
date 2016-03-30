@@ -31,9 +31,8 @@ public class TimelineLogic implements ITimelineLogic {
     @Override
     public List<TimelineEntity> getTimelines() {
         logger.info("Inicia proceso de consultar todos los timelines");
-        List<TimelineEntity> timelines = persistence.findAll();
         logger.info("Termina proceso de consultar todos los timelines");
-        return timelines;
+        return null;
     }
 
 
