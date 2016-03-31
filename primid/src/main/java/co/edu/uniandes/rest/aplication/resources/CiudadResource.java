@@ -23,7 +23,7 @@ import javax.ws.rs.Produces;
  *
  * @author andresvera
  */
-@Path("ciudades")
+@Path("viajeros/{id_viajero}/itinerario/{id_itinerario}/ciudades")
 @Produces("application/json")
 public class CiudadResource {
 
