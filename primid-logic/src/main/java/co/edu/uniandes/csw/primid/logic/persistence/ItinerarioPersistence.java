@@ -1,6 +1,6 @@
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-import co.edu.uniandes.csw.bookstore.entities.AuthorEntity;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
