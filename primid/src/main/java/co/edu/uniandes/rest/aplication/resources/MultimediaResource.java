@@ -32,7 +32,7 @@ import javax.ws.rs.Produces;
 @Produces("application/json")
 public class MultimediaResource {
 
- //incluir dependencia desde el pomp
+ //incluir dependencia desde el pom
     @Inject
     MultimediaLogicMock multimediaLogic;
 
@@ -42,6 +42,7 @@ public class MultimediaResource {
 	 * @throws PrimidLogicException excepción retornada por la lógica
 	 */
     @GET
+    @Path("/multimedia")
     public List<MultimediaDTO> getMultimedia() throws PrimidLogicException {
         return multimediaLogic.getMultimedia();
     }
