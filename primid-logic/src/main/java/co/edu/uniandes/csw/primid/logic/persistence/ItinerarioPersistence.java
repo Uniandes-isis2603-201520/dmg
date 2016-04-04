@@ -1,6 +1,7 @@
 package co.edu.uniandes.csw.primid.logic.persistence;
 
 
+import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,37 +13,37 @@ import javax.persistence.Query;
 @Stateless
 public class ItinerarioPersistence {
 
-    private static final Logger logger = Logger.getLogger(AuthorPersistence.class.getName());
-
-    @PersistenceContext(unitName = "BookStorePU")
+    private static final Logger logger = Logger.getLogger(ItinerarioPersistence.class.getName());
+//TODO
+    @PersistenceContext(unitName = "primidPU")
     protected EntityManager em;
 
-    public AuthorEntity create(AuthorEntity entity) {
-        logger.info("Creando un autor nuevo");
+    public ItinerarioEntity create(ItinerarioEntity entity) {
+        logger.info("Creando un itinerario nuevo");
         em.persist(entity);
-        logger.info("Autor creado");
+        logger.info("Itinerario creado");
         return entity;
     }
 
-    public AuthorEntity update(AuthorEntity entity) {
-        logger.log(Level.INFO, "Actualizando autor con id={0}", entity.getId());
+    public ItinerarioEntity update(ItinerarioEntity entity) {
+        logger.log(Level.INFO, "Actualizando itinerario con id={0}", entity.getId());
         return em.merge(entity);
     }
 
     public void delete(Long id) {
-        logger.log(Level.INFO, "Borrando autor con id={0}", id);
-        AuthorEntity entity = em.find(AuthorEntity.class, id);
+        logger.log(Level.INFO, "Borrando itinerario con id={0}", id);
+        ItinerarioEntity entity = em.find(ItinerarioEntity.class, id);
         em.remove(entity);
     }
 
-    public AuthorEntity find(Long id) {
-        logger.log(Level.INFO, "Consultando autor con id={0}", id);
-        return em.find(AuthorEntity.class, id);
+    public ItinerarioEntity find(Long id) {
+        logger.log(Level.INFO, "Consultando itinerario con id={0}", id);
+        return em.find(ItinerarioEntity.class, id);
     }
 
-    public List<AuthorEntity> findAll() {
-        logger.info("Consultando todos los autores");
-        Query q = em.createQuery("select u from AuthorEntity u");
+    public List<ItinerarioEntity> findAll() {
+        logger.info("Consultando todos los itinerarios");
+        Query q = em.createQuery("select u from ItinerarioEntity u");
         return q.getResultList();
     }
 }
