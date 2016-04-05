@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class CiudadEntity extends BaseEntity implements Serializable {
 
-    private int id;
+
     private String name;
     private double coordenadas;
     private String description;
@@ -30,33 +30,10 @@ public class CiudadEntity extends BaseEntity implements Serializable {
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReviewEntity> reviews = new ArrayList<>();
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+   
 
     /**
      * @return the description

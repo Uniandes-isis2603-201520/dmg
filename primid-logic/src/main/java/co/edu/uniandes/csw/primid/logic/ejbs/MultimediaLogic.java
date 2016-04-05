@@ -15,6 +15,10 @@ import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+/**
+ *
+ * @author fa.lopez10
+ */
 @Stateless
 public class MultimediaLogic {
 
@@ -26,9 +30,9 @@ public class MultimediaLogic {
 
 
     public List<MultimediaEntity> getArchivosMultimedia() {
-        logger.info("Inicia proceso de consultar todos los libros");
+        logger.info("Inicia proceso de consultar todos los archivos multimedia");
         List<MultimediaEntity> archivosMultimedia = persistence.findAll();
-        logger.info("Termina proceso de consultar todos los libros");
+        logger.info("Termina proceso de consultar todos los archivos multimedia");
         return archivosMultimedia;
     }
 

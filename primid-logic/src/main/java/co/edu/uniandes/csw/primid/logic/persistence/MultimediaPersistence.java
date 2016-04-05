@@ -18,32 +18,14 @@ public class MultimediaPersistence {
     @PersistenceContext(unitName = "BookStorePU")
     protected EntityManager em;
 
-    public BookEntity find(Long id) {
-        logger.log(Level.INFO, "Consultando libro con id={0}", id);
-        return em.find(BookEntity.class, id);
+    public MultimediaEntity find(Long id) {
+        logger.log(Level.INFO, "Consultando archivo multimedia con id={0}", id);
+        return em.find(MultimediaEntity.class, id);
     }
 
     public List<MultimediaEntity> findAll() {
         logger.info("Consultando todos los archivos multimedia");
         Query q = em.createQuery("select u from MultimediaEntity u");
         return q.getResultList();
-    }
-
-    public MultimediaEntity create(MultimediaEntity entity) {
-        logger.info("Creando un archivo multimedia nuevo");
-        em.persist(entity);
-        logger.info("archivo multimedia creado");
-        return entity;
-    }
-
-    public BookEntity update(BookEntity entity) {
-        logger.log(Level.INFO, "Actualizando libro con id={0}", entity.getId());
-        return em.merge(entity);
-    }
-
-    public void delete(Long id) {
-        logger.log(Level.INFO, "Borrando libro con id={0}", id);
-        BookEntity entity = em.find(BookEntity.class, id);
-        em.remove(entity);
     }
 }
