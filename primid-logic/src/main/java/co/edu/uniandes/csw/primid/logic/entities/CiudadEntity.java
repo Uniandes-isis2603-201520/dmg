@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 public class CiudadEntity extends BaseEntity implements Serializable {
 
 
-    private String name;
+ 
     private double coordenadas;
     private String description;
 
@@ -33,7 +33,7 @@ public class CiudadEntity extends BaseEntity implements Serializable {
 
 
 
-   
+
 
     /**
      * @return the description
