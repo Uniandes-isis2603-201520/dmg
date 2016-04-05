@@ -1,4 +1,4 @@
-package co.edu.uniandes.csw.bookstore.entities;
+package co.edu.uniandes.csw.primid.logic.entities;
 
 import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
