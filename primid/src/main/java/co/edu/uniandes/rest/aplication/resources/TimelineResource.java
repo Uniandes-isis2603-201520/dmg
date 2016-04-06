@@ -1,17 +1,19 @@
 /*
  *ViajeroResource.java
  * Clase que representa el viajero "/timeline"
- * Implementa varios m√©todos para manipular los viajeros
+ * Implementa varios mÈtodos para manipular los viajeros
  */
 package co.edu.uniandes.rest.aplication.resources;
 
 
+import co.edu.uniandes.csw.primid.logic.api.ITimelineLogic;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.TimelineDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.TimelineLogicMock;
 import co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
 import java.util.List;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,28 +21,30 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /*
- * Clase que implementa el recurso REST correspondiente a "viajeros".
+ * Clase que implementa el recurso REST correspondiente a "timeline".
  *
- * Note que la aplicaci√≥n (definida en RestConfig.java) define la ruta
+ * Note que la aplicaciÛn (definida en RestConfig.java) define la ruta
  * "/api" y este recurso tiene la ruta "viajeros".
- * Al ejecutar la aplicaci√≥n, el recurso ser√° accesibe a trav√©s de la
+ * Al ejecutar la aplicaciÛn, el recurso ser· accesibe a travÈs de la
  * ruta "/api/viajero"
- * @author jd.torres11
+ * @author s.gonzalez22
  */
-@Path ("timelines")
-@Produces("application/json")
+@Path ("viajeros/{id_Viajero:\\d+}/itinerarios/{id_Itinerario:\\d+}/timeline")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class TimelineResource {
 
- //incluir dependencia desde el pomp
+ //incluir dependencia desde el pom
     @Inject
-    TimelineLogicMock timelineLogic;
+    private ITimelineLogic timelineLogic;
 
     	/**
-	 * Obtiene el listado de viajeros.
+	 * Obtiene el listado de timelines de los itinerarios de un viajero.
 	 * @return lista de viajeros
-	 * @throws PrimidLogicException excepci√≥n retornada por la l√≥gica
+	 * @throws PrimidLogicException excepciÛn retornada por la lÛgica
 	 */
      @GET
     public List<TimelineDTO> getTimelines() throws PrimidLogicException {
@@ -48,10 +52,10 @@ public class TimelineResource {
     }
 
     /**
-     * Obtiene un viajero
-     * @param id identificador dl viajero
-     * @return viajero encontrada
-     * @throws PrimidLogicException cuando el viajero no existe
+     * Obtiene un timeline de un itinerario
+     * @param id identificador del timeline
+     * @return Timeline encontrado
+     * @throws PrimidLogicException cuando el tineline no existe
      */
          @GET
          @Path("{id: \\d+}")
