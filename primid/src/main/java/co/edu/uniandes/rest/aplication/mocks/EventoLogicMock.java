@@ -61,6 +61,43 @@ public class EventoLogicMock {
     	return eventos;
     }
 
+    	/**
+	 * Obtiene el listado de eventos
+	 * @return lista de eventos
+	 * @throws PrimidLogicException cuando no existe la lista en memoria
+	 */
+    public List<EventoDTO> getEventosViajero() throws PrimidLogicException {
+    	if (eventos == null) {
+    		logger.severe("Error interno: lista de eventos no existe.");
+    		throw new PrimidLogicException("Error interno: lista de eventos no existe.");
+    	}
+
+    	logger.info("retornando todos los eventos");
+    	return eventos;
+    }
+
+       /**
+     * Obtiene un evento
+     * @param id identificador del evento
+     * @return evento encontrado
+     * @throws PrimidLogicException cuando el evento no existe
+     */
+    public EventoDTO getEventoViajero(Long id) throws PrimidLogicException {
+    	logger.info("recibiendo solicitud del evento con id " + id);
+
+    	// busca el evento con el id suministrado
+        for (EventoDTO evento : eventos) {
+            if (Objects.equals(evento.getId(), id)){
+            	logger.info("retornando ciudad " + evento);
+                return evento;
+            }
+        }
+
+        // si no encuentrael evento
+        logger.severe("No existe evento con ese id");
+        throw new PrimidLogicException("No existe evento con ese id");
+    }
+
     /**
      * Obtiene un evento
      * @param id identificador del evento

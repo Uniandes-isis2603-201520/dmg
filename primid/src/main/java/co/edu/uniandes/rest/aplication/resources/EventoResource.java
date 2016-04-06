@@ -22,7 +22,7 @@ import javax.ws.rs.Produces;
  *
  * @author karenlorenaosoriohenao
  */
-@Path ("eventos")
+@Path ("")
 @Produces("application/json")
 public class EventoResource {
 
@@ -36,8 +36,33 @@ public class EventoResource {
 	 * @throws PrimidLogicException excepción retornada por la lógica
 	 */
      @GET
+     @Path("ciudades/eventos")
     public List<EventoDTO> getEventos() throws PrimidLogicException {
         return eventoLogic.getEventos();
+    }
+
+
+        /**
+	 * Obtiene el listado de eventos del viajero.
+	 * @return lista de eventos del viajero
+	 * @throws PrimidLogicException excepción retornada por la lógica
+	 */
+     @GET
+     @Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos")
+    public List<EventoDTO> getEventosViajero() throws PrimidLogicException {
+        return eventoLogic.getEventosViajero();
+    }
+
+            /**
+     * Obtiene un evento de un viajero
+     * @param id identificador del evento
+     * @return evento encontrada
+     * @throws PrimidLogicException cuando el evento no existe
+     */
+         @GET
+     @Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos/{id_PlanEvento: \\d+}")
+    public EventoDTO getEventoViajero(@PathParam("id_PlanEvento") Long id) throws PrimidLogicException   {
+        return eventoLogic.getEventoViajero(id);
     }
 
         /**
@@ -47,8 +72,8 @@ public class EventoResource {
      * @throws PrimidLogicException cuando el evento no existe
      */
          @GET
-         @Path("{id: \\d+}")
-    public EventoDTO getEvento(@PathParam("id") Long id) throws PrimidLogicException   {
+     @Path("ciudades/eventos/{id_Evento: \\d+}")
+    public EventoDTO getEvento(@PathParam("id_Evento") Long id) throws PrimidLogicException   {
         return eventoLogic.getEvento(id);
     }
 
@@ -89,3 +114,4 @@ public class EventoResource {
     }
 
 }
+    

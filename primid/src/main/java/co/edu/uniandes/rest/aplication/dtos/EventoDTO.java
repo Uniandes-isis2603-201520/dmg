@@ -87,7 +87,7 @@ public class EventoDTO {
      * @return the description
      */
     public String getDescription() {
-        return name;
+        return description;
     }
 
     /**
@@ -124,6 +124,7 @@ public class EventoDTO {
     public void setDateEnds(String dateEnds) {
         this.dateEnds = dateEnds;
     }
+
 
     /**
      * Convierte el objeto a una cadena
