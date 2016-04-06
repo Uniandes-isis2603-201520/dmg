@@ -8,9 +8,13 @@ package co.edu.uniandes.rest.aplication.resources;
 import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.CiudadDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.rest.aplication.mocks.CiudadLogicMock;
+import co.edu.uniandes.csw.primid.logic.api.ICiudadLogic;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -18,21 +22,26 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 /**
  *
  * @author andresvera
  */
-@Path("viajeros/{id_viajero}/itinerario/{id_itinerario}/ciudades")
+@Path("ciudades")
 @Produces("application/json")
 public class CiudadResource {
+    
+    private static final Logger logger = Logger.getLogger(CiudadResource.class.getName());
 
     @Inject
-    CiudadLogicMock ciudadLogic;
+    private ICiudadLogic ciudadLogic;
 
-    @GET
+    @GET 
     public List<CiudadDTO> getCiudades() throws PrimidLogicException{
-        return ciudadLogic.getCities();
+        return CiudadConverter.listEntity2DTO(ciudadLogic.getCiudades());
     }
 
     /**
