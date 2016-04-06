@@ -11,8 +11,12 @@ import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.ItinerarioDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.rest.aplication.mocks.ItinerarioLogicMock;
 
+
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -20,6 +24,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 /*
  * Clase que implementa el recurso REST correspondiente a "itinerarios".
@@ -30,14 +37,18 @@ import javax.ws.rs.Produces;
  * ruta "/api/itinerario"
  * @author la.mesa10
  */
-@Path ("viajeros/{id_Viajero:\\d+}")
-@Produces("application/json")
+@Path ("viajeros/{id_Viajero:\\d+}/itinerarios")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class ItinerarioResource {
 
+    private static final Logger logger = Logger.getLogger(ItinerarioResource.class.getName());
  //incluir dependencia desde el pomp
+    //Lo del mock ya no sino IauthorLogic   Autor
     @Inject
-    ItinerarioLogicMock itinerarioLogic;
-    ViajeroResource viajeroResource;
+    private ItinerarioLogic itinerarioLogic;
+
+    //ViajeroResource viajeroResource;
 
     	/**
 	 * Obtiene el listado de itinerarios.
@@ -45,10 +56,11 @@ public class ItinerarioResource {
 	 * @throws PrimidLogicException excepción retornada por la lógica
 	 */
      @GET
-     @Path("/itinerarios")
+     //@Path("/itinerarios")
     public List<ItinerarioDTO> getItinerarios(@PathParam("id_Viajero") Long idViajero) throws PrimidLogicException {
-
-        return itinerarioLogic.getItinerarios(idViajero);
+        logger.info("Se ejecuta método getItinerarios");
+        List<ItinerarioEntity> itinerarios = itinerarioLogic.getItinerarios();
+        return ItinerariConverter.getItinerarios(idViajero);
     }
 
     /**
@@ -58,7 +70,7 @@ public class ItinerarioResource {
      * @throws PrimidLogicException cuando el itinerario no existe
      */
          @GET
-         @Path("id: \\d")
+         @Path("id: \\d+")
     public ItinerarioDTO getItinerario(@PathParam("id") Long id) throws PrimidLogicException   {
 
         return itinerarioLogic.getItinerarioPorId(id);
@@ -71,7 +83,7 @@ public class ItinerarioResource {
      * @throws PrimidLogicException cuando ya existe un itinerario con el id suministrado
      */
          @POST
-    public ItinerarioDTO createItinerarios(ItinerarioDTO itinerario) throws PrimidLogicException  {
+    public ItinerarioDTO createItinerario(ItinerarioDTO itinerario) throws PrimidLogicException  {
         return itinerarioLogic.createItinerario(itinerario);
     }
 
@@ -84,7 +96,7 @@ public class ItinerarioResource {
      * @throws PrimidLogicException cuando no existe un itinerario con el id suministrado
      */
          @PUT
-         @Path("{id: \\d+}")
+         @Path("/{id: \\d+}")
     public ItinerarioDTO updateItinerario(@PathParam("id") Long id, ItinerarioDTO itinerario) throws PrimidLogicException {
         return itinerarioLogic.updateItinerario(id, itinerario);
     }
