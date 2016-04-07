@@ -1,18 +1,10 @@
-
-
-
 /*
 	 * To change this license header, choose License Headers in Project Properties.
 	 * To change this template file, choose Tools | Templates
 	 * and open the template in the editor.
 	 */
-	package edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos;
-	
-
-	/**
-	 *
-	 * @author jd.torres11
-	 */
+	package co.edu.uniandes.rest.aplication.dtos;
+        
 	public class CiudadDTO {
 	
 

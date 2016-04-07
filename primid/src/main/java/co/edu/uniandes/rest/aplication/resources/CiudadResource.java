@@ -5,10 +5,11 @@
  */
 package co.edu.uniandes.rest.aplication.resources;
 
-import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.CiudadDTO;
+import co.edu.uniandes.rest.aplication.dtos.CiudadDTO;
+import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.csw.primid.logic.api.ICiudadLogic;
-import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.rest.aplication.converters.CiudadConverter;
+import co.edu.uniandes.csw.primid.logic.entities.CiudadEntity;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -40,7 +41,7 @@ public class CiudadResource {
     private ICiudadLogic ciudadLogic;
 
     @GET
-    public List<CiudadDTO> getCiudades() throws BusinessLogicException{
+    public List<CiudadDTO> getCiudades() {
         return CiudadConverter.listEntity2DTO(ciudadLogic.getCiudades());
     }
 
@@ -52,8 +53,8 @@ public class CiudadResource {
      */
     @GET
     @Path("{id: \\d+}")
-    public CiudadDTO getCity(@PathParam("id") Long id) throws BusinessLogicException {
-        return null;
+    public CiudadDTO getCiudad(@PathParam("id") Long id) {
+        return CiudadConverter.fullEntity2DTO(ciudadLogic.getCiudad(id));
     }
 
     /**
@@ -63,8 +64,9 @@ public class CiudadResource {
      * @throws CityLogicException cuando ya existe una ciudad con el id suministrado
      */
     @POST
-    public CiudadDTO createCity(CiudadDTO ciudad) throws BusinessLogicException {
-        return null;
+    public CiudadDTO createCiudad(CiudadDTO dto) {
+        CiudadEntity entity = CiudadConverter.fullDTO2Entity(dto);
+        return CiudadConverter.fullEntity2DTO(ciudadLogic.createCiudad(entity));
     }
 
     /**
@@ -76,8 +78,12 @@ public class CiudadResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public CiudadDTO updateCity(@PathParam("id") Long id, CiudadDTO ciudad) throws BusinessLogicException {
-        return null;
+    public CiudadDTO updateCiudad(@PathParam("id") Long id, CiudadDTO dto) {
+        CiudadEntity entity = CiudadConverter.fullDTO2Entity(dto);
+        entity.setId(id);
+        CiudadEntity oldEntity = ciudadLogic.getCiudad(id);
+        //entity.setBooks(oldEntity.getBooks());
+        return CiudadConverter.fullEntity2DTO(ciudadLogic.updateCiudad(entity));
     }
 
     /**
@@ -87,8 +93,8 @@ public class CiudadResource {
      */
     @DELETE
     @Path("{id: \\d+}")
-    public void deleteCity(@PathParam("id") Long id) throws BusinessLogicException {
-    	
+    public void deleteCiudad(@PathParam("id") Long id) {
+        ciudadLogic.deleteCiudad(id);
     }
 
 }

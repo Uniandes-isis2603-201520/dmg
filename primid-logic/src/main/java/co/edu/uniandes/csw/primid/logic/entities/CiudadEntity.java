@@ -12,29 +12,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import uk.co.jemos.podam.common.PodamExclude;
+import uk.co.jemos.podam.common.PodamStrategyValue;
 
 @Entity
 public class CiudadEntity extends BaseEntity implements Serializable {
 
-
-
     private double coordenadas;
-    private String description;
-
-    @ManyToMany
-    private List<CiudadEntity> authors = new ArrayList<>();
-
-    @ManyToOne
-    private CiudadEntity editorial;
-
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CiudadEntity> reviews = new ArrayList<>();
-
-
-
-
-
-
+   
     /**
      * @return the description
      */
@@ -49,41 +34,5 @@ public class CiudadEntity extends BaseEntity implements Serializable {
         this.coordenadas = coordenadas;
     }
 
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<CiudadEntity> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<CiudadEntity> authors) {
-        this.authors = authors;
-    }
-
-    public CiudadEntity getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(CiudadEntity editorial) {
-        this.editorial = editorial;
-    }
-
-    public List<CiudadEntity> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<CiudadEntity> reviews) {
-        this.reviews = reviews;
-    }
+    
 }
