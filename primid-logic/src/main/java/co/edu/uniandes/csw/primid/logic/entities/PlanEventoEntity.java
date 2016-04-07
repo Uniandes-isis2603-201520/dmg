@@ -29,8 +29,7 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
 @Entity
 public class PlanEventoEntity extends BaseEntity implements Serializable {
 
-    private Long id;
-    private String name;
+
 
     @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
@@ -42,33 +41,7 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
 
 
 
-        /**
-     * @return the publishDate
-     */
-    public Long getId() {
-        return id;
-    }
 
-    /**
-     * @param publishDate the publishDate to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-        /**
-     * @return the publishDate
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @param publishDate the publishDate to set
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
 
       /**
      * @return the publishDate
