@@ -6,18 +6,21 @@
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
 import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.primid.logic.api.IItinerarioLogic;
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
 import co.edu.uniandes.csw.primid.logic.persistence.ItinerarioPersistence;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author la.mesa10
  */
-public class ItinerarioLogic
+@Stateless
+public class ItinerarioLogic implements IItinerarioLogic
 {
     private static final Logger logger = Logger.getLogger(ItinerarioLogic.class.getName());
 
@@ -27,12 +30,20 @@ public class ItinerarioLogic
     public List<ItinerarioEntity> getItinerarios() {
         logger.info("Inicia proceso de consultar todos los itinerarios");
         List<ItinerarioEntity> itinerarios = persistence.findAll();
-        logger.info("Termina proceso de consultar todos los libros");
+        logger.info("Termina proceso de consultar todos los itinerarios");
         return itinerarios;
     }
 
-     public ItinerarioEntity getItinerario(Long id) throws BusinessLogicException {
-        logger.log(Level.INFO, "Inicia proceso de consultar editorial con id={0}", id);
+    public List<ItinerarioEntity> getItinerarios(Long idViajero)
+    {
+        logger.info("Inicia proceso de consultar todos los itinerarios de un viajero");
+        List<ItinerarioEntity> itinerarios = persistence.findAll();
+        logger.info("Termina proceso de consultar todos los itinerarios de un viajero");
+        return itinerarios;
+    }
+     public ItinerarioEntity getItinerario(Long id) throws BusinessLogicException
+     {
+        logger.log(Level.INFO, "Inicia proceso de consultar itinerario con id={0}", id);
         ItinerarioEntity itinerario = persistence.find(id);
         if (itinerario == null) {
             logger.log(Level.SEVERE, "El itinerario con el id {0} no existe", id);
@@ -67,49 +78,4 @@ public class ItinerarioLogic
     }
 
 
-    //public ItinerarioEntity addItinerario(Long bookId, Long itinerarioId) {
-      //  EditorialEntity editorialEntity = persistence.find(editorialId);
-        //BookEntity bookEntity = bookPersistence.find(bookId);
-        //bookEntity.setEditorial(editorialEntity);
-        //return bookEntity;
-    //}
-
-
-    //public void removeBook(Long bookId, Long editorialId) {
-      //  EditorialEntity editorialEntity = persistence.find(editorialId);
-        //BookEntity book = bookPersistence.find(bookId);
-        //book.setEditorial(null);
-        //editorialEntity.getBooks().remove(book);
-    //}
-
-    //@Override
-    //public List<BookEntity> replaceBooks(List<BookEntity> books, Long editorialId) {
-      //  EditorialEntity editorial = persistence.find(editorialId);
-        //List<BookEntity> bookList = bookPersistence.findAll();
-        //for (BookEntity book : bookList) {
-          //  if (books.contains(book)) {
-            //    book.setEditorial(editorial);
-            //} else if (book.getEditorial() != null && book.getEditorial().equals(editorial)) {
-              //  book.setEditorial(null);
-            //}
-       // }
-        //return books;
-    //}
-
-    //@Override
-    //public List<BookEntity> getBooks(Long editorialId) {
-      //  return persistence.find(editorialId).getBooks();
-    //}
-
-    //@Override
-    //public BookEntity getBook(Long editorialId, Long bookId) {
-      //  List<BookEntity> books = persistence.find(editorialId).getBooks();
-        //BookEntity book = new BookEntity();
-        //book.setId(bookId);
-        //int index = books.indexOf(book);
-        //if (index >= 0) {
-          //  return books.get(index);
-        //}
-        //return null;
-    //}
 }
