@@ -7,7 +7,7 @@ package co.edu.uniandes.rest.aplication.resources;
 
 
 //import co.edu.uniandes.rest.cities.dtos.ItinerarioDTO;
-import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.api.IItinerarioLogic;
 import co.edu.uniandes.csw.primid.logic.ejbs.ItinerarioLogic;
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
