@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos;
+package co.edu.uniandes.rest.aplication.dtos;
 
 /**
  *
@@ -14,7 +14,6 @@ public class MultimediaDTO {
     private long id;
     private String name;
     private String tipo;
-    private Boolean visible;
     private String ruta;
 
     public final static String VIDEO="video";
@@ -39,7 +38,6 @@ public class MultimediaDTO {
 		this.id = id;
 		this.name = name;
                 this.tipo = tipo;
-                this.visible = true;
                 this.ruta = ruta;
 	}
     /*
@@ -78,18 +76,8 @@ public class MultimediaDTO {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-      /*
-     * @return el estado
-     */
-    public Boolean getVisible() {
-        return visible;
-    }
-    /**
-     * @param estado el estado de la cuenta
-     */
-    public void setVisible(Boolean visible) {
-        this.visible = visible;
-    }
+
+
     /*
      * @return la ruta
      */
@@ -107,6 +95,6 @@ public class MultimediaDTO {
      */
     @Override
     public String toString() {
-    	return "{ id : " + getId() + ", name : \"" + getName() + ", tipo : \"" + getTipo() + ", visible : \"" +getVisible() + ", ruta : \"" +getRuta() +"\" }" ;
+    	return "{ id : " + getId() + ", name : \"" + getName() + ", tipo : \"" + getTipo() + ", ruta : \"" +getRuta() +"\" }" ;
     }
 }

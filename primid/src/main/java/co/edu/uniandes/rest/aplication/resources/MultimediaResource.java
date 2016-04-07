@@ -6,6 +6,7 @@
 package co.edu.uniandes.rest.aplication.resources;
 
 
+import co.edu.uniandes.rest.aplication.converters.MultimediaConverter;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.MultimediaDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.rest.aplication.mocks.MultimediaLogicMock;
@@ -28,13 +29,13 @@ import javax.ws.rs.Produces;
  * ruta "/api/multimedia"
  * @author fa.lopez10
  */
-@Path ("viajeros/{id}/itinerario/{id}/ciudades/{id}/eventos/{id}/multimedia")
+@Path ("viajeros/{id_Viajero:\\d+}/itinerario/{id_Itinerario:\\d+}/ciudades/{id_Ciudad:\\d+}/eventos/{id_Evento:\\d+}/multimedia")
 @Produces("application/json")
 public class MultimediaResource {
 
  //incluir dependencia desde el pom
     @Inject
-    MultimediaLogicMock multimediaLogic;
+    IMultimediaLogic multimediaLogic;
 
     	/**
 	 * Obtiene el listado de archivos Multimedia.
@@ -44,7 +45,7 @@ public class MultimediaResource {
     @GET
     @Path("/multimedia")
     public List<MultimediaDTO> getMultimedia() throws PrimidLogicException {
-        return multimediaLogic.getMultimedia();
+        return MultimediaConverter.listEntity2DTO(multimediaLogic.getMultimedia());
     }
 
     /**

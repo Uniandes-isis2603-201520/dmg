@@ -17,19 +17,19 @@ import javax.inject.Inject;
 @Stateless
 public class MultimediaLogic {
 
-  //  private static final Logger logger = Logger.getLogger(BookLogic.class.getName());
+    private static final Logger logger = Logger.getLogger(MultimediaLogic.class.getName());
 
     @Inject
     private MultimediaPersistence persistence;
 
 
 
-   // public List<MultimediaEntity> getArchivosMultimedia() {
-    //    logger.info("Inicia proceso de consultar todos los archivos multimedia");
-     //   List<MultimediaEntity> archivosMultimedia = persistence.findAll();
-    //    logger.info("Termina proceso de consultar todos los archivos multimedia");
-     //   return archivosMultimedia;
-    //}
+    public List<MultimediaEntity> getArchivosMultimedia() {
+        logger.info("Inicia proceso de consultar todos los archivos multimedia");
+        List<MultimediaEntity> archivosMultimedia = persistence.findAll();
+        logger.info("Termina proceso de consultar todos los archivos multimedia");
+        return archivosMultimedia;
+    }
 
 
 
