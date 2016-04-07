@@ -34,72 +34,75 @@ import javax.ws.rs.Produces;
 @Produces("application/json")
 public class ViajeroResource {
 
- //incluir dependencia desde el pomp
-   @Inject
+    //incluir dependencia desde el pomp
+    @Inject
     private IViajeroLogic viajeroLogic;
 
-    	/**
-	 * Obtiene el listado de viajeros.
-	 * @return lista de viajeros
-	 * @throws PrimidLogicException excepción retornada por la lógica
-	 */
-
-     @GET
-    public List<ViajeroDTO> getViajeros() throws PrimidLogicException {
+    /**
+     * Obtiene el listado de viajeros.
+     *
+     * @return lista de viajeros
+     * @throws BusinessLogicException excepción retornada por la lógica
+     */
+    @GET
+    public List<ViajeroDTO> getViajeros() throws BusinessLogicException {
         return ViajeroConverter.listEntity2DTO(viajeroLogic.getViajeros());
     }
 
     /**
      * Obtiene un viajero
+     *
      * @param id identificador dl viajero
      * @return viajero encontrada
      * @throws BusinessLogicException cuando el viajero no existe
      */
-         @GET
-         @Path("{id: \\d+}")
-    public ViajeroDTO getViajero(@PathParam("id") Long id) throws BusinessLogicException   {
+    @GET
+    @Path("{id: \\d+}")
+    public ViajeroDTO getViajero(@PathParam("id") Long id) throws BusinessLogicException {
         return ViajeroConverter.fullEntity2DTO(viajeroLogic.getViajero(id));
     }
 
-
-     /**
+    /**
      * Agrega un viajero
+     *
      * @param viajero viajero a agregar
      * @return datos del viajero a agregar
-     * @throws BusinessLogicException cuando ya existe un viajero con el id suministrado
+     * @throws BusinessLogicException cuando ya existe un viajero con el id
+     * suministrado
      */
-         @POST
-
-    public ViajeroDTO createViajeros(ViajeroDTO viajero) throws BusinessLogicException  {
-         ViajeroEntity entity = ViajeroConverter.fullDTO2Entity(viajero);
+    @POST
+    public ViajeroDTO createViajeros(ViajeroDTO viajero) throws BusinessLogicException {
+        ViajeroEntity entity = ViajeroConverter.fullDTO2Entity(viajero);
         return ViajeroConverter.fullEntity2DTO(viajeroLogic.createViajero(entity));
 
     }
 
-
-        /**
+    /**
      * Actualiza los datos de un viajero
+     *
      * @param id identificador del viajero a modificar
      * @param viajero viajero a modificar
      * @return datos del viajero modificada
-     * @throws PrimidLogicException cuando no existe un viajero con el id suministrado
+     * @throws BusinessLogicException cuando no existe un viajero con el id
+     * suministrado
      */
-         @PUT
-         @Path("{id: \\d+}")
-    public ViajeroDTO updateViajero(@PathParam("id") Long id, ViajeroDTO viajero) throws PrimidLogicException {
+    @PUT
+    @Path("{id: \\d+}")
+    public ViajeroDTO updateViajero(@PathParam("id") Long id, ViajeroDTO viajero) throws BusinessLogicException {
 
         return null;
     }
 
     /**
      * Elimina los datos de un viajero
+     *
      * @param id identificador del viajero a eliminar
-     * @throws PrimidLogicException cuando no existe un viajero con el id suministrado
+     * @throws PrimidLogicException cuando no existe un viajero con el id
+     * suministrado
      */
-
-         @DELETE
-         @Path("{id: \\d+}")
-    public void deleteViajero(@PathParam("id") Long id) throws PrimidLogicException  {
+    @DELETE
+    @Path("{id: \\d+}")
+    public void deleteViajero(@PathParam("id") Long id) throws BusinessLogicException {
         viajeroLogic.deleteViajero(id);
     }
 

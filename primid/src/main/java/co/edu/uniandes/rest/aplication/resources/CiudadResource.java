@@ -6,8 +6,9 @@
 package co.edu.uniandes.rest.aplication.resources;
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.CiudadDTO;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.csw.primid.logic.api.ICiudadLogic;
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
+import co.edu.uniandes.rest.aplication.converters.CiudadConverter;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -39,7 +40,7 @@ public class CiudadResource {
     private ICiudadLogic ciudadLogic;
 
     @GET
-    public List<CiudadDTO> getCiudades() throws PrimidLogicException{
+    public List<CiudadDTO> getCiudades() throws BusinessLogicException{
         return CiudadConverter.listEntity2DTO(ciudadLogic.getCiudades());
     }
 
@@ -51,8 +52,8 @@ public class CiudadResource {
      */
     @GET
     @Path("{id: \\d+}")
-    public CiudadDTO getCity(@PathParam("id") Long id) throws PrimidLogicException {
-        return ciudadLogic.getCity(id);
+    public CiudadDTO getCity(@PathParam("id") Long id) throws BusinessLogicException {
+        return null;
     }
 
     /**
@@ -62,8 +63,8 @@ public class CiudadResource {
      * @throws CityLogicException cuando ya existe una ciudad con el id suministrado
      */
     @POST
-    public CiudadDTO createCity(CiudadDTO ciudad) throws PrimidLogicException {
-        return ciudadLogic.createCity(ciudad);
+    public CiudadDTO createCity(CiudadDTO ciudad) throws BusinessLogicException {
+        return null;
     }
 
     /**
@@ -75,8 +76,8 @@ public class CiudadResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public CiudadDTO updateCity(@PathParam("id") Long id, CiudadDTO ciudad) throws PrimidLogicException {
-        return ciudadLogic.updateCity(id, ciudad);
+    public CiudadDTO updateCity(@PathParam("id") Long id, CiudadDTO ciudad) throws BusinessLogicException {
+        return null;
     }
 
     /**
@@ -86,8 +87,8 @@ public class CiudadResource {
      */
     @DELETE
     @Path("{id: \\d+}")
-    public void deleteCity(@PathParam("id") Long id) throws PrimidLogicException {
-    	ciudadLogic.deleteCity(id);
+    public void deleteCity(@PathParam("id") Long id) throws BusinessLogicException {
+    	
     }
 
 }
