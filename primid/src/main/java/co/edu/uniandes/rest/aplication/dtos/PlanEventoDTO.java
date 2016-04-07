@@ -4,7 +4,7 @@
 	 * To change this template file, choose Tools | Templates
 	 * and open the template in the editor.
 	 */
-	package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos;
+	package co.edu.uniandes.rest.aplication.dtos;
 
         import java.util.Date;
 
