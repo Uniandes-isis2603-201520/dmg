@@ -46,7 +46,7 @@ public class TimelineResource {
 	 */
      @GET
     public List<TimelineDTO> getTimelines() throws PrimidLogicException {
-        return timelineLogic.getTimelines();
+        return null;//return timelineLogic.getTimelines();
     }
 
     /**
@@ -58,7 +58,7 @@ public class TimelineResource {
          @GET
          @Path("{id: \\d+}")
     public TimelineDTO getTimeline(@PathParam("id") Long id) throws PrimidLogicException   {
-        return timelineLogic.getTimelinePorId(id);
+        return null;//return timelineLogic.getTimelinePorId(id);
     }
 
      /**
@@ -69,7 +69,7 @@ public class TimelineResource {
      */
          @POST
     public TimelineDTO createTimelines(TimelineDTO timeline) throws PrimidLogicException  {
-        return timelineLogic.createTimeline(timeline);
+       return null;// return timelineLogic.createTimeline(timeline);
     }
 
 
@@ -83,7 +83,7 @@ public class TimelineResource {
          @PUT
          @Path("{id: \\d+}")
     public TimelineDTO updateTimeline(@PathParam("id") Long id, TimelineDTO timeline) throws PrimidLogicException {
-        return timelineLogic.updateTimeline(id, timeline);
+        return null;//return timelineLogic.updateTimeline(id, timeline);
     }
 
     /**
@@ -95,7 +95,7 @@ public class TimelineResource {
          @DELETE
          @Path("{id: \\d+}")
     public void deleteTimeline(@PathParam("id") Long id) throws PrimidLogicException  {
-        timelineLogic.deleteTimeline(id);
+         //timelineLogic.deleteTimeline(id);
     }
 
 }

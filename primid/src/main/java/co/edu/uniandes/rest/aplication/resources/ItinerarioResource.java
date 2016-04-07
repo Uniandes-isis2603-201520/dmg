@@ -7,7 +7,7 @@ package co.edu.uniandes.rest.aplication.resources;
 
 
 //import co.edu.uniandes.rest.cities.dtos.ItinerarioDTO;
-import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.api.IItinerarioLogic;
 import co.edu.uniandes.csw.primid.logic.ejbs.ItinerarioLogic;
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
@@ -65,7 +65,7 @@ public class ItinerarioResource {
     public List<ItinerarioDTO> getItinerarios(@PathParam("id_Viajero") Long idViajero) throws PrimidLogicException {
         logger.info("Se ejecuta método getItinerarios");
         //TODO
-        List<ItinerarioEntity> itinerarios = itinerarioLogic.getItinerarios();
+        List<ItinerarioEntity> itinerarios = itinerarioLogic.getItinerarios(idViajero);
         return ItinerarioConverter.listEntity2DTO(itinerarios);
     }
 
