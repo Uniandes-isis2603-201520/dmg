@@ -20,11 +20,11 @@ public interface IViajeroLogic {
 
     //public ItinerarioEntity addI(Long itinerarioId, Long authorId) throws BusinessLogicException;
 
-    //public void removeBook(Long itinerarioId, Long authorId);
+    //public void removeItinerario(Long itinerarioId, Long authorId);
 
-    //public List<ItinerarioEntity> replaceBooks(List<ItinerarioEntity> itinerarios, Long authorId) throws BusinessLogicException;
+    //public List<ItinerarioEntity> replaceItinerarios(List<ItinerarioEntity> itinerarios, Long authorId) throws BusinessLogicException;
 
-    //public List<ItinerarioEntity> getBooks(Long authorId);
+    //public List<ItinerarioEntity> getItinerarios(Long authorId);
 
-    // public ItinerarioEntity getBook(Long authorId, Long itinerarioId);
+    // public ItinerarioEntity getItinerario(Long authorId, Long itinerarioId);
 }

@@ -34,68 +34,68 @@ import javax.ws.rs.Produces;
 @Produces("application/json")
 public class MultimediaResource {
 
- //incluir dependencia desde el pom
-    @Inject
-    IMultimediaLogic multimediaLogic;
-
-    	/**
-	 * Obtiene el listado de archivos Multimedia.
-	 * @return lista de archivos Multimedia
-	 * @throws PrimidLogicException excepción retornada por la lógica
-	 */
-    @GET
-    @Path("/multimedia")
-    public List<MultimediaDTO> getMultimedia() throws BusinessLogicException {
-        return MultimediaConverter.listEntity2DTO(multimediaLogic.getMultimedia());
-    }
-
-    /**
-     * Obtiene un archivo multimedia
-     * @param id identificador dl archivo multimedia
-     * @return archivo multimedia encontrada
-     * @throws PrimidLogicException cuando el archivo multimedia no existe
-     */
-    @GET
-    @Path("{id: \\d+}")
-    public MultimediaDTO getArchivoMultimedia(@PathParam("id") Long id) throws PrimidLogicException   {
-        return multimediaLogic.getArchivoMultimediaPorId(id);
-    }
-
-    /**
-     * Agrega un archivo multimedia
-     * @param mult archivo multimedia a agregar
-     * @return datos del archivo multimedia a agregar
-     * @throws PrimidLogicException cuando ya existe un archivo multimedia con el id suministrado
-     */
-         @POST
-    public MultimediaDTO createArchivoMultimedia(MultimediaDTO mult) throws PrimidLogicException  {
-        return multimediaLogic.createArchivoMultimedia(mult);
-    }
-
-
-    /**
-     * Actualiza los datos de un archivo multimedia
-     * @param id identificador del archivo multimedia a modificar
-     * @param mult archivo multimedia a modificar
-     * @return datos del archivo multimedia modificada
-     * @throws PrimidLogicException cuando no existe un archivo multimedia con el id suministrado
-     */
-         @PUT
-         @Path("{id: \\d+}")
-    public MultimediaDTO updateArchivoMultimedia(@PathParam("id") Long id, MultimediaDTO mult) throws PrimidLogicException {
-        return multimediaLogic.updateArchivoMultimedia(id, mult);
-    }
-
-    /**
-     * Elimina los datos de un archivo multimedia
-     * @param id identificador del archivo multimedia a eliminar
-     * @throws PrimidLogicException cuando no existe un archivo multimedia con el id suministrado
-     */
-
-         @DELETE
-         @Path("{id: \\d+}")
-    public void deleteArchivoMultimedia(@PathParam("id") Long id) throws PrimidLogicException  {
-        multimediaLogic.deleteArchivoMultimedia(id);
-    }
+// //incluir dependencia desde el pom
+//    @Inject
+//    IMultimediaLogic multimediaLogic;
+//
+//    	/**
+//	 * Obtiene el listado de archivos Multimedia.
+//	 * @return lista de archivos Multimedia
+//	 * @throws PrimidLogicException excepción retornada por la lógica
+//	 */
+//    @GET
+//    @Path("/multimedia")
+//    public List<MultimediaDTO> getMultimedia() throws BusinessLogicException {
+//        return MultimediaConverter.listEntity2DTO(multimediaLogic.getMultimedia());
+//    }
+//
+//    /**
+//     * Obtiene un archivo multimedia
+//     * @param id identificador dl archivo multimedia
+//     * @return archivo multimedia encontrada
+//     * @throws PrimidLogicException cuando el archivo multimedia no existe
+//     */
+//    @GET
+//    @Path("{id: \\d+}")
+//    public MultimediaDTO getArchivoMultimedia(@PathParam("id") Long id) throws PrimidLogicException   {
+//        return multimediaLogic.getArchivoMultimediaPorId(id);
+//    }
+//
+//    /**
+//     * Agrega un archivo multimedia
+//     * @param mult archivo multimedia a agregar
+//     * @return datos del archivo multimedia a agregar
+//     * @throws PrimidLogicException cuando ya existe un archivo multimedia con el id suministrado
+//     */
+//         @POST
+//    public MultimediaDTO createArchivoMultimedia(MultimediaDTO mult) throws PrimidLogicException  {
+//        return multimediaLogic.createArchivoMultimedia(mult);
+//    }
+//
+//
+//    /**
+//     * Actualiza los datos de un archivo multimedia
+//     * @param id identificador del archivo multimedia a modificar
+//     * @param mult archivo multimedia a modificar
+//     * @return datos del archivo multimedia modificada
+//     * @throws PrimidLogicException cuando no existe un archivo multimedia con el id suministrado
+//     */
+//         @PUT
+//         @Path("{id: \\d+}")
+//    public MultimediaDTO updateArchivoMultimedia(@PathParam("id") Long id, MultimediaDTO mult) throws PrimidLogicException {
+//        return multimediaLogic.updateArchivoMultimedia(id, mult);
+//    }
+//
+//    /**
+//     * Elimina los datos de un archivo multimedia
+//     * @param id identificador del archivo multimedia a eliminar
+//     * @throws PrimidLogicException cuando no existe un archivo multimedia con el id suministrado
+//     */
+//
+//         @DELETE
+//         @Path("{id: \\d+}")
+//    public void deleteArchivoMultimedia(@PathParam("id") Long id) throws PrimidLogicException  {
+//        multimediaLogic.deleteArchivoMultimedia(id);
+//    }
 
 }

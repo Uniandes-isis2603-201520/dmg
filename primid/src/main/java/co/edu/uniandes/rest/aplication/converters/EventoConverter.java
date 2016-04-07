@@ -6,7 +6,7 @@
 package co.edu.uniandes.rest.aplication.converters;
 
 import co.edu.uniandes.csw.primid.logic.entities.EventoEntity;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.EventoDTO;
+import co.edu.uniandes.rest.aplication.dtos.EventoDTO;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,15 +14,15 @@ import java.util.List;
  *
  * @author kl.osorio10
  */
-public class EventoConverter {
+public abstract class EventoConverter {
 
         /**
-     * Realiza la conversión de ViajeroEntity a ViajeroDTO.
-     * Se invoca cuando otra entidad tiene una referencia a ViajeroEntity.
-     * Entrega únicamente los atributos proprios de la entidad.
+     * Realiza la conversion de EventoEntity a EventoDTO.
+     * Se invoca cuando otra entidad tiene una referencia a EventoEntity.
+     * Entrega unicamente los atributos proprios de la entidad.
      *
-     * @param entity instancia de ViajeroEntity a convertir
-     * @return instancia de ViajeroDTO con los datos recibidos por parámetro
+     * @param entity instancia de EventoEntity a convertir
+     * @return instancia de EventoDTO con los datos recibidos por parámetro
      * @generated
      */
     public static EventoDTO refEntity2DTO(EventoEntity entity) {
@@ -57,11 +57,11 @@ public class EventoConverter {
     }
 
     /**
-     * Convierte una instancia de ViajeroEntity a ViajeroDTO Se invoca cuando se desea
+     * Convierte una instancia de EventoEntity a EventoDTO Se invoca cuando se desea
      * consultar la entidad y sus relaciones muchos a uno o uno a uno
      *
-     * @param entity instancia de ViajeroEntity a convertir
-     * @return Instancia de ViajeroDTO con los datos recibidos por parámetro
+     * @param entity instancia de EventoEntity a convertir
+     * @return Instancia de EventoDTO con los datos recibidos por parámetro
      * @generated
      */
     private static EventoDTO basicEntity2DTO(EventoEntity entity) {
@@ -69,6 +69,13 @@ public class EventoConverter {
             EventoDTO dto = new EventoDTO();
             dto.setId(entity.getId());
             dto.setName(entity.getName());
+            dto.setImage(entity.getImage());
+            dto.setDescription(entity.getDescription());
+            dto.setDateStarts(entity.getStartDate());
+            dto.setDateEnds(entity.getEndDate());
+            dto.setCategory(entity.getCategory());
+            dto.setScore(entity.getScore());
+            dto.setPlace(entity.getPlace());
 
             return dto;
         } else {
@@ -77,12 +84,12 @@ public class EventoConverter {
     }
 
     /**
-     * Convierte una instancia de ViajeroDTO a ViajeroEntity Se invoca cuando se
-     * necesita convertir una instancia de ViajeroDTO con los atributos propios de
+     * Convierte una instancia de EventoDTO a EventoEntity Se invoca cuando se
+     * necesita convertir una instancia de EventoDTO con los atributos propios de
      * la entidad y con las relaciones uno a uno o muchos a uno
      *
-     * @param dto instancia de ViajeroDTO a convertir
-     * @return Instancia de ViajeroEntity creada a partir de los datos de dto
+     * @param dto instancia de EventoDTO a convertir
+     * @return Instancia de EventoEntity creada a partir de los datos de dto
      * @generated
      */
     private static EventoEntity basicDTO2Entity(EventoDTO dto) {
@@ -90,6 +97,13 @@ public class EventoConverter {
             EventoEntity entity = new EventoEntity();
             entity.setId(dto.getId());
             entity.setName(dto.getName());
+            entity.setImage(dto.getImage());
+            entity.setDescription(dto.getDescription());
+            entity.setStartDate(dto.getDateStarts());
+            entity.setEndDate(dto.getDateEnds());
+            entity.setCategory(dto.getCategory());
+            entity.setScore(dto.getScore());
+            entity.setPlace(dto.getPlace());
 
             return entity;
         } else {
@@ -98,11 +112,11 @@ public class EventoConverter {
     }
 
     /**
-     * Convierte instancias de ViajeroEntity a ViajeroDTO incluyendo sus relaciones
+     * Convierte instancias de EventoEntity a EventoDTO incluyendo sus relaciones
      * Uno a muchos y Muchos a muchos
      *
-     * @param entity Instancia de ViajeroEntity a convertir
-     * @return Instancia de ViajeroDTO con los datos recibidos por parámetro
+     * @param entity Instancia de EventoEntity a convertir
+     * @return Instancia de EventoDTO con los datos recibidos por parámetro
      * @generated
      */
     public static EventoDTO fullEntity2DTO(EventoEntity entity) {
@@ -115,11 +129,11 @@ public class EventoConverter {
     }
 
     /**
-     * Convierte una instancia de ViajeroDTO a ViajeroEntity.
-     * Incluye todos los atributos de ViajeroEntity.
+     * Convierte una instancia de EventoDTO a EventoEntity.
+     * Incluye todos los atributos de EventoEntity.
      *
-     * @param dto Instancia de ViajeroDTO a convertir
-     * @return Instancia de ViajeroEntity con los datos recibidos por parámetro
+     * @param dto Instancia de EventoDTO a convertir
+     * @return Instancia de EventoEntity con los datos recibidos por parámetro
      * @generated
      */
     public static EventoEntity fullDTO2Entity(EventoDTO dto) {
@@ -132,12 +146,12 @@ public class EventoConverter {
     }
 
     /**
-     * Convierte una colección de instancias de ViajeroEntity a ViajeroDTO. Para cada
-     * instancia de ViajeroEntity en la lista, invoca basicEntity2DTO y añade el
-     * nuevo ViajeroDTO a una nueva lista
+     * Convierte una colección de instancias de EventoEntity a EventoDTO. Para cada
+     * instancia de EventoEntity en la lista, invoca basicEntity2DTO y añade el
+     * nuevo EventoDTO a una nueva lista
      *
      * @param entities Colección de entidades a convertir
-     * @return Collección de instancias de ViajeroDTO
+     * @return Collección de instancias de EventoDTO
      * @generated
      */
     public static List<EventoDTO> listEntity2DTO(List<EventoEntity> entities) {
@@ -151,11 +165,11 @@ public class EventoConverter {
     }
 
     /**
-     * Convierte una colección de instancias de ViajeroDTO a instancias de
-     * ViajeroEntity Para cada instancia se invoca el método basicDTO2Entity
+     * Convierte una colección de instancias de EventoDTO a instancias de
+     * EventoEntity Para cada instancia se invoca el método basicDTO2Entity
      *
-     * @param dtos entities Colección de ViajeroDTO a convertir
-     * @return Collección de instancias de ViajeroEntity
+     * @param dtos entities Colección de EventoDTO a convertir
+     * @return Collección de instancias de EventoEntity
      * @generated
      */
     public static List<EventoEntity> listDTO2Entity(List<EventoDTO> dtos) {

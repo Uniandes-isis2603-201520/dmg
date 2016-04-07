@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.rest.aplication.mocks;
 
-import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.CiudadDTO;
+import co.edu.uniandes.rest.aplication.dtos.CiudadDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import java.util.ArrayList;
 import java.util.List;

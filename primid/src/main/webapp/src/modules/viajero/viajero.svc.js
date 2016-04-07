@@ -40,7 +40,7 @@
              * nuevos datos de la instancia de reviews.
              * Si currentRecord no tiene la propiedad id, se hace un POST a /reviews
              * para crear el nuevo registro de reviews
-             * @param {object} currentRecord instancia de book a guardar/actualizar
+             * @param {object} currentRecord instancia de viajero a guardar/actualizar
              * @returns {promise} promise para leer la respuesta del servidor
              * Devuelve un objeto de reviews con sus datos incluyendo el id
              */
@@ -53,8 +53,8 @@
             };
 
             /**
-             * Hace una petición DELETE a /reviews/:id para eliminar un book
-             * @param {number} id identificador de la instancia de book a eliminar
+             * Hace una petición DELETE a /reviews/:id para eliminar un viajero
+             * @param {number} id identificador de la instancia de viajero a eliminar
              * @returns {promise} promise para leer la respuesta del servidor
              * No devuelve datos.
              */

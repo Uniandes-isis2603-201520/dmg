@@ -5,9 +5,10 @@
  */
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
-import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
+
 import co.edu.uniandes.csw.primid.logic.api.IEventoLogic;
 import co.edu.uniandes.csw.primid.logic.entities.EventoEntity;
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.persistence.EventoPersistence;
 import java.util.Date;
 import java.util.List;
@@ -38,6 +39,13 @@ public class EventoLogic implements IEventoLogic {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+
+
+    @Override
+    public void deleteEvento(Long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @Override
     public EventoEntity getEvento(Long id) throws BusinessLogicException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -50,11 +58,6 @@ public class EventoLogic implements IEventoLogic {
 
     @Override
     public EventoEntity updateEvento(EventoEntity entity) throws BusinessLogicException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void deleteEvento(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

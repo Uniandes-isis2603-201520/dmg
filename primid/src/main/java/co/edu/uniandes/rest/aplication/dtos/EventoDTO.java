@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos;
+package co.edu.uniandes.rest.aplication.dtos;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -14,9 +17,13 @@ public class EventoDTO {
     private Long id;
     private String name;
     private String image;
+    private String place;
+    private ArrayList<String> comments;
+    private String category;
+    private double score;
     private String description;
-    private String dateStarts;
-    private String dateEnds;
+    private Date dateStarts;
+    private Date dateEnds;
 
     /**
      * Constructor por defecto
@@ -30,8 +37,13 @@ public class EventoDTO {
      * @param name nombre del evento
      * @param image imagen del evento
      * @param description decripción del evento
+     * @param dateStarts Fecha en la que inicia el evento
+     * @param dateEnds Fecha en la que termina el evento
+     * @param category La categoria del evento
+     * @param score La calificacion que ha recibido el evento
+     * @param place El lugar donde ocurre el evento
      */
-    public EventoDTO(Long id, String name, String image, String description, String dateStarts, String dateEnds) {
+    public EventoDTO(Long id, String name, String image, String description, Date dateStarts, Date dateEnds, String place, double score, String category) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -39,6 +51,9 @@ public class EventoDTO {
                 this.description = description;
                 this.dateStarts = dateStarts;
                 this.dateEnds = dateEnds;
+                this.category = category;
+                this.score = score;
+                this.place = place;
 	}
 
 	/**
@@ -100,31 +115,72 @@ public class EventoDTO {
             /**
      * @return the dateStarts
      */
-    public String getDateStarts() {
+    public Date getDateStarts() {
         return dateStarts;
     }
 
     /**
      * @param dateStarts the dateStarts to set
      */
-    public void setDateStarts(String dateStarts) {
+    public void setDateStarts(Date dateStarts) {
         this.dateStarts = dateStarts;
     }
 
             /**
      * @return the dateEnds
      */
-    public String getDateEnds() {
+    public Date getDateEnds() {
         return dateEnds;
     }
 
     /**
      * @param dateEnds the dateEnds to set
      */
-    public void setDateEnds(String dateEnds) {
+    public void setDateEnds(Date dateEnds) {
         this.dateEnds = dateEnds;
     }
 
+            /**
+     * @return the place
+     */
+    public String getPlace() {
+        return place;
+    }
+
+    /**
+     * @param place the place to set
+     */
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    /**
+     * @return the image
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * @param category the image to set
+     */
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+     /**
+     * @return the score
+     */
+    public double getScore() {
+        return score;
+    }
+
+    /**
+     * @param score the score to set
+     */
+    public void setScore(double score) {
+        this.score = score;
+    }
 
     /**
      * Convierte el objeto a una cadena

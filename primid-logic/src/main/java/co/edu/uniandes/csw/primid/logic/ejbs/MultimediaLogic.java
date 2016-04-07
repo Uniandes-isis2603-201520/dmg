@@ -25,13 +25,13 @@ public class MultimediaLogic {
 
 
 
-    public List<MultimediaEntity> getArchivosMultimedia() {
-        logger.info("Inicia proceso de consultar todos los archivos multimedia");
-        List<MultimediaEntity> archivosMultimedia = persistence.findAll();
-        logger.info("Termina proceso de consultar todos los archivos multimedia");
-        return archivosMultimedia;
-    }
-
+//    public List<MultimediaEntity> getArchivosMultimedia() {
+//        logger.info("Inicia proceso de consultar todos los archivos multimedia");
+//        List<MultimediaEntity> archivosMultimedia = persistence.findAll();
+//        logger.info("Termina proceso de consultar todos los archivos multimedia");
+//        return archivosMultimedia;
+//    }
+//
 
 
 }
