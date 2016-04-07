@@ -1,14 +1,16 @@
 /*
  *ViajeroResource.java
  * Clase que representa el viajero "/viajero"
- * Implementa varios m√©todos para manipular los viajeros
+ * Implementa varios mÈtodos para manipular los viajeros
  */
 package co.edu.uniandes.rest.aplication.resources;
 
+import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.primid.logic.api.IViajeroLogic;
+import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
 import co.edu.uniandes.rest.aplication.converters.ViajeroConverter;
 import co.edu.uniandes.rest.aplication.dtos.ViajeroDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
@@ -22,9 +24,9 @@ import javax.ws.rs.Produces;
 /*
  * Clase que implementa el recurso REST correspondiente a "viajeros".
  *
- * Note que la aplicaci√≥n (definida en RestConfig.java) define la ruta
+ * Note que la aplicaciÛn (definida en RestConfig.java) define la ruta
  * "/api" y este recurso tiene la ruta "viajeros".
- * Al ejecutar la aplicaci√≥n, el recurso ser√° accesibe a trav√©s de la
+ * Al ejecutar la aplicaciÛn, el recurso ser· accesibe a travÈs de la
  * ruta "/api/viajero"
  * @author jd.torres11
  */
@@ -39,7 +41,7 @@ public class ViajeroResource {
     	/**
 	 * Obtiene el listado de viajeros.
 	 * @return lista de viajeros
-	 * @throws PrimidLogicException excepci√≥n retornada por la l√≥gica
+	 * @throws PrimidLogicException excepciÛn retornada por la lÛgica
 	 */
 
      @GET
@@ -51,11 +53,11 @@ public class ViajeroResource {
      * Obtiene un viajero
      * @param id identificador dl viajero
      * @return viajero encontrada
-     * @throws PrimidLogicException cuando el viajero no existe
+     * @throws BusinessLogicException cuando el viajero no existe
      */
          @GET
          @Path("{id: \\d+}")
-    public ViajeroDTO getViajero(@PathParam("id") Long id) throws PrimidLogicException   {
+    public ViajeroDTO getViajero(@PathParam("id") Long id) throws BusinessLogicException   {
         return ViajeroConverter.fullEntity2DTO(viajeroLogic.getViajero(id));
     }
 
@@ -64,12 +66,12 @@ public class ViajeroResource {
      * Agrega un viajero
      * @param viajero viajero a agregar
      * @return datos del viajero a agregar
-     * @throws PrimidLogicException cuando ya existe un viajero con el id suministrado
+     * @throws BusinessLogicException cuando ya existe un viajero con el id suministrado
      */
          @POST
          @StatusCreated
-    public ViajeroDTO createViajeros(ViajeroDTO viajero) throws PrimidLogicException  {
-         ViajeroEntity entity = ViajeroConverter.fullDTO2Entity(dto);
+    public ViajeroDTO createViajeros(ViajeroDTO viajero) throws BusinessLogicException  {
+         ViajeroEntity entity = ViajeroConverter.fullDTO2Entity(viajero);
         return ViajeroConverter.fullEntity2DTO(viajeroLogic.createViajero(entity));
 
     }

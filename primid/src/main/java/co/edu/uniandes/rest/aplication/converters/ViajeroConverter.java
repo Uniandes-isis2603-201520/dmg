@@ -1,5 +1,6 @@
 package co.edu.uniandes.rest.aplication.converters;
 
+import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
 import co.edu.uniandes.rest.aplication.dtos.ViajeroDTO;
 import java.util.ArrayList;
 import java.util.List;
