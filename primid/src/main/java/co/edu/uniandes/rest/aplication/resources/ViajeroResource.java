@@ -69,7 +69,7 @@ public class ViajeroResource {
      * @throws BusinessLogicException cuando ya existe un viajero con el id suministrado
      */
          @POST
-         
+
     public ViajeroDTO createViajeros(ViajeroDTO viajero) throws BusinessLogicException  {
          ViajeroEntity entity = ViajeroConverter.fullDTO2Entity(viajero);
         return ViajeroConverter.fullEntity2DTO(viajeroLogic.createViajero(entity));

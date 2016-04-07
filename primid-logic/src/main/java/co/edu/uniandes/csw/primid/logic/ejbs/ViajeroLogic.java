@@ -1,6 +1,6 @@
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
-import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.api.IViajeroLogic;
 import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
 import co.edu.uniandes.csw.primid.logic.persistence.ViajeroPersistence;
