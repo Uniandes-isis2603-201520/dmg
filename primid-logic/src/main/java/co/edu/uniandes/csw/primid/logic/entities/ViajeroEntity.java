@@ -34,4 +34,12 @@ public class ViajeroEntity extends BaseEntity implements Serializable {
     public void setBooks(List<ItinerarioEntity> itinerarios) {
         this.itinerarios = itinerarios;
     }
+
+    public String getMail() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Boolean getEstado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
