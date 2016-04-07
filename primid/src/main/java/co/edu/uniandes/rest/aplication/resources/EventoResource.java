@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.rest.aplication.resources;
 
+import co.edu.uniandes.csw.primid.logic.api.IEventoLogic;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.EventoDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import java.util.List;
@@ -27,7 +28,7 @@ public class EventoResource {
 
     //incluir dependencia desde el pomp
     @Inject
-    EventoLogic eventoLogic;
+    private IEventoLogic eventoLogic;
 
     	/**
 	 * Obtiene el listado de eventos.
