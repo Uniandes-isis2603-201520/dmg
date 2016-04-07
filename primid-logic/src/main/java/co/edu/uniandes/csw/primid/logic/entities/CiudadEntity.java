@@ -17,18 +17,18 @@ import javax.persistence.TemporalType;
 public class CiudadEntity extends BaseEntity implements Serializable {
 
 
- 
+
     private double coordenadas;
     private String description;
 
     @ManyToMany
-    private List<AuthorEntity> authors = new ArrayList<>();
+    private List<CiudadEntity> authors = new ArrayList<>();
 
     @ManyToOne
-    private EditorialEntity editorial;
+    private CiudadEntity editorial;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ReviewEntity> reviews = new ArrayList<>();
+    private List<CiudadEntity> reviews = new ArrayList<>();
 
 
 
@@ -63,27 +63,27 @@ public class CiudadEntity extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-    public List<AuthorEntity> getAuthors() {
+    public List<CiudadEntity> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(List<AuthorEntity> authors) {
+    public void setAuthors(List<CiudadEntity> authors) {
         this.authors = authors;
     }
 
-    public EditorialEntity getEditorial() {
+    public CiudadEntity getEditorial() {
         return editorial;
     }
 
-    public void setEditorial(EditorialEntity editorial) {
+    public void setEditorial(CiudadEntity editorial) {
         this.editorial = editorial;
     }
 
-    public List<ReviewEntity> getReviews() {
+    public List<CiudadEntity> getReviews() {
         return reviews;
     }
 
-    public void setReviews(List<ReviewEntity> reviews) {
+    public void setReviews(List<CiudadEntity> reviews) {
         this.reviews = reviews;
     }
 }
