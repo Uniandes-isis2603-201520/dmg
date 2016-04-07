@@ -24,7 +24,12 @@ import javax.persistence.TemporalType;
 @Entity
 public class EventoEntity extends BaseEntity implements Serializable  {
 
+    private Long id;
     private String name;
+    private String place;
+    private ArrayList<String> comments;
+    private String category;
+    private double score;
     private String image;
     @Temporal(TemporalType.DATE)
     private Date startDate;
@@ -43,17 +48,41 @@ public class EventoEntity extends BaseEntity implements Serializable  {
    // private List<ReviewEntity> reviews = new ArrayList<>();
 
         /**
-     * @return the isbn
+     * @return the place
      */
-    public String getName() {
-        return name;
+    public String getPlace() {
+        return place;
     }
 
     /**
-     * @param isbn the isbn to set
+     * @param place the place to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    /**
+    * @return the comments
+    */
+    public ArrayList<String> getComments()
+    {
+        return comments;
+    }
+
+    /**
+     * @param comments the lists of comments
+     */
+    public void setComments(ArrayList comments)
+    {
+        this.comments = comments;
+    }
+
+    /**
+     * Add a comment to the event
+     */
+    public void addComment(String comment)
+    {
+        this.comments.add(comment);
     }
 
     /**
@@ -68,6 +97,34 @@ public class EventoEntity extends BaseEntity implements Serializable  {
      */
     public void setImage(String image) {
         this.image = image;
+    }
+
+    /**
+     * @return the image
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * @param category the image to set
+     */
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+     /**
+     * @return the score
+     */
+    public double getScore() {
+        return score;
+    }
+
+    /**
+     * @param score the score to set
+     */
+    public void setScore(double score) {
+        this.score = score;
     }
 
     /**
