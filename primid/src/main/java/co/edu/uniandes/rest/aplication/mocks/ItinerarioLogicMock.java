@@ -3,7 +3,7 @@ package co.edu.uniandes.rest.aplication.mocks;
 
 
 //import co.edu.uniandes.rest.cities.dtos.ItinerarioDTO;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.ItinerarioDTO;
+import co.edu.uniandes.rest.aplication.dtos.ItinerarioDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,11 +37,11 @@ public class ItinerarioLogicMock {
 
     	if (itinerarios == null) {
             itinerarios = new ArrayList();
-            itinerarios.add(new ItinerarioDTO(1L, "Vacaciones en familia","2016/03/17","2016/03/19","resources/images/Intinerario1.jpg",1L));
-            itinerarios.add(new ItinerarioDTO(2L, "Vacaciones en Estambul","2016/03/18","2016/03/20","resources/images/Intinerario2.jpg",1L));
-            itinerarios.add(new ItinerarioDTO(3L, "Visita a la familia","2016/03/19","2016/03/21","resources/images/Intinerario3.jpg",1L));
-            itinerarios.add(new ItinerarioDTO(3L, "Visita a Shadow Moses","2016/03/20","2016/03/22","resources/images/Intinerario3.jpg",2L));
-            itinerarios.add(new ItinerarioDTO(3L, "Vacaciones en Wakanda","2016/03/21","2016/03/23","resources/images/Intinerario2.jpg",3L));
+            //itinerarios.add(new ItinerarioDTO(1L, "Vacaciones en familia","2016/03/17","2016/03/19","resources/images/Intinerario1.jpg",1L));
+            //itinerarios.add(new ItinerarioDTO(2L, "Vacaciones en Estambul","2016/03/18","2016/03/20","resources/images/Intinerario2.jpg",1L));
+            //itinerarios.add(new ItinerarioDTO(3L, "Visita a la familia","2016/03/19","2016/03/21","resources/images/Intinerario3.jpg",1L));
+            //itinerarios.add(new ItinerarioDTO(3L, "Visita a Shadow Moses","2016/03/20","2016/03/22","resources/images/Intinerario3.jpg",2L));
+            //itinerarios.add(new ItinerarioDTO(3L, "Vacaciones en Wakanda","2016/03/21","2016/03/23","resources/images/Intinerario2.jpg",3L));
         }
         // indica que se muestren todos los mensajes
     	logger.setLevel(Level.INFO);
