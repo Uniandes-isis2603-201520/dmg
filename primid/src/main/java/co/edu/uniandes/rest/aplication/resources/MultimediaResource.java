@@ -6,10 +6,11 @@
 package co.edu.uniandes.rest.aplication.resources;
 
 
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.rest.aplication.converters.MultimediaConverter;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.MultimediaDTO;
+import co.edu.uniandes.rest.aplication.dtos.MultimediaDTO;
+
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import co.edu.uniandes.rest.aplication.mocks.MultimediaLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
@@ -44,7 +45,7 @@ public class MultimediaResource {
 	 */
     @GET
     @Path("/multimedia")
-    public List<MultimediaDTO> getMultimedia() throws PrimidLogicException {
+    public List<MultimediaDTO> getMultimedia() throws BusinessLogicException {
         return MultimediaConverter.listEntity2DTO(multimediaLogic.getMultimedia());
     }
 
