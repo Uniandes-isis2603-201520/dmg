@@ -1,6 +1,6 @@
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
-import co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.entities.CiudadEntity;
 import co.edu.uniandes.csw.primid.logic.persistence.CiudadPersistence;
 import java.util.Date;
@@ -17,8 +17,6 @@ public class CiudadLogic {
 
     @Inject
     private CiudadPersistence persistence;
-
-
 
     public List<CiudadEntity> getCiudades() {
         logger.info("Inicia proceso de consultar todos las ciudades");
