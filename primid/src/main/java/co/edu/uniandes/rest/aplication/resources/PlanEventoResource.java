@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.rest.aplication.resources;
 
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.PlanEventoDTO;
+import co.edu.uniandes.rest.aplication.dtos.PlanEventoDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.rest.aplication.mocks.CiudadLogicMock;
 
@@ -21,9 +21,9 @@ import javax.ws.rs.Produces;
 
 /**
  *
- * @author andresvera
+ * @author s.gonzalez22
  */
-@Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos/{id_PlanEvento: \\d+}")
+@Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos")
 @Produces("application/json")
 public class PlanEventoResource {
 
