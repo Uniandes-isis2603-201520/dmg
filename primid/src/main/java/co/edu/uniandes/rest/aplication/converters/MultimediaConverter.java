@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author fa.lopez10
  */
-public class MultimediaConverter {
+public abstract class MultimediaConverter {
 
     private MultimediaConverter()
     {
@@ -63,7 +63,7 @@ public class MultimediaConverter {
      * @return Instancia de BookDTO con los datos recibidos por parámetro
      * @generated
      */
-    private static MultimediaDTO basicEntity2DTO(MultimediaEntity entity) {
+    public static MultimediaDTO basicEntity2DTO(MultimediaEntity entity) {
         if (entity != null) {
             MultimediaDTO dto = new MultimediaDTO();
             dto.setId(entity.getId());
@@ -71,8 +71,38 @@ public class MultimediaConverter {
             dto.setRuta(entity.getRuta());
             dto.setTipo(entity.getTipo());
             //aqui van los many to one
+            dto.setItinerario(ItinerarioConverter.basicEntity2DTO(entity.getItinerario()));
+            dto.setPlanCiudad(PlanCiudadConverter.basicEntity2DTO(entity.getPlanCiudad()));//si sigue con error es que no esta el converter
+            dto.setPlanEvento(PlanEventoConverter.basicEntity2DTO(entity.getPlanEvento()));//si sigue con error es del converter
 
             return dto;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Convierte una instancia de MultimediaDTO a MultimediaEntity Se invoca cuando se
+     * necesita convertir una instancia de MultimediaDTO con los atributos propios de
+     * la entidad y con las relaciones uno a uno o muchos a uno
+     *
+     * @param dto instancia de MultimediaDTO a convertir
+     * @return Instancia de MultimediaEntity creada a partir de los datos de dto
+     * @generated
+     */
+    public static MultimediaEntity basicDTO2Entity(MultimediaDTO dto) {
+        if (dto != null) {
+            MultimediaEntity entity = new MultimediaEntity();
+            entity.setId(dto.getId());
+            entity.setName(dto.getName());
+            entity.setRuta(dto.getRuta());
+            entity.setTipo(dto.getTipo());
+            //relaciones entre recursos
+            entity.setItinerario(ItinerarioConverter.refDTO2Entity(dto.getItinerario()));
+            entity.setPlanCiudad(PlanCiudadConverter.refDTO2Entity(dto.getPlanCiudad()));//si sigue con error es que no esta el converter de plan...
+            entity.setPlanEvento(PlanEventoConverter.refDTO2Entity(dto.getPlanEvento()));//si sigue con error es del converter de plan..
+
+            return entity;
         } else {
             return null;
         }

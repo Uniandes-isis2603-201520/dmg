@@ -7,9 +7,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,14 +16,14 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
 
     private String tipo;
     private String ruta;
-//    Poner relaciones con planEvento, planCiudad e itinerario
+//    Relaciones con planEvento, planCiudad e itinerario
 //    @ManyToOne
-//    private PlanEventoEntity evento;
-//
-//    @ManyToOne
-//    private PlanCiudadEntity editorial;
+    private PlanEventoEntity planEvento;
 
-    @ManyToOne
+//    @ManyToOne
+    private PlanCiudadEntity planCiudad;
+
+//    @ManyToOne
     private ItinerarioEntity itinerario;
 
     /**
@@ -56,5 +54,48 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
         this.ruta = ruta;
     }
 
+    /**
+     *
+     */
+    public PlanEventoEntity getPlanEvento()
+    {
+        return planEvento;
+    }
+    /**
+     *
+     */
+    public void setPlanEvento(PlanEventoEntity planEvento)
+    {
+        this.planEvento=planEvento;
+    }
+
+    /**
+     *
+     */
+    public PlanCiudadEntity getPlanCiudad()
+    {
+        return planCiudad;
+    }
+    /**
+     *
+     */
+    public void setPlanCiudad(PlanCiudadEntity planCiudad)
+    {
+        this.planCiudad=planCiudad;
+    }
+    /**
+     *
+     */
+    public ItinerarioEntity getItinerario()
+    {
+        return itinerario;
+    }
+    /**
+     *
+     */
+    public void setItinerario(ItinerarioEntity itinerario)
+    {
+        this.itinerario=itinerario;
+    }
 
 }

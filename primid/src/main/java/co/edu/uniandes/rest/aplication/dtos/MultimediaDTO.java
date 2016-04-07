@@ -16,6 +16,10 @@ public class MultimediaDTO {
     private String tipo;
     private String ruta;
 
+    private PlanCiudadDTO planCiudad;
+    private PlanEventoDTO planEvento;
+    private ItinerarioDTO itinerario;
+
     public final static String VIDEO="video";
     public final static String AUDIO="audio";
     public final static String IMAGEN="imagen";
@@ -90,6 +94,31 @@ public class MultimediaDTO {
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }
+
+    public PlanCiudadDTO getPlanCiudad() {
+        return planCiudad;
+    }
+
+    public void setPlanCiudad(PlanCiudadDTO planCiudad) {
+        this.planCiudad = planCiudad;
+    }
+
+    public PlanEventoDTO getPlanEvento() {
+        return planEvento;
+    }
+
+    public void setPlanEvento(PlanEventoDTO planEvento) {
+        this.planEvento = planEvento;
+    }
+
+    public ItinerarioDTO getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(ItinerarioDTO itinerario) {
+        this.itinerario = itinerario;
+    }
+
      /**
      * Convierte el objeto a una cadena
      */
