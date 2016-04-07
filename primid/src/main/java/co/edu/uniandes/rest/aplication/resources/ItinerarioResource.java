@@ -65,7 +65,7 @@ public class ItinerarioResource {
     public List<ItinerarioDTO> getItinerarios(@PathParam("id_Viajero") Long idViajero) throws PrimidLogicException {
         logger.info("Se ejecuta método getItinerarios");
         //TODO
-        List<ItinerarioEntity> itinerarios = itinerarioLogic.getItinerarios();
+        List<ItinerarioEntity> itinerarios = itinerarioLogic.getItinerarios(idViajero);
         return ItinerarioConverter.listEntity2DTO(itinerarios);
     }
 
