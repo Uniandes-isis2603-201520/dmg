@@ -23,12 +23,12 @@ import javax.ws.rs.Produces;
  *
  * @author andresvera
  */
-@Path("viajeros/{id_Viajero:\\d+}/itinerarios/{id_Itinerario:\\d+}/plan/{id_planC:\\d+}")
+@Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos/{id_PlanEvento: \\d+}")
 @Produces("application/json")
 public class PlanEventoResource {
 
     @Inject
-    CiudadLogicMock ciudadLogic;
+
 
     @GET
     public List<PlanEventoDTO> getPlanEventos() throws PrimidLogicException{

@@ -7,7 +7,6 @@ package co.edu.uniandes.rest.aplication.resources;
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.EventoDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import co.edu.uniandes.rest.aplication.mocks.EventoLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
@@ -22,21 +21,21 @@ import javax.ws.rs.Produces;
  *
  * @author karenlorenaosoriohenao
  */
-@Path ("")
+@Path ("ciudades/{id_Ciudad: \\d+}/eventos")
 @Produces("application/json")
 public class EventoResource {
 
     //incluir dependencia desde el pomp
     @Inject
-    EventoLogicMock eventoLogic;
+    EventoLogic eventoLogic;
 
     	/**
 	 * Obtiene el listado de eventos.
 	 * @return lista de eventos
-	 * @throws PrimidLogicException excepci贸n retornada por la l贸gica
+	 * @throws PrimidLogicException excepci髇 retornada por la l骻ica
 	 */
      @GET
-     @Path("ciudades/eventos")
+     @Path("ciudades/{id_Ciudad: \\d+}/eventos")
     public List<EventoDTO> getEventos() throws PrimidLogicException {
         return eventoLogic.getEventos();
     }
@@ -45,10 +44,10 @@ public class EventoResource {
         /**
 	 * Obtiene el listado de eventos del viajero.
 	 * @return lista de eventos del viajero
-	 * @throws PrimidLogicException excepci贸n retornada por la l贸gica
+	 * @throws PrimidLogicException excepci髇 retornada por la l骻ica
 	 */
-     @GET
-     @Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos")
+//     @GET
+//     @Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos")
     public List<EventoDTO> getEventosViajero() throws PrimidLogicException {
         return eventoLogic.getEventosViajero();
     }
@@ -89,6 +88,17 @@ public class EventoResource {
     }
 
         /**
+     * Agrega un evento
+     * @param evento evento a agregar
+     * @return datos del evento a agregar
+     * @throws PrimidLogicException cuando ya existe un evento con el id suministrado
+     */
+         @POST
+    public EventoDTO createEventoViajero(EventoDTO evento) throws PrimidLogicException  {
+        return eventoLogic.createEvento(evento);
+    }
+
+        /**
      * Actualiza los datos de un evento
      * @param id identificador del evento a modificar
      * @param evento evento a modificar
@@ -114,4 +124,3 @@ public class EventoResource {
     }
 
 }
-    
