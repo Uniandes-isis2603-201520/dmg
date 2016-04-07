@@ -11,4 +11,6 @@ package co.edu.uniandes.csw.primid.logic.api;
  */
 public interface IPlanEventoLogic {
 
+    
+
 }
