@@ -27,11 +27,11 @@ public class ViajeroEntity extends BaseEntity implements Serializable {
         this.birthDate = birthDate;
     }
 
-    public List<ItinerarioEntity> getBooks() {
+    public List<ItinerarioEntity> getItinerarios() {
         return itinerarios;
     }
 
-    public void setBooks(List<ItinerarioEntity> itinerarios) {
+    public void setItinerarios(List<ItinerarioEntity> itinerarios) {
         this.itinerarios = itinerarios;
     }
 
