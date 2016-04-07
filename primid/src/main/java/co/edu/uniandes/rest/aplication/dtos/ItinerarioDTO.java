@@ -4,19 +4,24 @@
  * Los DTO especifican los mensajes que se envían entre el cliente y el servidor.
  * @author la.mesa10
  */
-package edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos;
+package co.edu.uniandes.rest.aplication.dtos;
+
+import java.util.Date;
 
 /*
  * Objeto de transferencia de datos de Viajeros.
  * @author la.mesa10
  */
+
+
 public class ItinerarioDTO {
 
     private Long id;
+    //TODO
     private Long idViajero;
     private String resumen;
-    private String fechaInicio;
-    private String fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
     private String rutaImg;
 
     /**
@@ -32,7 +37,7 @@ public class ItinerarioDTO {
      * @param fechaInicio fechaInicio del viajero
      * @param rutaImg imagen del viajero
      */
-    public ItinerarioDTO(Long id, String resumen, String fechaInicio,String fechaFin,String rutaImg,Long idViajero) {
+    public ItinerarioDTO(Long id, String resumen, Date fechaInicio,Date fechaFin,String rutaImg,Long idViajero) {
 		super();
 		this.id = id;
 		this.resumen = resumen;
@@ -74,33 +79,31 @@ public class ItinerarioDTO {
     /*
      * @return el fechaInicio
      */
-    public String getfechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
     /**
      * @param fechaInicio el fechaInicio del viajero
      */
-    public void setfechaInicio(String fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
       /*
      * @return la fecha final
      */
-    public String getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
-    /**
-     * @param fechaFin estado final de la cuenta
-     */
-    public void setFechaFin(String fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
+
       /*
      * @return la ruta de la imagen
      */
     public String getRutaImg()
     {
-        return fechaFin;
+        return rutaImg;
     }
     /**
      * @param rutaImg ruta con la imagem
@@ -115,6 +118,7 @@ public class ItinerarioDTO {
      */
     @Override
     public String toString() {
-    	return "{ id : " + getId() + ", resumen : \"" + getResumen() + ", fechaInicio : \"" + getfechaInicio() + ", fechaFin : \"" +getFechaFin() +"\" }" ;
+    	return "{ id : " + getId() + ", resumen : \"" + getResumen() + ", fechaInicio : \"" + getFechaInicio() + ", fechaFin : \"" +getFechaFin() +"\" }" ;
     }
+
 }
