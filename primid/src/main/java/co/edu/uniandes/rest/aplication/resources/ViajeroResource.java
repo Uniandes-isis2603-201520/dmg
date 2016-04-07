@@ -5,8 +5,7 @@
  */
 package co.edu.uniandes.rest.aplication.resources;
 
-
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.ViajeroDTO;
+import co.edu.uniandes.rest.aplication.dtos.ViajeroDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
 import java.util.List;
