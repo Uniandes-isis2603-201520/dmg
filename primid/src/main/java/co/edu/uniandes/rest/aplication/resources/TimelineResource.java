@@ -1,7 +1,7 @@
 /*
  *ViajeroResource.java
  * Clase que representa el viajero "/timeline"
- * Implementa varios métodos para manipular los viajeros
+ * Implementa varios mï¿½todos para manipular los viajeros
  */
 package co.edu.uniandes.rest.aplication.resources;
 
@@ -9,8 +9,6 @@ package co.edu.uniandes.rest.aplication.resources;
 import co.edu.uniandes.csw.primid.logic.api.ITimelineLogic;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.TimelineDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.mocks.TimelineLogicMock;
-import co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -26,9 +24,9 @@ import javax.ws.rs.core.MediaType;
 /*
  * Clase que implementa el recurso REST correspondiente a "timeline".
  *
- * Note que la aplicación (definida en RestConfig.java) define la ruta
+ * Note que la aplicaciï¿½n (definida en RestConfig.java) define la ruta
  * "/api" y este recurso tiene la ruta "viajeros".
- * Al ejecutar la aplicación, el recurso será accesibe a través de la
+ * Al ejecutar la aplicaciï¿½n, el recurso serï¿½ accesibe a travï¿½s de la
  * ruta "/api/viajero"
  * @author s.gonzalez22
  */
@@ -44,7 +42,7 @@ public class TimelineResource {
     	/**
 	 * Obtiene el listado de timelines de los itinerarios de un viajero.
 	 * @return lista de viajeros
-	 * @throws PrimidLogicException excepción retornada por la lógica
+	 * @throws PrimidLogicException excepciï¿½n retornada por la lï¿½gica
 	 */
      @GET
     public List<TimelineDTO> getTimelines() throws PrimidLogicException {

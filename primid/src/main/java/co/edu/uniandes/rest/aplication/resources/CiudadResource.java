@@ -7,7 +7,6 @@ package co.edu.uniandes.rest.aplication.resources;
 
 import edu.uniandes.dmg.co.edu.uniandes.rest.cities.dtos.CiudadDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import co.edu.uniandes.rest.aplication.mocks.CiudadLogicMock;
 import co.edu.uniandes.csw.primid.logic.api.ICiudadLogic;
 
 import java.util.List;
@@ -33,13 +32,13 @@ import javax.ws.rs.core.Response;
 @Path("ciudades")
 @Produces("application/json")
 public class CiudadResource {
-    
+
     private static final Logger logger = Logger.getLogger(CiudadResource.class.getName());
 
     @Inject
     private ICiudadLogic ciudadLogic;
 
-    @GET 
+    @GET
     public List<CiudadDTO> getCiudades() throws PrimidLogicException{
         return CiudadConverter.listEntity2DTO(ciudadLogic.getCiudades());
     }

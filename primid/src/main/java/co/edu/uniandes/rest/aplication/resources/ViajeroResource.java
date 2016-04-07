@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.rest.aplication.resources;
 
+import co.edu.uniandes.rest.aplication.converters.ViajeroConverter;
 import co.edu.uniandes.rest.aplication.dtos.ViajeroDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.rest.aplication.mocks.ViajeroLogicMock;
@@ -32,8 +33,8 @@ import javax.ws.rs.Produces;
 public class ViajeroResource {
 
  //incluir dependencia desde el pomp
-    @Inject
-    ViajeroLogicMock viajeroLogic;
+   @Inject
+    private IViajeroLogic viajeroLogic;
 
     	/**
 	 * Obtiene el listado de viajeros.
@@ -43,7 +44,7 @@ public class ViajeroResource {
 
      @GET
     public List<ViajeroDTO> getViajeros() throws PrimidLogicException {
-        return viajeroLogic.getViajeros();
+        return ViajeroConverter.listEntity2DTO(viajeroLogic.getViajeros());
     }
 
     /**
@@ -55,8 +56,9 @@ public class ViajeroResource {
          @GET
          @Path("{id: \\d+}")
     public ViajeroDTO getViajero(@PathParam("id") Long id) throws PrimidLogicException   {
-        return viajeroLogic.getViajeroPorId(id);
+        return ViajeroConverter.fullEntity2DTO(viajeroLogic.getViajero(id));
     }
+
 
      /**
      * Agrega un viajero
@@ -65,8 +67,11 @@ public class ViajeroResource {
      * @throws PrimidLogicException cuando ya existe un viajero con el id suministrado
      */
          @POST
+         @StatusCreated
     public ViajeroDTO createViajeros(ViajeroDTO viajero) throws PrimidLogicException  {
-        return viajeroLogic.createViajero(viajero);
+         ViajeroEntity entity = ViajeroConverter.fullDTO2Entity(dto);
+        return ViajeroConverter.fullEntity2DTO(viajeroLogic.createViajero(entity));
+
     }
 
 
@@ -80,7 +85,8 @@ public class ViajeroResource {
          @PUT
          @Path("{id: \\d+}")
     public ViajeroDTO updateViajero(@PathParam("id") Long id, ViajeroDTO viajero) throws PrimidLogicException {
-        return viajeroLogic.updateViajero(id, viajero);
+
+        return null;
     }
 
     /**

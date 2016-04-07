@@ -9,8 +9,6 @@ package co.edu.uniandes.rest.aplication.resources;
 //import co.edu.uniandes.rest.cities.dtos.ItinerarioDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.ItinerarioDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import co.edu.uniandes.rest.aplication.mocks.ItinerarioLogicMock;
-
 
 import java.util.List;
 import java.util.logging.Level;
