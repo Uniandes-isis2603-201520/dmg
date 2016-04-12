@@ -21,10 +21,10 @@ import javax.persistence.Query;
  */
 @Stateless
 public class PlanEventoPersistence {
-    
+
     private static final Logger logger = Logger.getLogger(PlanEventoPersistence.class.getName());
 
-    @PersistenceContext(unitName = "BookStorePU")
+    @PersistenceContext(unitName = "primidPU")
     protected EntityManager em;
 
     public PlanEventoEntity create(PlanEventoEntity entity) {

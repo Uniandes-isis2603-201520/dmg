@@ -22,7 +22,7 @@ public class EventoPersistence {
 
     private static final Logger logger = Logger.getLogger(EventoPersistence.class.getName());
 
-    @PersistenceContext(unitName = "EventoPU")
+    @PersistenceContext(unitName = "primidPU")
     protected EntityManager em;
 
     public EventoEntity find(Long id) {

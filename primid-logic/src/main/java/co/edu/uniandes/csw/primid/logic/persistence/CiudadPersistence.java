@@ -15,7 +15,7 @@ public class CiudadPersistence {
 
     private static final Logger logger = Logger.getLogger(CiudadPersistence.class.getName());
 
-    @PersistenceContext(unitName = "CiudadStorePU")
+    @PersistenceContext(unitName = "primidPU")
     protected EntityManager em;
 
     public CiudadEntity find(Long id) {

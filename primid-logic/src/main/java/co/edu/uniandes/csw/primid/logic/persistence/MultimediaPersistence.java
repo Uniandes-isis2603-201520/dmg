@@ -16,7 +16,7 @@ public class MultimediaPersistence {
 
     private static final Logger logger = Logger.getLogger(MultimediaPersistence.class.getName());
 
-    @PersistenceContext(unitName = "BookStorePU")
+    @PersistenceContext(unitName = "primidPU")
     protected EntityManager em;
 
     public MultimediaEntity find(Long id) {
