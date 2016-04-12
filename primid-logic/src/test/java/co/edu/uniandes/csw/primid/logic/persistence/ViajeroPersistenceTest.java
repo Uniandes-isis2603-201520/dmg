@@ -22,7 +22,7 @@ public class ViajeroPersistenceTest {
 
     }
     @Deployment
-    
+  
 
     @Test
     public void testSomeMethod() {
