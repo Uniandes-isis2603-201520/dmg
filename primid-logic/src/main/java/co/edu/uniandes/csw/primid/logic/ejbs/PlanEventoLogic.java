@@ -28,8 +28,7 @@ public class PlanEventoLogic implements IPlanEventoLogic {
     @Inject
     private PlanEventoPersistence persistence;
 
-    @Inject
-    IPlanEventoLogic planEventoLogic;
+   
     
   
 
