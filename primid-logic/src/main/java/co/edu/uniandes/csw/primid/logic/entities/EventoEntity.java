@@ -9,7 +9,6 @@ import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
@@ -24,8 +23,6 @@ import javax.persistence.TemporalType;
 @Entity
 public class EventoEntity extends BaseEntity implements Serializable  {
 
-    private Long id;
-    private String name;
     private String place;
     private ArrayList<String> comments;
     private String category;
@@ -168,10 +165,4 @@ public class EventoEntity extends BaseEntity implements Serializable  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
-
-
-
 }
