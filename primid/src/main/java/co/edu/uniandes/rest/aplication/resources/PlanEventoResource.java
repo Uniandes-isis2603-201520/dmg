@@ -5,9 +5,10 @@
  */
 package co.edu.uniandes.rest.aplication.resources;
 
+import co.edu.uniandes.csw.primid.logic.api.IPlanEventoLogic;
 import co.edu.uniandes.rest.aplication.dtos.PlanEventoDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-import co.edu.uniandes.rest.aplication.mocks.CiudadLogicMock;
+
 
 import java.util.List;
 import javax.inject.Inject;
@@ -28,6 +29,7 @@ import javax.ws.rs.Produces;
 public class PlanEventoResource {
 
     @Inject
+    private IPlanEventoLogic planEventoLogic;
 
 
     @GET
