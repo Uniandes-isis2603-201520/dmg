@@ -29,4 +29,22 @@ public class MultimediaPersistence {
         Query q = em.createQuery("select u from MultimediaEntity u");
         return q.getResultList();
     }
+
+    public MultimediaEntity create(MultimediaEntity entity) {
+        logger.info("Creando un archivo multimedia nuevo");
+        em.persist(entity);
+        logger.info("Archivo multimedia creado");
+        return entity;
+    }
+
+    public MultimediaEntity update(MultimediaEntity entity) {
+        logger.log(Level.INFO, "Actualizando archivo multimedia con id={0}", entity.getId());
+        return em.merge(entity);
+    }
+
+    public void delete(Long id) {
+        logger.log(Level.INFO, "Borrando archivo multimedia con id={0}", id);
+        MultimediaEntity entity = em.find(MultimediaEntity.class, id);
+        em.remove(entity);
+    }
 }
