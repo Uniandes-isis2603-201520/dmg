@@ -6,7 +6,7 @@
 package co.edu.uniandes.rest.aplication.converters;
 
 import co.edu.uniandes.csw.primid.logic.entities.PlanCiudadEntity;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.PlanCiudadDTO;
+import co.edu.uniandes.rest.aplication.dtos.PlanCiudadDTO;
 import java.util.ArrayList;
 import java.util.List;
 

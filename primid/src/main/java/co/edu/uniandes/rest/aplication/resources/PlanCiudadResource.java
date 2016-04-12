@@ -9,7 +9,7 @@ import co.edu.uniandes.csw.primid.logic.api.IPlanCiudadLogic;
 import co.edu.uniandes.csw.primid.logic.entities.PlanCiudadEntity;
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.rest.aplication.converters.PlanCiudadConverter;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.dtos.PlanCiudadDTO;
+import co.edu.uniandes.rest.aplication.dtos.PlanCiudadDTO;
 import co.edu.uniandes.rest.aplication.mocks.CiudadLogicMock;
 
 import java.util.List;
@@ -36,7 +36,7 @@ public class PlanCiudadResource {
 /**
 	 * Obtiene el listado de plan ciudades.
 	 * @return lista de plan ciudades
-	 * @throws BusinessLogicException excepción retornada por la lógica
+	 * @throws BusinessLogicException excepciï¿½n retornada por la lï¿½gica
 	 */
     @Path("planCiudades")
     @GET
