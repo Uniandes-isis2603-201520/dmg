@@ -20,9 +20,6 @@ public class CiudadLogic implements ICiudadLogic {
     @Inject
     private CiudadPersistence persistence;
 
-    @Inject
-    ICiudadLogic ciudadLogic;
-
     @Override
     public List<CiudadEntity> getCiudades() {
         logger.info("Inicia proceso de consultar todas las ciudades");
