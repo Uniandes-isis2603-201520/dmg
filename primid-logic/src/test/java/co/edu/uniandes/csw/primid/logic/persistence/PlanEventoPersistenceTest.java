@@ -29,5 +29,37 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 public class PlanEventoPersistenceTest {
 
 
-    
+    @Inject
+    private PlanEventoPersistence planEventoPersistence;
+    @PersistenceContext
+    private EntityManager em ;
+    private final PodamFactory factory = new PodamFactoryImpl();
+
+    public PlanEventoPersistenceTest() {
+
+    }
+
+    @Deployment
+    public static JavaArchive createDeployment()
+    {
+        return ShrinkWrap.create(JavaArchive.class)
+                .addPackage(PlanEventoEntity.class.getPackage())
+                .addPackage(PlanEventoPersistence.class.getPackage())
+                .addAsManifestResource("META-INF/persistence.xml","persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml","beans.xml");
+
+    }
+
+    @Test
+    public void createPlanEventoTest() {
+
+        PlanEventoEntity newEntity= factory.manufacturePojo(PlanEventoEntity.class);
+
+        PlanEventoEntity result = planEventoPersistence.create(newEntity);
+
+
+        Assert.assertNotNull(result);
+    }
+
+
 }
