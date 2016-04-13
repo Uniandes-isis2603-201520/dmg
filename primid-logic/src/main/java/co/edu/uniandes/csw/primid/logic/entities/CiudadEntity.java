@@ -18,8 +18,12 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
 @Entity
 public class CiudadEntity extends BaseEntity implements Serializable {
 
+
+    @OneToMany(mappedBy = "ciudad")
+    private ArrayList<EventoEntity> eventos = new ArrayList() ;
+
     private double coordenadas;
-   
+
     /**
      * @return the description
      */
@@ -34,5 +38,5 @@ public class CiudadEntity extends BaseEntity implements Serializable {
         this.coordenadas = coordenadas;
     }
 
-    
+
 }

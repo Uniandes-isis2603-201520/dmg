@@ -53,6 +53,11 @@ public class EventoPersistenceTest {
         Assert.assertNotNull(result);
         EventoEntity entity = em.find(EventoEntity.class, result.getId());
         Assert.assertEquals(newEntity.getName(), entity.getName());
+        Assert.assertEquals(newEntity.getPlace(), entity.getPlace());
+        Assert.assertEquals(newEntity.getCategory(), entity.getCategory());
+        Assert.assertEquals(newEntity.getDescription(), entity.getDescription());
+
     }
+
 
 }
