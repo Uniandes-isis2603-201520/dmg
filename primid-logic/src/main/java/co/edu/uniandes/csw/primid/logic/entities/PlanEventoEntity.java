@@ -41,6 +41,18 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
 
 
 
+    @ManyToMany
+    @PodamExclude
+    private List<MultimediaEntity> multimedia = new ArrayList<>();
+
+    @ManyToOne
+    @PodamExclude
+    private EventoEntity evento;
+
+
+
+
+
 
 
       /**

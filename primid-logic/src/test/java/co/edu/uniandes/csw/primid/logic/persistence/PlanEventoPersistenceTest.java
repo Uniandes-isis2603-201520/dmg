@@ -5,55 +5,61 @@
  */
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
+import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.junit.Assert;
-
+import junit.framework.Assert;
+import static org.glassfish.pfl.basic.tools.argparser.ElementParser.factory;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
+import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 /**
  *
- * @author jd.torres11
+ * @author Sebastian
  */
 @RunWith(Arquillian.class)
-public class ViajeroPersistenceTest {
+public class PlanEventoPersistenceTest {
+
 
     @Inject
-    private ViajeroPersistence viajeroPersistence;
+    private PlanEventoPersistence planEventoPersistence;
     @PersistenceContext
     private EntityManager em ;
     private final PodamFactory factory = new PodamFactoryImpl();
 
-    public ViajeroPersistenceTest() {
+    public PlanEventoPersistenceTest() {
 
     }
+
     @Deployment
     public static JavaArchive createDeployment()
     {
         return ShrinkWrap.create(JavaArchive.class)
-                .addPackage(ViajeroEntity.class.getPackage())
-                .addPackage(ViajeroPersistence.class.getPackage())
-                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
-                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
+                .addPackage(PlanEventoEntity.class.getPackage())
+                .addPackage(PlanEventoPersistence.class.getPackage())
+                .addAsManifestResource("META-INF/persistence.xml","persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml","beans.xml");
+
     }
 
     @Test
-    public void createViajeroTest() {
+    public void createPlanEventoTest() {
 
-        ViajeroEntity newEntity =factory.manufacturePojo(ViajeroEntity.class);
+        PlanEventoEntity newEntity= factory.manufacturePojo(PlanEventoEntity.class);
 
-        ViajeroEntity result = viajeroPersistence.create (newEntity);
+        PlanEventoEntity result = planEventoPersistence.create(newEntity);
+
 
         Assert.assertNotNull(result);
     }
+
 
 }
