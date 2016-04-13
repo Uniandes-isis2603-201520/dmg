@@ -11,8 +11,13 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
+import javax.inject.Inject;
+import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
+import uk.co.jemos.podam.api.PodamFactory;
+import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 /**
  *
@@ -20,6 +25,12 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Arquillian.class)
 public class EventoPersistenceTest {
+
+    @Inject
+    private EventoPersistence eventoPersistence;
+    @PersistenceContext
+    private EntityManager em;
+    private final PodamFactory factory = new PodamFactoryImpl();
 
     public EventoPersistenceTest() {
     }
@@ -35,7 +46,13 @@ public class EventoPersistenceTest {
     }
 
     @Test
-    public void testSomeMethod() {
+    public void creatEventotest() {
+        EventoEntity newEntity = factory.manufacturePojo(EventoEntity.class);
+        EventoEntity result = eventoPersistence.create(newEntity);
+
+        Assert.assertNotNull(result);
+        EventoEntity entity = em.find(EventoEntity.class, result.getId());
+        Assert.assertEquals(newEntity.getName(), entity.getName());
     }
 
 }
