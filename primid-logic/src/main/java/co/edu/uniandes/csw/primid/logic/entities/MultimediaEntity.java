@@ -21,8 +21,6 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     @ManyToOne
     private PlanCiudadEntity planCiudad;
 
-    @OneToOne
-    private ItinerarioEntity itinerario;
 
     /**
      * @return the tipo
@@ -81,19 +79,6 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     {
         this.planCiudad=planCiudad;
     }
-    /**
-     *
-     */
-    public ItinerarioEntity getItinerario()
-    {
-        return itinerario;
-    }
-    /**
-     *
-     */
-    public void setItinerario(ItinerarioEntity itinerario)
-    {
-        this.itinerario=itinerario;
-    }
+
 
 }
