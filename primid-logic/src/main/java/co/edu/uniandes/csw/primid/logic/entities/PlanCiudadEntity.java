@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -28,8 +29,8 @@ public class PlanCiudadEntity extends BaseEntity implements Serializable{
        @Temporal(TemporalType.DATE)
     private Date fechaSalida;
 
-    @ManyToMany(mappedBy = "viajeros")
-    private List<PlanCiudadEntity> planCiudades = new ArrayList<>();
+    @ManyToOne
+    private ItinerarioEntity itinerario;
 
     public Date getFechaLlegada() {
         return fechaLlegada;

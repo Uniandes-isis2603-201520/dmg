@@ -30,6 +30,9 @@ public class ItinerarioEntity extends BaseEntity implements Serializable
     @PodamExclude
     private ViajeroEntity viajero;
 
+    @OneToMany(mappedBy = "itinerario")
+    private List<PlanCiudadEntity> planCiudades = new ArrayList<> ();
+
     @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
     private Date fechaInicio;
