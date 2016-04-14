@@ -9,7 +9,9 @@
         <module>../primid</module>
         <module>../primid-logic</module>
     </modules>
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
      <repositories>
         <repository>
             <id>csw-releases</id>
@@ -17,10 +19,6 @@
             <url>http://157.253.238.75:8081/content/repositories/releases/</url>
         </repository>
     </repositories>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>

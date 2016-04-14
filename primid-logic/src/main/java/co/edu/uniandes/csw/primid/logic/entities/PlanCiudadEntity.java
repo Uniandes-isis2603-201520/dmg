@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,6 +19,7 @@ import javax.persistence.TemporalType;
  *
  * @author jd.torres11
  */
+@Entity
 public class PlanCiudadEntity extends BaseEntity implements Serializable{
 
      @Temporal(TemporalType.DATE)
@@ -44,6 +46,6 @@ public class PlanCiudadEntity extends BaseEntity implements Serializable{
         this.fechaSalida = fechaSalida;
     }
 
-   
+
 
 }
