@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import uk.co.jemos.podam.common.PodamExclude;
 /**
  *
  * @author kl.osorio10
@@ -38,8 +39,9 @@ public class EventoEntity extends BaseEntity implements Serializable  {
    // @ManyToMany
    // private List<AuthorEntity> authors = new ArrayList<>();
 
-   // @ManyToOne
-   // private EditorialEntity editorial;
+    @ManyToOne
+    //@PodamExclude
+    private CiudadEntity ciudad;
 
    // @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
    // private List<ReviewEntity> reviews = new ArrayList<>();
@@ -165,4 +167,13 @@ public class EventoEntity extends BaseEntity implements Serializable  {
     public void setDescription(String description) {
         this.description = description;
     }
+
+        public CiudadEntity getCiudad() {
+        return ciudad;
+    }
+
+    public void setEditorial(CiudadEntity ciudad) {
+        this.ciudad = ciudad;
+    }
+
 }
