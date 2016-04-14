@@ -41,7 +41,7 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
 
 
 
-    @ManyToMany
+    @OneToMany(mappedBy = "planEvento", cascade = CascadeType.ALL, orphanRemoval = true)
     @PodamExclude
     private List<MultimediaEntity> multimedia = new ArrayList<>();
 
