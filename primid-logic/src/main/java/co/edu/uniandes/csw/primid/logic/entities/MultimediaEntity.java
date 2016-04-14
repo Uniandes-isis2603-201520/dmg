@@ -4,12 +4,7 @@ import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 @Entity
 public class MultimediaEntity extends BaseEntity implements Serializable {
@@ -17,13 +12,13 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     private String tipo;
     private String ruta;
 //    Relaciones con planEvento, planCiudad e itinerario
-//    @ManyToOne
+    @ManyToOne
     private PlanEventoEntity planEvento;
 
-//    @ManyToOne
+    @ManyToOne
     private PlanCiudadEntity planCiudad;
 
-//    @ManyToOne
+    @OneToOne
     private ItinerarioEntity itinerario;
 
     /**
