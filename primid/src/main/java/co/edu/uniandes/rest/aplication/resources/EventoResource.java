@@ -5,10 +5,10 @@
  */
 package co.edu.uniandes.rest.aplication.resources;
 
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.api.IEventoLogic;
 import co.edu.uniandes.csw.primid.logic.entities.EventoEntity;
 import co.edu.uniandes.rest.aplication.converters.EventoConverter;
-import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.rest.aplication.dtos.EventoDTO;
 import java.util.List;
 import java.util.logging.Level;
