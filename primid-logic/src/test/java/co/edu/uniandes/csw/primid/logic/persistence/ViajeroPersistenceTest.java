@@ -54,6 +54,10 @@ public class ViajeroPersistenceTest {
         ViajeroEntity result = viajeroPersistence.create (newEntity);
 
         Assert.assertNotNull(result);
+        ViajeroEntity entity = em.find (ViajeroEntity.class, result.getId());
+        Assert.assertEquals(newEntity.getName(), entity.getName());
+        Assert.assertEquals(newEntity.getEstado(), entity.getEstado());
+        Assert.assertEquals(newEntity.getMail(), entity.getMail());
     }
 
 }
