@@ -5,8 +5,7 @@
  */
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +13,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -100,9 +99,7 @@ public class ItinerarioPersistenceTest
             data.add(nuevo);
         }
     }
-    {
-
-    }
+    
     @Test
     public void getItinerariosTest() {
         List<ItinerarioEntity> list = itinerarioP.findAll();
