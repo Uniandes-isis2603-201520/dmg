@@ -12,10 +12,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -29,8 +26,6 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
  */
 @Entity
 public class PlanEventoEntity extends BaseEntity implements Serializable {
-
-
 
     @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
@@ -50,12 +45,6 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
     @PodamExclude
     private EventoEntity evento;
 
-
-
-
-
-
-
       /**
      * @return the publishDate
      */
@@ -64,7 +53,7 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
     }
 
     /**
-     * @param publishDate the publishDate to set
+     * @param fechaInicio the publishDate to set
      */
     public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
@@ -78,13 +67,11 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
     }
 
     /**
-     * @param publishDate the publishDate to set
+     * @param fechaFin the publishDate to set
      */
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
-
-
 
 
 }

@@ -2,11 +2,8 @@ package co.edu.uniandes.csw.primid.logic.entities;
 
 import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 
@@ -55,6 +52,7 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
 
     /**
      *
+     * @return PlanEventoEntity
      */
     public PlanEventoEntity getPlanEvento()
     {
@@ -62,6 +60,7 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     }
     /**
      *
+     * @param planEvento
      */
     public void setPlanEvento(PlanEventoEntity planEvento)
     {
@@ -70,6 +69,7 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
 
     /**
      *
+     * @return PlanCiudadEntity
      */
     public PlanCiudadEntity getPlanCiudad()
     {
@@ -77,6 +77,7 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     }
     /**
      *
+     * @param planCiudad
      */
     public void setPlanCiudad(PlanCiudadEntity planCiudad)
     {

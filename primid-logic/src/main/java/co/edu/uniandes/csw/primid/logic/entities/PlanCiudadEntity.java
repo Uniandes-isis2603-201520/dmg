@@ -7,11 +7,8 @@ package co.edu.uniandes.csw.primid.logic.entities;
 
 import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,7 +23,7 @@ public class PlanCiudadEntity extends BaseEntity implements Serializable{
      @Temporal(TemporalType.DATE)
     private Date fechaLlegada;
 
-       @Temporal(TemporalType.DATE)
+     @Temporal(TemporalType.DATE)
     private Date fechaSalida;
 
     @ManyToOne
