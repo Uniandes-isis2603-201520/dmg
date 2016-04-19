@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.primid.logic.entities;
 
+import co.edu.uniandes.csw.crud.api.podam.strategy.DateStrategy;
 import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import uk.co.jemos.podam.common.PodamExclude;
+import uk.co.jemos.podam.common.PodamStrategyValue;
 /**
  *
  * @author kl.osorio10
@@ -30,15 +32,17 @@ public class EventoEntity extends BaseEntity implements Serializable  {
     private String category;
     private double score;
     private String image;
+    @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
     private Date startDate;
+    @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
     private Date endDate;
     private String description;
 
 
     @ManyToOne
-    //@PodamExclude
+    @PodamExclude
     private CiudadEntity ciudad;
 
         /**
