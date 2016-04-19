@@ -28,31 +28,31 @@ public class PlanEventoPersistence {
     protected EntityManager em;
 
     public PlanEventoEntity create(PlanEventoEntity entity) {
-        logger.info("Creando un autor nuevo");
+        logger.info("Creando un planEvento nuevo");
         em.persist(entity);
-        logger.info("Autor creado");
+        logger.info("planEvento creado");
         return entity;
     }
 
     public PlanEventoEntity update(PlanEventoEntity entity) {
-        logger.log(Level.INFO, "Actualizando autor con id={0}", entity.getId());
+        logger.log(Level.INFO, "Actualizando planEvento con id={0}", entity.getId());
         return em.merge(entity);
     }
 
     public void delete(Long id) {
-        logger.log(Level.INFO, "Borrando autor con id={0}", id);
+        logger.log(Level.INFO, "Borrando planEvento con id={0}", id);
         PlanEventoEntity entity = em.find(PlanEventoEntity.class, id);
         em.remove(entity);
     }
 
     public PlanEventoEntity find(Long id) {
-        logger.log(Level.INFO, "Consultando autor con id={0}", id);
+        logger.log(Level.INFO, "Consultando planEvento con id={0}", id);
         return em.find(PlanEventoEntity.class, id);
     }
 
     public List<PlanEventoEntity> findAll() {
-        logger.info("Consultando todos los autores");
-        Query q = em.createQuery("select u from AuthorEntity u");
+        logger.info("Consultando todos los planEvento");
+        Query q = em.createQuery("select u from PlanEventoEntity u");
         return q.getResultList();
     }
 
