@@ -131,7 +131,7 @@ public class PlanEventoPersistenceTest {
     }
 
     @Test
-    public void deleteAuthorTest() {
+    public void deletePlanEventoTest() {
         PlanEventoEntity entity = data.get(0);
         planEventoPersistence.delete(entity.getId());
         PlanEventoEntity deleted = em.find(PlanEventoEntity.class, entity.getId());
