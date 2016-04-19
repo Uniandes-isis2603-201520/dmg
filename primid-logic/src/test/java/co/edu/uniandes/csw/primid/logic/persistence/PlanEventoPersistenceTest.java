@@ -75,6 +75,81 @@ public class PlanEventoPersistenceTest {
     }
 
 
-//prueba
+  public PlanEventoPersistenceTest() {
+
+    }
+
+    @Deployment
+    public static JavaArchive createDeployment()
+    {
+        return ShrinkWrap.create(JavaArchive.class)
+                .addPackage(PlanEventoEntity.class.getPackage())
+                .addPackage(PlanEventoPersistence.class.getPackage())
+                .addAsManifestResource("META-INF/persistence.xml","persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml","beans.xml");
+
+    }
+
+    @Test
+    public void createPlanEventoTest() {
+
+        PlanEventoEntity newEntity= factory.manufacturePojo(PlanEventoEntity.class);
+
+        PlanEventoEntity result = planEventoPersistence.create(newEntity);
+
+
+        Assert.assertNotNull(result);
+
+         PlanEventoEntity entity = em.find(PlanEventoEntity.class, result.getId());
+
+        Assert.assertEquals(newEntity.getName(), entity.getName());
+    }
+
+
+    @Test
+    public void getPlanEventosTest() {
+        List<PlanEventoEntity> list = planEventoPersistence.findAll();
+        Assert.assertEquals(data.size(), list.size());
+        for (PlanEventoEntity ent : list) {
+            boolean found = false;
+            for (PlanEventoEntity entity : data) {
+                if (ent.getId().equals(entity.getId())) {
+                    found = true;
+                }
+            }
+            Assert.assertTrue(found);
+        }
+    }
+
+    @Test
+    public void getAuthorTest() {
+        PlanEventoEntity entity = data.get(0);
+        PlanEventoEntity newEntity = planEventoPersistence.find(entity.getId());
+        Assert.assertNotNull(newEntity);
+        Assert.assertEquals(entity.getName(), newEntity.getName());
+
+    }
+
+    @Test
+    public void deleteAuthorTest() {
+        PlanEventoEntity entity = data.get(0);
+        planEventoPersistence.delete(entity.getId());
+        PlanEventoEntity deleted = em.find(PlanEventoEntity.class, entity.getId());
+        Assert.assertNull(deleted);
+    }
+
+    @Test
+    public void updatePlanEventoTest() {
+        PlanEventoEntity entity = data.get(0);
+        PlanEventoEntity newEntity = factory.manufacturePojo(PlanEventoEntity.class);
+
+        newEntity.setId(entity.getId());
+
+        planEventoPersistence.update(newEntity);
+
+        PlanEventoEntity resp = em.find(PlanEventoEntity.class, entity.getId());
+
+        Assert.assertEquals(newEntity.getName(), resp.getName());
+    }
 
 }
