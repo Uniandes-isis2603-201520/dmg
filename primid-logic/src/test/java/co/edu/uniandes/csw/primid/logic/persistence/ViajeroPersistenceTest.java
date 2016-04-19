@@ -145,6 +145,6 @@ public class ViajeroPersistenceTest {
         ViajeroEntity resp = em.find(ViajeroEntity.class, entity.getId());
 
         Assert.assertEquals(newEntity.getName(), resp.getName());
-    }
+    }   
 
 }
