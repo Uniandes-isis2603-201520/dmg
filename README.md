@@ -9,6 +9,7 @@ Integra servicios REST implementando JAX-RS.
 
 ## Estructura del proyecto
 
+
 El proyecto sigue la estructura de los proyectos Maven. 
 Por lo tanto, el código fuente Java está ubicado en la carpeta `src/main/java` dentro del proyecto.
 El código de la página web está ubicado en la carpeta `src/main/webapp`. 
