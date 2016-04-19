@@ -122,7 +122,7 @@ public class PlanEventoPersistenceTest {
     }
 
     @Test
-    public void getAuthorTest() {
+    public void getPlanEventoTest() {
         PlanEventoEntity entity = data.get(0);
         PlanEventoEntity newEntity = planEventoPersistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
