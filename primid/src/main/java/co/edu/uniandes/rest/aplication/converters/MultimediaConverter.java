@@ -71,9 +71,8 @@ public abstract class MultimediaConverter {
             dto.setRuta(entity.getRuta());
             dto.setTipo(entity.getTipo());
             //aqui van los many to one
-            dto.setItinerario(ItinerarioConverter.refEntity2DTO(entity.getItinerario()));
-//            dto.setPlanCiudad(PlanCiudadConverter.refEntity2DTO(entity.getPlanCiudad()));//si sigue con error es que no esta el converter
-            dto.setPlanEvento(PlanEventoConverter.refEntity2DTO(entity.getPlanEvento()));//si sigue con error es del converter
+            dto.setPlanCiudad(PlanCiudadConverter.refEntity2DTO(entity.getPlanCiudad()));
+            dto.setPlanEvento(PlanEventoConverter.refEntity2DTO(entity.getPlanEvento()));
 
             return dto;
         } else {
@@ -98,9 +97,9 @@ public abstract class MultimediaConverter {
             entity.setRuta(dto.getRuta());
             entity.setTipo(dto.getTipo());
             //relaciones entre recursos
-            entity.setItinerario(ItinerarioConverter.refDTO2Entity(dto.getItinerario()));
-//            entity.setPlanCiudad(PlanCiudadConverter.refDTO2Entity(dto.getPlanCiudad()));//si sigue con error es que no esta el converter de plan...
-            entity.setPlanEvento(PlanEventoConverter.refDTO2Entity(dto.getPlanEvento()));//si sigue con error es del converter de plan..
+
+            entity.setPlanCiudad(PlanCiudadConverter.refDTO2Entity(dto.getPlanCiudad()));
+            entity.setPlanEvento(PlanEventoConverter.refDTO2Entity(dto.getPlanEvento()));
 
             return entity;
         } else {

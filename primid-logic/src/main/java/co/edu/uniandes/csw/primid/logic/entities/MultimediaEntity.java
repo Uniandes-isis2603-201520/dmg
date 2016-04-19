@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 
 @Entity
@@ -16,13 +17,13 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     private String ruta;
 //    Relaciones con planEvento, planCiudad e itinerario
     @ManyToOne
+    @PodamExclude
     private PlanEventoEntity planEvento;
 
     @ManyToOne
+    @PodamExclude
     private PlanCiudadEntity planCiudad;
 
-    @OneToOne
-    private ItinerarioEntity itinerario;
 
     /**
      * @return the tipo
@@ -81,19 +82,6 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     {
         this.planCiudad=planCiudad;
     }
-    /**
-     *
-     */
-    public ItinerarioEntity getItinerario()
-    {
-        return itinerario;
-    }
-    /**
-     *
-     */
-    public void setItinerario(ItinerarioEntity itinerario)
-    {
-        this.itinerario=itinerario;
-    }
+
 
 }
