@@ -69,7 +69,7 @@ public class MultimediaPersistenceTest {
     }
 
     private void clearData() {
-        em.createQuery("delete from AuthorEntity").executeUpdate();
+        em.createQuery("delete from MultimediaEntity").executeUpdate();
     }
 
     private List<MultimediaEntity> data = new ArrayList<>();
