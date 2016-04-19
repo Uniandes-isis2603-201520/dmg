@@ -38,7 +38,7 @@ public class ItinerarioPersistenceTest
     @Inject
     UserTransaction ut ;
     private List<ItinerarioEntity> data = new ArrayList<>();
-
+//Purueba
 
     @Deployment
     public static JavaArchive createDeployment()
@@ -99,7 +99,7 @@ public class ItinerarioPersistenceTest
             data.add(nuevo);
         }
     }
-    
+
     @Test
     public void getItinerariosTest() {
         List<ItinerarioEntity> list = itinerarioP.findAll();
