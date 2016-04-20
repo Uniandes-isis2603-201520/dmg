@@ -10,7 +10,7 @@
 
 	    private long id;
 	    private String name;
-	    private int coordenadas;
+	    private Integer coordenadas;
 	
 
 	    /**
@@ -22,7 +22,7 @@
 	    /**
 	     * Constructor 
 	     */
-	    public CiudadDTO(long id, String name, int coordenadas) {
+	    public CiudadDTO(long id, String name, Integer coordenadas) {
 	
 
 	        super();
@@ -66,7 +66,7 @@
 	    }
 	
 
-	    public double getCoordenadas() {
+	    public Integer getCoordenadas() {
 	        return coordenadas;
 	    }
 	
@@ -74,7 +74,7 @@
 	    /**
 	     * @param name the name to set
 	     */
-	    public void setCoordenadas(int coordenadas) {
+	    public void setCoordenadas(Integer coordenadas) {
 	        this.coordenadas = coordenadas;
 	    }
 	

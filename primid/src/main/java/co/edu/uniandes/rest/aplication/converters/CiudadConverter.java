@@ -101,7 +101,7 @@ public abstract class CiudadConverter {
             CiudadEntity entity = new CiudadEntity();
             entity.setId(dto.getId());
             entity.setName(dto.getName());
-            entity.setCoordenadas((int) dto.getCoordenadas());
+            entity.setCoordenadas(dto.getCoordenadas());
 
             return entity;
         } else {
