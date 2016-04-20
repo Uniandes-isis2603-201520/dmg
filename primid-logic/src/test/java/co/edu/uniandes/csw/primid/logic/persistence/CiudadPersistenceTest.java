@@ -18,6 +18,7 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
@@ -29,7 +30,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  */
 @RunWith(Arquillian.class)
 public class CiudadPersistenceTest {
-
+    
     @Inject
     private CiudadPersistence ciudadPersistence;
 
@@ -38,12 +39,12 @@ public class CiudadPersistenceTest {
 
     @Inject
     UserTransaction utx;
-
+    
     private final PodamFactory factory = new PodamFactoryImpl();
-
+    
     public CiudadPersistenceTest() {
     }
-
+    
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
@@ -52,7 +53,7 @@ public class CiudadPersistenceTest {
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
-
+    
     @Test
     public void createCiudadTest() {
         CiudadEntity newEntity = factory.manufacturePojo(CiudadEntity.class);
@@ -61,9 +62,9 @@ public class CiudadPersistenceTest {
         Assert.assertNotNull(result);
         CiudadEntity entity = em.find(CiudadEntity.class, result.getId());
         Assert.assertEquals(newEntity.getName(), entity.getName());
-        Assert.assertEquals(newEntity.getCoordenadas(), entity.getCoordenadas(),1);
+        Assert.assertEquals(newEntity.getCoordenadas(), entity.getCoordenadas());
     }
-
+    
     @Before
     public void configTest() {
         try {
@@ -81,13 +82,13 @@ public class CiudadPersistenceTest {
             }
         }
     }
-
+    
     private void clearData() {
         em.createQuery("delete from CiudadEntity").executeUpdate();
     }
-
+    
     private List<CiudadEntity> data = new ArrayList<>();
-
+    
     private void insertData() {
         for (int i = 0; i < 3; i++) {
             CiudadEntity entity = factory.manufacturePojo(CiudadEntity.class);
@@ -117,7 +118,7 @@ public class CiudadPersistenceTest {
         CiudadEntity newEntity = ciudadPersistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getName(), newEntity.getName());
-        Assert.assertEquals(entity.getCoordenadas(), newEntity.getCoordenadas(),1);
+        Assert.assertEquals(entity.getCoordenadas(), newEntity.getCoordenadas());
     }
 
     @Test
@@ -141,5 +142,5 @@ public class CiudadPersistenceTest {
 
         Assert.assertEquals(newEntity.getName(), resp.getName());
     }
-
+    
 }

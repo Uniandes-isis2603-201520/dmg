@@ -10,7 +10,6 @@ import co.edu.uniandes.csw.primid.logic.entities.PlanCiudadEntity;
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.rest.aplication.converters.PlanCiudadConverter;
 import co.edu.uniandes.rest.aplication.dtos.PlanCiudadDTO;
-import co.edu.uniandes.rest.aplication.mocks.CiudadLogicMock;
 
 import java.util.List;
 import javax.inject.Inject;

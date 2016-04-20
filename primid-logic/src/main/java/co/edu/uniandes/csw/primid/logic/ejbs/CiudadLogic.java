@@ -4,6 +4,7 @@ import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.entities.CiudadEntity;
 import co.edu.uniandes.csw.primid.logic.persistence.CiudadPersistence;
 import co.edu.uniandes.csw.primid.logic.api.ICiudadLogic;
+import co.edu.uniandes.csw.primid.logic.api.IPlanCiudadLogic;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -19,6 +20,9 @@ public class CiudadLogic implements ICiudadLogic {
 
     @Inject
     private CiudadPersistence persistence;
+    
+    @Inject
+    private IPlanCiudadLogic planCiudad;
 
     @Override
     public List<CiudadEntity> getCiudades() {
