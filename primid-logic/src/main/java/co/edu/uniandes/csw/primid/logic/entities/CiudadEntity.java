@@ -21,6 +21,7 @@ public class CiudadEntity extends BaseEntity implements Serializable {
     private Integer coordenadas;
     
     @OneToMany(mappedBy = "ciudad")
+    @PodamExclude
     private List<EventoEntity> eventos = new ArrayList<>();
    
     /**
