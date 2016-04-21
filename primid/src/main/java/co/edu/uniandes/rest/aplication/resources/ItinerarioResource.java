@@ -96,9 +96,9 @@ public class ItinerarioResource {
          @POST
     public ItinerarioDTO createItinerario(ItinerarioDTO itinerarioDTO) throws PrimidLogicException  {
         logger.info("Se ejecuta método createItinerario");
-        //ItinerarioEntity entity = ItinerarioConverter.fullDTO2Entity(itinerarioDTO);
-        ItinerarioEntity newEntity;
-        return null;
+        ItinerarioEntity entity = ItinerarioConverter.fullDTO2Entity(itinerarioDTO);
+
+        return ItinerarioConverter.fullEntity2DTO(itinerarioLogic.createItinerario(entity));
         //try {
         //    newEntity = ItinerarioLogic.createItinerario(entity);
         //} catch (BusinessLogicException ex) {

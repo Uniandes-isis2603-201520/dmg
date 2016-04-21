@@ -32,7 +32,22 @@ public abstract class ItinerarioConverter {
     {
 
     }
-
+    public static ItinerarioEntity fullDTO2Entity(ItinerarioDTO dto) {
+        if (dto != null) {
+            ItinerarioEntity entity = basicDTO2Entity(dto);
+            return entity;
+        } else {
+            return null;
+        }
+    }
+    public static ItinerarioDTO fullEntity2DTO(ItinerarioEntity entity) {
+        if (entity != null) {
+            ItinerarioDTO dto = basicEntity2DTO(entity);
+            return dto;
+        } else {
+            return null;
+        }
+    }
     public static ItinerarioDTO refEntity2DTO(ItinerarioEntity entity)
     {
         if (entity != null) {
