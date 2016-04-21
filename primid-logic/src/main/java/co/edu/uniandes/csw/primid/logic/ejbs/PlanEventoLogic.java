@@ -53,7 +53,7 @@ public class PlanEventoLogic implements IPlanEventoLogic {
     }
 
    
-    public PlanEventoEntity updateAuthor(PlanEventoEntity entity) {
+    public PlanEventoEntity updatePlanEvento(PlanEventoEntity entity) {
         logger.log(Level.INFO, "Inicia proceso de actualizar autor con id={0}", entity.getId());
         PlanEventoEntity newEntity = persistence.update(entity);
         logger.log(Level.INFO, "Termina proceso de actualizar autor con id={0}", entity.getId());
@@ -66,6 +66,10 @@ public class PlanEventoLogic implements IPlanEventoLogic {
         persistence.delete(id);
         logger.log(Level.INFO, "Termina proceso de borrar autor con id={0}", id);
     }
+
+  
+
+ 
 
    
     

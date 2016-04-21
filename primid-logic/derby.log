@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Wed Apr 20 19:09:21 COT 2016:
- Iniciando instancia a816c00e-0154-3626-50a4-000007c92498 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\estudiante\AppData\Local\Temp\gfembed515611442699438309tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@75b84c92
-Cargado desde file:/C:/Users/estudiante/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1.1/glassfish-embedded-all-4.1.1.jar
+Thu Apr 21 07:03:57 COT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0154-38b4-8e21-000007ff9ca8 
+on database directory /private/var/folders/8h/_1hzfw7d6916_w7clg0tg4ph0000gn/T/gfembed8035252578687797069tmp/lib/databases/embedded_default with class loader sun.misc.Launcher$AppClassLoader@12a3a380 
+Loaded from file:/Users/macbookpro/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1.1/glassfish-embedded-all-4.1.1.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_66-b18
-user.dir=C:\Users\estudiante\Documents\Camello\dmg\dmg\primid-logic
-os.name=Windows 7
-os.arch=amd64
-os.version=6.1
+java.runtime.version=1.8.0_60-b27
+user.dir=/Users/macbookpro/Documents/isis2603/proyecto/dmg/primid-logic
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.5
 derby.system.home=null
-Cargador de clases de base de datos iniciado - derby.database.classpath=''
+Database Class Loader started - derby.database.classpath=''
