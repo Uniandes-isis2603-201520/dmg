@@ -78,7 +78,7 @@ public class CiudadLogicTest {
     }
 
     private void clearData() {
-        em.createQuery("delete from AuthorEntity").executeUpdate();
+        em.createQuery("delete from CiudadEntity").executeUpdate();
     }
 
     private void insertData() {
@@ -105,6 +105,48 @@ public class CiudadLogicTest {
         Assert.assertEquals(expected.getId(), result.getId());
         Assert.assertEquals(expected.getName(), result.getName());
         Assert.assertEquals(expected.getCoordenadas(), result.getCoordenadas());
+    }
+    
+    @Test
+    public void getCiudadesTest() {
+        List<CiudadEntity> resultList = ciudadLogic.getCiudades();
+        List<CiudadEntity> expectedList = em.createQuery("SELECT u from CiudadEntity u").getResultList();
+        Assert.assertEquals(expectedList.size(), resultList.size());
+        for (CiudadEntity expected : expectedList) {
+            boolean found = false;
+            for (CiudadEntity result : resultList) {
+                if (result.getId().equals(expected.getId())) {
+                    found = true;
+                }
+            }
+            Assert.assertTrue(found);
+        }
+    }
+    
+    @Test
+    public void deleteCiudadTest() {
+        CiudadEntity entity = data.get(1);
+        ciudadLogic.deleteCiudad(entity.getId());
+        CiudadEntity expected = em.find(CiudadEntity.class, entity.getId());
+        Assert.assertNull(expected);
+    }
+    
+    @Test
+    public void updateCiudadTest() {
+        CiudadEntity entity = data.get(0);
+        CiudadEntity expected = factory.manufacturePojo(CiudadEntity.class);
+
+        expected.setId(entity.getId());
+
+        ciudadLogic.updateCiudad(expected);
+
+        CiudadEntity resp = em.find(CiudadEntity.class, entity.getId());
+
+        Assert.assertNotNull(expected);
+        Assert.assertEquals(expected.getId(), resp.getId());
+        Assert.assertEquals(expected.getName(), resp.getName());
+        Assert.assertEquals(expected.getCoordenadas(), resp.getCoordenadas());
+     
     }
 
 }
