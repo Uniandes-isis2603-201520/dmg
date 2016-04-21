@@ -6,7 +6,6 @@ import co.edu.uniandes.csw.primid.logic.api.IMultimediaLogic;
 import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.persistence.MultimediaPersistence;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,7 +35,7 @@ public class MultimediaLogic implements IMultimediaLogic {
     }
 
     @Override
-    public MultimediaEntity getArchivoMultimedia(Long id) throws BusinessLogicException {
+    public MultimediaEntity getArchivoMultimedia(Long id) {
         logger.log(Level.INFO, "Inicia proceso de consultar archivo Multimedia con id={0}", id);
         MultimediaEntity archivoMultimedia = persistence.find(id);
         if (archivoMultimedia == null) {

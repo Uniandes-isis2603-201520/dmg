@@ -17,7 +17,7 @@ public interface IMultimediaLogic {
 
     public List<MultimediaEntity> getMultimedia();
 
-    public MultimediaEntity getArchivoMultimedia(Long id) throws BusinessLogicException;
+    public MultimediaEntity getArchivoMultimedia(Long id);
 
     public MultimediaEntity createArchivoMultimedia(MultimediaEntity entity);
 

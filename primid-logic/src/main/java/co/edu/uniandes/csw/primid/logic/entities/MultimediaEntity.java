@@ -12,7 +12,7 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
 
     private String tipo;
     private String ruta;
-//    Relaciones con planEvento, planCiudad e itinerario
+//    Relaciones con planEvento, planCiudad
     @ManyToOne
     @PodamExclude
     private PlanEventoEntity planEvento;
