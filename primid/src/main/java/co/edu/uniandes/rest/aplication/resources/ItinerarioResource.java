@@ -94,7 +94,8 @@ public class ItinerarioResource {
      * @throws PrimidLogicException cuando ya existe un itinerario con el id suministrado
      */
          @POST
-    public ItinerarioDTO createItinerario(ItinerarioDTO itinerarioDTO) throws PrimidLogicException  {
+    public ItinerarioDTO createItinerario(ItinerarioDTO itinerarioDTO) throws PrimidLogicException
+    {
         logger.info("Se ejecuta método createItinerario");
         ItinerarioEntity entity = ItinerarioConverter.fullDTO2Entity(itinerarioDTO);
         ItinerarioEntity nuevo ;
