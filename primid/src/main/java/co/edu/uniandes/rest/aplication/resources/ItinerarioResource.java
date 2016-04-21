@@ -97,8 +97,17 @@ public class ItinerarioResource {
     public ItinerarioDTO createItinerario(ItinerarioDTO itinerarioDTO) throws PrimidLogicException  {
         logger.info("Se ejecuta método createItinerario");
         ItinerarioEntity entity = ItinerarioConverter.fullDTO2Entity(itinerarioDTO);
-
-        return ItinerarioConverter.fullEntity2DTO(itinerarioLogic.createItinerario(entity));
+        ItinerarioEntity nuevo ;
+        try
+        {
+            nuevo = itinerarioLogic.createItinerario(entity);
+        }
+        catch(Exception e)
+        {
+            logger.log(Level.SEVERE, e.getLocalizedMessage(), e);
+            throw new WebApplicationException(e.getLocalizedMessage(), e, Response.Status.BAD_REQUEST);
+        }
+        return ItinerarioConverter.fullEntity2DTO(nuevo);
         //try {
         //    newEntity = ItinerarioLogic.createItinerario(entity);
         //} catch (BusinessLogicException ex) {
