@@ -135,8 +135,8 @@ public class ItinerarioResource {
         //ItinerarioEntity oldEntity = itinerarioLogic.getItinerario(id);
 
         try {
-            ItinerarioEntity savedBook = itinerarioLogic.updateItinerario(entity);
-            return ItinerarioConverter.fullEntity2DTO(savedBook);
+            ItinerarioEntity savedI = itinerarioLogic.updateItinerario(entity);
+            return ItinerarioConverter.fullEntity2DTO(savedI);
         } catch (Exception ex) {
             logger.log(Level.SEVERE, ex.getLocalizedMessage(), ex);
             throw new WebApplicationException(ex.getLocalizedMessage(), ex, Response.Status.BAD_REQUEST);
