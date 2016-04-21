@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.primid.logic.persistence;
 
 
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
+import com.google.common.math.BigIntegerMath;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -128,5 +129,29 @@ public class ItinerarioPersistenceTest
          Assert.assertNotNull(prueba);
          Assert.assertEquals(prueba.getName(),prueba.getName());
          Assert.assertEquals(prueba.getResumen(),prueba.getResumen());
+    }
+
+    @Test
+    public void updateItinerarioTest()
+    {
+            ItinerarioEntity itinerario = data.get(0);
+         ItinerarioEntity prueba = fabrica.manufacturePojo(ItinerarioEntity.class);
+
+         Assert.assertNotNull(prueba);
+
+         prueba.setId(itinerario.getId());
+         itinerarioP.update(prueba);
+
+         ItinerarioEntity rta = manejador.find(ItinerarioEntity.class,itinerario.getId());
+
+         Assert.assertEquals(rta.getName(),prueba.getName());
+         Assert.assertEquals(rta.getResumen(),prueba.getResumen());
+    }
+     @Test
+    public void deleteItinerarioTest() {
+        ItinerarioEntity itinerario = data.get(0);
+        itinerarioP.delete(itinerario.getId());
+        ItinerarioEntity bien = manejador.find(ItinerarioEntity.class, itinerario.getId());
+        Assert.assertNull(bien);
     }
 }
