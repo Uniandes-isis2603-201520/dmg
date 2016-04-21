@@ -6,6 +6,10 @@
 package co.edu.uniandes.rest.aplication.resources;
 
 import co.edu.uniandes.csw.primid.logic.api.IPlanEventoLogic;
+import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
+import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
+import co.edu.uniandes.rest.aplication.converters.PlanEventoConverter;
+import co.edu.uniandes.rest.aplication.converters.ViajeroConverter;
 import co.edu.uniandes.rest.aplication.dtos.PlanEventoDTO;
 import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 
@@ -46,7 +50,7 @@ public class PlanEventoResource {
     @GET
     @Path("planE/{id_Plan: \\d+}")
     public PlanEventoDTO getPlanEventoPorId(@PathParam("id_Plan") Long id) throws PrimidLogicException {
-        return null;
+    return PlanEventoConverter.fullEntity2DTO(planEventoLogic.getPlanEvento(id));
     }
 
     /**
@@ -57,7 +61,8 @@ public class PlanEventoResource {
      */
     @POST
     public PlanEventoDTO createPlanEvento(PlanEventoDTO ciudad) throws PrimidLogicException {
-        return null;
+         PlanEventoEntity entity = PlanEventoConverter.fullDTO2Entity(ciudad);
+        return PlanEventoConverter.fullEntity2DTO(planEventoLogic.createPlanEvento(entity));
     }
 
     /**
@@ -81,6 +86,8 @@ public class PlanEventoResource {
     @DELETE
     @Path("planE/{id_PlanDelete: \\d+}")
     public void deletePlanEvento(@PathParam("id_PlanDelete") Long id) throws PrimidLogicException {
+
+         planEventoLogic.deletePlanEvento(id);
 
     }
 
