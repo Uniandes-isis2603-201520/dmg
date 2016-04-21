@@ -128,9 +128,20 @@ public class ItinerarioResource {
      */
          @PUT
          @Path("/{id: \\d+}")
-    public ItinerarioDTO updateItinerario(@PathParam("id") Long id, ItinerarioDTO itinerario) throws PrimidLogicException {
-        //return itinerarioLogic.updateItinerario(id, itinerario);
-        return null;
+    public ItinerarioDTO updateItinerario(@PathParam("id") Long id, ItinerarioDTO itinerario) throws PrimidLogicException, BusinessLogicException {
+         logger.log(Level.INFO, "Se ejecuta método updateItinerario con id={0}", id);
+        ItinerarioEntity entity = ItinerarioConverter.fullDTO2Entity(itinerario);
+        entity.setId(id);
+        //ItinerarioEntity oldEntity = itinerarioLogic.getItinerario(id);
+
+        try {
+            ItinerarioEntity savedBook = itinerarioLogic.updateItinerario(entity);
+            return ItinerarioConverter.fullEntity2DTO(savedBook);
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, ex.getLocalizedMessage(), ex);
+            throw new WebApplicationException(ex.getLocalizedMessage(), ex, Response.Status.BAD_REQUEST);
+        }
+
     }
 
     /**
