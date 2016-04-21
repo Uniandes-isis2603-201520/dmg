@@ -46,4 +46,5 @@ public class ItinerarioPersistence {
         Query q = em.createQuery("select u from ItinerarioEntity u");
         return q.getResultList();
     }
+
 }

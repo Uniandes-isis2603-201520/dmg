@@ -114,10 +114,19 @@ public class ItinerarioPersistenceTest
             Assert.assertTrue(found);
         }
     }
-     public ItinerarioPersistenceTest() {
+     public ItinerarioPersistenceTest()
+     {
+
     }
 
     @Test
-    public void testSomeMethod() {
+    public void getItinerarioTest()
+    {
+            ItinerarioEntity itinerario = data.get(0);
+         ItinerarioEntity prueba = itinerarioP.find(itinerario.getId());
+
+         Assert.assertNotNull(prueba);
+         Assert.assertEquals(prueba.getName(),prueba.getName());
+         Assert.assertEquals(prueba.getResumen(),prueba.getResumen());
     }
 }
