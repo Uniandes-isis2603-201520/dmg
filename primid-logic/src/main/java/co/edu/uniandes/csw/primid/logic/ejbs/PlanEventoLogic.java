@@ -34,37 +34,37 @@ public class PlanEventoLogic implements IPlanEventoLogic {
 
   
     public PlanEventoEntity getPlanEvento(Long id) {
-        logger.log(Level.INFO, "Inicia proceso de consultar autor con id={0}", id);
+        logger.log(Level.INFO, "Inicia proceso de consultar planEvento con id={0}", id);
         PlanEventoEntity plan = persistence.find(id);
         if (plan == null) {
-            logger.log(Level.SEVERE, "El autor con el id {0} no existe", id);
+            logger.log(Level.SEVERE, "El planEvento con el id {0} no existe", id);
             throw new IllegalArgumentException("El autor solicitado no existe");
         }
-        logger.log(Level.INFO, "Termina proceso de consultar autor con id={0}", id);
+        logger.log(Level.INFO, "Termina proceso de consultar planEvento con id={0}", id);
         return plan;
     }
 
     
     public PlanEventoEntity createPlanEvento(PlanEventoEntity entity) {
-        logger.info("Inicia proceso de creación de autor");
+        logger.info("Inicia proceso de creación de planEvento");
         persistence.create(entity);
-        logger.info("Termina proceso de creación de autor");
+        logger.info("Termina proceso de creación de planEvento");
         return entity;
     }
 
    
     public PlanEventoEntity updatePlanEvento(PlanEventoEntity entity) {
-        logger.log(Level.INFO, "Inicia proceso de actualizar autor con id={0}", entity.getId());
+        logger.log(Level.INFO, "Inicia proceso de actualizar planEvento con id={0}", entity.getId());
         PlanEventoEntity newEntity = persistence.update(entity);
-        logger.log(Level.INFO, "Termina proceso de actualizar autor con id={0}", entity.getId());
+        logger.log(Level.INFO, "Termina proceso de actualizar planEvento con id={0}", entity.getId());
         return newEntity;
     }
 
    
     public void deletePlanEvento(Long id) {
-        logger.log(Level.INFO, "Inicia proceso de borrar autor con id={0}", id);
+        logger.log(Level.INFO, "Inicia proceso de borrar planEvento con id={0}", id);
         persistence.delete(id);
-        logger.log(Level.INFO, "Termina proceso de borrar autor con id={0}", id);
+        logger.log(Level.INFO, "Termina proceso de borrar planEvento con id={0}", id);
     }
 
   

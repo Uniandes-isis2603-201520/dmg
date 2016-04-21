@@ -12,18 +12,24 @@ import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.persistence.MultimediaPersistence;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
@@ -31,6 +37,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  *
  * @author fa.lopez10
  */
+@RunWith(Arquillian.class)
 public class MultimediaLogicTest {
 
 
