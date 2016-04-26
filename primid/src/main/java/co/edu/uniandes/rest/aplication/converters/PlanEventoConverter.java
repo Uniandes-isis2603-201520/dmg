@@ -48,9 +48,9 @@ public abstract class PlanEventoConverter {
     }
 
     /**
-     * Realiza la conversión de AuthorDTO a AuthorEntity Se invoca cuando otro DTO
+     * Realiza la conversion de AuthorDTO a AuthorEntity Se invoca cuando otro DTO
      * tiene una referencia a AuthorDTO Convierte unicamente el ID ya que es el
-     * único atributo necesario para guardar la relacion en la base de datos
+     * unico atributo necesario para guardar la relacion en la base de datos
      *
      * @param dto instancia de AuthorDTO a convertir
      * @return instancia de AuthorEntity con los datos recibidos por parametro
