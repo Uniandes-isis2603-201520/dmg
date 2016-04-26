@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Thu Apr 21 06:54:52 COT 2016:
- Iniciando instancia a816c00e-0154-38ac-3dfd-00000804eaf0 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\estudiante\AppData\Local\Temp\gfembed4077426479757152281tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@75b84c92
+Tue Apr 26 11:06:02 COT 2016:
+ Iniciando instancia a816c00e-0154-5351-fb5e-000009fab0e8 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
+en el directorio de base de datos C:\Users\estudiante\AppData\Local\Temp\gfembed7184878511739412273tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@75b84c92
 Cargado desde file:/C:/Users/estudiante/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1.1/glassfish-embedded-all-4.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_66-b18
-user.dir=C:\Users\estudiante\Documents\isis2603\proyecto\dmg\primid-logic
+user.dir=C:\Users\estudiante\Documents\SW\POST KAREN\dmg\primid-logic
 os.name=Windows 7
 os.arch=amd64
 os.version=6.1
