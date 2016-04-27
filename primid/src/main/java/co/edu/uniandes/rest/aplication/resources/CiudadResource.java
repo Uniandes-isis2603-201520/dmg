@@ -87,7 +87,6 @@ public class CiudadResource {
         CiudadEntity entity = CiudadConverter.fullDTO2Entity(dto);
         entity.setId(id);
         CiudadEntity oldEntity = ciudadLogic.getCiudad(id);
-        //entity.setBooks(oldEntity.getBooks());
         return CiudadConverter.fullEntity2DTO(ciudadLogic.updateCiudad(entity));
     }
 

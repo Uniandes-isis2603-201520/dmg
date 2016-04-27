@@ -61,7 +61,7 @@ public abstract class MultimediaConverter {
      * a uno
      *
      * @param entity instancia de MultimediaEntity a convertir
-     * @return Instancia de BookDTO con los datos recibidos por parametro
+     * @return Instancia de MultimediaDTO con los datos recibidos por parametro
      * @generated
      */
     public static MultimediaDTO basicEntity2DTO(MultimediaEntity entity) {

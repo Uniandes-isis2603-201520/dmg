@@ -102,8 +102,8 @@ public class EventoResource {
         entity.setId(id);
         EventoEntity oldEntity = eventoLogic.getEvento(id);
         entity.setComments(oldEntity.getComments());
-        EventoEntity savedBook = eventoLogic.updateEvento(entity);
-        return EventoConverter.fullEntity2DTO(savedBook);
+        EventoEntity savedEvento = eventoLogic.updateEvento(entity);
+        return EventoConverter.fullEntity2DTO(savedEvento);
     }
 
     /**
