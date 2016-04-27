@@ -35,7 +35,7 @@ public class CiudadLogicTest {
 
     public CiudadLogicTest() {
     }
-    
+
     private PodamFactory factory = new PodamFactoryImpl();
 
     @Inject
@@ -106,7 +106,7 @@ public class CiudadLogicTest {
         Assert.assertEquals(expected.getName(), result.getName());
         Assert.assertEquals(expected.getCoordenadas(), result.getCoordenadas());
     }
-    
+
     @Test
     public void getCiudadesTest() {
         List<CiudadEntity> resultList = ciudadLogic.getCiudades();
@@ -122,7 +122,7 @@ public class CiudadLogicTest {
             Assert.assertTrue(found);
         }
     }
-    
+
     @Test
     public void deleteCiudadTest() {
         CiudadEntity entity = data.get(1);
@@ -130,7 +130,7 @@ public class CiudadLogicTest {
         CiudadEntity expected = em.find(CiudadEntity.class, entity.getId());
         Assert.assertNull(expected);
     }
-    
+
     @Test
     public void updateCiudadTest() {
         CiudadEntity entity = data.get(0);
@@ -146,7 +146,7 @@ public class CiudadLogicTest {
         Assert.assertEquals(expected.getId(), resp.getId());
         Assert.assertEquals(expected.getName(), resp.getName());
         Assert.assertEquals(expected.getCoordenadas(), resp.getCoordenadas());
-     
+
     }
 
 }

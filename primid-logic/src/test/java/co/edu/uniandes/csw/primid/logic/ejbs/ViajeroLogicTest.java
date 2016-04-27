@@ -60,6 +60,7 @@ public class ViajeroLogicTest {
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
+
     @Before
     public void configTest() {
         try {
@@ -78,10 +79,9 @@ public class ViajeroLogicTest {
     }
 
     private void clearData() {
-       // em.createQuery("delete from BookEntity").executeUpdate();
+        // em.createQuery("delete from BookEntity").executeUpdate();
         em.createQuery("delete from ViajeroEntity").executeUpdate();
     }
-
 
     private void insertData() {
         for (int i = 0; i < 3; i++) {
@@ -97,7 +97,7 @@ public class ViajeroLogicTest {
         }
     }
 
-      @Test
+    @Test
     public void createViajeroTest() {
         ViajeroEntity expected = factory.manufacturePojo(ViajeroEntity.class);
         ViajeroEntity created = viajeroLogic.createViajero(expected);
@@ -110,7 +110,8 @@ public class ViajeroLogicTest {
         Assert.assertEquals(expected.getName(), result.getName());
         Assert.assertEquals(expected.getBirthDate(), result.getBirthDate());
     }
-     @Test
+
+    @Test
     public void getViajerosTest() {
         List<ViajeroEntity> resultList = viajeroLogic.getViajeros();
         List<ViajeroEntity> expectedList = em.createQuery("SELECT u from ViajeroEntity u").getResultList();
@@ -126,7 +127,7 @@ public class ViajeroLogicTest {
         }
     }
 
-     @Test
+    @Test
     public void deleteViajeroTest() {
         ViajeroEntity entity = data.get(1);
         viajeroLogic.deleteViajero(entity.getId());
@@ -175,6 +176,5 @@ public class ViajeroLogicTest {
 //
 //        return (ItinerarioEntity) q.getSingleResult();
 //    }
-
 
 }

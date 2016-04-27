@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-
 //import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
 import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
 import java.util.List;
@@ -21,7 +20,7 @@ public class MultimediaPersistence {
 
     public MultimediaEntity find(Long id) {
         logger.log(Level.INFO, "Consultando archivo multimedia con id={0}", id);
-       return em.find(MultimediaEntity.class, id);
+        return em.find(MultimediaEntity.class, id);
     }
 
     public List<MultimediaEntity> findAll() {

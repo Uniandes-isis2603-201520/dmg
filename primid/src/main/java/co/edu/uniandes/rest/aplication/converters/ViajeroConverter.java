@@ -8,16 +8,18 @@ import java.util.List;
 public abstract class ViajeroConverter {
 
     /**
-     * Constructor privado para evitar la creación del constructor implícito de Java
+     * Constructor privado para evitar la creación del constructor implícito
+     * de Java
+     *
      * @generated
      */
     private ViajeroConverter() {
     }
 
     /**
-     * Realiza la conversión de ViajeroEntity a ViajeroDTO.
-     * Se invoca cuando otra entidad tiene una referencia a ViajeroEntity.
-     * Entrega únicamente los atributos proprios de la entidad.
+     * Realiza la conversión de ViajeroEntity a ViajeroDTO. Se invoca cuando
+     * otra entidad tiene una referencia a ViajeroEntity. Entrega únicamente
+     * los atributos proprios de la entidad.
      *
      * @param entity instancia de ViajeroEntity a convertir
      * @return instancia de ViajeroDTO con los datos recibidos por parámetro
@@ -37,9 +39,10 @@ public abstract class ViajeroConverter {
     }
 
     /**
-     * Realiza la conversión de ViajeroDTO a ViajeroEntity Se invoca cuando otro DTO
-     * tiene una referencia a ViajeroDTO Convierte únicamente el ID ya que es el
-     * único atributo necesario para guardar la relación en la base de datos
+     * Realiza la conversión de ViajeroDTO a ViajeroEntity Se invoca cuando
+     * otro DTO tiene una referencia a ViajeroDTO Convierte únicamente el ID ya
+     * que es el único atributo necesario para guardar la relación en la base
+     * de datos
      *
      * @param dto instancia de ViajeroDTO a convertir
      * @return instancia de ViajeroEntity con los datos recibidos por parámetro
@@ -57,8 +60,8 @@ public abstract class ViajeroConverter {
     }
 
     /**
-     * Convierte una instancia de ViajeroEntity a ViajeroDTO Se invoca cuando se desea
-     * consultar la entidad y sus relaciones muchos a uno o uno a uno
+     * Convierte una instancia de ViajeroEntity a ViajeroDTO Se invoca cuando se
+     * desea consultar la entidad y sus relaciones muchos a uno o uno a uno
      *
      * @param entity instancia de ViajeroEntity a convertir
      * @return Instancia de ViajeroDTO con los datos recibidos por parámetro
@@ -80,8 +83,8 @@ public abstract class ViajeroConverter {
 
     /**
      * Convierte una instancia de ViajeroDTO a ViajeroEntity Se invoca cuando se
-     * necesita convertir una instancia de ViajeroDTO con los atributos propios de
-     * la entidad y con las relaciones uno a uno o muchos a uno
+     * necesita convertir una instancia de ViajeroDTO con los atributos propios
+     * de la entidad y con las relaciones uno a uno o muchos a uno
      *
      * @param dto instancia de ViajeroDTO a convertir
      * @return Instancia de ViajeroEntity creada a partir de los datos de dto
@@ -102,8 +105,8 @@ public abstract class ViajeroConverter {
     }
 
     /**
-     * Convierte instancias de ViajeroEntity a ViajeroDTO incluyendo sus relaciones
-     * Uno a muchos y Muchos a muchos
+     * Convierte instancias de ViajeroEntity a ViajeroDTO incluyendo sus
+     * relaciones Uno a muchos y Muchos a muchos
      *
      * @param entity Instancia de ViajeroEntity a convertir
      * @return Instancia de ViajeroDTO con los datos recibidos por parámetro
@@ -119,8 +122,8 @@ public abstract class ViajeroConverter {
     }
 
     /**
-     * Convierte una instancia de ViajeroDTO a ViajeroEntity.
-     * Incluye todos los atributos de ViajeroEntity.
+     * Convierte una instancia de ViajeroDTO a ViajeroEntity. Incluye todos los
+     * atributos de ViajeroEntity.
      *
      * @param dto Instancia de ViajeroDTO a convertir
      * @return Instancia de ViajeroEntity con los datos recibidos por parámetro
@@ -136,9 +139,9 @@ public abstract class ViajeroConverter {
     }
 
     /**
-     * Convierte una colección de instancias de ViajeroEntity a ViajeroDTO. Para cada
-     * instancia de ViajeroEntity en la lista, invoca basicEntity2DTO y añade el
-     * nuevo ViajeroDTO a una nueva lista
+     * Convierte una colección de instancias de ViajeroEntity a ViajeroDTO.
+     * Para cada instancia de ViajeroEntity en la lista, invoca basicEntity2DTO
+     * y añade el nuevo ViajeroDTO a una nueva lista
      *
      * @param entities Colección de entidades a convertir
      * @return Collección de instancias de ViajeroDTO

@@ -46,8 +46,8 @@ public class MultimediaPersistenceTest {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(MultimediaEntity.class.getPackage())
                 .addPackage(MultimediaPersistence.class.getPackage())
-                .addAsManifestResource("META-INF/persistence.xml","persistence.xml")
-                .addAsManifestResource("META-INF/beans.xml","beans.xml");
+                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
 
     @Before
@@ -90,9 +90,9 @@ public class MultimediaPersistenceTest {
 
         Assert.assertNotNull(result);
         MultimediaEntity entity = em.find(MultimediaEntity.class, result.getId());
-        Assert.assertEquals(newEntity.getName(),entity.getName());
-        Assert.assertEquals(newEntity.getTipo(),entity.getTipo());
-        Assert.assertEquals(newEntity.getRuta(),entity.getRuta());
+        Assert.assertEquals(newEntity.getName(), entity.getName());
+        Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
+        Assert.assertEquals(newEntity.getRuta(), entity.getRuta());
     }
 
     @Test
@@ -115,9 +115,9 @@ public class MultimediaPersistenceTest {
         MultimediaEntity entity = data.get(0);
         MultimediaEntity newEntity = multimediaPersistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
-        Assert.assertEquals(newEntity.getName(),entity.getName());
-        Assert.assertEquals(newEntity.getTipo(),entity.getTipo());
-        Assert.assertEquals(newEntity.getRuta(),entity.getRuta());
+        Assert.assertEquals(newEntity.getName(), entity.getName());
+        Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
+        Assert.assertEquals(newEntity.getRuta(), entity.getRuta());
 
     }
 

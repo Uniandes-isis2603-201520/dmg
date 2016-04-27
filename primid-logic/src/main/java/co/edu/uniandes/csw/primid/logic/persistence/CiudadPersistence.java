@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-
 import co.edu.uniandes.csw.primid.logic.entities.CiudadEntity;
 import java.util.List;
 import java.util.logging.Level;

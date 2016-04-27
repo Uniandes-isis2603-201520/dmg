@@ -20,15 +20,15 @@ public class MultimediaDTO {
     private PlanEventoDTO planEvento;
     private ItinerarioDTO itinerario;
 
-    public final static String VIDEO="video";
-    public final static String AUDIO="audio";
-    public final static String IMAGEN="imagen";
+    public final static String VIDEO = "video";
+    public final static String AUDIO = "audio";
+    public final static String IMAGEN = "imagen";
 
     /**
      * Constructor por defecto
      */
     public MultimediaDTO() {
-	}
+    }
 
     /*
      * Constructor con parámetros.
@@ -37,43 +37,49 @@ public class MultimediaDTO {
      * @param mail mail del viajero
      * @param rutaImg imagen del viajero
      */
-    public MultimediaDTO(long id, String name, String tipo,String ruta) {
-		super();
-		this.id = id;
-		this.name = name;
-                this.tipo = tipo;
-                this.ruta = ruta;
-	}
+    public MultimediaDTO(long id, String name, String tipo, String ruta) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.tipo = tipo;
+        this.ruta = ruta;
+    }
+
     /*
      * @return el id
      */
     public Long getId() {
         return id;
     }
+
     /**
      * @param id el id del archivo multimedia
      */
     public void setId(Long id) {
         this.id = id;
     }
+
     /*
      * @return el name
      */
     public String getName() {
         return name;
     }
-     /**
+
+    /**
      * @param name el name del archivo multimedia
      */
     public void setName(String name) {
         this.name = name;
     }
+
     /*
      * @return el tipo(ARCHIVO,VIDEO, AUDIO)
      */
     public String getTipo() {
         return tipo;
     }
+
     /**
      * @param mail el mail del viajero
      */
@@ -88,7 +94,8 @@ public class MultimediaDTO {
     public String getRuta() {
         return ruta;
     }
-     /**
+
+    /**
      * @param name el name del archivo multimedia
      */
     public void setRuta(String ruta) {
@@ -119,11 +126,11 @@ public class MultimediaDTO {
         this.itinerario = itinerario;
     }
 
-     /**
+    /**
      * Convierte el objeto a una cadena
      */
     @Override
     public String toString() {
-    	return "{ id : " + getId() + ", name : \"" + getName() + ", tipo : \"" + getTipo() + ", ruta : \"" +getRuta() +"\" }" ;
+        return "{ id : " + getId() + ", name : \"" + getName() + ", tipo : \"" + getTipo() + ", ruta : \"" + getRuta() + "\" }";
     }
 }

@@ -12,13 +12,14 @@ import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 /**
  *
  * @author jd.torres11
  */
 public class PlanCiudadPersistence {
 
-     private static final Logger logger = Logger.getLogger(PlanCiudadPersistence.class.getName());
+    private static final Logger logger = Logger.getLogger(PlanCiudadPersistence.class.getName());
 
     @PersistenceContext(unitName = "primidPU")
     protected EntityManager em;

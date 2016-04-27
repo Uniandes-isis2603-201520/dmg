@@ -32,17 +32,15 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 @RunWith(Arquillian.class)
 public class PlanEventoPersistenceTest {
 
-
     @Inject
     private PlanEventoPersistence planEventoPersistence;
     @PersistenceContext
-    private EntityManager em ;
+    private EntityManager em;
     @Inject
     UserTransaction utx;
     private final PodamFactory factory = new PodamFactoryImpl();
 
-
-     @Before
+    @Before
     public void configTest() {
         try {
             utx.begin();
@@ -74,37 +72,33 @@ public class PlanEventoPersistenceTest {
         }
     }
 
-
-  public PlanEventoPersistenceTest() {
+    public PlanEventoPersistenceTest() {
 
     }
 
     @Deployment
-    public static JavaArchive createDeployment()
-    {
+    public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(PlanEventoEntity.class.getPackage())
                 .addPackage(PlanEventoPersistence.class.getPackage())
-                .addAsManifestResource("META-INF/persistence.xml","persistence.xml")
-                .addAsManifestResource("META-INF/beans.xml","beans.xml");
+                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
 
     }
 
     @Test
     public void createPlanEventoTest() {
 
-        PlanEventoEntity newEntity= factory.manufacturePojo(PlanEventoEntity.class);
+        PlanEventoEntity newEntity = factory.manufacturePojo(PlanEventoEntity.class);
 
         PlanEventoEntity result = planEventoPersistence.create(newEntity);
 
-
         Assert.assertNotNull(result);
 
-         PlanEventoEntity entity = em.find(PlanEventoEntity.class, result.getId());
+        PlanEventoEntity entity = em.find(PlanEventoEntity.class, result.getId());
 
         Assert.assertEquals(newEntity.getName(), entity.getName());
     }
-
 
     @Test
     public void getPlanEventosTest() {

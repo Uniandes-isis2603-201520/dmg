@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
 import com.google.common.math.BigIntegerMath;
 import java.util.ArrayList;
@@ -24,77 +23,70 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
+
 /**
  *
  * @author la.mesa10
  */
 @RunWith(Arquillian.class)
-public class ItinerarioPersistenceTest
-{
+public class ItinerarioPersistenceTest {
+
     @Inject
     private ItinerarioPersistence itinerarioP;
     @PersistenceContext
     private EntityManager manejador;
     private final PodamFactory fabrica = new PodamFactoryImpl();
     @Inject
-    UserTransaction ut ;
+    UserTransaction ut;
     private List<ItinerarioEntity> data = new ArrayList<>();
 //Purueba
 
     @Deployment
-    public static JavaArchive createDeployment()
-    {
+    public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(ItinerarioEntity.class.getPackage())
                 .addPackage(ItinerarioPersistence.class.getPackage())
-                .addAsManifestResource("META-INF/persistence.xml","persistence.xml")
-                .addAsManifestResource("META-INF/beans.xml","beans.xml");
+                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
+
     @Before
-    public void configTest()
-    {
-        try
-        {
+    public void configTest() {
+        try {
             ut.begin();
             clearData();
             insertData();
             ut.commit();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
-            try
-            {
+            try {
                 ut.rollback();
-            }
-            catch(Exception e2)
-            {
+            } catch (Exception e2) {
                 e2.printStackTrace();
             }
         }
     }
+
     @Test
-    public void createItinerarioTest()
-    {
+    public void createItinerarioTest() {
         ItinerarioEntity nuevaEntidad = fabrica.manufacturePojo(ItinerarioEntity.class);
         ItinerarioEntity resultado = itinerarioP.create(nuevaEntidad);
 
         Assert.assertNotNull(resultado);
 
-        ItinerarioEntity encontrado= manejador.find(ItinerarioEntity.class, resultado.getId());
-        Assert.assertEquals(encontrado.getName(),nuevaEntidad.getName());
-        Assert.assertEquals(encontrado.getFechaFin(),nuevaEntidad.getFechaFin());
-        Assert.assertEquals(encontrado.getFechaInicio(),nuevaEntidad.getFechaInicio());
+        ItinerarioEntity encontrado = manejador.find(ItinerarioEntity.class, resultado.getId());
+        Assert.assertEquals(encontrado.getName(), nuevaEntidad.getName());
+        Assert.assertEquals(encontrado.getFechaFin(), nuevaEntidad.getFechaFin());
+        Assert.assertEquals(encontrado.getFechaInicio(), nuevaEntidad.getFechaInicio());
 
     }
-    private void clearData()
-    {
+
+    private void clearData() {
         manejador.createQuery("delete from ItinerarioEntity").executeUpdate();
     }
-    private void insertData()
-    {
-        for (int i = 0; i < 3; i++)
-        {
+
+    private void insertData() {
+        for (int i = 0; i < 3; i++) {
             ItinerarioEntity nuevo = fabrica.manufacturePojo(ItinerarioEntity.class);
             manejador.persist(nuevo);
             data.add(nuevo);
@@ -115,39 +107,38 @@ public class ItinerarioPersistenceTest
             Assert.assertTrue(found);
         }
     }
-     public ItinerarioPersistenceTest()
-     {
+
+    public ItinerarioPersistenceTest() {
 
     }
 
     @Test
-    public void getItinerarioTest()
-    {
-            ItinerarioEntity itinerario = data.get(0);
-         ItinerarioEntity prueba = itinerarioP.find(itinerario.getId());
+    public void getItinerarioTest() {
+        ItinerarioEntity itinerario = data.get(0);
+        ItinerarioEntity prueba = itinerarioP.find(itinerario.getId());
 
-         Assert.assertNotNull(prueba);
-         Assert.assertEquals(prueba.getName(),prueba.getName());
-         Assert.assertEquals(prueba.getResumen(),prueba.getResumen());
+        Assert.assertNotNull(prueba);
+        Assert.assertEquals(prueba.getName(), prueba.getName());
+        Assert.assertEquals(prueba.getResumen(), prueba.getResumen());
     }
 
     @Test
-    public void updateItinerarioTest()
-    {
-            ItinerarioEntity itinerario = data.get(0);
-         ItinerarioEntity prueba = fabrica.manufacturePojo(ItinerarioEntity.class);
+    public void updateItinerarioTest() {
+        ItinerarioEntity itinerario = data.get(0);
+        ItinerarioEntity prueba = fabrica.manufacturePojo(ItinerarioEntity.class);
 
-         Assert.assertNotNull(prueba);
+        Assert.assertNotNull(prueba);
 
-         prueba.setId(itinerario.getId());
-         itinerarioP.update(prueba);
+        prueba.setId(itinerario.getId());
+        itinerarioP.update(prueba);
 
-         ItinerarioEntity rta = manejador.find(ItinerarioEntity.class,itinerario.getId());
+        ItinerarioEntity rta = manejador.find(ItinerarioEntity.class, itinerario.getId());
 
-         Assert.assertEquals(rta.getName(),prueba.getName());
-         Assert.assertEquals(rta.getResumen(),prueba.getResumen());
+        Assert.assertEquals(rta.getName(), prueba.getName());
+        Assert.assertEquals(rta.getResumen(), prueba.getResumen());
     }
-     @Test
+
+    @Test
     public void deleteItinerarioTest() {
         ItinerarioEntity itinerario = data.get(0);
         itinerarioP.delete(itinerario.getId());

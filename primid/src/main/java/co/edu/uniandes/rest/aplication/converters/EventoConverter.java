@@ -16,10 +16,10 @@ import java.util.List;
  */
 public abstract class EventoConverter {
 
-        /**
-     * Realiza la conversion de EventoEntity a EventoDTO.
-     * Se invoca cuando otra entidad tiene una referencia a EventoEntity.
-     * Entrega unicamente los atributos proprios de la entidad.
+    /**
+     * Realiza la conversion de EventoEntity a EventoDTO. Se invoca cuando otra
+     * entidad tiene una referencia a EventoEntity. Entrega unicamente los
+     * atributos proprios de la entidad.
      *
      * @param entity instancia de EventoEntity a convertir
      * @return instancia de EventoDTO con los datos recibidos por parámetro
@@ -37,9 +37,10 @@ public abstract class EventoConverter {
     }
 
     /**
-     * Realiza la conversión de ViajeroDTO a ViajeroEntity Se invoca cuando otro DTO
-     * tiene una referencia a ViajeroDTO Convierte únicamente el ID ya que es el
-     * único atributo necesario para guardar la relación en la base de datos
+     * Realiza la conversión de ViajeroDTO a ViajeroEntity Se invoca cuando
+     * otro DTO tiene una referencia a ViajeroDTO Convierte únicamente el ID ya
+     * que es el único atributo necesario para guardar la relación en la base
+     * de datos
      *
      * @param dto instancia de ViajeroDTO a convertir
      * @return instancia de ViajeroEntity con los datos recibidos por parámetro
@@ -57,8 +58,8 @@ public abstract class EventoConverter {
     }
 
     /**
-     * Convierte una instancia de EventoEntity a EventoDTO Se invoca cuando se desea
-     * consultar la entidad y sus relaciones muchos a uno o uno a uno
+     * Convierte una instancia de EventoEntity a EventoDTO Se invoca cuando se
+     * desea consultar la entidad y sus relaciones muchos a uno o uno a uno
      *
      * @param entity instancia de EventoEntity a convertir
      * @return Instancia de EventoDTO con los datos recibidos por parámetro
@@ -85,8 +86,8 @@ public abstract class EventoConverter {
 
     /**
      * Convierte una instancia de EventoDTO a EventoEntity Se invoca cuando se
-     * necesita convertir una instancia de EventoDTO con los atributos propios de
-     * la entidad y con las relaciones uno a uno o muchos a uno
+     * necesita convertir una instancia de EventoDTO con los atributos propios
+     * de la entidad y con las relaciones uno a uno o muchos a uno
      *
      * @param dto instancia de EventoDTO a convertir
      * @return Instancia de EventoEntity creada a partir de los datos de dto
@@ -112,8 +113,8 @@ public abstract class EventoConverter {
     }
 
     /**
-     * Convierte instancias de EventoEntity a EventoDTO incluyendo sus relaciones
-     * Uno a muchos y Muchos a muchos
+     * Convierte instancias de EventoEntity a EventoDTO incluyendo sus
+     * relaciones Uno a muchos y Muchos a muchos
      *
      * @param entity Instancia de EventoEntity a convertir
      * @return Instancia de EventoDTO con los datos recibidos por parámetro
@@ -129,8 +130,8 @@ public abstract class EventoConverter {
     }
 
     /**
-     * Convierte una instancia de EventoDTO a EventoEntity.
-     * Incluye todos los atributos de EventoEntity.
+     * Convierte una instancia de EventoDTO a EventoEntity. Incluye todos los
+     * atributos de EventoEntity.
      *
      * @param dto Instancia de EventoDTO a convertir
      * @return Instancia de EventoEntity con los datos recibidos por parámetro
@@ -146,9 +147,9 @@ public abstract class EventoConverter {
     }
 
     /**
-     * Convierte una colección de instancias de EventoEntity a EventoDTO. Para cada
-     * instancia de EventoEntity en la lista, invoca basicEntity2DTO y añade el
-     * nuevo EventoDTO a una nueva lista
+     * Convierte una colección de instancias de EventoEntity a EventoDTO. Para
+     * cada instancia de EventoEntity en la lista, invoca basicEntity2DTO y
+     * añade el nuevo EventoDTO a una nueva lista
      *
      * @param entities Colección de entidades a convertir
      * @return Collección de instancias de EventoDTO
@@ -181,6 +182,5 @@ public abstract class EventoConverter {
         }
         return entities;
     }
-
 
 }

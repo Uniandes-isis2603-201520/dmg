@@ -18,12 +18,12 @@ import javax.persistence.TemporalType;
  * @author jd.torres11
  */
 @Entity
-public class PlanCiudadEntity extends BaseEntity implements Serializable{
+public class PlanCiudadEntity extends BaseEntity implements Serializable {
 
-     @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     private Date fechaLlegada;
 
-     @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     private Date fechaSalida;
 
     @ManyToOne
@@ -36,6 +36,7 @@ public class PlanCiudadEntity extends BaseEntity implements Serializable{
     public Date getFechaSalida() {
         return fechaSalida;
     }
+
     public void setFechaLlegada(Date fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
@@ -43,7 +44,5 @@ public class PlanCiudadEntity extends BaseEntity implements Serializable{
     public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
-
-
 
 }

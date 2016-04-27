@@ -24,14 +24,14 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
  * @author la.mesa10
  */
 @Entity
-public class ItinerarioEntity extends BaseEntity implements Serializable
-{
+public class ItinerarioEntity extends BaseEntity implements Serializable {
+
     @ManyToOne
     @PodamExclude
     private ViajeroEntity viajero;
 
     @OneToMany(mappedBy = "itinerario")
-    private List<PlanCiudadEntity> planCiudades = new ArrayList<> ();
+    private List<PlanCiudadEntity> planCiudades = new ArrayList<>();
 
     @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
@@ -46,11 +46,9 @@ public class ItinerarioEntity extends BaseEntity implements Serializable
     private String resumen;
 
     //TODO posible atributo PlanCiudadEntity
-
     //public ViajeroEntity getViajero() {
     //    return viajero;
     //}
-
     public void setViajero(ViajeroEntity viajero) {
         this.viajero = viajero;
     }
@@ -86,8 +84,5 @@ public class ItinerarioEntity extends BaseEntity implements Serializable
     public void setRutaImg(String rutaImg) {
         this.rutaImg = rutaImg;
     }
-
-
-
 
 }

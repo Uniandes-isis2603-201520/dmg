@@ -24,7 +24,6 @@ public class CiudadEntity extends BaseEntity implements Serializable {
     @PodamExclude
     private List<EventoEntity> eventos = new ArrayList<>();
 
-
     /**
      * @return the description
      */

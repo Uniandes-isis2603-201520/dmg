@@ -20,8 +20,8 @@ import javax.inject.Inject;
  * @author la.mesa10
  */
 @Stateless
-public class ItinerarioLogic implements IItinerarioLogic
-{
+public class ItinerarioLogic implements IItinerarioLogic {
+
     private static final Logger logger = Logger.getLogger(ItinerarioLogic.class.getName());
 
     @Inject
@@ -34,15 +34,14 @@ public class ItinerarioLogic implements IItinerarioLogic
         return itinerarios;
     }
 
-    public List<ItinerarioEntity> getItinerarios(Long idViajero)
-    {
+    public List<ItinerarioEntity> getItinerarios(Long idViajero) {
         logger.info("Inicia proceso de consultar todos los itinerarios de un viajero");
         List<ItinerarioEntity> itinerarios = persistence.findAll();
         logger.info("Termina proceso de consultar todos los itinerarios de un viajero");
         return itinerarios;
     }
-     public ItinerarioEntity getItinerario(Long id) throws BusinessLogicException
-     {
+
+    public ItinerarioEntity getItinerario(Long id) throws BusinessLogicException {
         logger.log(Level.INFO, "Inicia proceso de consultar itinerario con id={0}", id);
         ItinerarioEntity itinerario = persistence.find(id);
         if (itinerario == null) {
@@ -60,22 +59,17 @@ public class ItinerarioLogic implements IItinerarioLogic
         return entity;
     }
 
-
-    public ItinerarioEntity updateItinerario(ItinerarioEntity entity)
-    {
+    public ItinerarioEntity updateItinerario(ItinerarioEntity entity) {
         logger.log(Level.INFO, "Inicia proceso de actualizar itinerario con id={0}", entity.getId());
         ItinerarioEntity newEntity = persistence.update(entity);
         logger.log(Level.INFO, "Termina proceso de actualizar itinerario con id={0}", entity.getId());
         return newEntity;
     }
 
-
-    public void deleteItinerario(Long id)
-    {
+    public void deleteItinerario(Long id) {
         logger.log(Level.INFO, "Inicia proceso de borrar itinerario con id={0}", id);
         persistence.delete(id);
         logger.log(Level.INFO, "Termina proceso de borrar itinerario con id={0}", id);
     }
-
 
 }

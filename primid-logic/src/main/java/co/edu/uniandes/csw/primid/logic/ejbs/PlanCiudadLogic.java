@@ -30,7 +30,6 @@ public class PlanCiudadLogic implements IPlanCiudadLogic {
     @Inject
     private PlanCiudadPersistence persistence;
 
-
     @Override
     public List<PlanCiudadEntity> getPlanCiudades() {
         logger.info("Inicia proceso de consultar todos los plan ciudades");
@@ -73,8 +72,5 @@ public class PlanCiudadLogic implements IPlanCiudadLogic {
         persistence.delete(id);
         logger.log(Level.INFO, "Termina proceso de borrar plan Ciudad con id={0}", id);
     }
-
-
-
 
 }

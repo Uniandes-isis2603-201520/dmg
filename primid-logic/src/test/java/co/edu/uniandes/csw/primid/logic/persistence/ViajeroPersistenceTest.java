@@ -31,9 +31,8 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 @RunWith(Arquillian.class)
 public class ViajeroPersistenceTest {
 
-     @Deployment
-    public static JavaArchive createDeployment()
-    {
+    @Deployment
+    public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(ViajeroEntity.class.getPackage())
                 .addPackage(ViajeroPersistence.class.getPackage())
@@ -45,7 +44,7 @@ public class ViajeroPersistenceTest {
     private ViajeroPersistence viajeroPersistence;
 
     @PersistenceContext
-    private EntityManager em ;
+    private EntityManager em;
 
     @Inject
     UserTransaction utx;
@@ -75,6 +74,7 @@ public class ViajeroPersistenceTest {
     private void clearData() {
         em.createQuery("delete from ViajeroEntity").executeUpdate();
     }
+
     private void insertData() {
         for (int i = 0; i < 3; i++) {
             ViajeroEntity entity = factory.manufacturePojo(ViajeroEntity.class);
@@ -89,12 +89,12 @@ public class ViajeroPersistenceTest {
     @Test
     public void createViajeroTest() {
 
-        ViajeroEntity newEntity =factory.manufacturePojo(ViajeroEntity.class);
+        ViajeroEntity newEntity = factory.manufacturePojo(ViajeroEntity.class);
 
-        ViajeroEntity result = viajeroPersistence.create (newEntity);
+        ViajeroEntity result = viajeroPersistence.create(newEntity);
 
         Assert.assertNotNull(result);
-        ViajeroEntity entity = em.find (ViajeroEntity.class, result.getId());
+        ViajeroEntity entity = em.find(ViajeroEntity.class, result.getId());
         Assert.assertEquals(newEntity.getName(), entity.getName());
         Assert.assertEquals(newEntity.getEstado(), entity.getEstado());
         Assert.assertEquals(newEntity.getMail(), entity.getMail());
@@ -136,7 +136,7 @@ public class ViajeroPersistenceTest {
     @Test
     public void updateViajeroTest() {
         ViajeroEntity entity = data.get(0);
-       ViajeroEntity newEntity = factory.manufacturePojo(ViajeroEntity.class);
+        ViajeroEntity newEntity = factory.manufacturePojo(ViajeroEntity.class);
 
         newEntity.setId(entity.getId());
 
@@ -145,6 +145,6 @@ public class ViajeroPersistenceTest {
         ViajeroEntity resp = em.find(ViajeroEntity.class, entity.getId());
 
         Assert.assertEquals(newEntity.getName(), resp.getName());
-    }   
+    }
 
 }

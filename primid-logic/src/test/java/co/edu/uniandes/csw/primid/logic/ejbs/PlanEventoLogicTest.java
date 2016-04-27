@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
-
 import co.edu.uniandes.csw.primid.logic.api.IPlanEventoLogic;
 import co.edu.uniandes.csw.primid.logic.entities.PlanCiudadEntity;
 import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
@@ -39,7 +38,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 @RunWith(Arquillian.class)
 public class PlanEventoLogicTest {
 
-       private PodamFactory factory = new PodamFactoryImpl();
+    private PodamFactory factory = new PodamFactoryImpl();
 
     @Inject
     private IPlanEventoLogic planEventoLogic;
@@ -88,15 +87,12 @@ public class PlanEventoLogicTest {
     }
 
     private void insertData() {
-        
-        /**
-        for (int i = 0; i < 3; i++) {
-            PlanCiudadEntity plan = factory.manufacturePojo(PlanCiudadEntity.class);
-            em.persist(plan);
-            planCiudadData.add(plan);
-        }
-        */
 
+        /**
+         * for (int i = 0; i < 3; i++) { PlanCiudadEntity plan =
+         * factory.manufacturePojo(PlanCiudadEntity.class); em.persist(plan);
+         * planCiudadData.add(plan); }
+         */
         for (int i = 0; i < 3; i++) {
             PlanEventoEntity entity = factory.manufacturePojo(PlanEventoEntity.class);
 
@@ -118,10 +114,8 @@ public class PlanEventoLogicTest {
         Assert.assertNotNull(result);
         Assert.assertEquals(expected.getId(), result.getId());
         Assert.assertEquals(expected.getName(), result.getName());
-       
-    }
 
- 
+    }
 
     @Test
     public void getPlanEventoTest() {
@@ -133,7 +127,7 @@ public class PlanEventoLogicTest {
         Assert.assertNotNull(result);
         Assert.assertEquals(expected.getId(), result.getId());
         Assert.assertEquals(expected.getName(), result.getName());
-  
+
     }
 
     @Test
@@ -158,9 +152,7 @@ public class PlanEventoLogicTest {
         Assert.assertNotNull(expected);
         Assert.assertEquals(expected.getId(), resp.getId());
         Assert.assertEquals(expected.getName(), resp.getName());
-     
-    }
 
-   
+    }
 
 }

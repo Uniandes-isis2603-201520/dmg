@@ -1,4 +1,4 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,8 +11,7 @@ import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
 import co.edu.uniandes.rest.aplication.converters.PlanEventoConverter;
 import co.edu.uniandes.rest.aplication.converters.ViajeroConverter;
 import co.edu.uniandes.rest.aplication.dtos.PlanEventoDTO;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
-
+import co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 
 import java.util.List;
 import javax.inject.Inject;
@@ -35,14 +34,14 @@ public class PlanEventoResource {
     @Inject
     private IPlanEventoLogic planEventoLogic;
 
-
     @GET
-    public List<PlanEventoDTO> getPlanEventos() throws PrimidLogicException{
+    public List<PlanEventoDTO> getPlanEventos() throws PrimidLogicException {
         return null;
     }
 
     /**
      * Obtiene una ciudad
+     *
      * @param id identificador de la ciudad
      * @return ciudad encontrada
      * @throws CityLogicException cuando la ciudad no existe
@@ -50,27 +49,31 @@ public class PlanEventoResource {
     @GET
     @Path("planE/{id_Plan: \\d+}")
     public PlanEventoDTO getPlanEventoPorId(@PathParam("id_Plan") Long id) throws PrimidLogicException {
-    return PlanEventoConverter.fullEntity2DTO(planEventoLogic.getPlanEvento(id));
+        return PlanEventoConverter.fullEntity2DTO(planEventoLogic.getPlanEvento(id));
     }
 
     /**
      * Agrega una ciudad
+     *
      * @param city ciudad a agregar
      * @return datos de la ciudad a agregar
-     * @throws CityLogicException cuando ya existe una ciudad con el id suministrado
+     * @throws CityLogicException cuando ya existe una ciudad con el id
+     * suministrado
      */
     @POST
     public PlanEventoDTO createPlanEvento(PlanEventoDTO ciudad) throws PrimidLogicException {
-         PlanEventoEntity entity = PlanEventoConverter.fullDTO2Entity(ciudad);
+        PlanEventoEntity entity = PlanEventoConverter.fullDTO2Entity(ciudad);
         return PlanEventoConverter.fullEntity2DTO(planEventoLogic.createPlanEvento(entity));
     }
 
     /**
      * Actualiza los datos de una ciudad
+     *
      * @param id identificador de la ciudad a modificar
      * @param city ciudad a modificar
      * @return datos de la ciudad modificada
-     * @throws CityLogicException cuando no existe una ciudad con el id suministrado
+     * @throws CityLogicException cuando no existe una ciudad con el id
+     * suministrado
      */
     @PUT
     @Path("planE/{id_PlanUpdate: \\d+}")
@@ -80,14 +83,16 @@ public class PlanEventoResource {
 
     /**
      * Elimina los datos de una ciudad
+     *
      * @param id_PlanDelete identificador de la ciudad a eliminar
-     * @throws CityLogicException cuando no existe una ciudad con el id suministrado
+     * @throws CityLogicException cuando no existe una ciudad con el id
+     * suministrado
      */
     @DELETE
     @Path("planE/{id_PlanDelete: \\d+}")
     public void deletePlanEvento(@PathParam("id_PlanDelete") Long id) throws PrimidLogicException {
 
-         planEventoLogic.deletePlanEvento(id);
+        planEventoLogic.deletePlanEvento(id);
 
     }
 

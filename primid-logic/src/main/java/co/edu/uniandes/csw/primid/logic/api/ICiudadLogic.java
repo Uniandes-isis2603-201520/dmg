@@ -8,12 +8,12 @@ public interface ICiudadLogic {
 
     public List<CiudadEntity> getCiudades();
 
-    public CiudadEntity getCiudad(Long id) ;
+    public CiudadEntity getCiudad(Long id);
 
     public CiudadEntity createCiudad(CiudadEntity entity);
 
     public CiudadEntity updateCiudad(CiudadEntity entity);
 
     public void deleteCiudad(Long id);
-    
+
 }

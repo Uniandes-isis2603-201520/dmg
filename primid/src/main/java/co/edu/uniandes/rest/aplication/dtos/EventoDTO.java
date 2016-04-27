@@ -29,10 +29,11 @@ public class EventoDTO {
      * Constructor por defecto
      */
     public EventoDTO() {
-	}
+    }
 
     /**
      * Constructor con parámetros.
+     *
      * @param id identificador del evento
      * @param name nombre del evento
      * @param image imagen del evento
@@ -44,19 +45,19 @@ public class EventoDTO {
      * @param place El lugar donde ocurre el evento
      */
     public EventoDTO(Long id, String name, String image, String description, Date dateStarts, Date dateEnds, String place, double score, String category) {
-		super();
-		this.id = id;
-		this.name = name;
-                this.image = image;
-                this.description = description;
-                this.dateStarts = dateStarts;
-                this.dateEnds = dateEnds;
-                this.category = category;
-                this.score = score;
-                this.place = place;
-	}
+        super();
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.description = description;
+        this.dateStarts = dateStarts;
+        this.dateEnds = dateEnds;
+        this.category = category;
+        this.score = score;
+        this.place = place;
+    }
 
-	/**
+    /**
      * @return the id
      */
     public Long getId() {
@@ -84,7 +85,7 @@ public class EventoDTO {
         this.name = name;
     }
 
-        /**
+    /**
      * @return the image
      */
     public String getImage() {
@@ -98,7 +99,7 @@ public class EventoDTO {
         this.image = image;
     }
 
-        /**
+    /**
      * @return the description
      */
     public String getDescription() {
@@ -112,7 +113,7 @@ public class EventoDTO {
         this.description = description;
     }
 
-            /**
+    /**
      * @return the dateStarts
      */
     public Date getDateStarts() {
@@ -126,7 +127,7 @@ public class EventoDTO {
         this.dateStarts = dateStarts;
     }
 
-            /**
+    /**
      * @return the dateEnds
      */
     public Date getDateEnds() {
@@ -140,7 +141,7 @@ public class EventoDTO {
         this.dateEnds = dateEnds;
     }
 
-            /**
+    /**
      * @return the place
      */
     public String getPlace() {
@@ -168,7 +169,7 @@ public class EventoDTO {
         this.category = category;
     }
 
-     /**
+    /**
      * @return the score
      */
     public double getScore() {
@@ -187,6 +188,6 @@ public class EventoDTO {
      */
     @Override
     public String toString() {
-    	return "{ id : " + getId() + ", name : \"" + getName() + "\" }" ;
+        return "{ id : " + getId() + ", name : \"" + getName() + "\" }";
     }
 }

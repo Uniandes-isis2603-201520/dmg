@@ -16,16 +16,12 @@ import java.util.List;
  */
 public interface IPlanEventoLogic {
 
-  
-
-    public PlanEventoEntity getPlanEvento(Long id) ;
+    public PlanEventoEntity getPlanEvento(Long id);
 
     public PlanEventoEntity createPlanEvento(PlanEventoEntity entity);
 
     public PlanEventoEntity updatePlanEvento(PlanEventoEntity entity);
 
     public void deletePlanEvento(Long id);
-
-
 
 }

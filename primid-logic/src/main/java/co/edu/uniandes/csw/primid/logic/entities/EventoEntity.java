@@ -16,12 +16,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import uk.co.jemos.podam.common.PodamExclude;
 import uk.co.jemos.podam.common.PodamStrategyValue;
+
 /**
  *
  * @author kl.osorio10
  */
 @Entity
-public class EventoEntity extends BaseEntity implements Serializable  {
+public class EventoEntity extends BaseEntity implements Serializable {
 
     private String place;
     private ArrayList<String> comments;
@@ -36,12 +37,11 @@ public class EventoEntity extends BaseEntity implements Serializable  {
     private Date endDate;
     private String description;
 
-
     @ManyToOne
     @PodamExclude
     private CiudadEntity ciudad;
 
-        /**
+    /**
      * @return the place
      */
     public String getPlace() {
@@ -56,27 +56,25 @@ public class EventoEntity extends BaseEntity implements Serializable  {
     }
 
     /**
-    * @return the comments
-    */
-    public ArrayList<String> getComments()
-    {
+     * @return the comments
+     */
+    public ArrayList<String> getComments() {
         return comments;
     }
 
     /**
      * @param comments the lists of comments
      */
-    public void setComments(ArrayList comments)
-    {
+    public void setComments(ArrayList comments) {
         this.comments = comments;
     }
 
     /**
      * Add a comment to the event
+     *
      * @param comment
      */
-    public void addComment(String comment)
-    {
+    public void addComment(String comment) {
         this.comments.add(comment);
     }
 
@@ -108,7 +106,7 @@ public class EventoEntity extends BaseEntity implements Serializable  {
         this.category = category;
     }
 
-     /**
+    /**
      * @return the score
      */
     public double getScore() {
@@ -136,7 +134,7 @@ public class EventoEntity extends BaseEntity implements Serializable  {
         this.startDate = startDate;
     }
 
-        /**
+    /**
      * @return the endDate
      */
     public Date getEndDate() {
@@ -164,7 +162,7 @@ public class EventoEntity extends BaseEntity implements Serializable  {
         this.description = description;
     }
 
-        public CiudadEntity getCiudad() {
+    public CiudadEntity getCiudad() {
         return ciudad;
     }
 

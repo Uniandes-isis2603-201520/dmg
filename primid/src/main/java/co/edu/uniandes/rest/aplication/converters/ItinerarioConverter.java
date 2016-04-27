@@ -28,10 +28,10 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
  */
 public abstract class ItinerarioConverter {
 
-    private ItinerarioConverter()
-    {
+    private ItinerarioConverter() {
 
     }
+
     public static ItinerarioEntity fullDTO2Entity(ItinerarioDTO dto) {
         if (dto != null) {
             ItinerarioEntity entity = basicDTO2Entity(dto);
@@ -40,6 +40,7 @@ public abstract class ItinerarioConverter {
             return null;
         }
     }
+
     public static ItinerarioDTO fullEntity2DTO(ItinerarioEntity entity) {
         if (entity != null) {
             ItinerarioDTO dto = basicEntity2DTO(entity);
@@ -48,8 +49,8 @@ public abstract class ItinerarioConverter {
             return null;
         }
     }
-    public static ItinerarioDTO refEntity2DTO(ItinerarioEntity entity)
-    {
+
+    public static ItinerarioDTO refEntity2DTO(ItinerarioEntity entity) {
         if (entity != null) {
             ItinerarioDTO dto = new ItinerarioDTO();
             dto.setId(entity.getId());
@@ -62,16 +63,14 @@ public abstract class ItinerarioConverter {
             //TODO de viajero
 
             return dto;
-        } else
-        {
+        } else {
             return null;
         }
     }
-    public static ItinerarioEntity refDTO2Entity(ItinerarioDTO dto)
-    {
-        if (dto != null)
-        {
-            ItinerarioEntity entity=new ItinerarioEntity();
+
+    public static ItinerarioEntity refDTO2Entity(ItinerarioDTO dto) {
+        if (dto != null) {
+            ItinerarioEntity entity = new ItinerarioEntity();
 
             entity.setId(dto.getId());
             //entity.setFechaFin(dto.getFechaFin());
@@ -86,8 +85,9 @@ public abstract class ItinerarioConverter {
         }
 
     }
+
     //TODO public ???
-     public static ItinerarioDTO basicEntity2DTO(ItinerarioEntity entity) {
+    public static ItinerarioDTO basicEntity2DTO(ItinerarioEntity entity) {
         if (entity != null) {
             ItinerarioDTO dto = new ItinerarioDTO();
             dto.setId(entity.getId());
@@ -104,7 +104,8 @@ public abstract class ItinerarioConverter {
             return null;
         }
     }
-     private static ItinerarioEntity basicDTO2Entity(ItinerarioDTO dto) {
+
+    private static ItinerarioEntity basicDTO2Entity(ItinerarioDTO dto) {
         if (dto != null) {
             ItinerarioEntity entity = new ItinerarioEntity();
             entity.setId(dto.getId());
@@ -119,8 +120,7 @@ public abstract class ItinerarioConverter {
         }
     }
 
-    public static List<ItinerarioDTO> listEntity2DTO(List<ItinerarioEntity> entities)
-    {
+    public static List<ItinerarioDTO> listEntity2DTO(List<ItinerarioEntity> entities) {
         List<ItinerarioDTO> dtos = new ArrayList<ItinerarioDTO>();
         if (entities != null) {
             for (ItinerarioEntity entity : entities) {
@@ -139,8 +139,5 @@ public abstract class ItinerarioConverter {
         }
         return entities;
     }
-
-
-
 
 }

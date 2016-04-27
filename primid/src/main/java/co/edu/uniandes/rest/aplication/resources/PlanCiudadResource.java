@@ -1,4 +1,4 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -32,19 +32,21 @@ public class PlanCiudadResource {
     @Inject
     private IPlanCiudadLogic planCiudadLogic;
 
-/**
-	 * Obtiene el listado de plan ciudades.
-	 * @return lista de plan ciudades
-	 * @throws BusinessLogicException excepci�n retornada por la l�gica
-	 */
+    /**
+     * Obtiene el listado de plan ciudades.
+     *
+     * @return lista de plan ciudades
+     * @throws BusinessLogicException excepci�n retornada por la l�gica
+     */
     @Path("planCiudades")
     @GET
-    public List<PlanCiudadDTO> getPlanCiudades() throws BusinessLogicException{
+    public List<PlanCiudadDTO> getPlanCiudades() throws BusinessLogicException {
         return PlanCiudadConverter.listEntity2DTO(planCiudadLogic.getPlanCiudades());
     }
 
     /**
      * Obtiene una ciudad
+     *
      * @param id identificador del plan Ciudad
      * @return plan ciudad encontradao
      * @throws BusinessLogicException cuando el plan ciudad no existe
@@ -57,22 +59,26 @@ public class PlanCiudadResource {
 
     /**
      * Agrega un plan ciudad
+     *
      * @param planCiudad plan ciudad a agregar
      * @return datos del plan ciudad a agregar
-     * @throws BusinessLogicException cuando ya existe un plan ciudad con el id suministrado
+     * @throws BusinessLogicException cuando ya existe un plan ciudad con el id
+     * suministrado
      */
     @POST
     public PlanCiudadDTO createPlanCiudad(PlanCiudadDTO planCiudad) throws BusinessLogicException {
-      PlanCiudadEntity entity = PlanCiudadConverter.fullDTO2Entity(planCiudad);
+        PlanCiudadEntity entity = PlanCiudadConverter.fullDTO2Entity(planCiudad);
         return PlanCiudadConverter.fullEntity2DTO(planCiudadLogic.createPlanCiudad(entity));
     }
 
     /**
      * Actualiza los datos de un plan ciudad
+     *
      * @param id identificador del plan ciudad a modificar
      * @param planCiudad plan ciudad a modificar
      * @return datos del plan ciudad modificada
-     * @throws BusinessLogicException cuando no existe una ciudad con el id suministrado
+     * @throws BusinessLogicException cuando no existe una ciudad con el id
+     * suministrado
      */
     @PUT
     @Path("planC/{id_PlanUpdate: \\d+}")
@@ -82,14 +88,16 @@ public class PlanCiudadResource {
 
     /**
      * Elimina los datos del plan ciudad
+     *
      * @param id identificador del plan ciudad a eliminar
-     * @throws BusinessLogicException cuando no existe un plan ciudad con el id suministrado
+     * @throws BusinessLogicException cuando no existe un plan ciudad con el id
+     * suministrado
      */
     @DELETE
     @Path("planC/{id_PlanDelete: \\d+}")
     public void deletePlanCiudad(@PathParam("id_PlanDelete") Long id) throws BusinessLogicException {
 
-         planCiudadLogic.deletePlanCiudad(id);
+        planCiudadLogic.deletePlanCiudad(id);
     }
 
 }

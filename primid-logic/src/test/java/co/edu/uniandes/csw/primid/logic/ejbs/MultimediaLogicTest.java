@@ -40,7 +40,6 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 @RunWith(Arquillian.class)
 public class MultimediaLogicTest {
 
-
     private PodamFactory factory = new PodamFactoryImpl();
 
     @Inject
@@ -171,6 +170,5 @@ public class MultimediaLogicTest {
             Assert.fail(ex.getLocalizedMessage());
         }
     }
-
 
 }

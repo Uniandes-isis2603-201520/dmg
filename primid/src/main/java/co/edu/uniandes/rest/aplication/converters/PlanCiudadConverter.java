@@ -14,19 +14,21 @@ import java.util.List;
  *
  * @author jd.torres11
  */
-public  abstract class PlanCiudadConverter {
+public abstract class PlanCiudadConverter {
 
     /**
-     * Constructor privado para evitar la creación del constructor implícito de Java
+     * Constructor privado para evitar la creación del constructor implícito
+     * de Java
+     *
      * @generated
      */
     private PlanCiudadConverter() {
     }
 
-     /**
-     * Realiza la conversión de PlanCiudadEntity a PlanCiudadDTO.
-     * Se invoca cuando otra entidad tiene una referencia a PlanCiudadEntity.
-     * Entrega únicamente los atributos proprios de la entidad.
+    /**
+     * Realiza la conversión de PlanCiudadEntity a PlanCiudadDTO. Se invoca
+     * cuando otra entidad tiene una referencia a PlanCiudadEntity. Entrega
+     * únicamente los atributos proprios de la entidad.
      *
      * @param entity instancia de PlanCiudadEntity a convertir
      * @return instancia de PlanCiudadDTO con los datos recibidos por parámetro
@@ -45,12 +47,14 @@ public  abstract class PlanCiudadConverter {
     }
 
     /**
-     * Realiza la conversión de PlanCiudadDTO a ViajeroEntity Se invoca cuando otro DTO
-     * tiene una referencia a PlanCiudadDTO Convierte únicamente el ID ya que es el
-     * único atributo necesario para guardar la relación en la base de datos
+     * Realiza la conversión de PlanCiudadDTO a ViajeroEntity Se invoca cuando
+     * otro DTO tiene una referencia a PlanCiudadDTO Convierte únicamente el ID
+     * ya que es el único atributo necesario para guardar la relación en la
+     * base de datos
      *
      * @param dto instancia de ViajeroDTO a convertir
-     * @return instancia de PlanCiudadEntity con los datos recibidos por parámetro
+     * @return instancia de PlanCiudadEntity con los datos recibidos por
+     * parámetro
      * @generated
      */
     public static PlanCiudadEntity refDTO2Entity(PlanCiudadDTO dto) {
@@ -65,8 +69,9 @@ public  abstract class PlanCiudadConverter {
     }
 
     /**
-     * Convierte una instancia de PlanCiudadEntity a PlanCiudadDTO Se invoca cuando se desea
-     * consultar la entidad y sus relaciones muchos a uno o uno a uno
+     * Convierte una instancia de PlanCiudadEntity a PlanCiudadDTO Se invoca
+     * cuando se desea consultar la entidad y sus relaciones muchos a uno o uno
+     * a uno
      *
      * @param entity instancia de PlanCiudadEntity a convertir
      * @return Instancia de PlanCiudadDTO con los datos recibidos por parámetro
@@ -78,18 +83,17 @@ public  abstract class PlanCiudadConverter {
             dto.setId(entity.getId());
             dto.setName(entity.getName());
 
-
             return dto;
         } else {
             return null;
         }
     }
 
-
     /**
-     * Convierte una instancia de PlanCiudadDTO a PlanCiudadEntity Se invoca cuando se
-     * necesita convertir una instancia de PlanCiudadDTO con los atributos propios de
-     * la entidad y con las relaciones uno a uno o muchos a uno
+     * Convierte una instancia de PlanCiudadDTO a PlanCiudadEntity Se invoca
+     * cuando se necesita convertir una instancia de PlanCiudadDTO con los
+     * atributos propios de la entidad y con las relaciones uno a uno o muchos a
+     * uno
      *
      * @param dto instancia de PlanCiudadDTO a convertir
      * @return Instancia de PlanCiudadEntity creada a partir de los datos de dto
@@ -101,16 +105,15 @@ public  abstract class PlanCiudadConverter {
             entity.setId(dto.getId());
             entity.setName(dto.getName());
 
-
             return entity;
         } else {
             return null;
         }
     }
 
-     /**
-     * Convierte instancias de PlanCiudadEntity a PlanCiudadDTO incluyendo sus relaciones
-     * Uno a muchos y Muchos a muchos
+    /**
+     * Convierte instancias de PlanCiudadEntity a PlanCiudadDTO incluyendo sus
+     * relaciones Uno a muchos y Muchos a muchos
      *
      * @param entity Instancia de PlanCiudadEntity a convertir
      * @return Instancia de PlanCiudadDTO con los datos recibidos por parámetro
@@ -126,11 +129,12 @@ public  abstract class PlanCiudadConverter {
     }
 
     /**
-     * Convierte una instancia de PlanCiudadDTO a PlanCiudadEntity.
-     * Incluye todos los atributos de PlanCiudadEntity.
+     * Convierte una instancia de PlanCiudadDTO a PlanCiudadEntity. Incluye
+     * todos los atributos de PlanCiudadEntity.
      *
      * @param dto Instancia de PlanCiudadDTO a convertir
-     * @return Instancia de PlanCiudadEntity con los datos recibidos por parámetro
+     * @return Instancia de PlanCiudadEntity con los datos recibidos por
+     * parámetro
      * @generated
      */
     public static PlanCiudadEntity fullDTO2Entity(PlanCiudadDTO dto) {
@@ -143,9 +147,9 @@ public  abstract class PlanCiudadConverter {
     }
 
     /**
-     * Convierte una colección de instancias de PlanCiudadEntity a PlanCiudadDTO. Para cada
-     * instancia de PlanCiudadEntity en la lista, invoca basicEntity2DTO y añade el
-     * nuevo PlanCiudadDTO a una nueva lista
+     * Convierte una colección de instancias de PlanCiudadEntity a
+     * PlanCiudadDTO. Para cada instancia de PlanCiudadEntity en la lista,
+     * invoca basicEntity2DTO y añade el nuevo PlanCiudadDTO a una nueva lista
      *
      * @param entities Colección de entidades a convertir
      * @return Collección de instancias de PlanCiudadDTO

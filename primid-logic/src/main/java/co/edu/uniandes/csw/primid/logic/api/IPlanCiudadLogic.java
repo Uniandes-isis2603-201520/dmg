@@ -15,7 +15,6 @@ import java.util.List;
  */
 public interface IPlanCiudadLogic {
 
-
     public List<PlanCiudadEntity> getPlanCiudades();
 
     public PlanCiudadEntity getPlanCiudad(Long id) throws BusinessLogicException;

@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.primid.logic.api;
 
-
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
 import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
@@ -19,12 +18,8 @@ public interface IViajeroLogic {
     public void deleteViajero(Long id);
 
     //public ItinerarioEntity addI(Long itinerarioId, Long authorId) throws BusinessLogicException;
-
     //public void removeItinerario(Long itinerarioId, Long authorId);
-
     //public List<ItinerarioEntity> replaceItinerarios(List<ItinerarioEntity> itinerarios, Long authorId) throws BusinessLogicException;
-
     //public List<ItinerarioEntity> getItinerarios(Long authorId);
-
     // public ItinerarioEntity getItinerario(Long authorId, Long itinerarioId);
 }

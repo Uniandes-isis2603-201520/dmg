@@ -22,17 +22,11 @@ import javax.inject.Inject;
 @Stateless
 public class PlanEventoLogic implements IPlanEventoLogic {
 
-
-     private static final Logger logger = Logger.getLogger(PlanEventoLogic.class.getName());
+    private static final Logger logger = Logger.getLogger(PlanEventoLogic.class.getName());
 
     @Inject
     private PlanEventoPersistence persistence;
 
-   
-    
-  
-
-  
     public PlanEventoEntity getPlanEvento(Long id) {
         logger.log(Level.INFO, "Inicia proceso de consultar planEvento con id={0}", id);
         PlanEventoEntity plan = persistence.find(id);
@@ -44,7 +38,6 @@ public class PlanEventoLogic implements IPlanEventoLogic {
         return plan;
     }
 
-    
     public PlanEventoEntity createPlanEvento(PlanEventoEntity entity) {
         logger.info("Inicia proceso de creación de planEvento");
         persistence.create(entity);
@@ -52,7 +45,6 @@ public class PlanEventoLogic implements IPlanEventoLogic {
         return entity;
     }
 
-   
     public PlanEventoEntity updatePlanEvento(PlanEventoEntity entity) {
         logger.log(Level.INFO, "Inicia proceso de actualizar planEvento con id={0}", entity.getId());
         PlanEventoEntity newEntity = persistence.update(entity);
@@ -60,21 +52,10 @@ public class PlanEventoLogic implements IPlanEventoLogic {
         return newEntity;
     }
 
-   
     public void deletePlanEvento(Long id) {
         logger.log(Level.INFO, "Inicia proceso de borrar planEvento con id={0}", id);
         persistence.delete(id);
         logger.log(Level.INFO, "Termina proceso de borrar planEvento con id={0}", id);
     }
-
-  
-
- 
-
-   
-    
-
-
-
 
 }

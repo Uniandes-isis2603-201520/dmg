@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-
 @Stateless
 public class CiudadLogic implements ICiudadLogic {
 
@@ -20,7 +19,7 @@ public class CiudadLogic implements ICiudadLogic {
 
     @Inject
     private CiudadPersistence persistence;
-    
+
     @Inject
     private IPlanCiudadLogic planCiudad;
 

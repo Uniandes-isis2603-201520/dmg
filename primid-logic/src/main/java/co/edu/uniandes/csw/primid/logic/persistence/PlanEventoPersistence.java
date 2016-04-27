@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-
 import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
 import java.util.List;
 import java.util.logging.Level;

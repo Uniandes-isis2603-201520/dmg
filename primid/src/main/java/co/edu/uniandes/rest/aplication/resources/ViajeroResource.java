@@ -10,7 +10,7 @@ import co.edu.uniandes.csw.primid.logic.api.IViajeroLogic;
 import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
 import co.edu.uniandes.rest.aplication.converters.ViajeroConverter;
 import co.edu.uniandes.rest.aplication.dtos.ViajeroDTO;
-import edu.uniandes.dmg.co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
+import co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;

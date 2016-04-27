@@ -44,10 +44,10 @@ public class ViajeroEntity extends BaseEntity implements Serializable {
     }
 
     public String getMail() {
-       return email;
+        return email;
     }
 
     public Boolean getEstado() {
-     return estado;
+        return estado;
     }
 }

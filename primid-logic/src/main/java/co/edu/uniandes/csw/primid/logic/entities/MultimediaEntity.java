@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
-
 @Entity
 public class MultimediaEntity extends BaseEntity implements Serializable {
 
@@ -20,7 +19,6 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
     @ManyToOne
     @PodamExclude
     private PlanCiudadEntity planCiudad;
-
 
     /**
      * @return the tipo
@@ -54,35 +52,32 @@ public class MultimediaEntity extends BaseEntity implements Serializable {
      *
      * @return PlanEventoEntity
      */
-    public PlanEventoEntity getPlanEvento()
-    {
+    public PlanEventoEntity getPlanEvento() {
         return planEvento;
     }
+
     /**
      *
      * @param planEvento
      */
-    public void setPlanEvento(PlanEventoEntity planEvento)
-    {
-        this.planEvento=planEvento;
+    public void setPlanEvento(PlanEventoEntity planEvento) {
+        this.planEvento = planEvento;
     }
 
     /**
      *
      * @return PlanCiudadEntity
      */
-    public PlanCiudadEntity getPlanCiudad()
-    {
+    public PlanCiudadEntity getPlanCiudad() {
         return planCiudad;
     }
+
     /**
      *
      * @param planCiudad
      */
-    public void setPlanCiudad(PlanCiudadEntity planCiudad)
-    {
-        this.planCiudad=planCiudad;
+    public void setPlanCiudad(PlanCiudadEntity planCiudad) {
+        this.planCiudad = planCiudad;
     }
-
 
 }

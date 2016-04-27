@@ -31,11 +31,9 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaInicio;
 
-      @PodamStrategyValue(DateStrategy.class)
+    @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
     private Date fechaFin;
-
-
 
     @OneToMany(mappedBy = "planEvento")
     @PodamExclude
@@ -45,7 +43,7 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
     @PodamExclude
     private EventoEntity evento;
 
-      /**
+    /**
      * @return the publishDate
      */
     public Date getFechaInicio() {
@@ -59,7 +57,7 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
         this.fechaInicio = fechaInicio;
     }
 
-     /**
+    /**
      * @return the publishDate
      */
     public Date getFechaFin() {
@@ -72,6 +70,5 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
-
 
 }

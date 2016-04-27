@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
-
 //import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
 import co.edu.uniandes.csw.primid.logic.api.IMultimediaLogic;
 import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
@@ -23,8 +22,6 @@ public class MultimediaLogic implements IMultimediaLogic {
 
     @Inject
     private MultimediaPersistence persistence;
-
-
 
     @Override
     public List<MultimediaEntity> getMultimedia() {
@@ -70,6 +67,5 @@ public class MultimediaLogic implements IMultimediaLogic {
         persistence.delete(id);
         logger.log(Level.INFO, "Termina proceso de borrar archivo multimedia con id={0}", id);
     }
-
 
 }

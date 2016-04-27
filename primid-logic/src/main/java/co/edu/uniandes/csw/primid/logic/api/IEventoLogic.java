@@ -8,6 +8,7 @@ package co.edu.uniandes.csw.primid.logic.api;
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.entities.EventoEntity;
 import java.util.List;
+
 /**
  *
  * @author kl.osorio10

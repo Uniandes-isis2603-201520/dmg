@@ -16,32 +16,32 @@ import java.util.List;
  */
 public abstract class MultimediaConverter {
 
-    private MultimediaConverter()
-    {
+    private MultimediaConverter() {
 
     }
 
-    public static MultimediaDTO refEntity2DTO(MultimediaEntity entity){
-        if(entity!=null){
+    public static MultimediaDTO refEntity2DTO(MultimediaEntity entity) {
+        if (entity != null) {
             MultimediaDTO dto = new MultimediaDTO();
             dto.setId(entity.getId());
             dto.setName(entity.getName());
             dto.setRuta(entity.getRuta());
             dto.setTipo(entity.getTipo());
             return dto;
-        }
-        else{
+        } else {
             return null;
         }
     }
 
     /**
-     * Realiza la conversion de MultimediaDTO a MultimediaEntity Se invoca cuando otro DTO
-     * tiene una referencia a MultimediaDTO Convierte unicamente el ID ya que es el
-     * unico atributo necesario para guardar la relacion en la base de datos
+     * Realiza la conversion de MultimediaDTO a MultimediaEntity Se invoca
+     * cuando otro DTO tiene una referencia a MultimediaDTO Convierte unicamente
+     * el ID ya que es el unico atributo necesario para guardar la relacion en
+     * la base de datos
      *
      * @param dto instancia de MultimediaDTO a convertir
-     * @return instancia de MultimediaEntity con los datos recibidos por parametro
+     * @return instancia de MultimediaEntity con los datos recibidos por
+     * parametro
      * @generated
      */
     public static MultimediaEntity refDTO2Entity(MultimediaDTO dto) {
@@ -56,8 +56,9 @@ public abstract class MultimediaConverter {
     }
 
     /**
-     * Convierte una instancia de MultimediaEntity a MultimediaDTO Se invoca cuando se desea
-     * consultar la entidad y sus relaciones muchos a uno o uno a uno
+     * Convierte una instancia de MultimediaEntity a MultimediaDTO Se invoca
+     * cuando se desea consultar la entidad y sus relaciones muchos a uno o uno
+     * a uno
      *
      * @param entity instancia de MultimediaEntity a convertir
      * @return Instancia de BookDTO con los datos recibidos por parametro
@@ -81,9 +82,10 @@ public abstract class MultimediaConverter {
     }
 
     /**
-     * Convierte una instancia de MultimediaDTO a MultimediaEntity Se invoca cuando se
-     * necesita convertir una instancia de MultimediaDTO con los atributos propios de
-     * la entidad y con las relaciones uno a uno o muchos a uno
+     * Convierte una instancia de MultimediaDTO a MultimediaEntity Se invoca
+     * cuando se necesita convertir una instancia de MultimediaDTO con los
+     * atributos propios de la entidad y con las relaciones uno a uno o muchos a
+     * uno
      *
      * @param dto instancia de MultimediaDTO a convertir
      * @return Instancia de MultimediaEntity creada a partir de los datos de dto
@@ -107,10 +109,10 @@ public abstract class MultimediaConverter {
         }
     }
 
-/**
-     * Convierte una coleccion de instancias de MultimediaEntity a MultimediaDTO. Para cada
-     * instancia de MultimediaEntity en la lista, invoca basicEntity2DTO y anade el
-     * nuevo MultimediaDTO a una nueva lista
+    /**
+     * Convierte una coleccion de instancias de MultimediaEntity a
+     * MultimediaDTO. Para cada instancia de MultimediaEntity en la lista,
+     * invoca basicEntity2DTO y anade el nuevo MultimediaDTO a una nueva lista
      *
      * @param entities coleccion de entidades a convertir
      * @return colleccion de instancias de MultimediaDTO

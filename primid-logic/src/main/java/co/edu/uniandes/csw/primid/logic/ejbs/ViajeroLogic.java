@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 @Stateless
-public class ViajeroLogic implements IViajeroLogic{
+public class ViajeroLogic implements IViajeroLogic {
 
     private static final Logger logger = Logger.getLogger(ViajeroLogic.class.getName());
 
@@ -28,7 +28,7 @@ public class ViajeroLogic implements IViajeroLogic{
 
     @Override
     public ViajeroEntity getViajero(Long id) throws BusinessLogicException {
-      logger.log(Level.INFO, "Inicia proceso de consultar Viajero con id={0}", id);
+        logger.log(Level.INFO, "Inicia proceso de consultar Viajero con id={0}", id);
         ViajeroEntity viajero = persistence.find(id);
         if (viajero == null) {
             logger.log(Level.SEVERE, "El viajero con el id {0} no existe", id);
@@ -46,10 +46,9 @@ public class ViajeroLogic implements IViajeroLogic{
         return entity;
     }
 
-
     @Override
     public ViajeroEntity updateViajero(ViajeroEntity entity) {
-       logger.log(Level.INFO, "Inicia proceso de actualizar viajero con id={0}", entity.getId());
+        logger.log(Level.INFO, "Inicia proceso de actualizar viajero con id={0}", entity.getId());
         ViajeroEntity newEntity = persistence.update(entity);
         logger.log(Level.INFO, "Termina proceso de actualizar viajerp con id={0}", entity.getId());
         return newEntity;
@@ -61,6 +60,5 @@ public class ViajeroLogic implements IViajeroLogic{
         persistence.delete(id);
         logger.log(Level.INFO, "Termina proceso de borrar viajero con id={0}", id);
     }
-
 
 }

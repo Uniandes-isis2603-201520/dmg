@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.primid.logic.api;
 
-
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
 
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;

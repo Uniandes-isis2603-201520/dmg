@@ -9,25 +9,26 @@ import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
 import co.edu.uniandes.rest.aplication.dtos.PlanEventoDTO;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author s.gonzalez22
  */
 public abstract class PlanEventoConverter {
 
-
-
-     /**
-     * Constructor privado para evitar la creacion del constructor implicito de Java
+    /**
+     * Constructor privado para evitar la creacion del constructor implicito de
+     * Java
+     *
      * @generated
      */
     private PlanEventoConverter() {
     }
 
     /**
-     * Realiza la conversion de AuthorEntity a AuthorDTO.
-     * Se invoca cuando otra entidad tiene una referencia a AuthorEntity.
-     * Entrega unicamente los atributos proprios de la entidad.
+     * Realiza la conversion de AuthorEntity a AuthorDTO. Se invoca cuando otra
+     * entidad tiene una referencia a AuthorEntity. Entrega unicamente los
+     * atributos proprios de la entidad.
      *
      * @param entity instancia de AuthorEntity a convertir
      * @return instancia de AuthorDTO con los datos recibidos por parametro
@@ -48,9 +49,9 @@ public abstract class PlanEventoConverter {
     }
 
     /**
-     * Realiza la conversion de AuthorDTO a AuthorEntity Se invoca cuando otro DTO
-     * tiene una referencia a AuthorDTO Convierte unicamente el ID ya que es el
-     * unico atributo necesario para guardar la relacion en la base de datos
+     * Realiza la conversion de AuthorDTO a AuthorEntity Se invoca cuando otro
+     * DTO tiene una referencia a AuthorDTO Convierte unicamente el ID ya que es
+     * el unico atributo necesario para guardar la relacion en la base de datos
      *
      * @param dto instancia de AuthorDTO a convertir
      * @return instancia de AuthorEntity con los datos recibidos por parametro
@@ -68,8 +69,8 @@ public abstract class PlanEventoConverter {
     }
 
     /**
-     * Convierte una instancia de AuthorEntity a AuthorDTO Se invoca cuando se desea
-     * consultar la entidad y sus relaciones muchos a uno o uno a uno
+     * Convierte una instancia de AuthorEntity a AuthorDTO Se invoca cuando se
+     * desea consultar la entidad y sus relaciones muchos a uno o uno a uno
      *
      * @param entity instancia de AuthorEntity a convertir
      * @return Instancia de AuthorDTO con los datos recibidos por parametro
@@ -91,8 +92,8 @@ public abstract class PlanEventoConverter {
 
     /**
      * Convierte una instancia de AuthorDTO a AuthorEntity Se invoca cuando se
-     * necesita convertir una instancia de AuthorDTO con los atributos propios de
-     * la entidad y con las relaciones uno a uno o muchos a uno
+     * necesita convertir una instancia de AuthorDTO con los atributos propios
+     * de la entidad y con las relaciones uno a uno o muchos a uno
      *
      * @param dto instancia de AuthorDTO a convertir
      * @return Instancia de AuthorEntity creada a partir de los datos de dto
@@ -113,8 +114,8 @@ public abstract class PlanEventoConverter {
     }
 
     /**
-     * Convierte instancias de AuthorEntity a AuthorDTO incluyendo sus relaciones
-     * Uno a muchos y Muchos a muchos
+     * Convierte instancias de AuthorEntity a AuthorDTO incluyendo sus
+     * relaciones Uno a muchos y Muchos a muchos
      *
      * @param entity Instancia de AuthorEntity a convertir
      * @return Instancia de AuthorDTO con los datos recibidos por parametro
@@ -130,8 +131,8 @@ public abstract class PlanEventoConverter {
     }
 
     /**
-     * Convierte una instancia de AuthorDTO a AuthorEntity.
-     * Incluye todos los atributos de AuthorEntity.
+     * Convierte una instancia de AuthorDTO a AuthorEntity. Incluye todos los
+     * atributos de AuthorEntity.
      *
      * @param dto Instancia de AuthorDTO a convertir
      * @return Instancia de AuthorEntity con los datos recibidos por parametro
@@ -147,9 +148,9 @@ public abstract class PlanEventoConverter {
     }
 
     /**
-     * Convierte una coleccion de instancias de AuthorEntity a AuthorDTO. Para cada
-     * instancia de AuthorEntity en la lista, invoca basicEntity2DTO y anade el
-     * nuevo AuthorDTO a una nueva lista
+     * Convierte una coleccion de instancias de AuthorEntity a AuthorDTO. Para
+     * cada instancia de AuthorEntity en la lista, invoca basicEntity2DTO y
+     * anade el nuevo AuthorDTO a una nueva lista
      *
      * @param entities Coleccion de entidades a convertir
      * @return Colleccion de instancias de AuthorDTO
@@ -182,6 +183,5 @@ public abstract class PlanEventoConverter {
         }
         return entities;
     }
-
 
 }
