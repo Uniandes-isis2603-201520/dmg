@@ -63,7 +63,7 @@ public class ItinerarioResource {
      @GET
      //@Path("/itinerarios")
     public List<ItinerarioDTO> getItinerarios(@PathParam("id_Viajero") Long idViajero) throws PrimidLogicException {
-        logger.info("Se ejecuta método getItinerarios");
+        logger.info("Se ejecuta metodo getItinerarios");
         //TODO
         List<ItinerarioEntity> itinerarios = itinerarioLogic.getItinerarios(idViajero);
         return ItinerarioConverter.listEntity2DTO(itinerarios);
@@ -80,7 +80,7 @@ public class ItinerarioResource {
          @Path("id: \\d+")
     public ItinerarioDTO getItinerario(@PathParam("id") Long id) throws PrimidLogicException, BusinessLogicException
     {
-        logger.log(Level.INFO, "Se ejecuta método getItinerario con id={0}", id);
+        logger.log(Level.INFO, "Se ejecuta metodo getItinerario con id={0}", id);
         ItinerarioEntity  i=itinerarioLogic.getItinerario(id);
         return ItinerarioConverter.basicEntity2DTO(i);
 
@@ -96,7 +96,7 @@ public class ItinerarioResource {
          @POST
     public ItinerarioDTO createItinerario(ItinerarioDTO itinerarioDTO) throws PrimidLogicException
     {
-        logger.info("Se ejecuta método createItinerario");
+        logger.info("Se ejecuta metodo createItinerario");
         ItinerarioEntity entity = ItinerarioConverter.fullDTO2Entity(itinerarioDTO);
         ItinerarioEntity nuevo ;
         try
@@ -129,7 +129,7 @@ public class ItinerarioResource {
          @PUT
          @Path("/{id: \\d+}")
     public ItinerarioDTO updateItinerario(@PathParam("id") Long id, ItinerarioDTO itinerario) throws PrimidLogicException, BusinessLogicException {
-         logger.log(Level.INFO, "Se ejecuta método updateItinerario con id={0}", id);
+         logger.log(Level.INFO, "Se ejecuta metodo updateItinerario con id={0}", id);
         ItinerarioEntity entity = ItinerarioConverter.fullDTO2Entity(itinerario);
         entity.setId(id);
         //ItinerarioEntity oldEntity = itinerarioLogic.getItinerario(id);

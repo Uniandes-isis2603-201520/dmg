@@ -119,7 +119,7 @@ public class MultimediaResource {
          @DELETE
          @Path("{id: \\d+}")
     public void deleteArchivoMultimedia(@PathParam("id") Long id) throws PrimidLogicException  {
-        logger.log(Level.INFO, "Se ejecuta método deleteArchivoMultimedia con id={0}", id);
+        logger.log(Level.INFO, "Se ejecuta metodo deleteArchivoMultimedia con id={0}", id);
         multimediaLogic.deleteArchivoMultimedia(id);
     }
 

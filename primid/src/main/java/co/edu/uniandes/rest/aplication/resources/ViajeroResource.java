@@ -1,7 +1,7 @@
 /*
  *ViajeroResource.java
  * Clase que representa el viajero "/viajero"
- * Implementa varios métodos para manipular los viajeros
+ * Implementa varios metodos para manipular los viajeros
  */
 package co.edu.uniandes.rest.aplication.resources;
 
@@ -24,9 +24,9 @@ import javax.ws.rs.Produces;
 /*
  * Clase que implementa el recurso REST correspondiente a "viajeros".
  *
- * Note que la aplicación (definida en RestConfig.java) define la ruta
+ * Note que la aplicacion (definida en RestConfig.java) define la ruta
  * "/api" y este recurso tiene la ruta "viajeros".
- * Al ejecutar la aplicación, el recurso será accesibe a través de la
+ * Al ejecutar la aplicacion, el recurso sera accesibe a traves de la
  * ruta "/api/viajero"
  * @author jd.torres11
  */
@@ -42,7 +42,7 @@ public class ViajeroResource {
      * Obtiene el listado de viajeros.
      *
      * @return lista de viajeros
-     * @throws BusinessLogicException excepción retornada por la lógica
+     * @throws BusinessLogicException excepcion retornada por la logica
      */
     @GET
     public List<ViajeroDTO> getViajeros() throws BusinessLogicException {

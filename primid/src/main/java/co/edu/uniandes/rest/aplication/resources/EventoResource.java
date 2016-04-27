@@ -44,11 +44,11 @@ public class EventoResource {
     	/**
 	 * Obtiene el listado de eventos.
 	 * @return lista de eventos
-	 * @throws BusinessLogicException excepción retornada por la lógica
+	 * @throws BusinessLogicException excepcion retornada por la logica
 	 */
      @GET
     public List<EventoDTO> getEventos() throws BusinessLogicException {
-        logger.info("Se ejecuta método getEventos");
+        logger.info("Se ejecuta metodo getEventos");
         return EventoConverter.listEntity2DTO(eventoLogic.getEventos());
     }
 
@@ -61,7 +61,7 @@ public class EventoResource {
          @GET
      @Path("{id_Evento: \\d+}")
     public EventoDTO getEvento(@PathParam("id_Evento") Long id) throws BusinessLogicException   {
-        logger.log(Level.INFO, "Se ejecuta método geEvento con id={0}", id);
+        logger.log(Level.INFO, "Se ejecuta metodo geEvento con id={0}", id);
         return EventoConverter.fullEntity2DTO(eventoLogic.getEvento(id));
     }
 
@@ -74,7 +74,7 @@ public class EventoResource {
          @POST
     public EventoDTO createEvento(EventoDTO dto) throws BusinessLogicException  {
 
-        logger.info("Se ejecuta método createEvento");
+        logger.info("Se ejecuta metodo createEvento");
         EventoEntity entity = EventoConverter.fullDTO2Entity(dto);
         EventoEntity newEntity;
         newEntity = eventoLogic.createEvento(entity);
@@ -91,7 +91,7 @@ public class EventoResource {
          @PUT
          @Path("{id: \\d+}")
     public EventoDTO updateEvento(@PathParam("id") Long id, EventoDTO dto) throws BusinessLogicException {
-        logger.log(Level.INFO, "Se ejecuta método updatEvento con id={0}", id);
+        logger.log(Level.INFO, "Se ejecuta metodo updatEvento con id={0}", id);
         EventoEntity entity = EventoConverter.fullDTO2Entity(dto);
         entity.setId(id);
         EventoEntity oldEntity = eventoLogic.getEvento(id);
@@ -109,7 +109,7 @@ public class EventoResource {
          @DELETE
          @Path("{id: \\d+}")
     public void deleteEvento(@PathParam("id") Long id) throws BusinessLogicException  {
-         logger.log(Level.INFO, "Se ejecuta método deleteEvento con id={0}", id);
+         logger.log(Level.INFO, "Se ejecuta metodo deleteEvento con id={0}", id);
         eventoLogic.deleteEvento(id);
     }
 

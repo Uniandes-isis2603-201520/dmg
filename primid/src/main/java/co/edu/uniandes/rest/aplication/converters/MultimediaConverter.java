@@ -36,12 +36,12 @@ public abstract class MultimediaConverter {
     }
 
     /**
-     * Realiza la conversión de MultimediaDTO a MultimediaEntity Se invoca cuando otro DTO
-     * tiene una referencia a MultimediaDTO Convierte únicamente el ID ya que es el
-     * único atributo necesario para guardar la relación en la base de datos
+     * Realiza la conversion de MultimediaDTO a MultimediaEntity Se invoca cuando otro DTO
+     * tiene una referencia a MultimediaDTO Convierte unicamente el ID ya que es el
+     * unico atributo necesario para guardar la relacion en la base de datos
      *
      * @param dto instancia de MultimediaDTO a convertir
-     * @return instancia de MultimediaEntity con los datos recibidos por parámetro
+     * @return instancia de MultimediaEntity con los datos recibidos por parametro
      * @generated
      */
     public static MultimediaEntity refDTO2Entity(MultimediaDTO dto) {
@@ -60,7 +60,7 @@ public abstract class MultimediaConverter {
      * consultar la entidad y sus relaciones muchos a uno o uno a uno
      *
      * @param entity instancia de MultimediaEntity a convertir
-     * @return Instancia de BookDTO con los datos recibidos por parámetro
+     * @return Instancia de BookDTO con los datos recibidos por parametro
      * @generated
      */
     public static MultimediaDTO basicEntity2DTO(MultimediaEntity entity) {
@@ -108,12 +108,12 @@ public abstract class MultimediaConverter {
     }
 
 /**
-     * Convierte una colección de instancias de MultimediaEntity a MultimediaDTO. Para cada
-     * instancia de MultimediaEntity en la lista, invoca basicEntity2DTO y añade el
+     * Convierte una coleccion de instancias de MultimediaEntity a MultimediaDTO. Para cada
+     * instancia de MultimediaEntity en la lista, invoca basicEntity2DTO y anade el
      * nuevo MultimediaDTO a una nueva lista
      *
-     * @param entities Colección de entidades a convertir
-     * @return Collección de instancias de MultimediaDTO
+     * @param entities coleccion de entidades a convertir
+     * @return colleccion de instancias de MultimediaDTO
      * @generated
      */
     public static List<MultimediaDTO> listEntity2DTO(List<MultimediaEntity> entities) {
