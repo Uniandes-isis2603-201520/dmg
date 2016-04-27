@@ -148,7 +148,7 @@ public abstract class PlanEventoConverter {
 
     /**
      * Convierte una coleccion de instancias de AuthorEntity a AuthorDTO. Para cada
-     * instancia de AuthorEntity en la lista, invoca basicEntity2DTO y añade el
+     * instancia de AuthorEntity en la lista, invoca basicEntity2DTO y anade el
      * nuevo AuthorDTO a una nueva lista
      *
      * @param entities Coleccion de entidades a convertir
