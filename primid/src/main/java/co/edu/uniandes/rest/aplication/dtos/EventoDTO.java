@@ -18,7 +18,6 @@ public class EventoDTO {
     private String name;
     private String image;
     private String place;
-    private ArrayList<String> comments;
     private String category;
     private double score;
     private String description;

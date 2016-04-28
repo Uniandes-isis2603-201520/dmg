@@ -1,4 +1,3 @@
-
 /*
 	 * To change this license header, choose License Headers in Project Properties.
 	 * To change this template file, choose Tools | Templates
@@ -18,6 +17,7 @@ public class PlanCiudadDTO {
     private Date fechaFin;
     private long id;
     private String name;
+    private CiudadDTO ciudad;
 
     /**
      * Constructor por defecto
@@ -28,6 +28,10 @@ public class PlanCiudadDTO {
 
     /**
      * Constructor
+     * @param id
+     * @param name
+     * @param fechaInicio
+     * @param fechaFin
      */
     public PlanCiudadDTO(long id, String name, Date fechaInicio, Date fechaFin) {
 
@@ -57,6 +61,20 @@ public class PlanCiudadDTO {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * @param ciudad
+     */
+    public void setCiudad(CiudadDTO ciudad) {
+        this.ciudad= ciudad;
+    }
+
+    /**
+     * @return la ciudad asociada
+     */
+    public CiudadDTO getCiudad() {
+        return ciudad;
     }
 
     /**
@@ -90,6 +108,7 @@ public class PlanCiudadDTO {
 
     /**
      * Convierte el objeto a una cadena
+     * @return plan ciudad convertido a dto
      */
     @Override
     public String toString() {

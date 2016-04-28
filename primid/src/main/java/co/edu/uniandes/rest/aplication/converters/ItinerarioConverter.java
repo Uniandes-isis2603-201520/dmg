@@ -72,19 +72,14 @@ public abstract class ItinerarioConverter {
 
     }
 
-    //TODO public ???
     public static ItinerarioDTO basicEntity2DTO(ItinerarioEntity entity) {
         if (entity != null) {
             ItinerarioDTO dto = new ItinerarioDTO();
             dto.setId(entity.getId());
-            //dto.setName(entity.getName());
             dto.setFechaFin(entity.getFechaFin());
             dto.setFechaInicio(entity.getFechaInicio());
             dto.setResumen(entity.getResumen());
             dto.setRutaImg(entity.getRutaImg());
-//            dto.setEditorial(EditorialConverter.refEntity2DTO(entity.getEditorial()));
-            //TODO viajero
-
             return dto;
         } else {
             return null;

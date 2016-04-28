@@ -96,8 +96,24 @@ public class ViajeroDTO {
         this.activo = estado;
     }
 
+    /*
+     * @return el estado
+     */
+    public String getRutaImagen() {
+        return rutaImg;
+    }
+
+    /**
+     * @param rutaImg
+     */
+    public void setRutaImagen(String rutaImg) {
+        this.rutaImg = rutaImg;
+    }
+
     /**
      * Convierte el objeto a una cadena
+     *
+     * @return linea que convierte al viajero en un string
      */
     @Override
     public String toString() {
