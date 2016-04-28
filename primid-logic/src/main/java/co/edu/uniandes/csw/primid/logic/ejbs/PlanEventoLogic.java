@@ -5,11 +5,9 @@
  */
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
-import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.api.IPlanEventoLogic;
 import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
 import co.edu.uniandes.csw.primid.logic.persistence.PlanEventoPersistence;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
@@ -27,6 +25,7 @@ public class PlanEventoLogic implements IPlanEventoLogic {
     @Inject
     private PlanEventoPersistence persistence;
 
+    @Override
     public PlanEventoEntity getPlanEvento(Long id) {
         logger.log(Level.INFO, "Inicia proceso de consultar planEvento con id={0}", id);
         PlanEventoEntity plan = persistence.find(id);
@@ -38,6 +37,7 @@ public class PlanEventoLogic implements IPlanEventoLogic {
         return plan;
     }
 
+    @Override
     public PlanEventoEntity createPlanEvento(PlanEventoEntity entity) {
         logger.info("Inicia proceso de creación de planEvento");
         persistence.create(entity);
@@ -45,6 +45,7 @@ public class PlanEventoLogic implements IPlanEventoLogic {
         return entity;
     }
 
+    @Override
     public PlanEventoEntity updatePlanEvento(PlanEventoEntity entity) {
         logger.log(Level.INFO, "Inicia proceso de actualizar planEvento con id={0}", entity.getId());
         PlanEventoEntity newEntity = persistence.update(entity);
@@ -52,6 +53,7 @@ public class PlanEventoLogic implements IPlanEventoLogic {
         return newEntity;
     }
 
+    @Override
     public void deletePlanEvento(Long id) {
         logger.log(Level.INFO, "Inicia proceso de borrar planEvento con id={0}", id);
         persistence.delete(id);

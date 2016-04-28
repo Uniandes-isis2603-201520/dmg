@@ -9,7 +9,6 @@ import co.edu.uniandes.csw.primid.logic.api.IEventoLogic;
 import co.edu.uniandes.csw.primid.logic.entities.EventoEntity;
 import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.persistence.EventoPersistence;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,10 +49,10 @@ public class EventoLogic implements IEventoLogic {
     public EventoEntity getEvento(Long id) throws BusinessLogicException {
         logger.log(Level.INFO, "Inicia proceso de consultar evento con id={0}", id);
         EventoEntity evento = persistence.find(id);
-        //       if (evento == null) {
-        //           logger.log(Level.SEVERE, "El evento con el id {0} no existe", id);
-        //           throw new IllegalArgumentException("El evento solicitado no existe");
-        //       }
+        if (evento == null) {
+            logger.log(Level.SEVERE, "El evento con el id {0} no existe", id);
+            throw new IllegalArgumentException("El evento solicitado no existe");
+        }
         logger.log(Level.INFO, "Termina proceso de consultar evento con id={0}", id);
         return evento;
     }
@@ -69,9 +68,6 @@ public class EventoLogic implements IEventoLogic {
     @Override
     public EventoEntity updateEvento(EventoEntity entity) throws BusinessLogicException {
         logger.log(Level.INFO, "Inicia proceso de actualizar evento con id={0}", entity.getId());
-        // if (!validateISBN(entity.getIsbn())) {
-        //     throw new BusinessLogicException("El ISBN es inválido");
-        // }
         EventoEntity newEntity = persistence.update(entity);
         logger.log(Level.INFO, "Termina proceso de actualizar evento con id={0}", entity.getId());
         return newEntity;

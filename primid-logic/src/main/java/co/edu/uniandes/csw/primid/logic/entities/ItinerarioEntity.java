@@ -45,10 +45,6 @@ public class ItinerarioEntity extends BaseEntity implements Serializable {
 
     private String resumen;
 
-    //TODO posible atributo PlanCiudadEntity
-    //public ViajeroEntity getViajero() {
-    //    return viajero;
-    //}
     public void setViajero(ViajeroEntity viajero) {
         this.viajero = viajero;
     }

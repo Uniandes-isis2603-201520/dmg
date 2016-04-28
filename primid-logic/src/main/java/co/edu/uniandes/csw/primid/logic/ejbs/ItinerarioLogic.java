@@ -27,6 +27,7 @@ public class ItinerarioLogic implements IItinerarioLogic {
     @Inject
     private ItinerarioPersistence persistence;
 
+    @Override
     public List<ItinerarioEntity> getItinerarios() {
         logger.info("Inicia proceso de consultar todos los itinerarios");
         List<ItinerarioEntity> itinerarios = persistence.findAll();
@@ -34,6 +35,7 @@ public class ItinerarioLogic implements IItinerarioLogic {
         return itinerarios;
     }
 
+    @Override
     public List<ItinerarioEntity> getItinerarios(Long idViajero) {
         logger.info("Inicia proceso de consultar todos los itinerarios de un viajero");
         List<ItinerarioEntity> itinerarios = persistence.findAll();
@@ -41,6 +43,7 @@ public class ItinerarioLogic implements IItinerarioLogic {
         return itinerarios;
     }
 
+    @Override
     public ItinerarioEntity getItinerario(Long id) throws BusinessLogicException {
         logger.log(Level.INFO, "Inicia proceso de consultar itinerario con id={0}", id);
         ItinerarioEntity itinerario = persistence.find(id);
@@ -52,6 +55,7 @@ public class ItinerarioLogic implements IItinerarioLogic {
         return itinerario;
     }
 
+    @Override
     public ItinerarioEntity createItinerario(ItinerarioEntity entity) {
         logger.info("Inicia proceso de creación de itinerario");
         persistence.create(entity);
@@ -59,6 +63,7 @@ public class ItinerarioLogic implements IItinerarioLogic {
         return entity;
     }
 
+    @Override
     public ItinerarioEntity updateItinerario(ItinerarioEntity entity) {
         logger.log(Level.INFO, "Inicia proceso de actualizar itinerario con id={0}", entity.getId());
         ItinerarioEntity newEntity = persistence.update(entity);
@@ -66,6 +71,7 @@ public class ItinerarioLogic implements IItinerarioLogic {
         return newEntity;
     }
 
+    @Override
     public void deleteItinerario(Long id) {
         logger.log(Level.INFO, "Inicia proceso de borrar itinerario con id={0}", id);
         persistence.delete(id);

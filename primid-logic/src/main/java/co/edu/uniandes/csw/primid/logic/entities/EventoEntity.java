@@ -10,6 +10,7 @@ import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -25,7 +26,7 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
 public class EventoEntity extends BaseEntity implements Serializable {
 
     private String place;
-    private ArrayList<String> comments;
+    private List<String> comments;
     private String category;
     private double score;
     private String image;
@@ -58,14 +59,14 @@ public class EventoEntity extends BaseEntity implements Serializable {
     /**
      * @return the comments
      */
-    public ArrayList<String> getComments() {
+    public List<String> getComments() {
         return comments;
     }
 
     /**
      * @param comments the lists of comments
      */
-    public void setComments(ArrayList comments) {
+    public void setComments(List comments) {
         this.comments = comments;
     }
 

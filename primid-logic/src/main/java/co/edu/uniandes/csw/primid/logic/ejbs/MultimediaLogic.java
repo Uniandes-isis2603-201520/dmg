@@ -1,9 +1,7 @@
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
-//import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
 import co.edu.uniandes.csw.primid.logic.api.IMultimediaLogic;
 import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
-import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.primid.logic.persistence.MultimediaPersistence;
 import java.util.List;
 import java.util.logging.Level;
