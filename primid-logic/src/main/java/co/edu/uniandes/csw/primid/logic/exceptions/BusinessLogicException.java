@@ -5,6 +5,9 @@ import javax.ejb.ApplicationException;
 @ApplicationException(rollback = true)
 public class BusinessLogicException extends Exception {
 
+    /**
+     * No se porque va vacia :V
+     */
     public BusinessLogicException() {
     }
 

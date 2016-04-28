@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
-
 @Entity
 public class CiudadEntity extends BaseEntity implements Serializable {
 
@@ -38,10 +37,6 @@ public class CiudadEntity extends BaseEntity implements Serializable {
 
     public void setEventos(List<EventoEntity> eventos) {
         this.eventos = eventos;
-    }
-    @Override
-     public boolean equals(Object obj) {
-       return false;
     }
 
 }

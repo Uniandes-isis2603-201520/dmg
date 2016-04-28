@@ -17,6 +17,15 @@ import java.util.List;
 public abstract class EventoConverter {
 
     /**
+     * Constructor privado para evitar la creacion del constructor implicito
+     * de Java
+     *
+     * @generated
+     */
+    private EventoConverter() {
+    }
+
+    /**
      * Realiza la conversion de EventoEntity a EventoDTO. Se invoca cuando otra
      * entidad tiene una referencia a EventoEntity. Entrega unicamente los
      * atributos proprios de la entidad.

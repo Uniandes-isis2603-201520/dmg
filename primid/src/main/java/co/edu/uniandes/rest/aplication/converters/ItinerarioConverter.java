@@ -5,22 +5,10 @@
  */
 package co.edu.uniandes.rest.aplication.converters;
 
-import co.edu.uniandes.csw.crud.api.podam.strategy.DateStrategy;
-import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import co.edu.uniandes.csw.primid.logic.entities.ItinerarioEntity;
 import co.edu.uniandes.rest.aplication.dtos.ItinerarioDTO;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import uk.co.jemos.podam.common.PodamExclude;
-import uk.co.jemos.podam.common.PodamStrategyValue;
-//import co.edu.uniandes.rest.aplication.entities.ItinerarioEntity;
 
 /**
  *
@@ -60,7 +48,6 @@ public abstract class ItinerarioConverter {
             dto.setResumen(entity.getResumen());
             dto.setRutaImg(entity.getRutaImg());
             dto.setFechaInicio(entity.getFechaInicio());
-            //TODO de viajero
 
             return dto;
         } else {
@@ -73,11 +60,10 @@ public abstract class ItinerarioConverter {
             ItinerarioEntity entity = new ItinerarioEntity();
 
             entity.setId(dto.getId());
-            //entity.setFechaFin(dto.getFechaFin());
-            //entity.setResumen(dto.getResumen());
-            //entity.setRutaImg(dto.getRutaImg());
-            //entity.setFechaInicio(dto.getFechaInicio());
-            //TODO de viajero
+            entity.setFechaFin(dto.getFechaFin());
+            entity.setResumen(dto.getResumen());
+            entity.setRutaImg(dto.getRutaImg());
+            entity.setFechaInicio(dto.getFechaInicio());
 
             return entity;
         } else {

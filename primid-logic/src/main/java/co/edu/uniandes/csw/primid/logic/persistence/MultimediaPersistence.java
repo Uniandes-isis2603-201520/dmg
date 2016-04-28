@@ -1,6 +1,5 @@
 package co.edu.uniandes.csw.primid.logic.persistence;
 
-//import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
 import co.edu.uniandes.csw.primid.logic.entities.MultimediaEntity;
 import java.util.List;
 import java.util.logging.Level;
