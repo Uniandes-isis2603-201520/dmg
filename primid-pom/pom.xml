@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-     <repositories>
+    <repositories>
         <repository>
             <id>csw-releases</id>
             <name>csw releases</name>
@@ -62,10 +62,24 @@
             <version>6.0.2.RELEASE</version>
         </dependency>
     </dependencies>
-
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.7.6.201602180812</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                                <goal>prepare-agent-integration</goal>
+                                <goal>report</goal>
+                                <goal>report-integration</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -78,5 +92,6 @@
             </plugins>
         </pluginManagement>
     </build>
+
     <name>primid-pom</name>
 </project>
