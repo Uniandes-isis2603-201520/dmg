@@ -63,7 +63,7 @@
         </dependency>
     </dependencies>
     <build>
-        <pluginManagement>
+       
             <plugins>
                 <plugin>
                     <groupId>org.jacoco</groupId>
@@ -90,7 +90,7 @@
                     </configuration>
                 </plugin>
             </plugins>
-        </pluginManagement>
+       
     </build>
 
     <name>primid-pom</name>
