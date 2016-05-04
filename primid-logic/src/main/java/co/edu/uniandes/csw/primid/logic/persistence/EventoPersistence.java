@@ -27,7 +27,7 @@ public class EventoPersistence {
     protected EntityManager em;
 
     public EventoEntity find(Long id) {
-        logger.log(Level.INFO, "Consultando evento con id={0}", id);
+        logger.log(Level.INFO, "Consultando Evento con id={0}", id);
         return em.find(EventoEntity.class, id);
     }
 
@@ -38,19 +38,19 @@ public class EventoPersistence {
     }
 
     public EventoEntity create(EventoEntity entity) {
-        logger.info("Creando un evento nuevo");
+        logger.info("Creando un Evento nuevo");
         em.persist(entity);
         logger.info("evento creado");
         return entity;
     }
 
     public EventoEntity update(EventoEntity entity) {
-        logger.log(Level.INFO, "Actualizando evento con id={0}", entity.getId());
+        logger.log(Level.INFO, "Actualizando Evento con id={0}", entity.getId());
         return em.merge(entity);
     }
 
     public void delete(Long id) {
-        logger.log(Level.INFO, "Borrando evento con id={0}", id);
+        logger.log(Level.INFO, "Borrando Evento con id={0}", id);
         EventoEntity entity = em.find(EventoEntity.class, id);
         em.remove(entity);
     }

@@ -9,8 +9,11 @@ import co.edu.uniandes.csw.crud.api.podam.strategy.DateStrategy;
 import co.edu.uniandes.csw.crud.spi.entity.BaseEntity;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -26,18 +29,23 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
 public class EventoEntity extends BaseEntity implements Serializable {
 
     private String place;
-    private List<String> comments;
+
+    @ElementCollection
+    @CollectionTable(name = "comments")
+    private Collection<String> comments = new ArrayList<String>();
     private String category;
-    private double score;
+    private Double score;
     private String image;
+
     @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
     private Date startDate;
+
     @PodamStrategyValue(DateStrategy.class)
     @Temporal(TemporalType.DATE)
     private Date endDate;
-    private String description;
 
+    private String description;
     @ManyToOne
     @PodamExclude
     private CiudadEntity ciudad;
@@ -57,16 +65,18 @@ public class EventoEntity extends BaseEntity implements Serializable {
     }
 
     /**
-     * @return the comments
-     */
-    public List<String> getComments() {
+    * @return the comments
+    */
+    public Collection<String> getComments()
+    {
         return comments;
     }
 
     /**
-     * @param comments the lists of comments
+     * @param comments the Collection  of comments
      */
-    public void setComments(List comments) {
+    public void setComments(Collection<String> comments)
+    {
         this.comments = comments;
     }
 
@@ -110,14 +120,14 @@ public class EventoEntity extends BaseEntity implements Serializable {
     /**
      * @return the score
      */
-    public double getScore() {
+    public Double getScore() {
         return score;
     }
 
     /**
      * @param score the score to set
      */
-    public void setScore(double score) {
+    public void setScore(Double score) {
         this.score = score;
     }
 
