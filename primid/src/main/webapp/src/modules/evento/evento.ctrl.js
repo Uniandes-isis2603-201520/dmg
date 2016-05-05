@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -59,7 +59,7 @@
             //Variables para el controlador
             this.readOnly = false;
             this.editMode = false;
-            
+
 
             this.changeTab = function (tab) {
                 $scope.tab = tab;
@@ -70,11 +70,11 @@
 
 
             /*
-             * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la 
-             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la información de modulos hijos 
+             * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la información de modulos hijos
              * al actual modulo.
              * Habilita el modo de edicion. El template de la lista cambia por el formulario.
-             * 
+             *
              */
 
             this.createRecord = function () {
@@ -83,15 +83,15 @@
                 $scope.currentRecord = {};
                 $scope.$broadcast("post-create", $scope.currentRecord);
             };
-            
-            
+
+
 
             /*
-             * Funcion editRecord emite el evento ("pre-edit") a los $Scope hijos del controlador por medio de la 
-             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la información de modulos hijos 
+             * Funcion editRecord emite el evento ("pre-edit") a los $Scope hijos del controlador por medio de la
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la información de modulos hijos
              * al actual modulo.
              * Habilita el modo de edicion.  Carga el template de formulario con los datos del record a editar.
-             * 
+             *
              */
 
             this.editRecord = function (record) {
@@ -103,10 +103,10 @@
                     return response;
                 }, responseError);
             };
-            
+
 
             /*
-             * Funcion fetchRecords consulta el servicio svc.fetchRecords con el fin de consultar 
+             * Funcion fetchRecords consulta el servicio svc.fetchRecords con el fin de consultar
              * todos los registros del modulo editorial.
              * Guarda los registros en la variable $scope.records
              * Muestra el template de la lista de records.
@@ -148,12 +148,6 @@
              * para desplegarlo en el template de la lista.
              */
             this.fetchRecords();
-
-            svc.get('http://localhost:8080/primid/src/modules/evento/evento.mock.js')
-            .success(function(response){
-                $scope.records = response.records;
-                
-            });
 
 
 
