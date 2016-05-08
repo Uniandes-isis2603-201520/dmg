@@ -25,10 +25,12 @@ public class MultimediaDTO {
     public final static String IMAGEN = "imagen";
 
     /**
-     * Constructor por defecto
+     * Constructor usado para crear el
+     * dto por defecto.
      */
     public MultimediaDTO() {
     }
+
 
     /*
      * Constructor con parámetros.

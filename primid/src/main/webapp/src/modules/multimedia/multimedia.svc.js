@@ -7,7 +7,7 @@
     mod.service("personService", ["$http", "personContext", function ($http, context) {
             /**
              * Obtener la lista de archivos multimedia.
-             * Hace una petición GET con $http a /multimedia para obtener la lista
+             * Hace una peticion GET con $http a /multimedia para obtener la lista
              * @returns {promise} promise para leer la respuesta del servidor}
              * Devuelve una lista de objetos de multimedia con sus atributos
              */
@@ -17,7 +17,7 @@
 
             /**
              * Obtener un registro de multimedia.
-             * Hace una petición GET a /multimedia/:id para obtener
+             * Hace una peticion GET a /multimedia/:id para obtener
              * los datos de un registro específico de multimedia
              * @param {number} id del registro a obtener
              * @returns {promise} promise para leer la respuesta del servidor
@@ -46,7 +46,7 @@
             };
 
             /**
-             * Hace una petición DELETE a /multimedia/:id para eliminar un archivo multimedia
+             * Hace una peticion DELETE a /multimedia/:id para eliminar un archivo multimedia
              * @param {number} id identificador de la instancia de archivo multimedia a eliminar
              * @returns {promise} promise para leer la respuesta del servidor
              * No devuelve datos.

@@ -27,9 +27,9 @@ import javax.ws.rs.Produces;
 /*
  * Clase que implementa el recurso REST correspondiente a "multimedia".
  *
- * Note que la aplicación (definida en RestConfig.java) define la ruta
+ * Note que la aplicacion (definida en RestConfig.java) define la ruta
  * "/api" y este recurso tiene la ruta "multimedia".
- * Al ejecutar la aplicación, el recurso será accesibe a través de la
+ * Al ejecutar la aplicacion, el recurso será accesibe a través de la
  * ruta "/api/multimedia"
  * @author fa.lopez10
  */
@@ -45,7 +45,7 @@ public class MultimediaResource {
      * Obtiene el listado de archivos Multimedia.
      *
      * @return lista de archivos Multimedia
-     * @throws PrimidLogicException excepción retornada por la lógica
+     * @throws PrimidLogicException excepcion retornada por la logica
      */
     @GET
     @Path("/multimedia")

@@ -5,10 +5,10 @@
  */
 (function (ng) {
 
-  // es parte del módulo "multimediaModule"
+  // es parte del modulo "multimediaModule"
   var mod = ng.module("multimediaModule");
 
-  // crea el controlador con dependencias a $scope y a personService
+  // crea el controlador con dependencias a $scope y a multimediaService
   mod.controller("multimediaCtrl", ["$scope", "multimediaService", function ($scope, svc) {
 
     // TODO: define los atributos en el scope
@@ -36,7 +36,7 @@
         $scope.alerts.splice(index, 1);
     };
 
-    // Función showMessage: Recibe el mensaje en String y su tipo con el fin de almacenarlo en el array $scope.alerts.
+    // Funcion showMessage: Recibe el mensaje en String y su tipo con el fin de almacenarlo en el array $scope.alerts.
     function showMessage(msg, type) {
         var types = ["info", "danger", "warning", "success"];
         if (types.some(function (rc) {

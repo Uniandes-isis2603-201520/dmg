@@ -40,7 +40,7 @@ public class MultimediaLogicMock {
         // indica que se muestren todos los mensajes
         logger.setLevel(Level.INFO);
 
-        // muestra información
+        // muestra informacion
         logger.info("Inicializa la lista de archivos multimedia");
         logger.info("multimedia" + multimedia);
     }
@@ -152,7 +152,7 @@ public class MultimediaLogicMock {
             }
         }
 
-        // Validacion: no encontró el archivo multimedia con ese id
+        // Validacion: no encontro el archivo multimedia con ese id
         logger.severe("No existe un archivo multimedia con ese id");
         throw new PrimidLogicException("No existe un archivo multimedia con ese id");
     }
@@ -178,7 +178,7 @@ public class MultimediaLogicMock {
             }
         }
 
-        // no encontró el archivo multimedia con ese id ?
+        // no encontro el archivo multimedia con ese id ?
         logger.severe("No existe un archivo multimedia con ese id");
         throw new PrimidLogicException("No existe un archivo multimedia con ese id");
     }
