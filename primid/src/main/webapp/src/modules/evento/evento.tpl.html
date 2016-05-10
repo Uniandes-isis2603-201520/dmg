@@ -30,8 +30,17 @@
                                         <li><input id="name" class="input-field form-item field-name" type="text" required="required" name="ciudad-evento" placeholder="Ciudad" />
                                         </li>
                                         <li>
-                                            <!-- Collect the nav links, forms, and other content for toggling -->
-                                             <div class="collapse navbar-collapse" id="editorial-navbar">
+
+                                                             <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="Evento-navbar">
+                                            <button id="create-evento" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-pencil"></span> Create</button>
+                                            <button id="refresh-evento" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-circle-arrow-left"></span> Refresh</button>
+                                            <button id="save-evento" type="submit" form="evento-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-check"></span> Save</button>
+                                            <button id="cancel-evento" type="button" form="evento-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                            </div>
+                                            <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="5000">{{alert.msg}} </alert>
+                                                       <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="editorial-navbar">
                                              <button id="refresh-evento" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
                                              <button class="fancy-button button-line btn-col small horizontal">
                                                 Buscar
@@ -39,7 +48,7 @@
                                                         <i class="fa fa-search"></i>
                                                     </span>
                                             </button>
-                                             </div>
+                                            </div>
                                         </li>
                                     </ul>
 
@@ -49,13 +58,32 @@
                     <br>
 
                     <div ng-hide="ctrl.editMode">
-                    		<ul>
-                    			<label class="feature-title color-scheme"> Información ng </label>
-                    			<li ng-repeat="record in records">
-                    				{{record.name}}
-                    			</li>
-                    		</ul>
+    <div class="col-sm-12">
+        <div ng-repeat="record in records">
+            <div class="col-md-4 col-sm-6 col-lg-3 well">
+                <div class="col-md-12">
+                    <div class="img-thumbnail" id="image" ng-if="record.image">
+                        <a ng-href="{{record.image}}" target="_blank"><img class="img-responsive" style="height: 20vmax;" ng-src="{{record.image}}" alt="{{record.image}}"></a>
                     </div>
+                </div>
+                <div class="caption" >
+                    <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
+                    <p><strong>Description:</strong> <span id="{{$index}}-description">{{record.description}}</span></p>
+                    <p><strong>Place:</strong> <span id="{{$index}}-place">{{record.place}}</span></p>
+                    <p><strong>Category:</strong> <span id="{{$index}}-categoryn">{{record.category}}</span></p>
+                    <p><strong>Score:</strong> <span id="{{$index}}-score">{{record.score}}</span></p>
+                    <p><strong>Start Date:</strong> <span id="{{$index}}-startDate">{{record.startDate| date}}</span></p>
+                    <p><strong>End Date:</strong> <span id="{{$index}}-endDate">{{record.endDate| date}}</span></p>
+                    <p><strong>Ciudad:</strong> <span id="{{$index}}-ciudad">{{record.ciudad}}</span></p>
+                </div>
+                <p class="text-center">
+                    <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
                     <div  class="col-lg-12">
 						<!--Features container Starts -->
 						<ul id="card-ul" class="features-hold baraja-container">

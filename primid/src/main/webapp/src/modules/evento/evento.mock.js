@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -8,13 +8,13 @@
     var mod = ng.module('eventoMock', ['ngMockE2E']);
 
 
-    mod.run(['$httpBackend', function ($httpBackend) {
+    mod.run(['$httpBackend','$lod', function ($httpBackend, $log) {
             var ignore_regexp = new RegExp('^((?!api).)*$');
             /*
              * @type RegExp
-             * recordUrl acepta cualquier url con el formato 
+             * recordUrl acepta cualquier url con el formato
              * api/(cualquierpalabra)/(numero)
-             * ej: api/editorials/1
+             * ej: api/eventos/1
              */
             var recordUrl = new RegExp('api/eventos/([0-9]+)');
 
@@ -22,36 +22,33 @@
              * @type Array
              * records: Array con un libro por defecto
              */
-            var records = [{
+            var records = [
 
-                    id: 1,
-                    name: 'Torre Eiffel',
-                    ciudad: 'Paris'
-                    
+                {id: 1,
+                    name: 'Universal' /*Tipo String*/,
+                    description: 'Parque de diversiones' /*Tipo String*/,
+                    place: 'Orlando Street' /*Tipo String*/,
+                    image: '' /*Tipo String*/,
+                    category: 'Fun' /*Tipo String*/,
+                    score: '4' /*Tipo Double*/,
+                    startDate: '2016-09-01' /*Tipo Date*/,
+                    endDate: '2016-09-10' /*Tipo Date*/,
+                    ciudad: 'Orlando' /*Tipo Ciudad*/,
+                    comments: []
                 },
-                {
-                    id: 2,
-                    name: 'Monserrate',
-                    ciudad: 'Bogota'
-                    
-                },
-                {
-                    id: 3,
-                    name: 'Tomorrowland',
-                    ciudad: 'Belgica'
-                    
-                },
-                {
-                    id: 4,
-                    name: 'Opera house',
-                    ciudad: 'Sydney'
-                   
-                },
-                {
-                    id: 5,
-                    name: 'Universal',
-                    ciudad: 'Orlando'
-                }];
+                {id: 2,
+                    name: 'Torre Eiffel' /*Tipo String*/,
+                    description: 'Torre turistica de Paris' /*Tipo String*/,
+                    place: 'Paris, parque' /*Tipo String*/,
+                    image: '' /*Tipo String*/,
+                    category: 'Discovery' /*Tipo String*/,
+                    score: '5' /*Tipo Double*/,
+                    startDate: '2022-01-01' /*Tipo Date*/,
+                    endDate: '2010-01-10' /*Tipo Date*/,
+                    ciudad: 'Paris' /*Tipo Ciudad*/,
+                    comments: []
+                }
+            ];
 
             function getQueryParams(url) {
                 var vars = {}, hash;
@@ -70,8 +67,8 @@
 
             /*
              * Esta funcion se ejecuta al invocar una solicitud GET a la url "api/editorials"
-             * Obtiene los parámetros de consulta "queryParams" para establecer 
-             * la pagina y la maxima cantida de records. Con los anteriores parametros 
+             * Obtiene los parámetros de consulta "queryParams" para establecer
+             * la pagina y la maxima cantida de records. Con los anteriores parametros
              * se realiza la simulacion de la paginacion.
              * Response: 200 -> Status ok, array de libros y los headers.
              */
@@ -109,7 +106,7 @@
             /*
              * Esta funcion se ejecuta al invocar una solicitud POST a la url "api/editorials"
              * Obtiene el record de libro desde el cuerpo de la peticion
-             * Genera un id aleatorio y lo asocia al record de libro y lo guarda en el 
+             * Genera un id aleatorio y lo asocia al record de libro y lo guarda en el
              * array de records.
              * Response: 201 -> Status created, record -> libro y ningún header.
              */
@@ -141,8 +138,8 @@
              * Esta funcion se ejecuta al invocar una solicitud PUT a la url "api/editorials/[numero]"
              * Obtiene el id del la url y el record de libro desde el cuerpo de la peticion
              * Busca y reemplaza el anterior registro por el enviado en el cuerpo de la solicitud
-             * Response: 204, no retorna ningun dato ni headers. 
-             * 
+             * Response: 204, no retorna ningun dato ni headers.
+             *
              */
             $httpBackend.whenPUT(recordUrl).respond(function (method, url, data) {
                 var id = parseInt(url.split('/').pop());

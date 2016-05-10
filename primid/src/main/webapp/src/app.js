@@ -1,6 +1,10 @@
 (function (ng) {
 
-    var mod = ng.module("mainApp", ["ui.router"]);
+    var mod = ng.module("mainApp", [
+        "ui.router"
+//        "eventoModule",
+//        "ngMessages"
+    ]);
 
     mod.config(['$logProvider', function ($logProvider) {
             $logProvider.debugEnabled(true);
@@ -49,14 +53,14 @@
                     })
                     .state('evento', {
                         url: '/evento',
-                        //controller: "eventoCtrl",
-                        //controllerAs: "ctrl",
+                        controller: "eventoCtrl",
+                        controllerAs: "ctrl",
                         templateUrl: "src/modules/evento/evento.tpl.html"
                     })
                     .state('eventoInfo', {
                         url: '/eventoInfo',
-                        //controller: "eventoCtrl",
-                        //controllerAs: "ctrl",
+                       // controller: "eventoCtrl",
+                       // controllerAs: "ctrl",
                         templateUrl: "src/modules/evento/evento1.tpl.html"
                     });
         }]);

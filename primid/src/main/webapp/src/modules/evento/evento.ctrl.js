@@ -9,10 +9,30 @@
 
     var mod = ng.module("eventoModule");
 
-    mod.controller("eventoCtrl", ["$scope", "eventoService", function ($scope, svc) {
+    mod.controller("eventoCtrl", ["$scope", "eventoService","$modal" ,function ($scope, svc, $modal) {
 
             $scope.alerts = [];
-            $scope.currentRecord = {};
+            $scope.currentRecord = {
+                id: undefined /*Tipo Long. El valor se asigna en el backend*/,
+                name: '' /*Tipo String*/,
+                description: '' /*Tipo String*/,
+                place: '' /*Tipo String*/,
+                image: '' /*Tipo String*/,
+                category: '' /*Tipo String*/,
+                score: '' /*Tipo Double*/,
+                startDate: '' /*Tipo Date*/,
+                endDate: '' /*Tipo Date*/,
+                ciudad: '' /*Tipo Ciudad*/,
+                comments: [{/*Colección de registros de Review*/
+                        id: undefined /*Tipo Long. El backend asigna el valor*/,
+                        name: '' /*Tipo String*/,
+                        description: '' /*Tipo String*/
+                    }, {
+                        id: undefined /*Tipo Long. El backend asigna el valor*/,
+                        name: '' /*Tipo String*/,
+                        description: '' /*Tipo String*/
+                    }] /*Colección de registros de Review*/
+            };
             $scope.records = [];
 
             $scope.today = function () {
@@ -78,7 +98,6 @@
              */
 
             this.createRecord = function () {
-                $scope.$broadcast("pre-create", $scope.currentRecord);
                 this.editMode = true;
                 $scope.currentRecord = {};
                 $scope.$broadcast("post-create", $scope.currentRecord);
@@ -95,7 +114,6 @@
              */
 
             this.editRecord = function (record) {
-                $scope.$broadcast("pre-edit", $scope.currentRecord);
                 return svc.fetchRecord(record.id).then(function (response) {
                     $scope.currentRecord = response.data;
                     self.editMode = true;
@@ -144,7 +162,7 @@
             };
 
             /*
-             * Funcion fetchRecords consulta todos los registros del mÃ³dulo editorial en base de datos
+             * Funcion fetchRecords consulta todos los registros del modulo de evento en base de datos
              * para desplegarlo en el template de la lista.
              */
             this.fetchRecords();

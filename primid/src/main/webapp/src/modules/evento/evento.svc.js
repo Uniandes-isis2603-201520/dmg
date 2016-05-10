@@ -9,13 +9,13 @@
 
     var mod = ng.module("eventoModule");
 
-    mod.service("eventoService", ["$http", "eventoContext", function ($http, context) {
+    mod.service("eventoService", ["$http", "eventoContext", function ($http, context, $log) {
             /**
-             * Obtener la lista de editorials.
-             * Hace una petición GET con $http a /editorials para obtener la lista
+             * Obtener la lista de eventos.
+             * Hace una petición GET con $http a /eventos para obtener la lista
              * de editorials
              * @returns {promise} promise para leer la respuesta del servidor}
-             * Devuelve una lista de objetos de editorials con sus atributos y reviews
+             * Devuelve una lista de objetos de eventos con sus atributos y comments
              */
             this.fetchRecords = function () {
                 return $http.get(context);
@@ -24,18 +24,18 @@
 
             /**
              * Obtener un registro de editorials.
-             * Hace una petición GET a /editorials/:id para obtener
-             * los datos de un registro específico de editorials
+             * Hace una petición GET a /events/:id para obtener
+             * los datos de un registro específico de eventos
              * @param {number} id del registro a obtener
              * @returns {promise} promise para leer la respuesta del servidor
-             * Devuelve un objeto de editorials con sus atributos y reviews
+             * Devuelve un objeto de eventos con sus atributos y comments
              */
             this.fetchRecord = function (id) {
                 return $http.get(context + "/" + id);
             };
 
             /**
-             * Guardar un registro de editorials.
+             * Guardar un registro de eventos.
              * Si currentRecord tiene la propiedad id, hace un PUT a /editorials/:id con los
              * nuevos datos de la instancia de editorials.
              * Si currentRecord no tiene la propiedad id, se hace un POST a /editorials
