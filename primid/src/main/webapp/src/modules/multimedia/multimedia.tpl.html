@@ -1,168 +1,102 @@
 
 <div class="container features center">
 <div class="row porfolio-container">
+
 				<div class="col-md-10 col-md-offset-1 center section-title">
 					<h3 style="color:grey">Multimedia</h3>
                                         <h5 style="color:grey"><strong>¡Accede, agrega y edita a los recuerdos vividos en tu viaje a través de tus fotos, música y videos!</strong></h5>
 				</div>
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-
-                                            <div class="photo-box">
-                                                    <img src="resources/images/multimedia1.jpg" alt="multimedia 1"  />
-                                                    <div class="photo-overlay">
-                                                            <h4>Vacaciones</h4>
-                                                    </div>
-                                                    <span class="photo-zoom">
-                                                            <a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-                                                    </span>
-                                            </div>
-                                            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-                                            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-                                            <div class="photo-box">
-                                                    <img src="resources/images/multimedia2.png" alt="" />
-                                                    <div class="photo-overlay">
-                                                            <h4>Rio de Janeiro</h4>
-                                                    </div>
-                                                    <span class="photo-zoom">
-                                                            <a href="src/modules/single/single-project.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-                                                    </span>
-                                            </div>
-                                            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-                                            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-
-				<!-- Single screenshot starts -->
-				<div class="col-md-4 col-sm-4 col-xs-6">
-					<div class="screenshot">
-                                            <div class="photo-box">
-                                                    <img src="resources/images/33.jpg" alt="" />
-                                                    <div class="photo-overlay">
-                                                            <h4>Playa</h4>
-                                                    </div>
-                                                    <span class="photo-zoom">
-                                                            <a href="src/modules/Timeline/timeline.tpl.html" class="view-project"><i class="fa fa-search-plus fa-2x"></i></a>
-                                                    </span>
-                                            </div>
-                                            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-                                            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
-					</div>
-				</div>
-				<!-- Single screenshot ends -->
-                    <!--botones crear y refrescar-->
-                        <div class="sign-up" style="float:left;widht:225px">
-                            <button id="create-multimedia" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Create</button>
-                            <button id="refresh-multimedia" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-                        </div>
-                    <!--fin botones crear y refrescar-->
-
-			</div>
-
-
-
-			<div id="portfolio-loader" class="center">
-				<div class="loading-circle fa-spin"></div>
-			</div> <!--=== Portfolio loader ===-->
-
-			<div id="portfolio-load"></div><!--=== ajax content will be loaded here ===-->
-                            <div class="col-md-12 center back-button"><!--Lo que salga dentro de este div solo aparece despues del clik en un boton-->
-                                <!-- <div class="container pricing"> -->
-                                <div class="row">
-                                        <!-- Intinerario1 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="500">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 1</h4>
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                        <!--&#9992 avion -->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <!-- Itinerario2 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="700">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 2</h4>
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <!-- Intinerario3 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="900">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 3</h4>
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <!-- Intinerario4 -->
-                                        <div class="col-md-3 col-sm-6 single-pricing-wrap center animated" data-animation="bounceInLeft" data-animation-delay="1100">
-                                                <div class="single-pricing">
-
-                                                        <div class="pricing-head">
-                                                                <h4 class="pricing-heading color-scheme">Itinerario 4</h4>
-
-                                                        </div>
-
-
-                                                        <div class="sign-up">
-                                                                <a href="#" class="fancy-button button-line btn-col zoom">
-                                                                        <p title="Escoger" style="font-size:22px">Escoger &#x261D</p>
-                                                                        <!--&#10084 corazon-->
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
+                                <!--botones crear y refrescar-->
+                                <div class="sign-up" style="float:left;widht:225px">
+                                    <button id="create-multimedia" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Create</button>
+                                    <button id="refresh-multimedia" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                                    <button id="save-multimedia" type="submit" class="fancy-button button-line btn-col small horizontal" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-check"></span> Save</button>
+                                    <button id="cancel-multimedia" type="button" class="fancy-button button-line btn-col small horizontal" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                                 </div>
-                        <!-- </div> -->
-
-
-                                    <a class="backToProject fancy-button button-line bell btn-col" href="#">
-                                            Atras
-                                            <span class="icon">
-                                                    <i class="fa fa-arrow-left"></i>
-                                            </span>
-                                    </a>
-                            </div>
+                                <!--fin botones crear y refrescar-->
+                                <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="5000">{{alert.msg}} </alert>
 </div>
+<div ng-hide="ctrl.editMode">
+    <div class="col-sm-12">
+        <div ng-repeat="record in records">
+            <div class="col-md-4 col-sm-6 col-lg-3 well">
+                <div class="col-md-12">
+                    <div class="img-thumbnail" id="image" ng-if="record.image">
+                        <a ng-href="{{record.image}}" target="_blank"><img class="img-responsive" style="height: 20vmax;" ng-src="{{record.image}}" alt="{{record.image}}"></a>
+                    </div>
+                </div>
+                <div class="caption" >
+                    <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
+                    <p><strong>Tipo:</strong> <span id="{{$index}}-description">{{record.tipo}}</span></p>
+                    <p><strong>Ruta:</strong> <span id="{{$index}}-place">{{record.ruta}}</span></p>
+                    <p><strong>PlanEvento:</strong> <span id="{{$index}}-planEvento">{{record.planEvento}}</span></p>
+                </div>
+                <p class="text-center">
+                    <button id="{{$index}}-edit-btn" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    <button id="{{$index}}-delete-btn" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="ctrl.editMode" class="section-overlay">
+    <form novalidate name="form" id="evento-form" role="form" ng-submit="ctrl.saveRecord()">
+        <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
+            <div ng-message="required">
+                Please, Fill the required fields
+            </div>
+        </alert>
+        <fieldset>
+            <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.name.$valid && form.name.$dirty, 'has-error': form.name.$invalid && (form.name.$dirty || form.$submitted)}" >
+                <label for="name" class="col-md-2 control-label">Name</label>
+                <div class="col-md-10">
+                    <input id="name" name="name" class="form-control" type="text" ng-model="currentRecord.name" required />
+                </div>
+            </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.tipo.$valid && form.tipo.$dirty, 'has-error': form.tipo.$invalid && (form.tipo.$dirty || form.$submitted)}" >
+                <label for="tipo" class="col-md-2 control-label">Tipo</label>
+                <div class="col-md-10">
+                    <input id="tipo" name="tipo" class="form-control" type="text" ng-model="currentRecord.tipo" required />
+                </div>
+            </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.ruta.$valid && form.ruta.$dirty, 'has-error': form.ruta.$invalid && (form.ruta.$dirty || form.$submitted)}" >
+                <label for="ruta" class="col-md-2 control-label">Ruta</label>
+                <div class="col-md-10">
+                    <input id="place" name="ruta" class="form-control" type="text" ng-model="currentRecord.ruta" required />
+                </div>
+            </div>
+<!--            Deberia ser un select para escoger el plan evento-->
+            <div class="form-group col-md-12" ng-class="{'has-success': !form.planEvento.$error.required && form.planEvento.$dirty, 'has-error': form.planEvento.$error.required && (form.planEvento.$dirty || form.$submitted)}" >
+                <label for="planEvento" class="col-md-2 control-label">PlanEvento</label>
+                <div class="col-md-10">
+                    <input id="planEvento" name="planEvento" class="form-control" type="text" ng-model="currentRecord.planEvento" required />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div id="portfolio-loader" class="center">
+        <div class="loading-circle fa-spin"></div>
+        <ul class="list-inline">
+                                        <li><input id="name" class="input-field form-item field-name" type="text"/>
+                                        </li>
+                                        <li>
+                                                       <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="editorial-navbar">
+                                             <button id="refresh" class="fancy-button button-line btn-col small horizontal"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                                             <button class="fancy-button button-line btn-col small horizontal">
+                                                Buscar
+                                                    <span class="icon">
+                                                        <i class="fa fa-search"></i>
+                                                    </span>
+                                            </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+</div> <!--=== Portfolio loader ===-->
+
+
 <!--==== MailChimp Widget plugin ====-->

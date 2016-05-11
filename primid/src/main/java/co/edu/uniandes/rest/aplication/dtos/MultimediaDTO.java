@@ -26,7 +26,8 @@ public class MultimediaDTO {
 
     /**
      * Constructor usado para crear el
-     * dto por defecto.
+     * dto por defecto. Se requiere para lograr construir de manera adecuada en
+     * el converter.
      */
     public MultimediaDTO() {
     }

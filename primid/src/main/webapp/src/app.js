@@ -28,7 +28,7 @@
                     })
                      .state('multimedia', {
                         url: '/multimedia',
-                        //controller: "section-homeCtrl",
+                        //controller: "multimediaCtrl",
                         //controllerAs: "ctrl",
                         templateUrl: "src/modules/multimedia/multimedia.tpl.html"
                     })

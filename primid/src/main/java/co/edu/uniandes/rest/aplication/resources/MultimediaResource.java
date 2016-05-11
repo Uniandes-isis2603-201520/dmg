@@ -104,7 +104,6 @@ public class MultimediaResource {
         MultimediaEntity entity = MultimediaConverter.basicDTO2Entity(dto);
         entity.setId(id);
 
-        MultimediaEntity oldEntity = multimediaLogic.getArchivoMultimedia(id);
 
         MultimediaEntity savedMultimedia = multimediaLogic.updateArchivoMultimedia(entity);
         return MultimediaConverter.basicEntity2DTO(savedMultimedia);
