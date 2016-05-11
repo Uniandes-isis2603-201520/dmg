@@ -6,43 +6,40 @@
 
 
 (function (ng) {
-
-    var mod = ng.module("reviewModule");
-
-
-    mod.service("reviewService", ["$http", "reviewContext", function ($http, context) {
+    var mod = ng.module("usuarioModule");
+    mod.service("usuarioService", ["$http", "usuarioContext", function ($http, context) {
             /**
-             * Obtener la lista de reviews.
-             * Hace una peticiÃ³n GET con $http a /reviews para obtener la lista
-             * de reviews
+             * Obtener la lista de viajeros.
+             * Hace una peticion GET con $http a /viajero para obtener la lista
+             * de viajeros
              * @returns {promise} promise para leer la respuesta del servidor}
-             * Devuelve una lista de objetos de reviews con sus atributos y reviews
+             * Devuelve una lista de objetos de viajeros con sus atributos
              */
             this.fetchRecords = function () {
                 return $http.get(context);
             };
 
             /**
-             * Obtener un registro de reviews.
-             * Hace una peticiÃ³n GET a /reviews/:id para obtener
-             * los datos de un registro especÃ­fico de reviews
+             * Obtener un registro de Viajero.
+             * Hace una peticion GET a /viajero/:id_viajero para obtener
+             * los datos de un registro especifico de viajeros
              * @param {number} id del registro a obtener
              * @returns {promise} promise para leer la respuesta del servidor
-             * Devuelve un objeto de reviews con sus atributos y reviews
+             * Devuelve un objeto de viajeros con sus atributos
              */
             this.fetchRecord = function (id) {
                 return $http.get(context + "/" + id);
             };
 
             /**
-             * Guardar un registro de reviews.
-             * Si currentRecord tiene la propiedad id, hace un PUT a /reviews/:id con los
-             * nuevos datos de la instancia de reviews.
-             * Si currentRecord no tiene la propiedad id, se hace un POST a /reviews
+             * Guardar un registro de viajero.
+             * Si currentRecord tiene la propiedad id, hace un PUT a /viajero/:id con los
+             * nuevos datos de la instancia de viajero.
+             * Si currentRecord no tiene la propiedad id, se hace un POST a /viajero
              * para crear el nuevo registro de reviews
              * @param {object} currentRecord instancia de viajero a guardar/actualizar
              * @returns {promise} promise para leer la respuesta del servidor
-             * Devuelve un objeto de reviews con sus datos incluyendo el id
+             * Devuelve un objeto de viajero con sus datos incluyendo el id
              */
             this.saveRecord = function (currentRecord) {
                 if (currentRecord.id) {
@@ -53,7 +50,7 @@
             };
 
             /**
-             * Hace una peticiÃ³n DELETE a /reviews/:id para eliminar un viajero
+             * Hace una peticion DELETE a /viajero/:id para eliminar un viajero
              * @param {number} id identificador de la instancia de viajero a eliminar
              * @returns {promise} promise para leer la respuesta del servidor
              * No devuelve datos.
@@ -61,5 +58,41 @@
             this.deleteRecord = function (id) {
                 return $http.delete(context + "/" + id);
             };
+
+             /**
+             * Hace una petición PUT a /viajero/:id/itinerarios para reemplazar los
+             * itinerarios asociados a un viajero
+             * @param {number} viajeroId Identificador de la instancia de viajero
+             * @param {array} itinerarios Colección de itinerarios nueva
+             * @returns {promise} promise para leer la respuesta del servidor.
+             * Devuelve el objeto de viajero con sus nuevos datos.
+             */
+            this.replaceItinerarios = function (viajeroId, itinerarios) {
+                return $http.put(context + "/" + viajeroId + "/books", itinerarios);
+            };
+
+              /**
+             * Hace una petición GET a /viajero/:id/itinerarios para obtener la colección
+             * de itinerarios asociados a un viajero
+             * @param {number} id Identificador de la instancia de viajero
+             * @returns {promise} promise para leer la respuesta del servidor.
+             * Retorna un array de objetos de itinerarios.
+             */
+            this.getItinerarios = function (id) {
+                return $http.get(context + "/" + id + "/itinerarios");
+            };
+
+            /**
+             * Hace una petición DELETE a /viajero/:id/itinerarios/:id para remover
+             * un itinerario de un viajero
+             * @param {number} viajeroId Identificador de la instancia de viajero
+             * @param {number} itinerarioId Identificador de la instancia de itinerario
+             * @returns {promise} promise para leer la respuesta del servidor
+             * La respuesta no devuelve datos.
+             */
+            this.removeItinerario = function (viajeroId, itinerarioId) {
+                return $http.delete(context + "/" + viajeroId + "/itinerarios/" + itinerarioId);
+            };
+
         }]);
 })(window.angular);

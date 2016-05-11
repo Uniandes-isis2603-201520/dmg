@@ -5,11 +5,9 @@
  */
 
 (function(ng){
-
-
-    var mod = ng.module("reviewModule", ["ui.bootstrap"]);
-
-    mod.constant("reviewContext", "api/viajeros");
+    var mod = ng.module("usuarioModule", ["ui.bootstrap", "ngMessages"]);
+    mod.constant("usuarioContext", "api/viajero");
 
 })(window.angular);
+
 
