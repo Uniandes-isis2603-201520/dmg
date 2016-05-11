@@ -1,9 +1,9 @@
 (function (ng) {
 
     var mod = ng.module("mainApp", [
-        "ui.router"
-//        "eventoModule",
-//        "ngMessages"
+        "ui.router",
+        "eventoModule",
+        "ngMessages"
     ]);
 
     mod.config(['$logProvider', function ($logProvider) {
@@ -11,7 +11,6 @@
         }]);
 
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-
             $urlRouterProvider.otherwise("/section-home");
             $stateProvider
 

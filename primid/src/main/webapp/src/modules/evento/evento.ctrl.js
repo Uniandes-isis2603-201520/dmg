@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-
 (function (ng) {
 
     var mod = ng.module("eventoModule");

@@ -30,7 +30,7 @@ import javax.ws.rs.core.Response;
  *
  * @author karenlorenaosoriohenao
  */
-@Path("ciudades/{id_Ciudad: \\d+}/eventos")
+@Path("eventos")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class EventoResource {
