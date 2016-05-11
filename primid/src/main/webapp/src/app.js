@@ -40,8 +40,8 @@
                     })
                     .state('viajero', {
                         url: '/viajero',
-                        //controller: "section-homeCtrl",
-                        //controllerAs: "ctrl",
+                        controller: "usuarioCtrl",
+                        controllerAs: "ctrl",
                         templateUrl: "src/modules/viajero/viajero.tpl.html"
                     })
                     .state('timeline', {

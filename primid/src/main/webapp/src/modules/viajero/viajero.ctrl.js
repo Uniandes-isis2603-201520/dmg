@@ -8,17 +8,20 @@
 (function (ng) {
 
 
-    var mod = ng.module("reviewModule");
+    var mod = ng.module("usuarioModule");
 
-    mod.controller("reviewCtrl", ["$scope", "reviewService", function ($scope, svc) {
+    mod.controller("usuarioCtrl", ["$scope", "usuarioService", function ($scope, svc) {
+
+            //Se almacenan todas las alertas
+            $scope.alerts = [];
 
             $scope.currentRecord = {
-                id: 0 /*Tipo Long*/,
+                id: undefined  /*Tipo Long*/,
                 name: '' /*Tipo String*/,
                 email: '' /*Tipo String*/,
                 image: '' /*Tipo String*/,
-                activo:true /*Tipo Boolean*/,
-                reviews: [] /*Colecci贸n de registros de Review*/
+                activo:true /*Tipo Boolean*/
+                // itinerarios: [{itinerario: {}}] /*Coleccion de registros de viajero*/
             };
             $scope.records = [];
 
@@ -37,21 +40,50 @@
                 $scope.opened = true;
             };
 
+            //Alertas
+            this.closeAlert = function (index) {
+                $scope.alerts.splice(index, 1);
+            };
+
+            // Funci髇 showMessage: Recibe el mensaje en String y su tipo con el fin de almacenarlo en el array $scope.alerts.
+            function showMessage(msg, type) {
+                var types = ["info", "danger", "warning", "success"];
+                if (types.some(function (rc) {
+                    return type === rc;
+                })) {
+                    $scope.alerts.push({type: type, msg: msg});
+                }
+            }
+
+            this.showError = function (msg) {
+                showMessage(msg, "danger");
+            };
+
+            this.showSuccess = function (msg) {
+                showMessage(msg, "success");
+            };
+
+            var self = this;
+            function responseError(response) {
+                self.showError(response.data);
+            }
+
             //Variables para el controlador
             this.readOnly = false;
             this.editMode = false;
 
-            var self = this;
             this.changeTab = function (tab) {
                 $scope.tab = tab;
             };
 
-           /*
+             //Ejemplo alerta
+            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje de informaci髇","info");
+
+            /*
              * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la
-             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informaci贸n de modulos hijos
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informacion de modulos hijos
              * al actual modulo.
              * Habilita el modo de edicion. El template de la lista cambia por el formulario.
-             *
              */
 
             this.createRecord = function () {
@@ -63,48 +95,46 @@
 
             /*
              * Funcion editRecord emite el evento ("pre-edit") a los $Scope hijos del controlador por medio de la
-             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informaci贸n de modulos hijos
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informacion de modulos hijos
              * al actual modulo.
              * Habilita el modo de edicion.  Carga el template de formulario con los datos del record a editar.
-             *
              */
 
-            this.editRecord = function (record) {
+             this.editRecord = function (record) {
                 $scope.$broadcast("pre-edit", $scope.currentRecord);
                 return svc.fetchRecord(record.id).then(function (response) {
                     $scope.currentRecord = response.data;
                     self.editMode = true;
                     $scope.$broadcast("post-edit", $scope.currentRecord);
                     return response;
-                });
+                }, responseError);
             };
 
             /*
              * Funcion fetchRecords consulta el servicio svc.fetchRecords con el fin de consultar
-             * todos los registros del modulo review.
+             * todos los registros del modulo viajero.
              * Guarda los registros en la variable $scope.records
              * Muestra el template de la lista de records.
              */
 
-            this.fetchRecords = function () {
+           this.fetchRecords = function () {
                 return svc.fetchRecords().then(function (response) {
                     $scope.records = response.data;
                     $scope.currentRecord = {};
                     self.editMode = false;
                     return response;
-                });
+                }, responseError);
             };
 
             /*
              * Funcion saveRecord hace un llamado al servicio svc.saveRecord con el fin de
              * persistirlo en base de datos.
-             * Muestra el template de la lista de records al finalizar la operaci贸n saveRecord
+             * Muestra el template de la lista de records al finalizar la operaci胦n saveRecord
              */
             this.saveRecord = function () {
-                return svc.saveRecord($scope.currentRecord).then(function () {
-                    self.fetchRecords();
-
-                });
+                    return svc.saveRecord($scope.currentRecord).then(function () {
+                        self.fetchRecords();
+                     }, responseError);
             };
 
             /*
@@ -115,7 +145,7 @@
             this.deleteRecord = function (record) {
                 return svc.deleteRecord(record.id).then(function () {
                     self.fetchRecords();
-                });
+                }, responseError);
             };
 
             /*
@@ -123,6 +153,13 @@
              * para desplegarlo en el template de la lista.
              */
             this.fetchRecords();
+
+            function updateItinerarios(event, args) {
+                $scope.currentRecord.itinerarios = args;
+            }
+            ;
+
+            $scope.$on('updateItinerarios', updateItinerarios);
 
         }]);
 
