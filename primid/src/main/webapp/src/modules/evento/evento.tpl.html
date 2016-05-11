@@ -1,11 +1,10 @@
-
-
 <!--==== Slider and Card style plugin ====-->
 <!--<script type="text/javascript" src="resources/js/jquery.baraja.js"></script>
 <script type="text/javascript" src="resources/js/jquery.vegas.min.js"></script>
 <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>-->
 
 <!--=== Features section Starts ===-->
+<div>
 <div class="container features center">
     <div class="container-fluid">
                     <ul>
@@ -20,6 +19,7 @@
                             </div>
                         </li>
                     </ul>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="5000">{{alert.msg}} </alert>
     </div>
 </div>
 <div ng-hide="ctrl.editMode">
@@ -49,8 +49,7 @@
     </div>
 </div>
 
-<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="5000">{{alert.msg}} </alert>
-<div ng-show="ctrl.editMode" class="container features center section-overlay">
+<div ng-show="ctrl.editMode" class="section-overlay">
     <form novalidate name="form" id="evento-form" role="form" ng-submit="ctrl.saveRecord()">
         <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
             <div ng-message="required">
@@ -145,6 +144,8 @@
 
 						<!-- Features Controls Ends -->
 </div>
+</div>
+
 	<!--=== Features section Ends ===-->
 
 
