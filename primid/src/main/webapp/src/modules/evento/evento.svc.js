@@ -9,7 +9,7 @@
 
     var mod = ng.module("eventoModule");
 
-    mod.service("eventoService", ["$http", "eventoContext", function ($http, context, $log) {
+    mod.service("eventoService", ["$http", "eventoContext", function ($http, context) {
             /**
              * Obtener la lista de eventos.
              * Hace una petición GET con $http a /eventos para obtener la lista

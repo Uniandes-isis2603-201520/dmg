@@ -8,7 +8,6 @@ package co.edu.uniandes.rest.aplication.mocks;
 import co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.rest.aplication.dtos.EventoDTO;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;

@@ -8,7 +8,7 @@
 
     var mod = ng.module("eventoModule");
 
-    mod.controller("eventoCtrl", ["$scope", "eventoService","$modal" ,function ($scope, svc, $modal) {
+    mod.controller("eventoCtrl", ["$scope", "eventoService", function ($scope, svc) {
 
             $scope.alerts = [];
             $scope.currentRecord = {
