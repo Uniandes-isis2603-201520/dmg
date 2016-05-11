@@ -27,6 +27,7 @@ public class EventoLogic implements IEventoLogic {
     private EventoPersistence persistence;
 
 
+    @Override
     public List<EventoEntity> getEventos() {
 
         logger.info("Inicia proceso de consultar todos los eventos");
@@ -36,6 +37,7 @@ public class EventoLogic implements IEventoLogic {
 }
 
 
+    @Override
     public void deleteEvento(Long id) {
         logger.log(Level.INFO, "Inicia proceso de borrar evento con id={0}", id);
         persistence.delete(id);
@@ -43,6 +45,7 @@ public class EventoLogic implements IEventoLogic {
     }
 
 
+    @Override
     public EventoEntity getEvento(Long id){
      logger.log(Level.INFO, "Inicia proceso de consultar evento con id={0}", id);
      EventoEntity evento = persistence.find(id);
@@ -51,6 +54,7 @@ public class EventoLogic implements IEventoLogic {
     }
 
 
+    @Override
     public EventoEntity createEvento(EventoEntity entity){
         logger.info("Inicia proceso de creación de evento");
         persistence.create(entity);
@@ -59,6 +63,7 @@ public class EventoLogic implements IEventoLogic {
     }
 
 
+    @Override
     public EventoEntity updateEvento(EventoEntity entity){
                logger.log(Level.INFO, "Inicia proceso de actualizar evento con id={0}", entity.getId());
         EventoEntity newEntity = persistence.update(entity);
