@@ -365,6 +365,10 @@ left: calc(50% - 110px);
 	background-color: #f9f9f9;
 }
 
+ul#card-ul li{
+    display: inline;
+}
+
 .container.features {
 	padding-top: 132px;
 	padding-bottom: 190px;

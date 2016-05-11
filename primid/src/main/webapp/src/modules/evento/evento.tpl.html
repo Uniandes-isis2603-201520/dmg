@@ -4,12 +4,85 @@
 <script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>-->
 
 <!--=== Features section Starts ===-->
-<div>
+
+<section>
 <div class="container features center">
     <div class="container-fluid">
                     <ul>
                         <li><h1 class="step-title color-scheme center">Eventos</h1></li>
+                        <li>
+                            <div class="container features center">
 
+                                    <ul class="list-inline">
+                                        <li><input id="name" class="input-field form-item field-name" type="text" required="required" name="ciudad-evento" placeholder="Ciudad" />
+                                        </li>
+                                        <li>
+                                                       <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="editorial-navbar">
+                                             <button id="refresh-evento" class="fancy-button button-line btn-col small horizontal"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                                             <button class="fancy-button button-line btn-col small horizontal">
+                                                Buscar
+                                                    <span class="icon">
+                                                        <i class="fa fa-search"></i>
+                                                    </span>
+                                            </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                        <div ng-hide="ctrl.editMode">
+                                            <div ng-repeat="record in records">
+                                                        <!--Features container Starts -->
+                                                        <ul id="card-ul" class="features-hold baraja-container center">
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Card style" >
+                                                            <h4 class="feature-title color-scheme"> Ciudad:<span id="{{$index}}-ciudad">{{record.ciudad}}</span></h4>
+                                                                <div id="image" ng-if="record.image">
+                                                                    <a ng-href="{{record.image}}" target="_blank"><img class="feature-image" ng-src="{{record.image}}" alt="{{record.image}}"></a>
+                                                                </div>
+								<h4 class="feature-title color-scheme"><span id="{{$index}}-name">{{record.name}}</span></h4>
+								<p class="feature-text">
+									<span id="{{$index}}-description">{{record.description}}</span>
+								</p>
+<!--                                                                <h4 class="feature-title color-scheme"> Fecha inicio:</h4><p class="feature-text"><span id="{{$index}}-startDate">{{record.startDate}}</span></p>
+                                                                <h4 class="feature-title color-scheme"> Fecha fin:</h4><p class="feature-text"><span id="{{$index}}-endDate">{{record.endDate}}</span></p>-->
+									<a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
+										<p title="Información">Información</p>
+									</a>
+							<!-- Single Feature Ends -->
+						</ul>
+                                                <!--Features container Ends -->
+                                            </div>
+                                        </div>
+
+						<!-- Features Controls Starts -->
+						<div class="features-control relative">
+							<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-prev" title="Previous" >
+								<span class="icon">
+									<i class="fa fa-arrow-left"></i>
+								</span>
+							</button>
+							<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-expand" title="Expand" >
+								<span class="icon">
+									<i class="fa fa-expand"></i>
+								</span>
+							</button>
+							<button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-close" title="Collapse" >
+								<span class="icon">
+									<i class="fa fa-compress"></i>
+								</span>
+							</button>
+							<button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-next" title="Next" >
+								<span class="icon">
+									<i class="fa fa-arrow-right"></i>
+								</span>
+							</button>
+						</div>
+						<!-- Features Controls Ends -->
+				</div>
+                        <!--=== Features section Ends ===-->
+                        </li>
                         <li>                                              <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="Evento-navbar">
                                 <button id="create-evento" class="fancy-button button-line btn-col small horizontal" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-pencil"></span> Create</button>
@@ -23,33 +96,40 @@
     </div>
 </div>
 <div ng-hide="ctrl.editMode">
-    <div class="col-sm-12">
+    <div class="caption">
         <div ng-repeat="record in records">
-            <div class="col-md-4 col-sm-6 col-lg-3 well">
-                <div class="col-md-12">
-                    <div class="img-thumbnail" id="image" ng-if="record.image">
-                        <a ng-href="{{record.image}}" target="_blank"><img class="img-responsive" style="height: 20vmax;" ng-src="{{record.image}}" alt="{{record.image}}"></a>
-                    </div>
-                </div>
-                <div class="caption" >
-                    <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
-                    <p><strong>Description:</strong> <span id="{{$index}}-description">{{record.description}}</span></p>
-                    <p><strong>Place:</strong> <span id="{{$index}}-place">{{record.place}}</span></p>
-                    <p><strong>Score:</strong> <span id="{{$index}}-score">{{record.score}}</span></p>
-                    <p><strong>Start date:</strong> <span id="{{$index}}-startDate">{{record.startDate| date}}</span></p>
-                    <p><strong>End date:</strong> <span id="{{$index}}-endDate">{{record.endDate| date}}</span></p>
-                    <p><strong>ciudad:</strong> <span id="{{$index}}-ciudad">{{record.ciudad}}</span></p>
-                </div>
+
+                 <!--Features container Starts -->
+                                                        <ul id="card-ul" class="features-hold baraja-container center">
+
+							<!-- Single Feature Starts -->
+							<li class="single-feature" title="Card style" >
+<!--                                                            <h4 class="feature-title color-scheme"> Ciudad:<span id="{{$index}}-ciudad">{{record.ciudad}}</span></h4>-->
+                                                                <div id="image" ng-if="record.image">
+                                                                    <a ng-href="{{record.image}}" target="_blank"><img class="feature-image" ng-src="{{record.image}}" alt="{{record.image}}"></a>
+                                                                </div>
+								<h4 class="feature-title color-scheme"><span id="{{$index}}-name">{{record.name}}</span></h4>
+								<p class="feature-text">
+									<span id="{{$index}}-description">{{record.description}}</span>
+								</p>
+<!--                                                                <h4 class="feature-title color-scheme"> Fecha inicio:</h4><p class="feature-text"><span id="{{$index}}-startDate">{{record.startDate}}</span></p>
+                                                                <h4 class="feature-title color-scheme"> Fecha fin:</h4><p class="feature-text"><span id="{{$index}}-endDate">{{record.endDate}}</span></p>-->
+									<a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
+										<p title="Información">Información</p>
+									</a>
+							<!-- Single Feature Ends -->
+						</ul>
+                                                <!--Features container Ends -->
+
                 <p class="text-center">
                     <button id="{{$index}}-edit-btn" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
                     <button id="{{$index}}-delete-btn" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
                 </p>
-            </div>
         </div>
     </div>
 </div>
 
-<div ng-show="ctrl.editMode" class="section-overlay">
+<div ng-show="ctrl.editMode">
     <form novalidate name="form" id="evento-form" role="form" ng-submit="ctrl.saveRecord()">
         <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
             <div ng-message="required">
@@ -90,14 +170,21 @@
                 </div>
             </div>
             <div class="form-group col-md-12" ng-class="{'has-success': !form.startDate.$error.required && form.startDate.$dirty, 'has-error': form.startDate.$error.required && (form.startDate.$dirty || form.$submitted)}" >
-                <label for="startDate" class="col-md-2 control-label">Start Date</label>
+                <label for="startDate" class="col-md-2 control-label">Fecha de inicio:</label>
                 <div class="col-md-10">
                     <p class="input-group">
-                        <input type="text" id="startDate" name="startDate" class="form-control" ng-model="currentRecord.startDate" ng-required="model.required" datepicker-popup is-open="opened" readonly/>
+                        <input type="text" id="startDate" name="startDate" class="form-control" ng-model="currentRecord.startDate " ng-required="model.required" datepicker-popup is-open="opened" readonly/>
                         <span class="input-group-btn">
                             <button type="button" id="startDate-datepicker" class="btn btn-default" ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></button>
                         </span>
                     </p>
+                </div>
+            </div>
+            <!--            Deberia ser un select para escoger la ciudad-->
+            <div class="form-group col-md-12" ng-class="{'has-success': !form.ciudad.$error.required && form.ciudad.$dirty, 'has-error': form.ciudad.$error.required && (form.ciudad.$dirty || form.$submitted)}" >
+                <label for="ciudad" class="col-md-2 control-label">Ciudad</label>
+                <div class="col-md-10">
+                    <input id="ciudad" name="ciudad" class="form-control" type="text" ng-model="currentRecord.ciudad" required />
                 </div>
             </div>
             <div class="form-group col-md-12" ng-class="{'has-success': !form.endDate.$error.required && form.endDate.$dirty, 'has-error': form.endDate.$error.required && (form.endDate.$dirty || form.$submitted)}" >
@@ -111,40 +198,10 @@
                     </p>
                 </div>
             </div>
-<!--            Deberia ser un select para escoger la ciudad-->
-            <div class="form-group col-md-12" ng-class="{'has-success': !form.ciudad.$error.required && form.ciudad.$dirty, 'has-error': form.ciudad.$error.required && (form.ciudad.$dirty || form.$submitted)}" >
-                <label for="ciudad" class="col-md-2 control-label">Ciudad</label>
-                <div class="col-md-10">
-                    <input id="ciudad" name="ciudad" class="form-control" type="text" ng-model="currentRecord.ciudad" required />
-                </div>
-            </div>
         </fieldset>
     </form>
 </div>
-
-<div class="container features center">
-
-                                    <ul class="list-inline">
-                                        <li><input id="name" class="input-field form-item field-name" type="text"/>
-                                        </li>
-                                        <li>
-                                                       <!-- Collect the nav links, forms, and other content for toggling -->
-                                            <div class="collapse navbar-collapse" id="editorial-navbar">
-                                             <button id="refresh-evento" class="fancy-button button-line btn-col small horizontal"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-                                             <button class="fancy-button button-line btn-col small horizontal">
-                                                Buscar
-                                                    <span class="icon">
-                                                        <i class="fa fa-search"></i>
-                                                    </span>
-                                            </button>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-
-						<!-- Features Controls Ends -->
-</div>
-</div>
+</section>
 
 	<!--=== Features section Ends ===-->
 
