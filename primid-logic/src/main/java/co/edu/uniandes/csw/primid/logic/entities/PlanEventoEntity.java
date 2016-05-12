@@ -71,4 +71,12 @@ public class PlanEventoEntity extends BaseEntity implements Serializable {
         this.fechaFin = fechaFin;
     }
 
+     public EventoEntity getEvento() {
+        return evento;
+    }
+
+    public void setEvento(EventoEntity evento) {
+        this.evento = evento;
+    }
+
 }

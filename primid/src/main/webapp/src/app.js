@@ -4,6 +4,8 @@
         "ui.router",
         "eventoModule",
         "ciudadModule",
+        "itinerarioModule",
+        "planEventoModule",
         "ngMessages"
     ]);
 
@@ -35,8 +37,8 @@
                     })
                      .state('itinerario', {
                         url: '/itinerario',
-                        //controller: "section-homeCtrl",
-                        //controllerAs: "ctrl",
+                        controller: "itinerarioCtrl",
+                        controllerAs: "ctrl",
                         templateUrl: "src/modules/Itinerario/itinerario.tpl.html"
                     })
                     .state('viajero', {
@@ -45,11 +47,11 @@
                         controllerAs: "ctrl",
                         templateUrl: "src/modules/viajero/viajero.tpl.html"
                     })
-                    .state('timeline', {
-                        url: '/timeline',
-                        //controller: "section-homeCtrl",
-                        //controllerAs: "ctrl",
-                        templateUrl: "src/modules/Timeline/timeline2.tpl.html"
+                    .state('planEvento', {
+                        url: '/planEvento',
+                        controller: "section-homeCtrl",
+                        controllerAs: "ctrl",
+                        templateUrl: "src/modules/planEvento/planEvento.tpl.html"
                     })
                     .state('evento', {
                         url: '/evento',

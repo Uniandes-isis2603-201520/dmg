@@ -4,20 +4,20 @@
  * and open the template in the editor.
  */
 
-
 (function (ng) {
 
-    var mod = ng.module("itinerarioModule");
+    var mod = ng.module("planEventoModule");
 
-    mod.controller("itinerarioCtrl", ["$scope", "itinerarioService", function ($scope, svc) {
+    mod.controller("planEventoCtrl", ["$scope", "planEventoService","eventoService","$modal",  function ($scope, svc, planEventoService, eventoService, $modal) {
 
             $scope.alerts = [];
             $scope.currentRecord = {
                 id: undefined /*Tipo Long. El valor se asigna en el backend*/,
                 name: '' /*Tipo String*/,
-                description: '' /*Tipo String*/,
-                isbn: '' /*Tipo String*/,
-                image: '' /*Tipo String*/
+                fechaInicio: '' /*Tipo Date*/,
+                fechaFin: '' /*Tipo Date*/,
+                evento: {} /*Objeto que representa instancia de Evento*/,
+
             };
             $scope.records = [];
 
@@ -62,7 +62,6 @@
             function responseError(response) {
                 self.showError(response.data);
             }
-
             //Variables para el controlador
             this.readOnly = false;
             this.editMode = false;
@@ -85,11 +84,12 @@
              */
 
             this.createRecord = function () {
-                $scope.$broadcast("pre-create", $scope.currentRecord);
                 this.editMode = true;
                 $scope.currentRecord = {};
                 $scope.$broadcast("post-create", $scope.currentRecord);
             };
+
+
 
             /*
              * Funcion editRecord emite el evento ("pre-edit") a los $Scope hijos del controlador por medio de la
@@ -100,7 +100,6 @@
              */
 
             this.editRecord = function (record) {
-                $scope.$broadcast("pre-edit", $scope.currentRecord);
                 return svc.fetchRecord(record.id).then(function (response) {
                     $scope.currentRecord = response.data;
                     self.editMode = true;
@@ -109,9 +108,10 @@
                 }, responseError);
             };
 
+
             /*
              * Funcion fetchRecords consulta el servicio svc.fetchRecords con el fin de consultar
-             * todos los registros del modulo itinerario.
+             * todos los registros del modulo editorial.
              * Guarda los registros en la variable $scope.records
              * Muestra el template de la lista de records.
              */
@@ -148,12 +148,10 @@
             };
 
             /*
-             * Funcion fetchRecords consulta todos los registros del módulo itinerario en base de datos
+             * Funcion fetchRecords consulta todos los registros del modulo de evento en base de datos
              * para desplegarlo en el template de la lista.
              */
             this.fetchRecords();
-
-
 
 
 
