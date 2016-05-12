@@ -1,17 +1,52 @@
 
-<!--==== Slider and Card style plugin ====-->
-<!--<script type="text/javascript" src="resources/js/jquery.baraja.js"></script>
-<script type="text/javascript" src="resources/js/jquery.vegas.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>-->
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+
+<script>
+var map;
+var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:5,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    placeMarker(event.latLng);
+  });
+}
+
+function placeMarker(location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Ciudad: ' + location.lat() + '<br>Longitude: ' + location.lng()
+  });
+  infowindow.open(map,marker);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
 
 <!--=== Features section Starts ===-->
-<div>
+<section>
 <div class="container features center">
     <div class="container-fluid">
                     <ul>
                         <li><h1 class="step-title color-scheme center">Ciudades</h1></li>
-
-                        <li>                                              <!-- Collect the nav links, forms, and other content for toggling -->
+                        <li> <img src="resources/images/mapas.png"> </li>
+                        
+                        <li>  
+                          <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="Ciudad-navbar">
                                 <button id="create-ciudad" class="fancy-button button-line btn-col small horizontal" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-pencil"></span> Create</button>
                                 <button id="refresh-ciudad" class="fancy-button button-line btn-col small horizontal" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-circle-arrow-left"></span> Refresh</button>
@@ -76,30 +111,22 @@
         </fieldset>
     </form>
 </div>
-
-<div class="container features center">
-
-                                    <ul class="list-inline">
-                                        <li><input id="id" class="input-field form-item field-id" type="text"/>
-                                        </li>
-                                        <li>
-                                                       <!-- Collect the nav links, forms, and other content for toggling -->
-                                            <div class="collapse navbar-collapse" id="editorial-navbar">
-                                             <button id="refresh-ciudad" class="fancy-button button-line btn-col small horizontal"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-                                             <button class="fancy-button button-line btn-col small horizontal">
-                                                Buscar
-                                                    <span class="icon">
-                                                        <i class="fa fa-search"></i>
-                                                    </span>
-                                            </button>
-                                            </div>
-                                        </li>
-                                    </ul>
+    <br>
+    <br>
+    <br>
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+</section>
 
 
-						<!-- Features Controls Ends -->
-</div>
-</div>
 
 	<!--=== Features section Ends ===-->
 
