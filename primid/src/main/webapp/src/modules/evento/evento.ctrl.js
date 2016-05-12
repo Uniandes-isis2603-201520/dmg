@@ -8,7 +8,7 @@
 
     var mod = ng.module("eventoModule");
 
-    mod.controller("eventoCtrl", ["$scope", "eventoService", function ($scope, svc) {
+    mod.controller("eventoCtrl", ["$scope", "eventoService", "ciudadService", "$modal", function ($scope, svc) {
 
             $scope.alerts = [];
             $scope.currentRecord = {
@@ -21,7 +21,7 @@
                 score: '' /*Tipo Double*/,
                 startDate: '' /*Tipo Date*/,
                 endDate: '' /*Tipo Date*/,
-                ciudad: '' /*Tipo Ciudad*/,
+                ciudad: {} /*Tipo Ciudad*/,
                 comments: [{/*Colección de registros de Review*/
                         id: undefined /*Tipo Long. El backend asigna el valor*/,
                         name: '' /*Tipo String*/,
