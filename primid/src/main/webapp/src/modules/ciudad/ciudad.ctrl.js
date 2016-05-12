@@ -11,19 +11,17 @@
 
             $scope.alerts = [];
             $scope.currentRecord = {
-                id: undefined /*Tipo int. El valor se asigna en el backend*/,
+                id: undefined /*Tipo Long. El valor se asigna en el backend*/,
                 name: '' /*Tipo String*/,
-                coordenadas: '' /*Tipo int*/,
-                image: '' /*Tipo String*/,
-                category: '' /*Tipo String*/,
+                coordenadas: '' /*Tipo String*/,
                 comments: [{/*Colecci�n de registros de Review*/
-                        id: undefined /*Tipo int. El backend asigna el valor*/,
+                        id: undefined /*Tipo Long. El backend asigna el valor*/,
                         name: '' /*Tipo String*/,
-                        coordenadas: '' /*Tipo int*/
+                        coordenadas: '' /*Tipo String*/
                     }, {
-                        id: undefined /*Tipo int. El backend asigna el valor*/,
+                        id: undefined /*Tipo Long. El backend asigna el valor*/,
                         name: '' /*Tipo String*/,
-                        coordenadas: '' /*Tipo int*/
+                        coordenadas: '' /*Tipo String*/
                     }] /*Colecci�n de registros de Review*/
             };
             $scope.records = [];
