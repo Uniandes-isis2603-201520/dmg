@@ -5,6 +5,7 @@
         "eventoModule",
         "ciudadModule",
         "itinerarioModule",
+        "planEventoModule",
         "ngMessages"
     ]);
 
@@ -46,11 +47,11 @@
                         controllerAs: "ctrl",
                         templateUrl: "src/modules/viajero/viajero.tpl.html"
                     })
-                    .state('timeline', {
-                        url: '/timeline',
-                        //controller: "section-homeCtrl",
-                        //controllerAs: "ctrl",
-                        templateUrl: "src/modules/Timeline/timeline2.tpl.html"
+                    .state('planEvento', {
+                        url: '/planEvento',
+                        controller: "section-homeCtrl",
+                        controllerAs: "ctrl",
+                        templateUrl: "src/modules/planEvento/planEvento.tpl.html"
                     })
                     .state('evento', {
                         url: '/evento',
