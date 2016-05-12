@@ -9,15 +9,16 @@ import java.util.Date;
 
 /**
  *
- * @author jd.torres11
+ * @author s.gonzalez22
  */
 public class PlanEventoDTO {
 
-    private Date fechaInicio;
-    private Date fechaFin;
     private long id;
     private String name;
+    private Date fechaInicio;
+    private Date fechaFin;
 
+     private EventoDTO evento;
     /**
      * Constructor por defecto
      */
@@ -89,6 +90,14 @@ public class PlanEventoDTO {
      */
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public EventoDTO getEvento() {
+        return evento;
+    }
+
+    public void setEvento(EventoDTO evento) {
+        this.evento = evento;
     }
 
     /**

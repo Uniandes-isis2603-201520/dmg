@@ -1,0 +1,91 @@
+<div id="planEvento-header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#planEvento-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">PlanEvento</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="book-navbar">
+                <button id="create-planEvento" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Create</button>
+                <button id="refresh-planEvento" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                <button id="save-planEvento" type="submit" form="book-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-save"></span> Save</button>
+                <button id="cancel-planEvento" type="button" form="book-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+            </div>
+        </div>
+    </nav>
+</div>
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="5000">{{alert.msg}} </alert>
+<div ng-hide="ctrl.editMode">
+    <div class="col-sm-12">
+        <div ng-repeat="record in records">
+            <div class="col-md-4 col-sm-6 col-lg-3 well">
+
+                <div class="caption" >
+                    <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
+                    <p><strong>Fecha Inicio:</strong> <span id="{{$index}}-fechaInicio">{{record.fechaInicio| date}}</span></p>
+                    <p><strong>Fecha Fin</strong> <span id="{{$index}}-fechaFin">{{record.fechaFin| date}}</span></p>
+                    <p><strong>Evento:</strong> <span id="{{$index}}-evento">{{record.evento.name}}</span></p>
+                </div>
+                <p class="text-center">
+                    <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-show="ctrl.editMode" class="col-md-6 well">
+    <form novalidate name="form" id="planEvento-form" role="form" ng-submit="ctrl.saveRecord()">
+        <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
+            <div ng-message="required">
+                Please, Fill the required fields!
+            </div>
+        </alert>
+        <fieldset>
+            <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.name.$valid && form.name.$dirty, 'has-error': form.name.$invalid && (form.name.$dirty || form.$submitted)}" >
+                <label for="name" class="col-md-2 control-label">Name</label>
+                <div class="col-md-10">
+                    <input id="name" name="name" class="form-control" type="text" ng-model="currentRecord.name" required />
+                </div>
+            </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.evento.$valid && form.evento.$dirty, 'has-error': form.evento.$invalid && (form.evento.$dirty || form.$submitted)}" >
+                <label for="editorial" class="col-md-2 control-label">Editorial</label>
+                <div class="col-md-10">
+                    <select id="evento" name="evento" ng-options="rc.name for rc in eventos track by rc.id" class="form-control" type="text" ng-model="currentRecord.evento" ></select>
+                </div>
+            </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': !form.fechaInicio.$error.required && form.fechaInicio.$dirty, 'has-error': form.fechaInicio.$error.required && (form.fechaInicio.$dirty || form.$submitted)}" >
+                <label for="fechaInicio" class="col-md-2 control-label">Fecha Inicio</label>
+                <div class="col-md-10">
+                    <p class="input-group">
+                        <input type="text" id="fechaInicio" name="fechaInicio" class="form-control" ng-model="currentRecord.fechaInicio" ng-required="model.required" datepicker-popup is-open="opened" readonly/>
+                        <span class="input-group-btn">
+                            <button type="button" id="fechaInicio-datepicker" class="btn btn-default" ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12" ng-class="{'has-success': !form.fechaFin.$error.required && form.fechaFin.$dirty, 'has-error': form.fechaFin.$error.required && (form.fechaFin.$dirty || form.$submitted)}" >
+                <label for="fechaFin" class="col-md-2 control-label">Fecha Inicio</label>
+                <div class="col-md-10">
+                    <p class="input-group">
+                        <input type="text" id="fechaInicio" name="fechaFin" class="form-control" ng-model="currentRecord.fechaFin" ng-required="model.required" datepicker-popup is-open="opened" readonly/>
+                        <span class="input-group-btn">
+                            <button type="button" id="fechaFin-datepicker" class="btn btn-default" ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

@@ -4,7 +4,7 @@
         "ui.router",
         "eventoModule",
         "ciudadModule",
-        "itinerarioModule",
+        "usuarioModule",
         "ngMessages"
     ]);
 
@@ -36,8 +36,8 @@
                     })
                      .state('itinerario', {
                         url: '/itinerario',
-                        controller: "itinerarioCtrl",
-                        controllerAs: "ctrl",
+                        //controller: "section-homeCtrl",
+                        //controllerAs: "ctrl",
                         templateUrl: "src/modules/Itinerario/itinerario.tpl.html"
                     })
                     .state('viajero', {

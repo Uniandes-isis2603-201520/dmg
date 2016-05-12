@@ -1,7 +1,6 @@
 <!--==== Slider and Card style plugin ====-->
-<!--<script type="text/javascript" src="resources/js/jquery.baraja.js"></script>
-<script type="text/javascript" src="resources/js/jquery.vegas.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>-->
+<script type="text/javascript" src="resources/js/jquery.baraja.js"></script>
+<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>
 
 <!--=== Features section Starts ===-->
 
@@ -37,7 +36,7 @@
 
 							<!-- Single Feature Starts -->
 							<li class="single-feature" title="Card style" >
-                                                            <h4 class="feature-title color-scheme"> Ciudad:<span id="{{$index}}-ciudad">{{record.ciudad}}</span></h4>
+                                                            <h4 class="feature-title color-scheme"><span id="{{$index}}-ciudad">{{record.ciudad}}</span></h4>
                                                                 <div id="image" ng-if="record.image">
                                                                     <a ng-href="{{record.image}}" target="_blank"><img class="feature-image" ng-src="{{record.image}}" alt="{{record.image}}"></a>
                                                                 </div>
@@ -96,7 +95,7 @@
     </div>
 </div>
 <div ng-hide="ctrl.editMode">
-    <div class="caption">
+    <div class="row">
         <div ng-repeat="record in records">
 
                  <!--Features container Starts -->
@@ -112,11 +111,8 @@
 								<p class="feature-text">
 									<span id="{{$index}}-description">{{record.description}}</span>
 								</p>
-<!--                                                                <h4 class="feature-title color-scheme"> Fecha inicio:</h4><p class="feature-text"><span id="{{$index}}-startDate">{{record.startDate}}</span></p>
-                                                                <h4 class="feature-title color-scheme"> Fecha fin:</h4><p class="feature-text"><span id="{{$index}}-endDate">{{record.endDate}}</span></p>-->
-									<a ui-serf="evento1" class="fancy-button button-line btn-col small vertical">
-										<p title="Información">Información</p>
-									</a>
+                                                                <h4 class="feature-title color-scheme"> Categoria:</h4><p class="feature-text"><span id="{{$index}}-category">{{record.category}}</span></p>
+                                                                <h4 class="feature-title color-scheme"> Score:</h4><p class="feature-text"><span id="{{$index}}-score">{{record.score}}</span></p>
 							<!-- Single Feature Ends -->
 						</ul>
                                                 <!--Features container Ends -->
@@ -150,6 +146,17 @@
                     <input id="description" name="description" class="form-control" type="text" ng-model="currentRecord.description" required />
                 </div>
             </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': !form.startDate.$error.required && form.startDate.$dirty, 'has-error': form.startDate.$error.required && (form.startDate.$dirty || form.$submitted)}" >
+                <label for="startDate" class="col-md-2 control-label">Fecha de inicio:</label>
+                <div class="col-md-10">
+                    <p class="input-group">
+                        <input type="text" id="startDate" name="startDate" class="form-control" ng-model="currentRecord.startDate " ng-required="model.required" datepicker-popup is-open="opened" readonly/>
+                        <span class="input-group-btn">
+                            <button type="button" id="startDate-datepicker" class="btn btn-default" ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
             <div class="form-group col-md-12" ng-class="{'has-success': form.place.$valid && form.place.$dirty, 'has-error': form.place.$invalid && (form.place.$dirty || form.$submitted)}" >
                 <label for="place" class="col-md-2 control-label">Place</label>
                 <div class="col-md-10">
@@ -169,22 +176,11 @@
                     <input id="category" name="category" class="form-control" type="text" ng-model="currentRecord.category" required />
                 </div>
             </div>
-            <div class="form-group col-md-12" ng-class="{'has-success': !form.startDate.$error.required && form.startDate.$dirty, 'has-error': form.startDate.$error.required && (form.startDate.$dirty || form.$submitted)}" >
-                <label for="startDate" class="col-md-2 control-label">Fecha de inicio:</label>
-                <div class="col-md-10">
-                    <p class="input-group">
-                        <input type="text" id="startDate" name="startDate" class="form-control" ng-model="currentRecord.startDate " ng-required="model.required" datepicker-popup is-open="opened" readonly/>
-                        <span class="input-group-btn">
-                            <button type="button" id="startDate-datepicker" class="btn btn-default" ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></button>
-                        </span>
-                    </p>
-                </div>
-            </div>
             <!--            Deberia ser un select para escoger la ciudad-->
-            <div class="form-group col-md-12" ng-class="{'has-success': !form.ciudad.$error.required && form.ciudad.$dirty, 'has-error': form.ciudad.$error.required && (form.ciudad.$dirty || form.$submitted)}" >
-                <label for="ciudad" class="col-md-2 control-label">Ciudad</label>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.ciudad.$valid && form.ciudad.$dirty, 'has-error': form.ciudad.$invalid && (form.ciudad.$dirty || form.$submitted)}" >
+                <label for="ciudad" class="col-md-2 control-label">Ciudad:</label>
                 <div class="col-md-10">
-                    <input id="ciudad" name="ciudad" class="form-control" type="text" ng-model="currentRecord.ciudad" required />
+                    <select id="ciudad" name="ciudad" ng-options="rc.ciudad for rc in ciudades track by rc.id" class="form-control" type="text" ng-model="currentRecord.ciudad" ></select>
                 </div>
             </div>
             <div class="form-group col-md-12" ng-class="{'has-success': !form.endDate.$error.required && form.endDate.$dirty, 'has-error': form.endDate.$error.required && (form.endDate.$dirty || form.$submitted)}" >

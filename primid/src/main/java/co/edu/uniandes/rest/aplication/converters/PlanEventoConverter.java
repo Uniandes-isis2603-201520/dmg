@@ -83,6 +83,7 @@ public abstract class PlanEventoConverter {
             dto.setName(entity.getName());
             dto.setFechaInicio(entity.getFechaInicio());
             dto.setFechaFin(entity.getFechaFin());
+            dto.setEvento(EventoConverter.refEntity2DTO(entity.getEvento()));
 
             return dto;
         } else {
@@ -106,6 +107,7 @@ public abstract class PlanEventoConverter {
             entity.setName(dto.getName());
             entity.setFechaInicio(dto.getFechaInicio());
             entity.setFechaFin(dto.getFechaFin());
+            entity.setEvento(EventoConverter.refDTO2Entity(dto.getEvento()));
 
             return entity;
         } else {

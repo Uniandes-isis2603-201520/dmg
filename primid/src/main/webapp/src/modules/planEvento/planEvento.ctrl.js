@@ -4,24 +4,20 @@
  * and open the template in the editor.
  */
 
-
 (function (ng) {
 
+    var mod = ng.module("planEventoModule");
 
-    var mod = ng.module("usuarioModule");
+    mod.controller("planEventoCtrl", ["$scope", "planEventoService","eventoService","$modal",  function ($scope, svc, planEventoService, eventoService, $modal) {
 
-    mod.controller("usuarioCtrl", ["$scope", "usuarioService", function ($scope, svc) {
-
-            //Se almacenan todas las alertas
             $scope.alerts = [];
-
             $scope.currentRecord = {
-                id: undefined  /*Tipo Long*/,
-                name: 'Pepe ' /*Tipo String*/,
-                email: '' /*Tipo String*/,
-                image: 'http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png' /*Tipo String*/,
-                activo:true /*Tipo Boolean*/
-                // itinerarios: [{itinerario: {}}] /*Coleccion de registros de viajero*/
+                id: undefined /*Tipo Long. El valor se asigna en el backend*/,
+                name: '' /*Tipo String*/,
+                fechaInicio: '' /*Tipo Date*/,
+                fechaFin: '' /*Tipo Date*/,
+                evento: {} /*Objeto que representa instancia de Evento*/,
+
             };
             $scope.records = [];
 
@@ -45,7 +41,6 @@
                 $scope.alerts.splice(index, 1);
             };
 
-            // Funci髇 showMessage: Recibe el mensaje en String y su tipo con el fin de almacenarlo en el array $scope.alerts.
             function showMessage(msg, type) {
                 var types = ["info", "danger", "warning", "success"];
                 if (types.some(function (rc) {
@@ -67,41 +62,44 @@
             function responseError(response) {
                 self.showError(response.data);
             }
-
             //Variables para el controlador
             this.readOnly = false;
             this.editMode = false;
+
 
             this.changeTab = function (tab) {
                 $scope.tab = tab;
             };
 
-             //Ejemplo alerta
-            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje de informaci髇","info");
+            //Ejemplo alerta
+            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje exitoso", "success");
+
 
             /*
              * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la
-             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informacion de modulos hijos
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informaci贸n de modulos hijos
              * al actual modulo.
              * Habilita el modo de edicion. El template de la lista cambia por el formulario.
+             *
              */
 
             this.createRecord = function () {
-                $scope.$broadcast("pre-create", $scope.currentRecord);
                 this.editMode = true;
                 $scope.currentRecord = {};
                 $scope.$broadcast("post-create", $scope.currentRecord);
             };
 
+
+
             /*
              * Funcion editRecord emite el evento ("pre-edit") a los $Scope hijos del controlador por medio de la
-             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informacion de modulos hijos
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informaci贸n de modulos hijos
              * al actual modulo.
              * Habilita el modo de edicion.  Carga el template de formulario con los datos del record a editar.
+             *
              */
 
-             this.editRecord = function (record) {
-                $scope.$broadcast("pre-edit", $scope.currentRecord);
+            this.editRecord = function (record) {
                 return svc.fetchRecord(record.id).then(function (response) {
                     $scope.currentRecord = response.data;
                     self.editMode = true;
@@ -110,14 +108,15 @@
                 }, responseError);
             };
 
+
             /*
              * Funcion fetchRecords consulta el servicio svc.fetchRecords con el fin de consultar
-             * todos los registros del modulo viajero.
+             * todos los registros del modulo editorial.
              * Guarda los registros en la variable $scope.records
              * Muestra el template de la lista de records.
              */
 
-           this.fetchRecords = function () {
+            this.fetchRecords = function () {
                 return svc.fetchRecords().then(function (response) {
                     $scope.records = response.data;
                     $scope.currentRecord = {};
@@ -129,12 +128,12 @@
             /*
              * Funcion saveRecord hace un llamado al servicio svc.saveRecord con el fin de
              * persistirlo en base de datos.
-             * Muestra el template de la lista de records al finalizar la operaci胦n saveRecord
+             * Muestra el template de la lista de records al finalizar la operaci贸n saveRecord
              */
             this.saveRecord = function () {
-                    return svc.saveRecord($scope.currentRecord).then(function () {
-                        self.fetchRecords();
-                     }, responseError);
+                return svc.saveRecord($scope.currentRecord).then(function () {
+                    self.fetchRecords();
+                }, responseError);
             };
 
             /*
@@ -149,24 +148,14 @@
             };
 
             /*
-             * Funcion fetchRecords consulta todos los registros del m贸dulo editorial en base de datos
+             * Funcion fetchRecords consulta todos los registros del modulo de evento en base de datos
              * para desplegarlo en el template de la lista.
              */
             this.fetchRecords();
 
-            function updateItinerarios(event, args) {
-                $scope.currentRecord.itinerarios = args;
-            };
 
-            $scope.$on('updateItinerarios', updateItinerarios);
 
-            function valInit($scope){
-             $scope.records = {
-                 items : [{ name :'lol',
-                         id :10
 
-                 }]}
-            };
         }]);
 
 })(window.angular);

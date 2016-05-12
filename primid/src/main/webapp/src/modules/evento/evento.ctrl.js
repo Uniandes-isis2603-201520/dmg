@@ -8,7 +8,7 @@
 
     var mod = ng.module("eventoModule");
 
-    mod.controller("eventoCtrl", ["$scope", "eventoService", function ($scope, svc) {
+    mod.controller("eventoCtrl", ["$scope", "eventoService", "ciudadService", "$modal", function ($scope, svc) {
 
             $scope.alerts = [];
             $scope.currentRecord = {
@@ -21,7 +21,7 @@
                 score: '' /*Tipo Double*/,
                 startDate: '' /*Tipo Date*/,
                 endDate: '' /*Tipo Date*/,
-                ciudad: '' /*Tipo Ciudad*/,
+                ciudad: {} /*Tipo Ciudad*/,
                 comments: [{/*Colección de registros de Review*/
                         id: undefined /*Tipo Long. El backend asigna el valor*/,
                         name: '' /*Tipo String*/,
@@ -85,10 +85,10 @@
             };
 
             //Ejemplo alerta
-            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje exitoso", "success");
+            showMessage("Bienvenido!, Agrega nuevos eventos", "info");
 
 
-            /*
+           /*
              * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la
              * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informaciÃ³n de modulos hijos
              * al actual modulo.
