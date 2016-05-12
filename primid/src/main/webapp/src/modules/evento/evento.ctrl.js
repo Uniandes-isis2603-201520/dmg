@@ -19,8 +19,8 @@
                 image: '' /*Tipo String*/,
                 category: '' /*Tipo String*/,
                 score: '' /*Tipo Double*/,
-//                startDate: '' /*Tipo Date*/,
-//                endDate: '' /*Tipo Date*/,
+                startDate: '' /*Tipo Date*/,
+                endDate: '' /*Tipo Date*/,
                 ciudad: {} /*Tipo Ciudad*/,
                 comments: [{/*Colección de registros de Review*/
                         id: undefined /*Tipo Long. El backend asigna el valor*/,
@@ -88,7 +88,7 @@
             showMessage("Bienvenido!, Agrega nuevos eventos", "info");
 
 
-            /*
+           /*
              * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la
              * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la informaciÃ³n de modulos hijos
              * al actual modulo.

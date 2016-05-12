@@ -140,6 +140,15 @@ public abstract class EventoConverter {
     public static EventoDTO fullEntity2DTO(EventoEntity entity) {
         if (entity != null) {
             EventoDTO dto = basicEntity2DTO(entity);
+            entity.setId(dto.getId());
+            entity.setName(dto.getName());
+            entity.setImage(dto.getImage());
+            entity.setDescription(dto.getDescription());
+            entity.setStartDate(dto.getDateStarts());
+            entity.setEndDate(dto.getDateEnds());
+            entity.setCategory(dto.getCategory());
+            entity.setScore(dto.getScore());
+            entity.setPlace(dto.getPlace());
             return dto;
         } else {
             return null;
@@ -157,6 +166,15 @@ public abstract class EventoConverter {
     public static EventoEntity fullDTO2Entity(EventoDTO dto) {
         if (dto != null) {
             EventoEntity entity = basicDTO2Entity(dto);
+            dto.setId(entity.getId());
+            dto.setName(entity.getName());
+            dto.setImage(entity.getImage());
+            dto.setDescription(entity.getDescription());
+            dto.setDateStarts(entity.getStartDate());
+            dto.setDateEnds(entity.getEndDate());
+            dto.setCategory(entity.getCategory());
+            dto.setScore(entity.getScore());
+            dto.setPlace(entity.getPlace());
             return entity;
         } else {
             return null;
