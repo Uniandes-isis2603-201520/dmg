@@ -2,9 +2,9 @@
 <p>.</p>
 <p>.</p>
 <p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
+
+
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="50000">{{alert.msg}} </alert>
 <div id="book-header">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -16,7 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">Books</a>
+                <a class="navbar-brand">Menu</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,17 +40,20 @@
 	<!--Desde acá podras administrar todos tus <strong>itinerarios</strong> de forma simple y así planear las mejores <strong>vacaciones</strong> a través de todo el planeta.-->
 				<p class="step-description"> Desde acá podras crear, editar, valorar y comentar todos tus <strong>itinerarios</strong> de modo simple. Permitenos ayudarte a planear tus mejores <strong>vacaciones</strong> a través de todo el planeta!.</p>
 			</div>
+                    <div ng-repeat="record in records">
                     <div class="col-md-4 col-sm-6 col-lg-3 well">
                 <div class="col-md-12">
+
                     <div class="img-thumbnail" id="image" ng-if="record.image">
                         <a ng-href="{{record.image}}" target="_blank"><img class="img-responsive" style="height: 20vmax;" ng-src="{{record.image}}" alt="{{record.image}}"></a>
                     </div>
                 </div>
                 <div class="caption" >
+                    <p><strong>Ruta:</strong> <span id="{{$index}}-ruta">{{record.rutaImg}}</span></p>
                     <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
-                    <p><strong>Description:</strong> <span id="{{$index}}-description">{{record.description}}</span></p>
-                    <p><strong>ISBN:</strong> <span id="{{$index}}-isbn">{{record.isbn}}</span></p>
-                    <p><strong>Publish Date:</strong> <span id="{{$index}}-publishDate">{{record.publishDate| date}}</span></p>
+                    <p><strong>Resumen:</strong> <span id="{{$index}}-description">{{record.resumen}}</span></p>
+                    <p><strong>Fecha Inicio:</strong> <span id="{{$index}}-publishDate">{{record.fechaInicio}}</span></p>
+                    <p><strong>Fecha Fin:</strong> <span id="{{$index}}-publishDate">{{record.fechaFin}}</span></p>
 
                 </div>
                 <p class="text-center">
@@ -59,11 +62,13 @@
                 </p>
             </div>
 		</div>
+        </div>
+
         <div ng-show="ctrl.editMode" class="col-md-6 well">
     <form novalidate name="form" id="book-form" role="form" ng-submit="ctrl.saveRecord()">
         <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
             <div ng-message="required">
-                Please, Fill the required fields!
+                Complete los datos por favor.
             </div>
         </alert>
         <fieldset>
@@ -75,44 +80,39 @@
                 </div>
             </div>
             <div class="form-group col-md-12" ng-class="{'has-success': form.description.$valid && form.description.$dirty, 'has-error': form.description.$invalid && (form.description.$dirty || form.$submitted)}" >
-                <label for="description" class="col-md-2 control-label">Description</label>
+                <label for="description" class="col-md-2 control-label">Resumen</label>
                 <div class="col-md-10">
-                    <input id="description" name="description" class="form-control" type="text" ng-model="currentRecord.description" required />
+                    <input id="description" name="description" class="form-control" type="text" ng-model="currentRecord.resumen" required />
                 </div>
             </div>
             <div class="form-group col-md-12" ng-class="{'has-success': form.isbn.$valid && form.isbn.$dirty, 'has-error': form.isbn.$invalid && (form.isbn.$dirty || form.$submitted)}" >
-                <label for="isbn" class="col-md-2 control-label">ISBN</label>
+                <label for="isbn" class="col-md-2 control-label">Fecha Inicio</label>
                 <div class="col-md-10">
-                    <input id="isbn" name="isbn" class="form-control" type="text" ng-model="currentRecord.isbn" required />
+                    <input id="isbn" name="isbn" class="form-control" type="text" ng-model="currentRecord.fechaInicio" required />
                 </div>
             </div>
 
             <div class="form-group col-md-12" ng-class="{'has-success': form.image.$valid && form.image.$dirty, 'has-error': form.image.$invalid && (form.image.$dirty || form.$submitted)}" >
                 <label for="image" class="col-md-2 control-label">Image</label>
                 <div class="col-md-10">
-                    <input id="image" name="image" class="form-control" type="text" ng-model="currentRecord.image" required />
+                    <input id="image" name="image" class="form-control" type="text" ng-model="currentRecord.rutaImg" required />
                 </div>
             </div>
 
-            <div class="form-group col-md-12" ng-class="{'has-success': !form.publishDate.$error.required && form.publishDate.$dirty, 'has-error': form.publishDate.$error.required && (form.publishDate.$dirty || form.$submitted)}" >
-                <label for="publishDate" class="col-md-2 control-label">Publish Date</label>
+             <div class="form-group col-md-12" ng-class="{'has-success': form.isbn.$valid && form.isbn.$dirty, 'has-error': form.isbn.$invalid && (form.isbn.$dirty || form.$submitted)}" >
+                <label for="isbn" class="col-md-2 control-label">Fecha Fin</label>
                 <div class="col-md-10">
-                    <p class="input-group">
-                        <input type="text" id="publishDate" name="publishDate" class="form-control" ng-model="currentRecord.publishDate" ng-required="model.required" datepicker-popup is-open="opened" readonly/>
-                        <span class="input-group-btn">
-                            <button type="button" id="publishDate-datepicker" class="btn btn-default" ng-click="open($event)"><span class="glyphicon glyphicon-calendar"></span></button>
-                        </span>
-                    </p>
+                    <input id="isbn" name="isbn" class="form-control" type="text" ng-model="currentRecord.fechaFin" required />
                 </div>
             </div>
         </fieldset>
     </form>
-</div>
 
 
 
 
 
+    </div>
 
 
 

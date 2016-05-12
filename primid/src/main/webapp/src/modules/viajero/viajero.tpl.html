@@ -1,6 +1,6 @@
 
 <div id="sectionViajero" class="viajero-wrap center">
-    <div class="section-overlay"></div>
+
     <p><br></p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
@@ -9,31 +9,31 @@
     <p style="font-size:10pt;">&nbsp;</p>
 
     <section>
-        <div class="container viajero center " >
+        <div class="container viajero center " ng-app="myApp" ng-controller="usuarioCtrl" >
             <div class="row">
                 <div class="container" ng-repeat="record in records">
                     <h1>{{record.name}}</h1>
-                    <h3>Welcome back</h3>
+                    <h3>Welcome back !</h3>
                 </div>
                 <div class="container">
                     <div class="main row" ng-repeat="record in records">
                         <article class="col-xs-12 col-sm-8 col-md-9 col-lg-12 center">
                             <h1>  </h1>
                             <h1>  </h1>
-                            <h3>Resumen de historia</h3>
+                            <h3>Resumen de Cuenta</h3>
                             <h4 class="visible-xs">12 Columnas</h4>
                             <h4 class="visible-sm">8 Columnas</h4>
                             <h4 class="visible-md">9 Columnas</h4>
-                            <h4 class="visible-lg">Foto del man</h4>
-
-                            <div class="img-thumbnail" id="image" ng-if="record.image">
+                            <h4 class="visible-lg">Profile Picture</h4>
                                 <a ng-href="{{record.image}}" target="_blank"><img class="img-responsive" style="height: 20vmax;" ng-src="{{record.image}}" alt="{{record.image}}"></a>
+                                    <img src="{{record.image}}" class="img-circle">
+
+
+
+
                             </div>
 
-                            <img src="resources/images/profile.jpg" class="img-circle">
-                            </div>
 
-                        </article>
 
                         <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-12" ng-repeat="record in records">
 
@@ -49,29 +49,79 @@
                                     <td>Email</td>
                                 </tr>
                                 <tr>
-                                    <td>{{record.id}}</td>
+                                    <td></td>
+                                    <td ng-model="name"></td>
+                                    <td></td>
+                                    <td ng-model="mail">{{record.id}}</td>
                                     <td>{{record.name}}</td>
                                     <td>{{record.email}}</td>
                                 </tr>
                             </table>
+                        </aside>
+
+                        <ul><li>                                              <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="Evento-navbar">
+                                    <button id="create-evento" class="fancy-button button-line btn-col small horizontal" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-pencil"></span> Create</button>
+                                    <button id="refresh-evento" class="fancy-button button-line btn-col small horizontal" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-circle-arrow-left"></span> Refresh</button>
+                                    <button id="save-evento" type="submit" form="evento-form" class="fancy-button button-line btn-col small horizontal" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-check"></span> Save</button>
+                                    <button id="cancel-evento" type="button" form="evento-form" class="fancy-button button-line btn-col small horizontal" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                </div>
+                            </li></ul>
+                        <div ng-hide="ctrl.editMode">
                             <div class="home-buttons">
-                                <a href="#" class="fancy-button button-line button-white vertical">
+                                <a href="#" class="fancy-button button-line button-white vertical hover">
                                     Editar cuenta
                                     <span class="icon">
                                         <i class="fa fa-chevron-up"></i>
                                     </span>
                                 </a>
-                                <a href="#" class="fancy-button button-line button-white zoom">
+                                <a href="#" class="fancy-button button-line hover zoom ">
                                     Eliminar Cuenta
                                     <span class="icon">
                                         <i class="fa fa-chevron-down"></i>
                                     </span>
                                 </a>
+                                <a href="#" class="fancy-button button-line hover zoom ">
+                                    Actualizar
+                                    <span class="icon">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </span>
+                                </a>
                             </div>
-                        </aside>
-
+                        </div>
                     </div>
 
+                    <div ng-show="ctrl.editMode">
+                        <form novalidate name="form" id="evento-form" role="form" ng-submit="ctrl.saveRecord()">
+                            <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
+                                <div ng-message="required">
+                                    Please, Fill the required fields
+                                </div>
+                            </alert>
+                            <fieldset>
+                                <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+                                <div class="form-group col-md-12" ng-class="{'has-success': form.name.$valid && form.name.$dirty, 'has-error': form.name.$invalid && (form.name.$dirty || form.$submitted)}" >
+                                    <label for="name" class="col-md-2 control-label">Name</label>
+                                    <div class="col-md-10">
+                                        <input id="name" name="name" class="form-control" type="text" ng-model="currentRecord.name" required />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12" ng-class="{'has-success': form.description.$valid && form.description.$dirty, 'has-error': form.description.$invalid && (form.description.$dirty || form.$submitted)}" >
+                                    <label for="description" class="col-md-2 control-label">Description</label>
+                                    <div class="col-md-10">
+                                        <input id="description" name="description" class="form-control" type="text" ng-model="currentRecord.description" required />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12" ng-class="{'has-success': form.image.$valid && form.image.$dirty, 'has-error': form.image.$invalid && (form.image.$dirty || form.$submitted)}" >
+                                    <label for="image" class="col-md-2 control-label">Image</label>
+                                    <div class="col-md-10">
+                                        <input id="image" name="image" class="form-control" type="text" ng-model="currentRecord.image" required />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                <div ng-hide="ctrl.editMode">
                     <div class="row">
 
                         <div class=" col-xs-12 col-sm-6 col-md-3">
@@ -87,7 +137,7 @@
 
                             <!-- Intinerario1 -->
                             <div id="bx-pager" class="client-photos">
-                                <a  href="" class="photo-hold">
+                                <a  href="#/itinerario" class="photo-hold">
                                     <span class="photo-bg">
                                         <img src="resources/images/itinerarios.png" alt="" /> <!-- Client photo 1 -->
                                     </span>
@@ -105,9 +155,9 @@
                                     <span class="no-inner">2</span>
                                 </div>
                             </div>
-                            <h4 class="visible-lg btn-col hover">  Fotos</h4>
+                            <h4 class="visible-lg btn-col hover"> Fotos</h4>
                             <div id="bx-pager" class="client-photos">
-                                <a  href="" class="photo-hold">
+                                <a  href="#/multimedia" class="photo-hold">
                                     <span class="photo-bg">
                                         <img src="resources/images/fotos.png" alt="" /> <!-- Client photo 1 -->
                                     </span>
@@ -127,7 +177,8 @@
                             </div>
                             <h4 class="visible-lg btn-col hover">  Eventos</h4>
                             <div id="bx-pager" class="client-photos">
-                                <a  href="" class="photo-hold">
+                                <!--                                <a ui-sref="evento">Eventos</a>-->
+                                <a  href="#/evento" class="photo-hold">
                                     <span class="photo-bg">
                                         <img src="resources/images/eventos.png" alt="" /> <!-- Client photo 1 -->
                                     </span>
@@ -147,7 +198,7 @@
                             </div>
                             <h4 class="visible-lg btn-col hover">  Tu mapa</h4>
                             <div id="bx-pager" class="client-photos">
-                                <a  href="" class="photo-hold">
+                                <a  href="#/ciudad" class="photo-hold">
                                     <span class="photo-bg">
                                         <img src="resources/images/maps.png" alt="" /> <!-- Client photo 1 -->
                                     </span>
@@ -156,16 +207,11 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
 
-            <footer>
-                <div class="container hover">
-                    <h3>Usuario</h3>
-                    <h4>mensaje motivacional</h4>
-                    <div ng-include="'src/modules/author/author.books.html'"></div>
-                </div>
-            </footer>
+
     </section>
 </div>
 

@@ -19,9 +19,11 @@ public class EventoDTO {
     private String category;
     private double score;
     private String description;
-    private Date dateStarts;
-    private Date dateEnds;
+    private Date startDate;
+    private Date endDate;
 
+
+    private CiudadDTO ciudad;
     /**
      * Constructor por defecto
      */
@@ -35,20 +37,20 @@ public class EventoDTO {
      * @param name nombre del evento
      * @param image imagen del evento
      * @param description decripción del evento
-     * @param dateStarts Fecha en la que inicia el evento
-     * @param dateEnds Fecha en la que termina el evento
+     * @param startDate Fecha en la que inicia el evento
+     * @param endDate Fecha en la que termina el evento
      * @param category La categoria del evento
      * @param score La calificacion que ha recibido el evento
      * @param place El lugar donde ocurre el evento
      */
-    public EventoDTO(Long id, String name, String image, String description, Date dateStarts, Date dateEnds, String place, double score, String category) {
+    public EventoDTO(Long id, String name, String image, String description, Date dateStarts, Date endDate, String place, double score, String category) {
         super();
         this.id = id;
         this.name = name;
         this.image = image;
         this.description = description;
-        this.dateStarts = dateStarts;
-        this.dateEnds = dateEnds;
+        this.startDate = dateStarts;
+        this.endDate = startDate;
         this.category = category;
         this.score = score;
         this.place = place;
@@ -114,28 +116,28 @@ public class EventoDTO {
      * @return the dateStarts
      */
     public Date getDateStarts() {
-        return dateStarts;
+        return startDate;
     }
 
     /**
-     * @param dateStarts the dateStarts to set
+     * @param startDate the dateStarts to set
      */
-    public void setDateStarts(Date dateStarts) {
-        this.dateStarts = dateStarts;
+    public void setDateStarts(Date startDate) {
+        this.startDate = startDate;
     }
 
     /**
      * @return the dateEnds
      */
     public Date getDateEnds() {
-        return dateEnds;
+        return endDate;
     }
 
     /**
-     * @param dateEnds the dateEnds to set
+     * @param endDate the endDate to set
      */
-    public void setDateEnds(Date dateEnds) {
-        this.dateEnds = dateEnds;
+    public void setDateEnds(Date endDate) {
+        this.endDate = endDate;
     }
 
     /**
@@ -178,6 +180,14 @@ public class EventoDTO {
      */
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public CiudadDTO getCiudad() {
+    return ciudad;
+    }
+
+    public void setCiudad(CiudadDTO ciudad) {
+        this.ciudad = ciudad;
     }
 
     /**

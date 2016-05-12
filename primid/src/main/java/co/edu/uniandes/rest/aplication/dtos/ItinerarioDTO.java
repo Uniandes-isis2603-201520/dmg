@@ -16,11 +16,15 @@ public class ItinerarioDTO {
 
     private Long id;
     //TODO
+    private String name;
     private Long idViajero;
     private String resumen;
     private Date fechaInicio;
     private Date fechaFin;
     private String rutaImg;
+
+    private String fechaInicio1;
+    private String fechaInicio2;
 
     /**
      * Constructor por defecto
@@ -35,7 +39,7 @@ public class ItinerarioDTO {
      * @param fechaInicio fechaInicio del viajero
      * @param rutaImg imagen del viajero
      */
-    public ItinerarioDTO(Long id, String resumen, Date fechaInicio, Date fechaFin, String rutaImg, Long idViajero) {
+    public ItinerarioDTO(Long id, String resumen, Date fechaInicio, Date fechaFin, String rutaImg, Long idViajero, String name) {
         super();
         this.id = id;
         this.resumen = resumen;
@@ -43,11 +47,17 @@ public class ItinerarioDTO {
         this.fechaFin = fechaFin;
         this.rutaImg = rutaImg;
         this.idViajero = idViajero;
+        this.name="jeje";
     }
 
     /*
      * @return el id
      */
+    public String getName()
+    {
+        return name;
+    }
+
     public Long getId() {
         return id;
     }
