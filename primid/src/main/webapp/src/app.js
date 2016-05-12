@@ -39,8 +39,8 @@
                     })
                      .state('itinerario', {
                         url: '/itinerario',
-                        //controller: "section-homeCtrl",
-                        //controllerAs: "ctrl",
+                        controller: "itinerarioCtrl",
+                        controllerAs: "ctrl",
                         templateUrl: "src/modules/Itinerario/itinerario.tpl.html"
                     })
                     .state('viajero', {
