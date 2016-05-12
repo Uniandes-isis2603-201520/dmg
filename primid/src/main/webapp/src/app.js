@@ -3,6 +3,7 @@
     var mod = ng.module("mainApp",[
         "ui.router",
         "eventoModule",
+        "ciudadModule",
         "ngMessages"
     ]);
 
@@ -22,8 +23,8 @@
                     })
                     .state('ciudad', {
                         url: '/ciudad',
-                        //controller: "section-homeCtrl",
-                        //controllerAs: "ctrl",
+                        controller: "ciudadCtrl",
+                        controllerAs: "ctrl",
                         templateUrl: "src/modules/ciudad/ciudad.tpl.html"
                     })
                      .state('multimedia', {

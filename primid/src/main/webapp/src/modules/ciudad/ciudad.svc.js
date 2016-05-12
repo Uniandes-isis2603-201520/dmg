@@ -30,5 +30,3 @@
             };
         }]);
 })(window.angular);
-
-

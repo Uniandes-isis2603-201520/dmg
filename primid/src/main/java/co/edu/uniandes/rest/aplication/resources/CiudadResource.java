@@ -6,6 +6,7 @@
 package co.edu.uniandes.rest.aplication.resources;
 
 import co.edu.uniandes.rest.aplication.dtos.CiudadDTO;
+import co.edu.uniandes.csw.primid.logic.exceptions.BusinessLogicException;
 import co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 import co.edu.uniandes.csw.primid.logic.api.ICiudadLogic;
 import co.edu.uniandes.rest.aplication.converters.CiudadConverter;
@@ -32,7 +33,8 @@ import javax.ws.rs.core.Response;
  * @author andresvera
  */
 @Path("ciudades")
-@Produces("application/json")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class CiudadResource {
 
     private static final Logger logger = Logger.getLogger(CiudadResource.class.getName());
@@ -41,7 +43,8 @@ public class CiudadResource {
     private ICiudadLogic ciudadLogic;
 
     @GET
-    public List<CiudadDTO> getCiudades() {
+    public List<CiudadDTO> getCiudades() throws BusinessLogicException {
+        logger.info("Se ejecuta metodo getCiudades");
         return CiudadConverter.listEntity2DTO(ciudadLogic.getCiudades());
     }
 
@@ -53,8 +56,9 @@ public class CiudadResource {
      * @throws CityLogicException cuando la ciudad no existe
      */
     @GET
-    @Path("{id: \\d+}")
-    public CiudadDTO getCiudad(@PathParam("id") Long id) {
+    @Path("{id_Ciudad: \\d+}")
+    public CiudadDTO getCiudad(@PathParam("id_Ciudad") Long id) throws BusinessLogicException {
+        logger.log(Level.INFO, "Se ejecuta metodo getCiudad con id={0}", id);
         return CiudadConverter.fullEntity2DTO(ciudadLogic.getCiudad(id));
     }
 
@@ -67,9 +71,13 @@ public class CiudadResource {
      * suministrado
      */
     @POST
-    public CiudadDTO createCiudad(CiudadDTO dto) {
+    public CiudadDTO createCiudad(CiudadDTO dto) throws BusinessLogicException {
+
+        logger.info("Se ejecuta metodo createCiudad");
         CiudadEntity entity = CiudadConverter.fullDTO2Entity(dto);
-        return CiudadConverter.fullEntity2DTO(ciudadLogic.createCiudad(entity));
+        CiudadEntity newEntity;
+        newEntity = ciudadLogic.createCiudad(entity);
+        return CiudadConverter.fullEntity2DTO(newEntity);
     }
 
     /**
@@ -83,11 +91,14 @@ public class CiudadResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public CiudadDTO updateCiudad(@PathParam("id") Long id, CiudadDTO dto) {
+    public CiudadDTO updateCiudad(@PathParam("id") Long id, CiudadDTO dto) throws BusinessLogicException {
+        logger.log(Level.INFO, "Se ejecuta metodo updatCiudad con id={0}", id);
         CiudadEntity entity = CiudadConverter.fullDTO2Entity(dto);
         entity.setId(id);
         CiudadEntity oldEntity = ciudadLogic.getCiudad(id);
-        return CiudadConverter.fullEntity2DTO(ciudadLogic.updateCiudad(entity));
+        entity.setComments(oldEntity.getComments());
+        CiudadEntity savedCiudad = ciudadLogic.updateCiudad(entity);
+        return CiudadConverter.fullEntity2DTO(savedCiudad);
     }
 
     /**
@@ -99,7 +110,8 @@ public class CiudadResource {
      */
     @DELETE
     @Path("{id: \\d+}")
-    public void deleteCiudad(@PathParam("id") Long id) {
+    public void deleteCiudad(@PathParam("id") Long id) throws BusinessLogicException {
+        logger.log(Level.INFO, "Se ejecuta metodo deleteCiudad con id={0}", id);
         ciudadLogic.deleteCiudad(id);
     }
 

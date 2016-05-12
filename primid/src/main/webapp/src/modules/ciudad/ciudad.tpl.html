@@ -1,96 +1,106 @@
-<div id="portfolio">
-    
-    <br>
-    <br>
-    
-    <div class="row-gree">
 
-      <div class="w-container wrap">
+<!--==== Slider and Card style plugin ====-->
+<!--<script type="text/javascript" src="resources/js/jquery.baraja.js"></script>
+<script type="text/javascript" src="resources/js/jquery.vegas.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.bxslider.min.js"></script>-->
 
-        <div class="center">
+<!--=== Features section Starts ===-->
+<div>
+<div class="container features center">
+    <div class="container-fluid">
+                    <ul>
+                        <li><h1 class="step-title color-scheme center">Ciudades</h1></li>
 
-          <h1 class="underline" style="color:white">CIUDADES</h1>
-
-        </div>
-          
-
-      </div>
-
+                        <li>                                              <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="Ciudad-navbar">
+                                <button id="create-ciudad" class="fancy-button button-line btn-col small horizontal" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-pencil"></span> Create</button>
+                                <button id="refresh-ciudad" class="fancy-button button-line btn-col small horizontal" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-circle-arrow-left"></span> Refresh</button>
+                                <button id="save-ciudad" type="submit" form="ciudad-form" class="fancy-button button-line btn-col small horizontal" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-check"></span> Save</button>
+                                <button id="cancel-ciudad" type="button" form="ciudad-form" class="fancy-button button-line btn-col small horizontal" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                            </div>
+                        </li>
+                    </ul>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)" dismiss-on-timeout="5000">{{alert.msg}} </alert>
     </div>
-
-    <div class="row-back">
-        
-        <br>
-
-        <div class="center">
-
-        <img src="resources/images/uno.jpg">
-
+</div>
+<div ng-hide="ctrl.editMode">
+    <div class="col-sm-12">
+        <div ng-repeat="record in records">
+            <div class="col-md-4 col-sm-6 col-lg-3 well">
+                <div class="col-md-12">
+                    <div class="img-thumbnail" id="image" ng-if="record.image">
+                        <a ng-href="{{record.image}}" target="_blank"><img class="img-responsive" style="height: 20vmax;" ng-src="{{record.image}}" alt="{{record.image}}"></a>
+                    </div>
+                </div>
+                <div class="caption" >
+                    <p><strong>Id:</strong> <span id="{{$index}}-id">{{record.id}}</span></p>
+                    <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
+                    <p><strong>Coordenadas:</strong> <span id="{{$index}}-coordenadas">{{record.coordenadas}}</span></p>
+                    </div>
+                <p class="text-center">
+                    <button id="{{$index}}-edit-btn" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    <button id="{{$index}}-delete-btn" class="fancy-button button-line btn-col small horizontal" ng-click="ctrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Remove</button>
+                </p>
+            </div>
         </div>
-
-
-      <a class="image-popup-no-margins" href="resources/images/dos.jpg">
-          
-          <br>
-          <br>
-          
-          <div class="center">
-
-        <img src="resources/images/dos.jpg">
-        
-          </div>
-
-       </a>
-
-      <a class="image-popup-no-margins" href="resources/images/tres.jpg">
-          
-          <br>
-          <br>
-          
-          <div class="center">
-
-        <img src="resources/images/tres.jpg">   
-        
-          </div>
-
-       </a>
-
-      <a class="image-popup-no-margins" href="resources/images/cuatro.jpg">
-          
-          <br>
-          <br>
-          
-          <div class="center">
-
-        <img src="resources/images/cuatro.jpg">
-        
-          </div>
-
-      </a>
-
-      <a class="image-popup-no-margins" href="resources/images/cinco.jpg">
-          
-          <br>
-          <br>
-          
-          <div class="center">
-
-        <img src="resources/images/cinco.jpg">
-        
-          </div>
-
-      </a>
-
-      <a class="image-popup-no-margins" href="resources/images/seis.jpg">
-          
-          <br>
-          <br>
-          
-          <div class="center">
-
-        <img src="resources/images/seis.jpg">
-        
-          </div>
-      </a>
     </div>
-  </div>
+</div>
+
+<div ng-show="ctrl.editMode" class="section-overlay">
+    <form novalidate name="form" id="ciudad-form" role="form" ng-submit="ctrl.saveRecord()">
+        <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
+            <div ng-message="required">
+                Please, Fill the required fields
+            </div>
+        </alert>
+        <fieldset>
+            <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.id.$valid && form.id.$dirty, 'has-error': form.id.$invalid && (form.id.$dirty || form.$submitted)}" >
+                <label for="id" class="col-md-2 control-label">Id</label>
+                <div class="col-md-10">
+                    <input id="id" name="id" class="form-control" type="text" ng-model="currentRecord.id" required />
+                </div>
+            </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.name.$valid && form.name.$dirty, 'has-error': form.name.$invalid && (form.name.$dirty || form.$submitted)}" >
+                <label for="name" class="col-md-2 control-label">Name</label>
+                <div class="col-md-10">
+                    <input id="name" name="name" class="form-control" type="text" ng-model="currentRecord.name" required />
+                </div>
+            </div>
+            <div class="form-group col-md-12" ng-class="{'has-success': form.coordenadas.$valid && form.coordenadas.$dirty, 'has-error': form.coordenadas.$invalid && (form.coordenadas.$dirty || form.$submitted)}" >
+                <label for="coordenadas" class="col-md-2 control-label">Coordenadas</label>
+                <div class="col-md-10">
+                    <input id="coordenadas" name="coordenadas" class="form-control" type="text" ng-model="currentRecord.coordenadas" required />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div class="container features center">
+
+                                    <ul class="list-inline">
+                                        <li><input id="id" class="input-field form-item field-id" type="text"/>
+                                        </li>
+                                        <li>
+                                                       <!-- Collect the nav links, forms, and other content for toggling -->
+                                            <div class="collapse navbar-collapse" id="editorial-navbar">
+                                             <button id="refresh-ciudad" class="fancy-button button-line btn-col small horizontal"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                                             <button class="fancy-button button-line btn-col small horizontal">
+                                                Buscar
+                                                    <span class="icon">
+                                                        <i class="fa fa-search"></i>
+                                                    </span>
+                                            </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+
+						<!-- Features Controls Ends -->
+</div>
+</div>
+
+	<!--=== Features section Ends ===-->
+
+

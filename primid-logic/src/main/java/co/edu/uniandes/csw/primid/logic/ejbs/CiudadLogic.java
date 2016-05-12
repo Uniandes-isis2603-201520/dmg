@@ -32,13 +32,9 @@ public class CiudadLogic implements ICiudadLogic {
     }
 
     @Override
-    public CiudadEntity getCiudad(Long id) {
-        logger.log(Level.INFO, "Inicia proceso de consultar ciudad con id={0}", id);
-        CiudadEntity ciudad = persistence.find(id);
-        if (ciudad == null) {
-            logger.log(Level.SEVERE, "La ciudad con el id {0} no existe", id);
-            throw new IllegalArgumentException("La ciudad solicitada no existe");
-        }
+    public CiudadEntity getCiudad(Long id){
+     logger.log(Level.INFO, "Inicia proceso de consultar ciudad con id={0}", id);
+     CiudadEntity ciudad = persistence.find(id);
         logger.log(Level.INFO, "Termina proceso de consultar ciudad con id={0}", id);
         return ciudad;
     }

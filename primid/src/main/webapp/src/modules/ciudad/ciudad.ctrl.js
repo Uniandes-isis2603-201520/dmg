@@ -5,21 +5,26 @@
  */
 (function (ng) {
 
-  // es parte del módulo "personModule"
-  var mod = ng.module("ciudadModule");
+    var mod = ng.module("ciudadModule");
 
-  // crea el controlador con dependencias a $scope y a personService
-  mod.controller("ciudadCtrl", ["$scope", "ciudadService", function ($scope, svc) {
+    mod.controller("ciudadCtrl", ["$scope", "ciudadService", function ($scope, svc) {
 
-            //alertas o metodos para desplegar mensajes
             $scope.alerts = [];
             $scope.currentRecord = {
-                id: 0 /*Tipo Long*/,
+                id: undefined /*Tipo int. El valor se asigna en el backend*/,
                 name: '' /*Tipo String*/,
-                coordenadas: 0/*Tipo Long*/,
-                itinerario: {} /*Objeto que representa instancia de Itinerario*/,
-                reviews: [] /*Colección de registros de Review*/
-
+                coordenadas: '' /*Tipo int*/,
+                image: '' /*Tipo String*/,
+                category: '' /*Tipo String*/,
+                comments: [{/*Colecci�n de registros de Review*/
+                        id: undefined /*Tipo int. El backend asigna el valor*/,
+                        name: '' /*Tipo String*/,
+                        coordenadas: '' /*Tipo int*/
+                    }, {
+                        id: undefined /*Tipo int. El backend asigna el valor*/,
+                        name: '' /*Tipo String*/,
+                        coordenadas: '' /*Tipo int*/
+                    }] /*Colecci�n de registros de Review*/
             };
             $scope.records = [];
 
@@ -38,10 +43,10 @@
                 $scope.opened = true;
             };
 
+            //Alertas
             this.closeAlert = function (index) {
                 $scope.alerts.splice(index, 1);
             };
-
 
             function showMessage(msg, type) {
                 var types = ["info", "danger", "warning", "success"];
@@ -64,25 +69,44 @@
             function responseError(response) {
                 self.showError(response.data);
             }
-
-
-            //metodos para invocar los servicios
+            //Variables para el controlador
             this.readOnly = false;
             this.editMode = false;
+
 
             this.changeTab = function (tab) {
                 $scope.tab = tab;
             };
 
+            //Ejemplo alerta
+            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje exitoso", "success");
+
+
+            /*
+             * Funcion createRecord emite un evento a los $scope hijos del controlador por medio de la
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la información de modulos hijos
+             * al actual modulo.
+             * Habilita el modo de edicion. El template de la lista cambia por el formulario.
+             *
+             */
+
             this.createRecord = function () {
-                $scope.$broadcast("pre-create", $scope.currentRecord);
                 this.editMode = true;
                 $scope.currentRecord = {};
                 $scope.$broadcast("post-create", $scope.currentRecord);
             };
 
+
+
+            /*
+             * Funcion editRecord emite el evento ("pre-edit") a los $Scope hijos del controlador por medio de la
+             * sentencia &broadcast ("nombre del evento", record), esto con el fin cargar la información de modulos hijos
+             * al actual modulo.
+             * Habilita el modo de edicion.  Carga el template de formulario con los datos del record a editar.
+             *
+             */
+
             this.editRecord = function (record) {
-                $scope.$broadcast("pre-edit", $scope.currentRecord);
                 return svc.fetchRecord(record.id).then(function (response) {
                     $scope.currentRecord = response.data;
                     self.editMode = true;
@@ -90,6 +114,14 @@
                     return response;
                 }, responseError);
             };
+
+
+            /*
+             * Funcion fetchRecords consulta el servicio svc.fetchRecords con el fin de consultar
+             * todos los registros del modulo editorial.
+             * Guarda los registros en la variable $scope.records
+             * Muestra el template de la lista de records.
+             */
 
             this.fetchRecords = function () {
                 return svc.fetchRecords().then(function (response) {
@@ -100,55 +132,37 @@
                 }, responseError);
             };
 
+            /*
+             * Funcion saveRecord hace un llamado al servicio svc.saveRecord con el fin de
+             * persistirlo en base de datos.
+             * Muestra el template de la lista de records al finalizar la operación saveRecord
+             */
             this.saveRecord = function () {
-                    return svc.saveRecord($scope.currentRecord).then(function () {
-                        self.fetchRecords();
-                    }, responseError);
+                return svc.saveRecord($scope.currentRecord).then(function () {
+                    self.fetchRecords();
+                }, responseError);
             };
 
+            /*
+             * Funcion deleteRecord hace un llamado al servicio svc.deleteRecord con el fin
+             * de eliminar el registro asociado.
+             * Muestra el template de la lista de records al finalizar el borrado del registro.
+             */
             this.deleteRecord = function (record) {
                 return svc.deleteRecord(record.id).then(function () {
                     self.fetchRecords();
                 }, responseError);
             };
 
+            /*
+             * Funcion fetchRecords consulta todos los registros del modulo de evento en base de datos
+             * para desplegarlo en el template de la lista.
+             */
             this.fetchRecords();
 
-            svc.get('http://localhost:8080/primid/src/modules/ciudad/ciudad.mock.js')
-            .success(function(response){
-                $scope.records = response.records;
-
-        });
-
-    var myCenter=new google.maps.LatLng(51.508742,-0.120850);
-    function initialize()
-    {
-    var mapProp = {
-      center: myCenter,
-      zoom:5,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-    var marker = new google.maps.Marker({
-     position: myCenter,
-     title:'Click to zoom'
-     });
-
-    marker.setMap(map);
-
-    // Zoom to 9 when clicking on marker
-    google.maps.event.addListener(marker,'click',function() {
-     map.setZoom(9);
-     map.setCenter(marker.getPosition());
-     });
-    }
-google.maps.event.addDomListener(window, 'load', initialize);
 
 
-  }]);
+
+        }]);
 
 })(window.angular);
-
-

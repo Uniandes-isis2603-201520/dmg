@@ -5,12 +5,10 @@
  */
 (function(ng){
 
-  // define el módulo "personModule" con dependencia a ui.bootstrap
-  var mod = ng.module("ciudadModule", ["ui.bootstrap"]);
+  // define el módulo "ciudadModule" con dependencia a ui.bootstrap
+  var mod = ng.module("ciudadModule", ["ui.bootstrap", "ngMessages"]);
 
   // define una constante usada por el servicio y el mock del servicio
   mod.constant("ciudadContext", "api/ciudades");
 
 })(window.angular);
-
-

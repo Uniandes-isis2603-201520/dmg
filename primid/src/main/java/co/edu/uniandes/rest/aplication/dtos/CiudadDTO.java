@@ -12,25 +12,6 @@ public class CiudadDTO {
     private Integer coordenadas;
 
     /**
-     * Constructor por defecto
-     */
-    public CiudadDTO() {
-
-    }
-
-    /**
-     * Constructor
-     */
-    public CiudadDTO(long id, String name, Integer coordenadas) {
-
-        super();
-        this.id = id;
-        this.name = name;
-        this.coordenadas = coordenadas;
-
-    }
-
-    /**
      * @return the id
      */
     public Long getId() {
