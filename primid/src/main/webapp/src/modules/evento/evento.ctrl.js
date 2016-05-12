@@ -19,8 +19,8 @@
                 image: '' /*Tipo String*/,
                 category: '' /*Tipo String*/,
                 score: '' /*Tipo Double*/,
-                startDate: '' /*Tipo Date*/,
-                endDate: '' /*Tipo Date*/,
+//                startDate: '' /*Tipo Date*/,
+//                endDate: '' /*Tipo Date*/,
                 ciudad: {} /*Tipo Ciudad*/,
                 comments: [{/*Colección de registros de Review*/
                         id: undefined /*Tipo Long. El backend asigna el valor*/,
@@ -85,7 +85,7 @@
             };
 
             //Ejemplo alerta
-            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje exitoso", "success");
+            showMessage("Bienvenido!, Agrega nuevos eventos", "info");
 
 
             /*

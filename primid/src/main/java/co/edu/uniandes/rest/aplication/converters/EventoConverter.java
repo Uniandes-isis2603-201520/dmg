@@ -39,6 +39,9 @@ public abstract class EventoConverter {
             EventoDTO dto = new EventoDTO();
             dto.setId(entity.getId());
             dto.setName(entity.getName());
+            dto.setDateStarts(entity.getStartDate());
+            dto.setDateEnds(entity.getEndDate());
+            dto.setCategory(entity.getCategory());
             return dto;
         } else {
             return null;
@@ -59,6 +62,11 @@ public abstract class EventoConverter {
         if (dto != null) {
             EventoEntity entity = new EventoEntity();
             entity.setId(dto.getId());
+            entity.setName(dto.getName());
+            entity.setDescription(dto.getDescription());
+            entity.setStartDate(dto.getDateStarts());
+            entity.setEndDate(dto.getDateEnds());
+            entity.setImage(dto.getImage());
 
             return entity;
         } else {
