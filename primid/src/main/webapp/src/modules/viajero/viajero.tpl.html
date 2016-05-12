@@ -1,154 +1,179 @@
 
 <div id="sectionViajero" class="viajero-wrap center">
     <div class="section-overlay"></div>
+    <p><br></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><br></p>
+    <p style="font-size:10pt;">&nbsp;</p>
+
     <section>
-    <div class="container viajero center " >
-        <div class="row">
-            <div class="container" ng-repeat="record in records">
-                <h1>{{record.name}}</h1>
-                <h3>Welcome back</h3>
-            </div>
-            <div class="container">
-                <div class="main row">
-                    <article class="col-xs-12 col-sm-8 col-md-9 col-lg-12 center">
-                        <h1>  </h1>
-                        <h1>  </h1>
-                        <h3>Resumen de historia</h3>
-                        <h4 class="visible-xs">12 Columnas</h4>
-                        <h4 class="visible-sm">8 Columnas</h4>
-                        <h4 class="visible-md">9 Columnas</h4>
-                        <h4 class="visible-lg">Foto del man</h4>
-
-                        <img src="resources/images/profile.jpg" class="img-circle">
-                        </div>
-
-                    </article>
-
-                    <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-12">
-
-                        <h3>RESUMEN CUENTA</h3>
-                        <h4 class="visible-xs">12 Columnas</h4>
-                        <h4 class="visible-sm">4 Columnas</h4>
-                        <h4 class="visible-md">3 Columnas</h4>
-                        <h4 class="visible-lg">Edita tu perfil</h4>
-                        <table class="table table-bordered">
-                        <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-                        </table>
-                    </aside>
-
+        <div class="container viajero center " >
+            <div class="row">
+                <div class="container" ng-repeat="record in records">
+                    <h1>{{record.name}}</h1>
+                    <h3>Welcome back</h3>
                 </div>
+                <div class="container">
+                    <div class="main row" ng-repeat="record in records">
+                        <article class="col-xs-12 col-sm-8 col-md-9 col-lg-12 center">
+                            <h1>  </h1>
+                            <h1>  </h1>
+                            <h3>Resumen de historia</h3>
+                            <h4 class="visible-xs">12 Columnas</h4>
+                            <h4 class="visible-sm">8 Columnas</h4>
+                            <h4 class="visible-md">9 Columnas</h4>
+                            <h4 class="visible-lg">Foto del man</h4>
 
-                <div class="row">
-
-                    <div class=" col-xs-12 col-sm-6 col-md-3">
-                        <h4 class="visible-xs">12 Columnas</h4>
-                        <h4 class="visible-sm">6 Columnas</h4>
-                        <h4 class="visible-md">3 Columnas</h4>
-                        <div class="col-md-2 center">
-                            <div class="step-no">
-                                <span class="no-inner">1</span>
+                            <div class="img-thumbnail" id="image" ng-if="record.image">
+                                <a ng-href="{{record.image}}" target="_blank"><img class="img-responsive" style="height: 20vmax;" ng-src="{{record.image}}" alt="{{record.image}}"></a>
                             </div>
-                        </div>
-                        <h4 class="visible-lg btn-col hover">  Itinerarios</h4>
 
-                        <!-- Intinerario1 -->
-                          <div id="bx-pager" class="client-photos">
-                                    <a  href="" class="photo-hold">
-                                        <span class="photo-bg">
-                                            <img src="resources/images/itinerarios.png" alt="" /> <!-- Client photo 1 -->
-                                        </span>
-                                    </a>
+                            <img src="resources/images/profile.jpg" class="img-circle">
+                            </div>
 
-                                </div>
+                        </article>
+
+                        <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-12" ng-repeat="record in records">
+
+                            <h3>RESUMEN CUENTA</h3>
+                            <h4 class="visible-xs">12 Columnas</h4>
+                            <h4 class="visible-sm">4 Columnas</h4>
+                            <h4 class="visible-md">3 Columnas</h4>
+                            <h4 class="visible-lg">Edita tu perfil</h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>Id</td>
+                                    <td>Nombre</td>
+                                    <td>Email</td>
+                                </tr>
+                                <tr>
+                                    <td>{{record.id}}</td>
+                                    <td>{{record.name}}</td>
+                                    <td>{{record.email}}</td>
+                                </tr>
+                            </table>
+                            <div class="home-buttons">
+                                <a href="#" class="fancy-button button-line button-white vertical">
+                                    Editar cuenta
+                                    <span class="icon">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </span>
+                                </a>
+                                <a href="#" class="fancy-button button-line button-white zoom">
+                                    Eliminar Cuenta
+                                    <span class="icon">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </aside>
 
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <h4 class="visible-xs">12 Columnas</h4>
-                        <h4 class="visible-sm">6 Columnas</h4>
-                        <h4 class="visible-md">3 Columnas</h4>
-                        <div class="col-md-2 center">
-                            <div class="step-no">
-                                <span class="no-inner">2</span>
+
+                    <div class="row">
+
+                        <div class=" col-xs-12 col-sm-6 col-md-3">
+                            <h4 class="visible-xs">12 Columnas</h4>
+                            <h4 class="visible-sm">6 Columnas</h4>
+                            <h4 class="visible-md">3 Columnas</h4>
+                            <div class="col-md-2 center">
+                                <div class="step-no">
+                                    <span class="no-inner">1</span>
+                                </div>
+                            </div>
+                            <h4 class="visible-lg btn-col hover">  Itinerarios</h4>
+
+                            <!-- Intinerario1 -->
+                            <div id="bx-pager" class="client-photos">
+                                <a  href="" class="photo-hold">
+                                    <span class="photo-bg">
+                                        <img src="resources/images/itinerarios.png" alt="" /> <!-- Client photo 1 -->
+                                    </span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <h4 class="visible-xs">12 Columnas</h4>
+                            <h4 class="visible-sm">6 Columnas</h4>
+                            <h4 class="visible-md">3 Columnas</h4>
+                            <div class="col-md-2 center">
+                                <div class="step-no">
+                                    <span class="no-inner">2</span>
+                                </div>
+                            </div>
+                            <h4 class="visible-lg btn-col hover">  Fotos</h4>
+                            <div id="bx-pager" class="client-photos">
+                                <a  href="" class="photo-hold">
+                                    <span class="photo-bg">
+                                        <img src="resources/images/fotos.png" alt="" /> <!-- Client photo 1 -->
+                                    </span>
+                                </a>
+
                             </div>
                         </div>
-                        <h4 class="visible-lg btn-col hover">  Fotos</h4>
-                        <div id="bx-pager" class="client-photos">
-                                    <a  href="" class="photo-hold">
-                                        <span class="photo-bg">
-                                            <img src="resources/images/fotos.png" alt="" /> <!-- Client photo 1 -->
-                                        </span>
-                                    </a>
 
+                        <div class=" col-xs-12 col-sm-6 col-md-3">
+                            <h4 class="visible-xs">12 Columnas</h4>
+                            <h4 class="visible-sm">6 Columnas</h4>
+                            <h4 class="visible-md">3 Columnas</h4>
+                            <div class="col-md-2 center">
+                                <div class="step-no">
+                                    <span class="no-inner">3</span>
                                 </div>
-                    </div>
+                            </div>
+                            <h4 class="visible-lg btn-col hover">  Eventos</h4>
+                            <div id="bx-pager" class="client-photos">
+                                <a  href="" class="photo-hold">
+                                    <span class="photo-bg">
+                                        <img src="resources/images/eventos.png" alt="" /> <!-- Client photo 1 -->
+                                    </span>
+                                </a>
 
-                    <div class=" col-xs-12 col-sm-6 col-md-3">
-                        <h4 class="visible-xs">12 Columnas</h4>
-                        <h4 class="visible-sm">6 Columnas</h4>
-                        <h4 class="visible-md">3 Columnas</h4>
-                        <div class="col-md-2 center">
-                            <div class="step-no">
-                                <span class="no-inner">3</span>
                             </div>
                         </div>
-                        <h4 class="visible-lg btn-col hover">  Eventos</h4>
-                         <div id="bx-pager" class="client-photos">
-                                    <a  href="" class="photo-hold">
-                                        <span class="photo-bg">
-                                            <img src="resources/images/eventos.png" alt="" /> <!-- Client photo 1 -->
-                                        </span>
-                                    </a>
 
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <h4 class="visible-xs">12 Columnas</h4>
+                            <h4 class="visible-sm">6 Columnas</h4>
+                            <h4 class="visible-md">3 Columnas</h4>
+                            <div class="col-md-2 center">
+                                <div class="step-no">
+                                    <span class="no-inner">4</span>
                                 </div>
-                    </div>
+                            </div>
+                            <h4 class="visible-lg btn-col hover">  Tu mapa</h4>
+                            <div id="bx-pager" class="client-photos">
+                                <a  href="" class="photo-hold">
+                                    <span class="photo-bg">
+                                        <img src="resources/images/maps.png" alt="" /> <!-- Client photo 1 -->
+                                    </span>
+                                </a>
 
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <h4 class="visible-xs">12 Columnas</h4>
-                        <h4 class="visible-sm">6 Columnas</h4>
-                        <h4 class="visible-md">3 Columnas</h4>
-                        <div class="col-md-2 center">
-                            <div class="step-no">
-                                <span class="no-inner">4</span>
                             </div>
                         </div>
-                        <h4 class="visible-lg btn-col hover">  Tu mapa</h4>
-                         <div id="bx-pager" class="client-photos">
-                                    <a  href="" class="photo-hold">
-                                        <span class="photo-bg">
-                                            <img src="resources/images/maps.png" alt="" /> <!-- Client photo 1 -->
-                                        </span>
-                                    </a>
-
-                                </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <footer>
-            <div class="container hover">
-                <h3>Usuario</h3>
-                <h4>mensaje motivacional</h4>
-                <div ng-include="'src/modules/author/author.books.html'"></div>
-            </div>
-        </footer>
-        </section>
-    </div>
-
+            <footer>
+                <div class="container hover">
+                    <h3>Usuario</h3>
+                    <h4>mensaje motivacional</h4>
+                    <div ng-include="'src/modules/author/author.books.html'"></div>
+                </div>
+            </footer>
+    </section>
+</div>
 
 
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
