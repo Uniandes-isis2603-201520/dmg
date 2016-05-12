@@ -17,9 +17,9 @@
 
             $scope.currentRecord = {
                 id: undefined  /*Tipo Long*/,
-                name: '' /*Tipo String*/,
+                name: 'Pepe ' /*Tipo String*/,
                 email: '' /*Tipo String*/,
-                image: '' /*Tipo String*/,
+                image: 'http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png' /*Tipo String*/,
                 activo:true /*Tipo Boolean*/
                 // itinerarios: [{itinerario: {}}] /*Coleccion de registros de viajero*/
             };
@@ -156,11 +156,17 @@
 
             function updateItinerarios(event, args) {
                 $scope.currentRecord.itinerarios = args;
-            }
-            ;
+            };
 
             $scope.$on('updateItinerarios', updateItinerarios);
 
+            function valInit($scope){
+             $scope.records = {
+                 items : [{ name :'lol',
+                         id :10
+
+                 }]}
+            };
         }]);
 
 })(window.angular);
