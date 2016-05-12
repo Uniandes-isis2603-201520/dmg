@@ -5,6 +5,7 @@
         "eventoModule",
         "ciudadModule",
         "itinerarioModule",
+        "multimediaModule",
         "ngMessages"
     ]);
 
@@ -30,8 +31,8 @@
                     })
                      .state('multimedia', {
                         url: '/multimedia',
-                        //controller: "multimediaCtrl",
-                        //controllerAs: "ctrl",
+                        controller: "multimediaCtrl",
+                        controllerAs: "ctrl",
                         templateUrl: "src/modules/multimedia/multimedia.tpl.html"
                     })
                      .state('itinerario', {
