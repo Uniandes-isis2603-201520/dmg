@@ -15,9 +15,11 @@
             $scope.currentRecord = {
                 id: undefined /*Tipo Long. El valor se asigna en el backend*/,
                 name: '' /*Tipo String*/,
-                description: '' /*Tipo String*/,
-                isbn: '' /*Tipo String*/,
-                image: '' /*Tipo String*/
+                nombre:'' /*Tipo String*/,
+                resumen: '' /*Tipo String*/,
+                rutaImg: '' /*Tipo String*/,
+                fechaInicio: '' /*Tipo String*/,
+                fechaFin: '' /*Tipo String*/
             };
             $scope.records = [];
 
@@ -73,7 +75,7 @@
             };
 
             //Ejemplo alerta
-            showMessage("Bienvenido!, Esto es un ejemplo para mostrar un mensaje exitoso", "success");
+            showMessage("Bienvenido! ", "success");
 
 
             /*

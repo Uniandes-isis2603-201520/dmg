@@ -88,8 +88,10 @@ public abstract class ItinerarioConverter {
 
     private static ItinerarioEntity basicDTO2Entity(ItinerarioDTO dto) {
         if (dto != null) {
+
             ItinerarioEntity entity = new ItinerarioEntity();
             entity.setId(dto.getId());
+            entity.setName(dto.getName());
             entity.setFechaFin(dto.getFechaFin());
             entity.setResumen(dto.getResumen());
             entity.setRutaImg(dto.getRutaImg());
