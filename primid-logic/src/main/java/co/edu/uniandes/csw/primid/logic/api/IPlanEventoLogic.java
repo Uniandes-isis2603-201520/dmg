@@ -16,6 +16,8 @@ import java.util.List;
  */
 public interface IPlanEventoLogic {
 
+     public List<PlanEventoEntity> getPlanEventos();
+
     public PlanEventoEntity getPlanEvento(Long id);
 
     public PlanEventoEntity createPlanEvento(PlanEventoEntity entity);

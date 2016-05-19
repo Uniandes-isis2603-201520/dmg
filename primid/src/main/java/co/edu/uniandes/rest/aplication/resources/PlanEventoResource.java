@@ -6,14 +6,17 @@
 package co.edu.uniandes.rest.aplication.resources;
 
 import co.edu.uniandes.csw.primid.logic.api.IPlanEventoLogic;
+import co.edu.uniandes.csw.primid.logic.entities.CiudadEntity;
 import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
 import co.edu.uniandes.csw.primid.logic.entities.ViajeroEntity;
+import co.edu.uniandes.rest.aplication.converters.CiudadConverter;
 import co.edu.uniandes.rest.aplication.converters.PlanEventoConverter;
 import co.edu.uniandes.rest.aplication.converters.ViajeroConverter;
 import co.edu.uniandes.rest.aplication.dtos.PlanEventoDTO;
 import co.edu.uniandes.rest.aplication.exceptions.PrimidLogicException;
 
 import java.util.List;
+import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -24,20 +27,24 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 /**
- *
+ *viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos
  * @author s.gonzalez22
  */
-@Path("viajeros/{id_Viajero: \\d+}/itinerarios/{id_Itinerario: \\d+}/planCiudades/{id_PlanCiudad: \\d+}/planEventos")
+@Path("planEventos")
 @Produces("application/json")
 public class PlanEventoResource {
+
+     private static final Logger logger = Logger.getLogger(PlanEventoResource.class.getName());
+
 
     @Inject
     private IPlanEventoLogic planEventoLogic;
 
     @GET
     public List<PlanEventoDTO> getPlanEventos() throws PrimidLogicException {
-        return null;
-    }
+         logger.info("Se ejecuta metodo getCiudades");
+        return PlanEventoConverter.listEntity2DTO(planEventoLogic.getPlanEventos());
+     }
 
     /**
      * Obtiene una ciudad
@@ -47,7 +54,7 @@ public class PlanEventoResource {
      * @throws CityLogicException cuando la ciudad no existe
      */
     @GET
-    @Path("planE/{id_Plan: \\d+}")
+    @Path("{id_Plan: \\d+}")
     public PlanEventoDTO getPlanEventoPorId(@PathParam("id_Plan") Long id) throws PrimidLogicException {
         return PlanEventoConverter.fullEntity2DTO(planEventoLogic.getPlanEvento(id));
     }
@@ -76,9 +83,14 @@ public class PlanEventoResource {
      * suministrado
      */
     @PUT
-    @Path("planE/{id_PlanUpdate: \\d+}")
-    public PlanEventoDTO updatePlanEvento(@PathParam("id_PlanUpdate") Long id, PlanEventoDTO ciudad) throws PrimidLogicException {
-        return null;
+    @Path("{id: \\d+}")
+    public PlanEventoDTO updatePlanEvento(@PathParam("id") Long id, PlanEventoDTO dto) throws PrimidLogicException {
+        PlanEventoEntity entity = PlanEventoConverter.fullDTO2Entity(dto);
+        entity.setId(id);
+        PlanEventoEntity oldEntity = planEventoLogic.getPlanEvento(id);
+        PlanEventoEntity savedPlan = planEventoLogic.updatePlanEvento(entity);
+        return PlanEventoConverter.fullEntity2DTO(savedPlan);
+
     }
 
     /**
@@ -89,8 +101,8 @@ public class PlanEventoResource {
      * suministrado
      */
     @DELETE
-    @Path("planE/{id_PlanDelete: \\d+}")
-    public void deletePlanEvento(@PathParam("id_PlanDelete") Long id) throws PrimidLogicException {
+    @Path("{id: \\d+}")
+    public void deletePlanEvento(@PathParam("id") Long id) throws PrimidLogicException {
 
         planEventoLogic.deletePlanEvento(id);
 

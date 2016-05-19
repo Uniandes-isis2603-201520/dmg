@@ -6,8 +6,10 @@
 package co.edu.uniandes.csw.primid.logic.ejbs;
 
 import co.edu.uniandes.csw.primid.logic.api.IPlanEventoLogic;
+import co.edu.uniandes.csw.primid.logic.entities.CiudadEntity;
 import co.edu.uniandes.csw.primid.logic.entities.PlanEventoEntity;
 import co.edu.uniandes.csw.primid.logic.persistence.PlanEventoPersistence;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
@@ -24,6 +26,15 @@ public class PlanEventoLogic implements IPlanEventoLogic {
 
     @Inject
     private PlanEventoPersistence persistence;
+
+
+      @Override
+    public List<PlanEventoEntity> getPlanEventos() {
+        logger.info("Inicia proceso de consultar todas las ciudades");
+        List<PlanEventoEntity> planes = persistence.findAll();
+        logger.info("Termina proceso de consultar todas las ciudades");
+        return planes;
+    }
 
     @Override
     public PlanEventoEntity getPlanEvento(Long id) {

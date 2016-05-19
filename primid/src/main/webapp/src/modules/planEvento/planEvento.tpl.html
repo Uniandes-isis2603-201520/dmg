@@ -6,11 +6,11 @@
 
 
 <li>
-<div class="collapse navbar-collapse" id="book-navbar">
+<div class="collapse navbar-collapse" id="planEvento-navbar">
                 <button id="create-planEvento" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.createRecord()"><span class="glyphicon glyphicon-plus"></span> Create</button>
                 <button id="refresh-planEvento" class="btn btn-default navbar-btn" ng-hide="ctrl.editMode" ng-click="ctrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-                <button id="save-planEvento" type="submit" form="book-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-save"></span> Save</button>
-                <button id="cancel-planEvento" type="button" form="book-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button id="save-planEvento" type="submit" form="planEvento-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode"><span class="glyphicon glyphicon-save"></span> Save</button>
+                <button id="cancel-planEvento" type="button" form="planEvento-form" class="btn btn-default navbar-btn" ng-show="ctrl.editMode" ng-click="form.$setPristine(); ctrl.fetchRecords();"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
 </div>
 </li>
 </ul>
@@ -23,9 +23,10 @@
 
                 <div class="caption" >
                     <p><strong>Name:</strong> <span id="{{$index}}-name">{{record.name}}</span></p>
+                    <p><strong>Evento:</strong> <span id="{{$index}}-evento">{{record.evento.name}}</span></p>
                     <p><strong>Fecha Inicio:</strong> <span id="{{$index}}-fechaInicio">{{record.fechaInicio| date}}</span></p>
                     <p><strong>Fecha Fin</strong> <span id="{{$index}}-fechaFin">{{record.fechaFin| date}}</span></p>
-                    <p><strong>Evento:</strong> <span id="{{$index}}-evento">{{record.evento.name}}</span></p>
+
                 </div>
                 <p class="text-center">
                     <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ng-click="ctrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
@@ -35,7 +36,7 @@
         </div>
     </div>
 </div>
-<div ng-show="ctrl.editMode" class="col-md-6 well">
+<div ng-show="ctrl.editMode" class="section-overlay">
     <form novalidate name="form" id="planEvento-form" role="form" ng-submit="ctrl.saveRecord()">
         <alert ng-messages="form.$error" type="danger" close="" ng-hide="!form.$error.required">
             <div ng-message="required">
